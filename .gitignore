@@ -1,0 +1,15 @@
+/target
+Cargo.lock
+issues_tracker_local/target
+issues_tracker_local/.env
+
+issues_tracker/target
+issues_tracker/.env
+
+db_updater_local/target
+db_updater_local/.env
+
+db_updater/target
+db_updater/.env
+
+.env
