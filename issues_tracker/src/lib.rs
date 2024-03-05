@@ -1,16 +1,23 @@
-use chrono::{ Datelike, Timelike, Utc };
+use chrono::{Datelike, Timelike, Utc};
 use dotenv::dotenv;
 use flowsnet_platform_sdk::logger;
-use github_flows::{ get_octo, GithubLogin };
-use octocrab_wasi::{ models::issues::Issue, params::issues::Sort, params::Direction };
-use openai_flows::{ chat::{ ChatModel, ChatOptions }, OpenAIFlows };
-use schedule_flows::{ schedule_cron_job, schedule_handler };
-use serde_json::{ json, to_string_pretty, Value };
-use std::{ collections::HashMap, env };
+use github_flows::{get_octo, GithubLogin};
+use octocrab_wasi::{models::issues::Issue, params::issues::Sort, params::Direction};
+use openai_flows::{
+    chat::{ChatModel, ChatOptions},
+    OpenAIFlows,
+};
+use schedule_flows::{schedule_cron_job, schedule_handler};
+use serde_json::{json, to_string_pretty, Value};
+use std::{collections::HashMap, env};
 
-use http_req::{ request::{ Method, Request }, response::Response, uri::Uri };
-use serde::{ Deserialize, Serialize };
 use chrono::Duration;
+use http_req::{
+    request::{Method, Request},
+    response::Response,
+    uri::Uri,
+};
+use serde::{Deserialize, Serialize};
 
 // #[schedule_handler]
 // async fn handler(body: Vec<u8>) {
@@ -54,22 +61,21 @@ pub async fn search_for_mention() -> anyhow::Result<()> {
 }
 
 pub async fn github_http_post_gql(query: &str) -> anyhow::Result<Vec<u8>> {
-    use http_req::{ request::Method, request::Request, uri::Uri };
+    use http_req::{request::Method, request::Request, uri::Uri};
     let token = env::var("GITHUB_TOKEN").expect("github_token is required");
     let base_url = "https://api.github.com/graphql";
     let base_url = Uri::try_from(base_url).unwrap();
     let mut writer = Vec::new();
 
     let query = serde_json::json!({"query": query});
-    match
-        Request::new(&base_url)
-            .method(Method::POST)
-            .header("User-Agent", "flows-network connector")
-            .header("Content-Type", "application/json")
-            .header("Authorization", &format!("Bearer {}", token))
-            .header("Content-Length", &query.to_string().len())
-            .body(&query.to_string().into_bytes())
-            .send(&mut writer)
+    match Request::new(&base_url)
+        .method(Method::POST)
+        .header("User-Agent", "flows-network connector")
+        .header("Content-Type", "application/json")
+        .header("Authorization", &format!("Bearer {}", token))
+        .header("Content-Length", &query.to_string().len())
+        .body(&query.to_string().into_bytes())
+        .send(&mut writer)
     {
         Ok(res) => {
             if !res.status_code().is_success() {
@@ -90,14 +96,13 @@ pub async fn github_http_get(url: &str) -> anyhow::Result<Vec<u8>> {
     let mut writer = Vec::new();
     let url = Uri::try_from(url).unwrap();
 
-    match
-        Request::new(&url)
-            .method(Method::GET)
-            .header("User-Agent", "flows-network connector")
-            .header("Content-Type", "application/json")
-            .header("Authorization", &format!("Bearer {}", token))
-            .header("CONNECTION", "close")
-            .send(&mut writer)
+    match Request::new(&url)
+        .method(Method::GET)
+        .header("User-Agent", "flows-network connector")
+        .header("Content-Type", "application/json")
+        .header("Authorization", &format!("Bearer {}", token))
+        .header("CONNECTION", "close")
+        .send(&mut writer)
     {
         Ok(res) => {
             if !res.status_code().is_success() {
