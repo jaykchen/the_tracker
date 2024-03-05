@@ -11,6 +11,7 @@ use std::{ collections::HashMap, env };
 use http_req::{ request::{ Method, Request }, response::Response, uri::Uri };
 use serde::{ Deserialize, Serialize };
 use chrono::Duration;
+pub use issues_tracker::search_for_mention;
 
 #[no_mangle]
 #[tokio::main(flavor = "current_thread")]
@@ -26,4 +27,5 @@ async fn handler(body: Vec<u8>) {
     dotenv().ok();
     logger::init();
 
+    let _ = search_for_mention().await;
 }

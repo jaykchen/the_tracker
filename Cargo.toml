@@ -5,16 +5,18 @@ edition = "2021"
 
 [lib]
 path = "src/lib.rs"
-crate-type = ["cdylib"]
 
 [workspace]
+resolver = "2"
 members= [
+    ".",
 "db_updater",
 "issues_tracker",
 ]
 exclude = ["db_updater_local",  "issues_tracker_local"]
 
 [dependencies]
+issues_tracker = {version = "0.1.0", path = "issues_tracker" }
 dotenv = "0.15.0"
 serde_json = "1.0.97"
 tokio_wasi = { version = "1", features = ["rt", "macros", "net", "time"]}
