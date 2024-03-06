@@ -12,6 +12,7 @@ use serde_json::{json, to_string_pretty, Value};
 use std::{collections::HashMap, env};
 
 use chrono::Duration;
+pub use db_updater::list_comments;
 use http_req::{
     request::{Method, Request},
     response::Response,
@@ -34,5 +35,11 @@ async fn handler(body: Vec<u8>) {
     dotenv().ok();
     logger::init();
 
-    let _ = search_for_mention().await;
+    // let _ = search_for_mention().await;
+    let pool = PgPool::connect(&env::var("DATABASE_URL")?).await?;
+
+    let issue_id = "https://github.com/jaykchen/issue-labeler/issues/24";
+
+    let res = list_comments(&pool, issue_id).await?;
+    log::info!("Comments: {:?}", res);
 }
