@@ -1,4 +1,4 @@
-use issues_tracker::get_project_logo;
+use crate::issues_tracker::get_project_logo;
 use sqlx::postgres::PgPool;
 use std::env;
 
@@ -40,7 +40,11 @@ pub async fn add_project_with_check(
     Ok(())
 }
 
-pub async fn add_project(pool: &PgPool, project_id: &str, project_logo: &str) -> anyhow::Result<()> {
+pub async fn add_project(
+    pool: &PgPool,
+    project_id: &str,
+    project_logo: &str,
+) -> anyhow::Result<()> {
     sqlx::query!(
         r#"
         INSERT INTO projects (project_id, project_logo)
@@ -225,25 +229,22 @@ pub async fn add_comment_with_check(
 ) -> anyhow::Result<()> {
     if issue_exists(pool, issue_id).await? {
     } else {
-
-let _ = add_issue_with_check(pool, issue_id, "title", "description").await?;
+        let _ = add_issue_with_check(pool, issue_id, "title", "description").await?;
     }
 
-
-          sqlx::query!(
-            r#"
+    sqlx::query!(
+        r#"
             INSERT INTO comments (comment_id, issue_id, creator, content)
             VALUES ($1, $2, $3, $4)
             "#,
-            comment_id,
-            issue_id,
-            creator,
-            content
-        )
-        .execute(pool)
-        .await?;
+        comment_id,
+        issue_id,
+        creator,
+        content
+    )
+    .execute(pool)
+    .await?;
     Ok(())
-  
 }
 
 pub async fn add_comment_test_1(pool: &PgPool) -> anyhow::Result<()> {
