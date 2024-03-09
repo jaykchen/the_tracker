@@ -1,7 +1,32 @@
+use issues_tracker::get_project_logo;
 use sqlx::postgres::PgPool;
 use std::env;
 
-async fn add_project(pool: &PgPool, project_id: &str, project_logo: &str) -> anyhow::Result<()> {
+pub async fn project_exists(pool: &PgPool, project_id: &str) -> anyhow::Result<bool> {
+    let exists = sqlx::query!(
+        r#"
+        SELECT EXISTS(SELECT 1 FROM projects WHERE project_id = $1) AS "exists!"
+        "#,
+        project_id
+    )
+    .fetch_one(pool)
+    .await?
+    .exists;
+
+    Ok(exists)
+}
+pub async fn add_project_with_check(
+    pool: &PgPool,
+    project_id: &str,
+    project_logo: &str,
+) -> anyhow::Result<()> {
+    if project_exists(pool, project_id).await? {
+        return Err(anyhow::anyhow!(
+            "Project with ID '{}' already exists.",
+            project_id
+        ));
+    }
+
     sqlx::query!(
         r#"
         INSERT INTO projects (project_id, project_logo)
@@ -15,8 +40,22 @@ async fn add_project(pool: &PgPool, project_id: &str, project_logo: &str) -> any
     Ok(())
 }
 
-async fn add_project_test_1(pool: &PgPool) -> anyhow::Result<()> {
-    let project_id = "jaykchen/b-test";
+pub async fn add_project(pool: &PgPool, project_id: &str, project_logo: &str) -> anyhow::Result<()> {
+    sqlx::query!(
+        r#"
+        INSERT INTO projects (project_id, project_logo)
+        VALUES ($1, $2)
+        "#,
+        project_id,
+        project_logo
+    )
+    .execute(pool)
+    .await?;
+    Ok(())
+}
+
+pub async fn add_project_test_1(pool: &PgPool) -> anyhow::Result<()> {
+    let project_id = "jaykchen/issue-labeler";
     let project_logo = "https://avatars.githubusercontent.com/u/112579101?v=4";
 
     let _ = add_project(pool, project_id, project_logo).await?;
@@ -24,7 +63,7 @@ async fn add_project_test_1(pool: &PgPool) -> anyhow::Result<()> {
     Ok(())
 }
 
-async fn list_projects(pool: &PgPool) -> anyhow::Result<()> {
+pub async fn list_projects(pool: &PgPool) -> anyhow::Result<()> {
     let recs = sqlx::query!(
         r#"
         SELECT project_id, project_logo
@@ -42,7 +81,56 @@ async fn list_projects(pool: &PgPool) -> anyhow::Result<()> {
     Ok(())
 }
 
-async fn add_issue(
+pub async fn issue_exists(pool: &PgPool, issue_id: &str) -> anyhow::Result<bool> {
+    let exists = sqlx::query!(
+        r#"
+        SELECT EXISTS(SELECT 1 FROM issues WHERE issue_id = $1) AS "exists!"
+        "#,
+        issue_id
+    )
+    .fetch_one(pool)
+    .await?
+    .exists;
+
+    Ok(exists)
+}
+
+pub async fn add_issue_with_check(
+    pool: &PgPool,
+    issue_id: &str,
+    title: &str,
+    description: &str,
+) -> anyhow::Result<()> {
+    // let issue_id = "https://github.com/jaykchen/issue-labeler/issues/24";
+
+    let project_id = issue_id.rsplitn(3, '/').nth(2).unwrap();
+
+    let owner_repo = project_id.rsplitn(3, '/').take(2).collect::<Vec<_>>();
+    let owner = owner_repo[1];
+    let repo = owner_repo[0];
+    if project_exists(pool, project_id).await? {
+    } else {
+        let project_logo = get_project_logo(owner, repo).await?;
+
+        add_project(pool, project_id, &project_logo).await?;
+    }
+    sqlx::query!(
+        r#"
+            INSERT INTO issues (issue_id, project_id, issue_title, issue_description)
+            VALUES ($1, $2, $3, $4)
+            "#,
+        issue_id,
+        project_id,
+        title,
+        description,
+    )
+    .execute(pool)
+    .await?;
+
+    Ok(())
+}
+
+pub async fn add_issue(
     pool: &PgPool,
     issue_id: &str,
     project_id: &str,
@@ -63,7 +151,7 @@ async fn add_issue(
     .await?;
     Ok(())
 }
-async fn add_issue_test_1(pool: &PgPool) -> anyhow::Result<()> {
+pub async fn add_issue_test_1(pool: &PgPool) -> anyhow::Result<()> {
     let issue_id = "https://github.com/jaykchen/issue-labeler/issues/24";
     let project_id = "jaykchen/issue-labeler";
     let title = "WASI-NN with GPU on Jetson Orin Nano";
@@ -84,7 +172,7 @@ async fn add_issue_test_1(pool: &PgPool) -> anyhow::Result<()> {
     Ok(())
 }
 
-async fn list_issues(pool: &PgPool, project_id: &str) -> anyhow::Result<()> {
+pub async fn list_issues(pool: &PgPool, project_id: &str) -> anyhow::Result<()> {
     let recs = sqlx::query!(
         r#"
         SELECT issue_id, issue_title, issue_description, issue_budget
@@ -107,7 +195,7 @@ async fn list_issues(pool: &PgPool, project_id: &str) -> anyhow::Result<()> {
     Ok(())
 }
 
-async fn add_comment(
+pub async fn add_comment(
     pool: &PgPool,
     comment_id: &str,
     issue_id: &str,
@@ -128,8 +216,37 @@ async fn add_comment(
     .await?;
     Ok(())
 }
+pub async fn add_comment_with_check(
+    pool: &PgPool,
+    comment_id: &str,
+    issue_id: &str,
+    creator: &str,
+    content: &str,
+) -> anyhow::Result<()> {
+    if issue_exists(pool, issue_id).await? {
+    } else {
 
-async fn add_comment_test_1(pool: &PgPool) -> anyhow::Result<()> {
+let _ = add_issue_with_check(pool, issue_id, "title", "description").await?;
+    }
+
+
+          sqlx::query!(
+            r#"
+            INSERT INTO comments (comment_id, issue_id, creator, content)
+            VALUES ($1, $2, $3, $4)
+            "#,
+            comment_id,
+            issue_id,
+            creator,
+            content
+        )
+        .execute(pool)
+        .await?;
+    Ok(())
+  
+}
+
+pub async fn add_comment_test_1(pool: &PgPool) -> anyhow::Result<()> {
     let comment_id = "https://github.com/jaykchen/issue-labeler/issues/24#issuecomment-1979927212";
     let issue_id = "https://github.com/jaykchen/issue-labeler/issues/24";
     let creator = "jaykchen";
@@ -149,7 +266,7 @@ async fn add_comment_test_1(pool: &PgPool) -> anyhow::Result<()> {
     Ok(())
 }
 
-async fn list_comments(pool: &PgPool, issue_id: &str) -> anyhow::Result<()> {
+pub async fn list_comments(pool: &PgPool, issue_id: &str) -> anyhow::Result<()> {
     let recs = sqlx::query!(
         r#"
         SELECT comment_id, content

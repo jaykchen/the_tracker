@@ -12,4 +12,7 @@ db_updater_local/.env
 db_updater/target
 db_updater/.env
 
+db_updater_mysql/target
+db_updater_mysql/.env
+
 .env

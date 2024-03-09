@@ -117,3 +117,50 @@ pub async fn github_http_get(url: &str) -> anyhow::Result<Vec<u8>> {
         }
     }
 }
+
+pub async fn get_project_logo(owner: &str, repo: &str) -> anyhow::Result<String> {
+    #[derive(Serialize, Deserialize)]
+    struct GraphQLResponse {
+        data: RepositoryData,
+    }
+
+    #[derive(Serialize, Deserialize)]
+    struct RepositoryData {
+        repository: OwnerData,
+    }
+
+    #[derive(Serialize, Deserialize)]
+    struct OwnerData {
+        owner: OwnerInfo,
+    }
+
+    #[derive(Serialize, Deserialize)]
+    struct OwnerInfo {
+        login: String,
+        avatarUrl: String,
+    }
+
+    let query_str = format!(
+        r#"
+        query {{
+            repository(owner: "{owner}", name: "{repo}") {{
+                owner {{
+                    login
+                    ... on User {{
+                        avatarUrl
+                    }}
+                    ... on Organization {{
+                        avatarUrl
+                    }}
+                }}
+            }}
+        }}
+        "#,
+    );
+
+    let response = github_http_post_gql(&query_str).await?;
+
+    let parsed_response: GraphQLResponse = serde_json::from_slice(&response)?;
+    let owner_info = parsed_response.data.repository.owner;
+    Ok(owner_info.avatarUrl)
+}
