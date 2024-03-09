@@ -1,17 +1,8 @@
 // AddProject {
 //     name: String,
-//     project_logo: String,
+
 // },
-// ListProjects,
-// AddIssue {
-//     project_id: i32,
-//     title: String,
-//     description: String,
-//     budget: f64,
-// },
-// ListIssues {
-//     project_id: i32,
-// },
+
 use mysql_async::{prelude::*, Error, Opts, Pool, QueryResult, Result};
 
 use std::{env, io};

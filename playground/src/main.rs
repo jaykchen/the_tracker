@@ -2,9 +2,9 @@ use chrono::{Duration, Utc};
 use dotenv::dotenv;
 use octocrab::Octocrab;
 use playground::db_updater_local::*;
-use playground::issues_tracker_local::*;
+
 use sqlx::postgres::PgPool;
-use std::collections::HashSet;
+
 use std::env;
 
 #[tokio::main]

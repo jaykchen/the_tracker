@@ -1,0 +1,524 @@
+{
+    "data": {
+        "search": {
+            "issueCount": 70206,
+            "edges": [
+                {
+                    "node": {
+                        "title": "shapes, Creator - Web design #413",
+                        "number": 2756,
+                        "author": {
+                            "login": "NtemKenyor",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/60122117?u=ffc7d9083dbee33254f38b9b9ed4f324ebe17dbc&v=4"
+                        },
+                        "repository": {
+                            "name": "WebCraftifyAI",
+                            "owner": {
+                                "login": "KwickerHub"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "good first issue"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "first-timers-only"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "auto-review"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "easy"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "shapes, Creator - Web design #412",
+                        "number": 2754,
+                        "author": {
+                            "login": "NtemKenyor",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/60122117?u=ffc7d9083dbee33254f38b9b9ed4f324ebe17dbc&v=4"
+                        },
+                        "repository": {
+                            "name": "WebCraftifyAI",
+                            "owner": {
+                                "login": "KwickerHub"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "good first issue"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "first-timers-only"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "auto-review"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "easy"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "JomiThomas777"
+                                        },
+                                        "body": "Can you assign the issue to me?\r\nThank you."
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Failing to run in Ubuntu 22.04 after make install because of libltfs.so.0 not being found",
+                        "number": 440,
+                        "author": {
+                            "login": "13e7h4x",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/28906286?v=4"
+                        },
+                        "repository": {
+                            "name": "ltfs",
+                            "owner": {
+                                "login": "LinearTapeFileSystem"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "help wanted"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "good first issue"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "Hacktoberfest"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "doc"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "13e7h4x"
+                                        },
+                                        "body": "This can be fixed with:\r\nsudo ldconfig\r\n\r\nCan this be included in the \"make install\" routine, or at least included in the Ubuntu install instructions?\r\n\r\n"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "piste-jp-ibm"
+                                        },
+                                        "body": "It is really generic knowledge to refresh shard library cache when an error happens in dynamic link loader.\r\n\r\nAnd I never know the project that `make install` make it at all in other OSS projects. I think it is good to describe something to README or another place.\r\n\r\nCan you please write it up and open a PR for this project?"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "shapes, Creator - Web design #411",
+                        "number": 2753,
+                        "author": {
+                            "login": "NtemKenyor",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/60122117?u=ffc7d9083dbee33254f38b9b9ed4f324ebe17dbc&v=4"
+                        },
+                        "repository": {
+                            "name": "WebCraftifyAI",
+                            "owner": {
+                                "login": "KwickerHub"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "good first issue"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "first-timers-only"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "auto-review"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "easy"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Orphan screenshot warning doesn't disappear after clear all of unused screenshots",
+                        "number": 11141,
+                        "author": {
+                            "login": "Wohlstand",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/6751442?u=16b10d84b3c4a0cc9b8b30ca33cc907941780e53&v=4"
+                        },
+                        "repository": {
+                            "name": "weblate",
+                            "owner": {
+                                "login": "WeblateOrg"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "enhancement"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "help wanted"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "good first issue"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "nijel"
+                                        },
+                                        "body": "It indeed might take some time to update, but it should be possible to make it immediate."
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "github-actions"
+                                        },
+                                        "body": "This issue seems to be a good fit for newbie contributors. You are welcome to contribute to Weblate! Don't hesitate to ask any questions you would have while implementing this.\n\nYou can learn about how to get started in our [contributors documentation](https://docs.weblate.org/en/latest/contributing/index.html)."
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "Wohlstand"
+                                        },
+                                        "body": "> It indeed might take some time to update, but it should be possible to make it immediate.\r\n\r\nAbsolutely no hurry, do as you can. :)\r\n\r\n> newbie contributors\r\n\r\nThis bot seems doesn't know that I contributed some tweaks on the Qt translation files support a while ago, and I had already reported some issues (or asked questions) during the history. xD"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "shapes, Creator - Web design #410",
+                        "number": 2749,
+                        "author": {
+                            "login": "NtemKenyor",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/60122117?u=ffc7d9083dbee33254f38b9b9ed4f324ebe17dbc&v=4"
+                        },
+                        "repository": {
+                            "name": "WebCraftifyAI",
+                            "owner": {
+                                "login": "KwickerHub"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "good first issue"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "first-timers-only"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "auto-review"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "easy"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Tea in the rank list ",
+                        "number": 414,
+                        "author": {
+                            "login": "VinceUB",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/25371789?u=e25fe7349a6597f4d5532babb482756c8b4cf3f6&v=4"
+                        },
+                        "repository": {
+                            "name": "stregsystemet",
+                            "owner": {
+                                "login": "f-klubben"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "enhancement"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "krestenlaust"
+                                        },
+                                        "body": "Feel free to dive in. Let me know if you need more pointers!\r\n\r\nThe template file related:\r\nhttps://github.com/f-klubben/stregsystemet/blob/af0efd806ae743b0e8a9639376c4a31b81d61cd2/stregsystem/templates/stregsystem/menu_userrank.html\r\n\r\nThe view procedure which does the rendering:\r\nhttps://github.com/f-klubben/stregsystemet/blob/af0efd806ae743b0e8a9639376c4a31b81d61cd2/stregsystem/views.py#L266-L331"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "shapes, Creator - Web design #409",
+                        "number": 2747,
+                        "author": {
+                            "login": "NtemKenyor",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/60122117?u=ffc7d9083dbee33254f38b9b9ed4f324ebe17dbc&v=4"
+                        },
+                        "repository": {
+                            "name": "WebCraftifyAI",
+                            "owner": {
+                                "login": "KwickerHub"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "good first issue"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "first-timers-only"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "auto-review"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "easy"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "shapes, Creator - Web design #408",
+                        "number": 2745,
+                        "author": {
+                            "login": "NtemKenyor",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/60122117?u=ffc7d9083dbee33254f38b9b9ed4f324ebe17dbc&v=4"
+                        },
+                        "repository": {
+                            "name": "WebCraftifyAI",
+                            "owner": {
+                                "login": "KwickerHub"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "good first issue"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "first-timers-only"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "auto-review"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "easy"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "shapes, Creator - Web design #407",
+                        "number": 2743,
+                        "author": {
+                            "login": "NtemKenyor",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/60122117?u=ffc7d9083dbee33254f38b9b9ed4f324ebe17dbc&v=4"
+                        },
+                        "repository": {
+                            "name": "WebCraftifyAI",
+                            "owner": {
+                                "login": "KwickerHub"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "good first issue"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "first-timers-only"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "auto-review"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "easy"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

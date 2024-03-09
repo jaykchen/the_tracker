@@ -19,7 +19,7 @@ use http_req::{
     response::Response,
     uri::Uri,
 };
-pub use issues_tracker::search_for_mention;
+pub use issues_tracker::search_for_initial_hits;
 use serde::{Deserialize, Serialize};
 
 #[no_mangle]
@@ -40,7 +40,7 @@ pub async fn inner(body: Vec<u8>) -> anyhow::Result<()> {
     dotenv().ok();
     logger::init();
 
-    // let _ = search_for_mention().await;
+    // let _ = search_for_initial_hits().await;
     let pool = PgPool::connect(&env::var("DATABASE_URL")?).await?;
 
     let issue_id = "https://github.com/jaykchen/issue-labeler/issues/24";

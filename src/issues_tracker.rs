@@ -24,9 +24,9 @@ use serde::{Deserialize, Serialize};
 //     dotenv().ok();
 //     logger::init();
 
-//     let _ = search_for_mention().await;
+//     let _ = search_for_initial_hits().await;
 // }
-pub async fn search_for_mention() -> anyhow::Result<()> {
+pub async fn search_for_initial_hits() -> anyhow::Result<()> {
     let octocrab = get_octo(&GithubLogin::Default);
     let one_hour_ago = (Utc::now() - Duration::hours(100i64))
         .format("%Y-%m-%dT%H:%M:%SZ")

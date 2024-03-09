@@ -1,6 +1,5 @@
 use crate::issues_tracker_local::get_project_logo;
 use sqlx::postgres::PgPool;
-use std::env;
 
 pub async fn project_exists(pool: &PgPool, project_id: &str) -> anyhow::Result<bool> {
     let exists = sqlx::query!(

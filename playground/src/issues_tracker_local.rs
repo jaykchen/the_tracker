@@ -1,13 +1,12 @@
-use chrono::{Datelike, Timelike, Utc};
-use dotenv::dotenv;
-use octocrab::{models::issues::Issue, params::issues::Sort, params::Direction, Octocrab};
-use serde_json::{json, to_string_pretty, Value};
-use std::{collections::HashMap, env};
+use chrono::Utc;
+
+use octocrab::{models::issues::Issue, Octocrab};
+
+use std::env;
 
 use chrono::Duration;
 use http_req::{
     request::{Method, Request},
-    response::Response,
     uri::Uri,
 };
 use serde::{Deserialize, Serialize};
@@ -17,9 +16,9 @@ use serde::{Deserialize, Serialize};
 //     dotenv().ok();
 //     logger::init();
 
-//     let _ = search_for_mention().await;
+//     let _ = search_for_initial_hits().await;
 // }
-pub async fn search_for_mention() -> anyhow::Result<()> {
+pub async fn search_for_initial_hits() -> anyhow::Result<()> {
     let token = std::env::var("GITHUB_TOKEN").expect("GITHUB_TOKEN env variable is required");
     let octocrab = Octocrab::builder()
         .personal_token(token)
@@ -32,7 +31,8 @@ pub async fn search_for_mention() -> anyhow::Result<()> {
         .format("%Y-%m-%dT%H:%M:%SZ")
         .to_string();
 
-    let query = format!("is:issue mentions:Hacktoberfest updated:>{one_year_ago}");
+    // label:hacktoberfest is:issue is:open no:assignee
+    let query = format!("label:hacktoberfest is:issue is:open no:assignee updated:>{one_year_ago}");
     let encoded_query = urlencoding::encode(&query);
 
     let query_url = format!("https://api.github.com/search/issues?q={encoded_query}");
