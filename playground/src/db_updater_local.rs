@@ -58,7 +58,7 @@ pub async fn add_project(
 }
 
 pub async fn add_project_test_1(pool: &PgPool) -> anyhow::Result<()> {
-    let project_id = "jaykchen/issue-labeler";
+    let project_id = "https://github.com/jaykchen/issue-labeler";
     let project_logo = "https://avatars.githubusercontent.com/u/112579101?v=4";
 
     let _ = add_project(pool, project_id, project_logo).await?;
@@ -156,7 +156,7 @@ pub async fn add_issue(
 }
 pub async fn add_issue_test_1(pool: &PgPool) -> anyhow::Result<()> {
     let issue_id = "https://github.com/jaykchen/issue-labeler/issues/24";
-    let project_id = "jaykchen/issue-labeler";
+    let project_id = "https://github.com/jaykchen/issue-labeler";
     let title = "WASI-NN with GPU on Jetson Orin Nano";
     let description = "demo";
 
@@ -184,6 +184,29 @@ pub async fn list_issues(pool: &PgPool, project_id: &str) -> anyhow::Result<()> 
         ORDER BY issue_id
         "#,
         project_id
+    )
+    .fetch_all(pool)
+    .await?;
+
+    for rec in recs {
+        println!(
+            "- [{}] {}: {} (${:?})",
+            rec.issue_id, rec.issue_title, rec.issue_description, rec.issue_budget
+        );
+    }
+
+    Ok(())
+}
+
+pub async fn get_issue(pool: &PgPool, issue_id: &str) -> anyhow::Result<()> {
+    let recs = sqlx::query!(
+        r#"
+        SELECT issue_id, issue_title, issue_description, issue_budget
+        FROM issues
+        WHERE issue_id = $1
+        ORDER BY issue_id
+        "#,
+        issue_id
     )
     .fetch_all(pool)
     .await?;

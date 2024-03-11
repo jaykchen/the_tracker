@@ -1,0 +1,86 @@
+query ($owner: String!, $repo: String!, $issueNumber: Int!) {
+  repository(owner: $owner, name: $repo) {
+    issue(number: $issueNumber) {
+      title
+      number
+      labels(first: 5) {
+        edges {
+          node {
+            name
+          }
+        }
+      }
+      assignees(first: 10) {
+        edges {
+          node {
+            name
+          }
+        }
+      }
+      timelineItems(
+        first: 200
+        itemTypes: [
+          CLOSED_EVENT
+          ISSUE_COMMENT
+          REFERENCED_EVENT
+          CROSS_REFERENCED_EVENT
+        ]
+      ) {
+        edges {
+          node {
+            __typename
+            ... on ClosedEvent {
+              actor {
+                login
+              }
+              createdAt
+            }
+            ... on IssueComment {
+              author {
+                login
+              }
+              body
+              createdAt
+            }
+            ... on ReferencedEvent {
+              actor {
+                login
+              }
+              commit {
+                oid
+                message
+                url
+              }
+              createdAt
+            }
+            ... on CrossReferencedEvent {
+              actor {
+                login
+              }
+              source {
+                __typename
+                ... on Issue {
+                  number
+                  title
+                  url
+                }
+                ... on PullRequest {
+                  number
+                  title
+                  url
+                }
+              }
+              createdAt
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+{
+  "owner": "ohmyzsh",
+  "repo": "ohmyzsh",
+  "issueNumber": 7175
+}

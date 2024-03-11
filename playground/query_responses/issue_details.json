@@ -1,0 +1,766 @@
+{
+    "data": {
+        "repository": {
+            "issue": {
+                "title": "[Good first PR] Add READMEs to undocumented plugins",
+                "body": "_Register at [Hacktoberfest](https://hacktoberfest.digitalocean.com/) before submitting a Pull Request_\r\n\r\n----\r\n\r\nFor some time we've had it in our minds to add a README to every plugin, as a way of documenting what the plugin does and what it requires, among other things. We have some READMEs already but most plugins lack one. That's why this issue exists, so you can take part in this effort.\r\n\r\nYou can have a look at [existing plugin READMEs](https://github.com/robbyrussell/oh-my-zsh/search?q=extension%3Amd+path%3Aplugins%2F) (the [yarn README is a great example](https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/yarn/README.md)). Also you can find [a Markdown guide here](https://guides.github.com/features/mastering-markdown/).\r\n\r\nThe README should follow a very simple structure:\r\n\r\n1. Name and brief description of what the plugin does. Links to relevant, essential websites.\r\n   For example: the README for the `ant` plugin should link to the [ant project](https://ant.apache.org/).\r\n\r\n2. How to enable the plugin. You can just copy-paste the excerpt below and substitute the word PLUGIN for the name of the plugin:<pre><code>To use it, add PLUGIN to the plugins array of your zshrc file:\r\n\\```\r\nplugins=(... PLUGIN)\r\n\\```</code></pre>\r\n\r\n3. Any other sections that document what the plugin does. Examples of that are: a l[ist of aliases, functions, or commands created](https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/archlinux/README.md); a description of [settings that the plugin allows](https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/ssh-agent/README.md#instructions); how to [build themes based on the plugin](https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/svn/README.md#usage-on-themes), ...\r\n\r\n4. Optionally: a section with a list of contributors.\r\n\r\nYou'll need to read the `.plugin.zsh` file to know what the plugin does or, if there isn't one, the plugin will probably just add completion. You can also get what the plugin does by looking at the commits, or even the [plugins wiki](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins).\r\n\r\nIf you want to work on the README for one of the following plugins, comment below and I'll mark it as such.\r\n\r\nThanks for your contribution and happy Hacktoberfest!\r\n\r\n- [x] [ant](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/ant)\r\n- [x] [autoenv](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/autoenv)\r\n- [x] [autojump](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/autojump)\r\n- [x] [autopep8](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/autopep8)\r\n- [x] [aws](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/aws)\r\n- [x] [battery](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/battery)\r\n- [x] [bower](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/bower)\r\n- [x] [brew](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/brew)\r\n- [x] [bwana](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/bwana)\r\n- [x] [cabal](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/cabal)\r\n- [x] [cake](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/cake)\r\n- [x] [cakephp3](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/cakephp3)\r\n- [x] [capistrano](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/capistrano)\r\n- [x] [catimg](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/catimg)\r\n- [x] [celery](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/celery)\r\n- [x] [chruby](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/chruby)\r\n- [x] [chucknorris](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/chucknorris)\r\n- [x] [cloudapp](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/cloudapp)\r\n- [x] [codeclimate](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/codeclimate)\r\n- [x] [colemak](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/colemak)\r\n- [x] [colored-man-pages](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/colored-man-pages)\r\n- [x] [colorize](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/colorize)\r\n- [x] [command-not-found](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/command-not-found)\r\n- [x] [common-aliases](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/common-aliases)\r\n- [x] [compleat](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/compleat)\r\n- [x] [composer](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/composer)\r\n- [x] [cpanm](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/cpanm)\r\n- [x] [dash](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/dash) ([website](https://kapeli.com/dash))\r\n- [x] [debian](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/debian)\r\n- [x] [dircycle](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/dircycle)\r\n- [x] [dirhistory](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/dirhistory)\r\n- [x] [dirpersist](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/dirpersist)\r\n- [x] [django](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/django)\r\n- [x] [doctl](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/doctl)\r\n- [x] [eecms](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/eecms)\r\n- [x] [emacs](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/emacs)\r\n- [x] [emoji-clock](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/emoji-clock)\r\n- [x] [emotty](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/emotty)\r\n- [x] [encode64](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/encode64)\r\n- [x] [fabric](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/fabric)\r\n- [x] [fasd](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/fasd)\r\n- [x] [fastfile](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/fastfile)\r\n- [x] [fbterm](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/fbterm)\r\n- [x] [fedora](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/fedora)\r\n- [x] [gas](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/gas)\r\n- [x] [gem](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/gem)\r\n- [x] [gitfast](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/gitfast)\r\n- [x] [git-flow-avh](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/git-flow-avh)\r\n- [x] [git-hubflow](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/git-hubflow)\r\n- [x] [gitignore](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/gitignore)\r\n- [x] [git-prompt](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/git-prompt)\r\n- [x] [git-remote-branch](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/git-remote-branch)\r\n- [x] [glassfish](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/glassfish)\r\n- [x] [gnu-utils](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/gnu-utils)\r\n- [x] [go](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/go)\r\n- [x] [golang](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/golang)\r\n- [x] [gpg-agent](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/gpg-agent)\r\n- [x] [gradle](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/gradle)\r\n- [x] [grails](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/grails)\r\n- [x] [grunt](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/grunt)\r\n- [x] [gulp](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/gulp)\r\n- [x] [helm](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/helm)\r\n- [x] [heroku](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/heroku)\r\n- [x] [homestead](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/homestead)\r\n- [x] [iterm2](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/iterm2)\r\n- [x] [iwhois](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/iwhois)\r\n- [x] [jake-node](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/jake-node)\r\n- [x] [jruby](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/jruby)\r\n- [x] [jump](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/jump)\r\n- [x] [kate](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/kate)\r\n- [x] [kitchen](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/kitchen)\r\n- [x] [knife](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/knife)\r\n- [x] [knife_ssh](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/knife_ssh)\r\n- [x] [kops](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/kops)\r\n- [x] [kubectl](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/kubectl)\r\n- [x] [laravel](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/laravel)\r\n- [x] [laravel4](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/laravel4)\r\n- [x] [laravel5](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/laravel5)\r\n- [x] [lein](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/lein)\r\n- [x] [lighthouse](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/lighthouse)\r\n- [x] [lol](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/lol)\r\n- [x] [macports](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/macports)\r\n- [x] [magic-enter](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/magic-enter)\r\n- [x] [man](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/man)\r\n- [x] [minikube](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/minikube)\r\n- [x] [mix](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/mix)\r\n- [x] [mosh](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/mosh)\r\n- [x] [mysql-macports](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/mysql-macports)\r\n- [x] [n98-magerun](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/n98-magerun)\r\n- [x] [nanoc](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/nanoc)\r\n- [x] [node](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/node)\r\n- [x] [nvm](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/nvm)\r\n- [x] [nyan](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/nyan)\r\n- [x] [oc](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/oc)\r\n- [x] [otp](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/otp)\r\n- [x] [pass](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/pass)\r\n- [x] [paver](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/paver)\r\n- [x] [pep8](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/pep8)\r\n- [x] [perl](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/perl)\r\n- [x] [phing](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/phing)\r\n- [x] [pip](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/pip)\r\n- [x] [pod](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/pod)\r\n- [x] [postgres](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/postgres)\r\n- [x] [pow](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/pow)\r\n- [x] [powder](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/powder)\r\n- [x] [powify](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/powify)\r\n- [x] [profiles](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/profiles)\r\n- [x] [pyenv](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/pyenv)\r\n- [x] [pylint](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/pylint)\r\n- [x] [python](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/python)\r\n- [x] [rails](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/rails)\r\n- [x] [rake](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/rake)\r\n- [x] [rbenv](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/rbenv)\r\n- [x] [rbfu](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/rbfu)\r\n- [x] [rebar](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/rebar)\r\n- [x] [redis-cli](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/redis-cli)\r\n- [x] [rsync](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/rsync)\r\n- [x] [ruby](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/ruby)\r\n- [x] [rust](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/rust)\r\n- [x] [rvm](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/rvm)\r\n- [x] [safe-paste](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/safe-paste)\r\n- [x] [sbt](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/sbt)\r\n- [x] [scala](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/scala)\r\n- [x] [screen](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/screen)\r\n- [x] [sfffe](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/sfffe)\r\n- [x] [singlechar](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/singlechar)\r\n- [x] [sprunge](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/sprunge)\r\n- [x] [stack](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/stack)\r\n- [x] [sudo](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/sudo)\r\n- [x] [supervisor](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/supervisor)\r\n- [x] [suse](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/suse)\r\n- [x] [svn-fast-info](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/svn-fast-info)\r\n- [x] [symfony](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/symfony)\r\n- [x] [symfony2](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/symfony2)\r\n- [x] [systemadmin](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/systemadmin)\r\n- [x] [systemd](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/systemd)\r\n- [x] [terminalapp](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/terminalapp)\r\n- [x] [terminitor](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/terminitor)\r\n- [x] [textmate](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/textmate)\r\n- [x] [themes](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/themes)\r\n- [x] [thor](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/thor)\r\n- [x] [tmux](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/tmux)\r\n- [x] [tmux-cssh](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/tmux-cssh)\r\n- [x] [tmuxinator](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/tmuxinator)\r\n- [x] [torrent](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/torrent)\r\n- [x] [tugboat](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/tugboat)\r\n- [x] [ubuntu](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/ubuntu)\r\n- [x] [ufw](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/ufw)\r\n- [x] [vagrant](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/vagrant)\r\n- [x] [virtualenv](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/virtualenv)\r\n- [x] [virtualenvwrapper](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/virtualenvwrapper)\r\n- [x] [vundle](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/vundle)\r\n- [x] [web-search](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/web-search)\r\n- [x] [yii](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/yii)\r\n- [x] [yum](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/yum)\r\n",
+                "timelineItems": {
+                    "nodes": [
+                        {
+                            "__typename": "LabeledEvent"
+                        },
+                        {
+                            "__typename": "LabeledEvent"
+                        },
+                        {
+                            "__typename": "LabeledEvent"
+                        },
+                        {
+                            "__typename": "UnlabeledEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I submitted a template to ease this process, what do you think?\r\nhttps://github.com/robbyrussell/oh-my-zsh/pull/7028",
+                            "createdAt": "2018-09-30T22:00:47Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I'll give it a shot to the gitignore and aws ones!",
+                            "createdAt": "2018-09-30T22:20:54Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "> I submitted a template to ease this process, what do you think?\r\n> #7028\r\n\r\nWhile having a template is great for most plugins, some doesn't even have any requirements or even configurations. Maybe if there's some kind of directory containing various readme templates for different kind of plugins, that'd be great.\r\n\r\nSpeaking of readmes, I have submitted a pull request about creating the readme for the `sudo` plugin (#7177).",
+                            "createdAt": "2018-09-30T22:42:35Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "> I'll give it a shot to the gitignore and aws ones!\r\n\r\nReserved!\r\n\r\n> I have submitted a pull request about creating the readme for the `sudo` plugin\r\n\r\nThanks!",
+                            "createdAt": "2018-10-01T09:56:49Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "@mcornella, may I submit another pull request for other readmes? I'd love to complete two or more plugins. 😅",
+                            "createdAt": "2018-10-01T11:14:03Z"
+                        },
+                        {
+                            "__typename": "MentionedEvent"
+                        },
+                        {
+                            "__typename": "SubscribedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "You can do as many as you like :wink:",
+                            "createdAt": "2018-10-01T12:11:33Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I would like to do python and tmux plugins.",
+                            "createdAt": "2018-10-01T14:24:08Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "> I would like to do python and tmux plugins.\r\n\r\nReserved",
+                            "createdAt": "2018-10-01T14:46:24Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I can give a try on django plugin.",
+                            "createdAt": "2018-10-01T18:36:55Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "Reserved.",
+                            "createdAt": "2018-10-01T19:04:17Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "Don't hesitate to ask for directions!",
+                            "createdAt": "2018-10-01T19:05:07Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I'll take the brew plugin",
+                            "createdAt": "2018-10-02T03:52:21Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "Hi 👋 \r\n\r\nI'd like to take `grunt`, `gulp`,  `node`, `nvm` and `web-search` plugins. Please, mark them as reserved.",
+                            "createdAt": "2018-10-02T10:50:01Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I'll take the mix plugin",
+                            "createdAt": "2018-10-02T14:04:33Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "> I'd like to take `grunt`, `gulp`, `node`, `nvm` and `web-search` plugins. Please, mark them as reserved.\r\n\r\nDone! For the `web-search` plugin you can get inspiration from the `frontend-search` plugin.\r\n\r\n> I'll take the mix plugin\r\n\r\nReserved.",
+                            "createdAt": "2018-10-02T17:10:26Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "in an effort to get involved in open source and learn git i have completed README's for tmuxinator, chucknorris, suse, common-aliases and rsync. i am unsure how to proceed from here.",
+                            "createdAt": "2018-10-02T17:38:26Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "> in an effort to get involved in open source and learn git i have completed README's for tmuxinator, chucknorris, suse, common-aliases and rsync. i am unsure how to proceed from here.\r\n\r\nReserved. You can create the READMEs from the github web interface. For example, you'd navigate to the chucknorris folder and create a new file named `README.md`, and paste your README in the box.\r\n\r\n![image](https://user-images.githubusercontent.com/1441704/46367606-56d86000-c67e-11e8-9e54-07a6e47e7e90.png)\r\n\r\nThen you commit it (make sure to preview first to check that it looks nice), and afterwards it'll give you the option of creating a pull request.\r\n\r\nMore resources:\r\n- https://help.github.com/articles/creating-a-pull-request/\r\n- https://help.github.com/articles/creating-a-pull-request-from-a-fork/\r\n\r\nIf you have made it using git, then [this guide](https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github) has a pretty comprehensive view of the steps you need to follow.",
+                            "createdAt": "2018-10-02T18:10:41Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": " One README per Pull Request please.",
+                            "createdAt": "2018-10-02T18:11:31Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I can also update Ubuntu ",
+                            "createdAt": "2018-10-02T18:35:43Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "> I can also update Ubuntu\r\n\r\nReserved",
+                            "createdAt": "2018-10-02T18:48:49Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I can also update composer, debian, emoji-clock, pylint, virtualenv and pyenv. Please mar them as reserved.",
+                            "createdAt": "2018-10-02T21:13:09Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "> I can also update composer, debian, emoji-clock, pylint, virtualenv and pyenv. Please mar them as reserved.\r\n\r\nDone.",
+                            "createdAt": "2018-10-02T21:37:04Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I have created a readme file for the `encode64` plugin (#7192).",
+                            "createdAt": "2018-10-02T22:34:54Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I can also take gem and gradle",
+                            "createdAt": "2018-10-03T13:16:57Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I'm going to have a look at macports 😊 please reserve for me",
+                            "createdAt": "2018-10-03T14:40:46Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "Hello! I'd like to take `encode64`. Please, reserve it for me 😉",
+                            "createdAt": "2018-10-03T14:42:11Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "> Hello! I'd like to take `encode64`. Please, reserve it for me\r\n\r\n@soul-wish already done: https://github.com/robbyrussell/oh-my-zsh/issues/7175#issuecomment-426453170\r\n\r\n> I can also take gem and gradle\r\n\r\n> I'm going to have a look at macports  please reserve for me\r\n\r\nDone and done.",
+                            "createdAt": "2018-10-03T15:26:14Z"
+                        },
+                        {
+                            "__typename": "MentionedEvent"
+                        },
+                        {
+                            "__typename": "SubscribedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I am doing ruby.",
+                            "createdAt": "2018-10-03T22:31:38Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I have created a readme file for `dircycle` plugin (#7213).",
+                            "createdAt": "2018-10-03T22:59:46Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "Hello, I've created Readme file for Bower plugin.\r\nhttps://github.com/robbyrussell/oh-my-zsh/pull/7216",
+                            "createdAt": "2018-10-04T04:26:47Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I've created PR's for `laravel`, `laravel4` and `laravel5` plugins.",
+                            "createdAt": "2018-10-04T09:29:13Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "Merged all remaining. Thanks all!",
+                            "createdAt": "2018-10-04T11:32:37Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "\\*sighs\\* I have created a readme for the `lol` plugin, because why not. (#7231)\r\n\r\nEdit: also made a readme for `catimg`. (#7232)",
+                            "createdAt": "2018-10-05T02:52:52Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I will do dirhistory as well.",
+                            "createdAt": "2018-10-05T03:20:34Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I'll take kate and vagrant plugin.",
+                            "createdAt": "2018-10-05T06:56:06Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "> *sighs* I have created a readme for the `lol` plugin, because why not. (#7231)\r\n> \r\n> Edit: also made a readme for `catimg`. (#7232)\r\n\r\nMerged.\r\n\r\n\r\n> I will do dirhistory as well.\r\n\r\n> I'll take kate and vagrant plugin.\r\n\r\nReserved. Godspeed!",
+                            "createdAt": "2018-10-05T07:43:58Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "Hi! I can take on the emacs plugin",
+                            "createdAt": "2018-10-05T10:51:09Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I'll take the jump plugin.",
+                            "createdAt": "2018-10-05T16:03:02Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I just finished dirhistory in #7239. ",
+                            "createdAt": "2018-10-05T21:15:31Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I'll make a readme for gitfast.",
+                            "createdAt": "2018-10-06T14:11:21Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I can take over `vundle` as well.",
+                            "createdAt": "2018-10-07T12:09:35Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I can take the pep8 and autopep8 plugins",
+                            "createdAt": "2018-10-07T19:16:11Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I've created PR's for `nyan` and `nanoc` plugins 😺",
+                            "createdAt": "2018-10-08T11:27:14Z"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I'll take the `autojump` plugin.",
+                            "createdAt": "2018-10-08T13:53:06Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I'll take the kubectl plugin",
+                            "createdAt": "2018-10-08T14:21:53Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "> I've created PR's for `nyan` and `nanoc` plugins 😺\r\n\r\n> I'll take the `autojump` plugin.\r\n\r\nMerged.\r\n\r\n\r\n> I'll take the kubectl plugin\r\n\r\nReserved.",
+                            "createdAt": "2018-10-08T16:43:23Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I'll take the scala plugin ",
+                            "createdAt": "2018-10-08T19:28:50Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I'll take the `pass` plugin. I also misplaced my last README and will move it into the correct directory. Apologies for that.",
+                            "createdAt": "2018-10-09T09:12:13Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "> I'll take the `pass` plugin. I also misplaced my last README and will move it into the correct directory. Apologies for that.\r\n\r\nReserved. And I just moved it, thanks for the heads up.",
+                            "createdAt": "2018-10-09T18:35:44Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "Reminder that these READMEs are still pending:\r\n\r\n@kashano:\r\n- [aws](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/aws)\r\n- [gitignore](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/gitignore)\r\n\r\n@Byte7:\r\n- [composer](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/composer)\r\n- [debian](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/debian)\r\n- [pyenv](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/pyenv)\r\n- [pylint](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/pylint)\r\n- [tmux](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/tmux)\r\n- [virtualenv](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/virtualenv)\r\n\r\n@richardmoyer:\r\n- [common-aliases](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/common-aliases)\r\n\r\n\r\nSome of these plugins are hard to document. Remember that you can still get a quick thing done and submit the PR even if it's not totally done, just to ask for advice or clarification on particularities of the plugins.",
+                            "createdAt": "2018-10-09T18:50:57Z"
+                        },
+                        {
+                            "__typename": "MentionedEvent"
+                        },
+                        {
+                            "__typename": "SubscribedEvent"
+                        },
+                        {
+                            "__typename": "MentionedEvent"
+                        },
+                        {
+                            "__typename": "SubscribedEvent"
+                        },
+                        {
+                            "__typename": "MentionedEvent"
+                        },
+                        {
+                            "__typename": "SubscribedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "Working on textmate",
+                            "createdAt": "2018-10-11T03:38:57Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I can do the command-not-found plugin.  I plan on doing a few more, but I'll post more later.",
+                            "createdAt": "2018-10-12T12:54:23Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I can do the systemadmin plugin",
+                            "createdAt": "2018-10-12T20:36:09Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "> \r\n> \r\n> Reminder that these READMEs are still pending:\r\n> \r\n> @kashano:\r\n> \r\n>     * [aws](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/aws)\r\n> \r\n>     * [gitignore](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/gitignore)\r\n> \r\n> \r\n> @Byte7:\r\n> \r\n>     * [composer](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/composer)\r\n> \r\n>     * [debian](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/debian)\r\n> \r\n>     * [pyenv](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/pyenv)\r\n> \r\n>     * [pylint](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/pylint)\r\n> \r\n>     * [tmux](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/tmux)\r\n> \r\n>     * [virtualenv](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/virtualenv)\r\n> \r\n> \r\n> @richardmoyer:\r\n> \r\n>     * [common-aliases](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/common-aliases)\r\n> \r\n> \r\n> Some of these plugins are hard to document. Remember that you can still get a quick thing done and submit the PR even if it's not totally done, just to ask for advice or clarification on particularities of the plugins.\r\n\r\n@mcornella Already sent PRs for pylint, virtualenv. I'll be doing the remaining ones too over this week.",
+                            "createdAt": "2018-10-14T14:56:40Z"
+                        },
+                        {
+                            "__typename": "MentionedEvent"
+                        },
+                        {
+                            "__typename": "SubscribedEvent"
+                        },
+                        {
+                            "__typename": "MentionedEvent"
+                        },
+                        {
+                            "__typename": "SubscribedEvent"
+                        },
+                        {
+                            "__typename": "MentionedEvent"
+                        },
+                        {
+                            "__typename": "SubscribedEvent"
+                        },
+                        {
+                            "__typename": "MentionedEvent"
+                        },
+                        {
+                            "__typename": "SubscribedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "Hi! For my first PR I would take the documentation of the gitignore-plugin. May you mark this as reserved for me? Thanks.",
+                            "createdAt": "2018-10-19T08:46:20Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I've made PR #7325 with a brief description for the Helm plugin.",
+                            "createdAt": "2018-10-22T21:06:09Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I'll do the REAMDE.md for symfony2 ^^",
+                            "createdAt": "2018-10-23T12:23:18Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I'll take the kops one.",
+                            "createdAt": "2018-10-27T23:27:27Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "Also minikube.",
+                            "createdAt": "2018-10-27T23:35:54Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "You need to tick `þostgres` plugin",
+                            "createdAt": "2018-12-17T21:03:51Z"
+                        },
+                        {
+                            "__typename": "PinnedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "Hi there! I will add the README for the  git-prompt plugin.",
+                            "createdAt": "2019-01-28T00:53:27Z"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "LabeledEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "Hi there! I'd like to take on the README for common-aliases",
+                            "createdAt": "2019-07-23T17:13:17Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I added README for `colored-man-pages` in #7173.",
+                            "createdAt": "2019-08-03T21:35:06Z"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I would like to work on pip plugin.",
+                            "createdAt": "2019-08-07T17:58:14Z"
+                        },
+                        {
+                            "__typename": "UnpinnedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "ReferencedEvent"
+                        },
+                        {
+                            "__typename": "PinnedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I am doing thor and pip.",
+                            "createdAt": "2019-09-27T10:09:25Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "Reserved, go for it! Note that if you're doing this for Hacktoberfest, to qualify the PR should be submitted between October 1 and 31, and you should register at [Hacktoberfest](https://hacktoberfest.digitalocean.com) *before* opening the PR.",
+                            "createdAt": "2019-09-27T11:09:52Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "> Reserved, go for it! Note that if you're doing this for Hacktoberfest, to qualify the PR should be submitted between October 1 and 31, and you should register at [Hacktoberfest](https://hacktoberfest.digitalocean.com) _before_ opening the PR.\r\n\r\nRegistered and will try to submit the PR on Oct 1st.",
+                            "createdAt": "2019-09-27T11:13:41Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I am doing redis-cli and perl",
+                            "createdAt": "2019-09-27T20:39:43Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "> Reserved, go for it! Note that if you're doing this for Hacktoberfest, to qualify the PR should be submitted between October 1 and 31, and you should register at [Hacktoberfest](https://hacktoberfest.digitalocean.com) _before_ opening the PR.\r\n\r\nhttps://github.com/robbyrussell/oh-my-zsh/pull/8185 ",
+                            "createdAt": "2019-09-30T20:15:21Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I'd like to work on the READMEs for the rake and rbenv plugins.",
+                            "createdAt": "2019-10-01T00:24:22Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "Can I claim `oc`?",
+                            "createdAt": "2019-10-01T02:52:50Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "> I'd like to work on the READMEs for the rake and rbenv plugins.\r\n\r\nGo ahead 😉 ",
+                            "createdAt": "2019-10-01T11:14:16Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "> I am doing redis-cli and perl\r\n\r\nAll yours!",
+                            "createdAt": "2019-10-01T11:15:36Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I can do `lein` and `jruby`",
+                            "createdAt": "2019-10-01T12:49:04Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I can also do `rvm` and `rebar`",
+                            "createdAt": "2019-10-01T18:52:32Z"
+                        },
+                        {
+                            "__typename": "IssueComment",
+                            "body": "I can do `yii` ",
+                            "createdAt": "2019-10-02T14:06:06Z"
+                        },
+                        {
+                            "__typename": "CrossReferencedEvent"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

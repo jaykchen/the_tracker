@@ -1,0 +1,48 @@
+query ($query: String!, $firstIssues: Int!, $firstComments: Int!) {
+  search(query: $query, type: ISSUE, first: $firstIssues) {
+    issueCount
+    edges {
+      node {
+        ... on Issue {
+          title
+          number
+          author {
+            login
+            ... on User {
+              avatarUrl
+            }
+          }
+          repository {
+            name
+            owner {
+              login
+            }
+          }
+          labels(first: 5) {
+            edges {
+              node {
+                name
+              }
+            }
+          }
+          comments(first: $firstComments) {
+            edges {
+              node {
+                author {
+                  login
+                }
+                body
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+{
+    "query": "label:hacktoberfest is:issue is:open no:assignee",
+    "firstIssues": 100,
+    "firstComments": 5
+  }

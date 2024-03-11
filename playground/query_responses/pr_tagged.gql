@@ -1,0 +1,39 @@
+query($query: String!, $firstIssues: Int!) {
+  search(query: $query, type: ISSUE, first: $firstIssues) {
+    issueCount
+    edges {
+      node {
+        ... on PullRequest {
+          title
+          number
+          url
+          author {
+            login
+            ... on User {
+              avatarUrl
+            }
+          }
+          repository {
+            name
+            owner {
+              login
+            }
+          }
+          labels(first: 5) {
+            edges {
+              node {
+                name
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+{
+    "query": "label:hacktoberfest-accepted is:pr is:merged",
+    "firstIssues": 100
+  }

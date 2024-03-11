@@ -1,0 +1,3773 @@
+{
+    "data": {
+        "search": {
+            "issueCount": 446354,
+            "edges": [
+                {
+                    "node": {
+                        "title": "user",
+                        "number": 777,
+                        "url": "https://github.com/mazipan/hello-open-source/pull/777",
+                        "author": {
+                            "login": "SHUBHAMRAJPUT9665",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/113655062?u=25ace03402bfc4ba0e213d5bb8be85dc89d72655&v=4"
+                        },
+                        "repository": {
+                            "name": "hello-open-source",
+                            "owner": {
+                                "login": "mazipan"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "automerge"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Update github_username.js",
+                        "number": 776,
+                        "url": "https://github.com/mazipan/hello-open-source/pull/776",
+                        "author": {
+                            "login": "T1-Praveen",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/157484020?v=4"
+                        },
+                        "repository": {
+                            "name": "hello-open-source",
+                            "owner": {
+                                "login": "mazipan"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "automerge"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "fix: pin catppuccin to <2.0.0",
+                        "number": 153,
+                        "url": "https://github.com/catppuccin/gtk/pull/153",
+                        "author": {
+                            "login": "backwardspy",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/289746?v=4"
+                        },
+                        "repository": {
+                            "name": "gtk",
+                            "owner": {
+                                "login": "catppuccin"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "wontfix"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "spam"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Added alrakib1.js file on people folder",
+                        "number": 773,
+                        "url": "https://github.com/mazipan/hello-open-source/pull/773",
+                        "author": {
+                            "login": "alrakib1",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/138372162?u=4bf79fe2c5321b52d4734d9289619a9f0620a0d1&v=4"
+                        },
+                        "repository": {
+                            "name": "hello-open-source",
+                            "owner": {
+                                "login": "mazipan"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "automerge"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "feat: beta release",
+                        "number": 60,
+                        "url": "https://github.com/milancommunity/Milan-Backend/pull/60",
+                        "author": {
+                            "login": "tamalCodes",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/72851613?u=9495819a525a0bb350a9aee906618759004c8a51&v=4"
+                        },
+                        "repository": {
+                            "name": "Milan-Backend",
+                            "owner": {
+                                "login": "milancommunity"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "💡 feature"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "🟣 status: todo"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "rahulagg7/add-rahulagg7",
+                        "number": 772,
+                        "url": "https://github.com/mazipan/hello-open-source/pull/772",
+                        "author": {
+                            "login": "rahulagg7",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/98452650?u=c77c513eb740c58b02c686e4be0660826ea21b7e&v=4"
+                        },
+                        "repository": {
+                            "name": "hello-open-source",
+                            "owner": {
+                                "login": "mazipan"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "automerge"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "fix: changes to authentication routes",
+                        "number": 1210,
+                        "url": "https://github.com/milancommunity/Milan/pull/1210",
+                        "author": {
+                            "login": "tamalCodes",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/72851613?u=9495819a525a0bb350a9aee906618759004c8a51&v=4"
+                        },
+                        "repository": {
+                            "name": "Milan",
+                            "owner": {
+                                "login": "milancommunity"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "🐞 bug"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "status: todo ⏳"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "feat: add github_soufianeouk.js",
+                        "number": 769,
+                        "url": "https://github.com/mazipan/hello-open-source/pull/769",
+                        "author": {
+                            "login": "soufianeouk",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/37966094?u=ab5e0cb74e0c8939630cdb3d9f8130e248e2602b&v=4"
+                        },
+                        "repository": {
+                            "name": "hello-open-source",
+                            "owner": {
+                                "login": "mazipan"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "automerge"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Create github_oliverTwist2.js",
+                        "number": 768,
+                        "url": "https://github.com/mazipan/hello-open-source/pull/768",
+                        "author": {
+                            "login": "oliverTwist2",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/104382427?u=529bf6bbb3f08fe68aa998c89ba413cb36f4077f&v=4"
+                        },
+                        "repository": {
+                            "name": "hello-open-source",
+                            "owner": {
+                                "login": "mazipan"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "automerge"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "file added",
+                        "number": 767,
+                        "url": "https://github.com/mazipan/hello-open-source/pull/767",
+                        "author": {
+                            "login": "EkaterineSheshelidze",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/85356244?v=4"
+                        },
+                        "repository": {
+                            "name": "hello-open-source",
+                            "owner": {
+                                "login": "mazipan"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "automerge"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Thanks to you all,first time trying this haaa",
+                        "number": 766,
+                        "url": "https://github.com/mazipan/hello-open-source/pull/766",
+                        "author": {
+                            "login": "Aryan-AAP",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/115885141?v=4"
+                        },
+                        "repository": {
+                            "name": "hello-open-source",
+                            "owner": {
+                                "login": "mazipan"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "automerge"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "added name ",
+                        "number": 765,
+                        "url": "https://github.com/mazipan/hello-open-source/pull/765",
+                        "author": {
+                            "login": "favy-codez",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/107569845?v=4"
+                        },
+                        "repository": {
+                            "name": "hello-open-source",
+                            "owner": {
+                                "login": "mazipan"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "automerge"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "added jonasermert",
+                        "number": 764,
+                        "url": "https://github.com/mazipan/hello-open-source/pull/764",
+                        "author": {
+                            "login": "jonasermert",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/1409808?u=2f4e8025f90541b59d7446ea77c138410eac2d40&v=4"
+                        },
+                        "repository": {
+                            "name": "hello-open-source",
+                            "owner": {
+                                "login": "mazipan"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "automerge"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "add my details",
+                        "number": 763,
+                        "url": "https://github.com/mazipan/hello-open-source/pull/763",
+                        "author": {
+                            "login": "manojtharindu11",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/114139836?u=7ae863da9f99655b7cb4a22b7274d8dc8f725344&v=4"
+                        },
+                        "repository": {
+                            "name": "hello-open-source",
+                            "owner": {
+                                "login": "mazipan"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "automerge"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "added my details",
+                        "number": 762,
+                        "url": "https://github.com/mazipan/hello-open-source/pull/762",
+                        "author": {
+                            "login": "kelvinokumu",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/105194367?v=4"
+                        },
+                        "repository": {
+                            "name": "hello-open-source",
+                            "owner": {
+                                "login": "mazipan"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "automerge"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "[IV-23-24] Objetivo 6",
+                        "number": 59,
+                        "url": "https://github.com/Enaraque/bus_stadistics/pull/59",
+                        "author": {
+                            "login": "Enaraque",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/74021522?u=43a2fac8effa1ac86861b0f1b9ab953e5c8f21bc&v=4"
+                        },
+                        "repository": {
+                            "name": "bus_stadistics",
+                            "owner": {
+                                "login": "Enaraque"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "ci"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "Enaraque"
+                                        },
+                                        "body": "@JJ Listo para revisión. "
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "Enaraque"
+                                        },
+                                        "body": "@JJ Podría usar cualquier versión anterior a la actual para el CI?"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "JJ"
+                                        },
+                                        "body": "> @JJ Podría usar cualquier versión anterior a la actual para el CI?\r\n\r\nTendrás que hacer un pequeño esfuerzo identificando alguna versión anterior que tenga sentido. Se trata de saber con qué versiones funciona tu aplicación. Puedes probar con varias hasta que una falle, y escoger la inmediata posterior."
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "Enaraque"
+                                        },
+                                        "body": "@JJ he añadido nuevas herramientas interesantes y probado diferentes versiones en el workflow de github. Creo que esta todo correcto.\r\nListo para revisión 🤞"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "Enaraque"
+                                        },
+                                        "body": "@JJ He añadido y cambiado cosas según lo comentado. Espero que esté bien 🫡.\r\nListo para revisión 🤝. "
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Add-MohamedBoukthir",
+                        "number": 761,
+                        "url": "https://github.com/mazipan/hello-open-source/pull/761",
+                        "author": {
+                            "login": "MohamedBoukthir",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/124532428?u=a672bb4f33076b8b635531482a77fe0c80d3f528&v=4"
+                        },
+                        "repository": {
+                            "name": "hello-open-source",
+                            "owner": {
+                                "login": "mazipan"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "automerge"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "prasannakumarboddeda02",
+                        "number": 760,
+                        "url": "https://github.com/mazipan/hello-open-source/pull/760",
+                        "author": {
+                            "login": "prasannakumarboddeda02",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/112362123?v=4"
+                        },
+                        "repository": {
+                            "name": "hello-open-source",
+                            "owner": {
+                                "login": "mazipan"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "automerge"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "[FIX 🛠️] About us link not found in footer",
+                        "number": 241,
+                        "url": "https://github.com/warmachine028/nike/pull/241",
+                        "author": {
+                            "login": "Nikhilh26",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/121549009?v=4"
+                        },
+                        "repository": {
+                            "name": "nike",
+                            "owner": {
+                                "login": "warmachine028"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "🛠 goal: fix"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "🐞 bug"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "vercel"
+                                        },
+                                        "body": "[vc]: #vKC5u8Kwk9KLaxh2FT8GLmiLXwqTnuKNJl1Gi+W3yqw=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJuaWtlIiwicm9vdERpcmVjdG9yeSI6bnVsbCwiaW5zcGVjdG9yVXJsIjoiaHR0cHM6Ly92ZXJjZWwuY29tL3dhcm1hY2hpbmUwMjgvbmlrZS80Q3hwS0wzOU5vbkpieDNBY29yeFN4bWVMMXM0IiwicHJldmlld1VybCI6Im5pa2UtZ2l0LWZvcmstbmlraGlsaDI2LWZpeGluZy1pc3N1ZS13YXJtYWNoaW5lMDI4LnZlcmNlbC5hcHAiLCJuZXh0Q29tbWl0U3RhdHVzIjoiREVQTE9ZRUQiLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoibmlrZS1naXQtZm9yay1uaWtoaWxoMjYtZml4aW5nLWlzc3VlLXdhcm1hY2hpbmUwMjgudmVyY2VsLmFwcCJ9fV19\n**The latest updates on your projects**. Learn more about [Vercel for Git ↗︎](https://vercel.link/github-learn-more)\n\n| Name | Status | Preview | Comments | Updated (UTC) |\n| :--- | :----- | :------ | :------- | :------ |\n| **nike** | ✅ Ready ([Inspect](https://vercel.com/warmachine028/nike/4CxpKL39NonJbx3AcorxSxmeL1s4)) | [Visit Preview](https://vercel.live/open-feedback/nike-git-fork-nikhilh26-fixing-issue-warmachine028.vercel.app?via=pr-comment-visit-preview-link&passThrough=1) | 💬 [**Add feedback**](https://vercel.live/open-feedback/nike-git-fork-nikhilh26-fixing-issue-warmachine028.vercel.app?via=pr-comment-feedback-link) | Dec 28, 2023 9:20am |\n\n"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "This is my first pull request!",
+                        "number": 758,
+                        "url": "https://github.com/mazipan/hello-open-source/pull/758",
+                        "author": {
+                            "login": "bharath143775",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/64431449?v=4"
+                        },
+                        "repository": {
+                            "name": "hello-open-source",
+                            "owner": {
+                                "login": "mazipan"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "automerge"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Logout all route tasks",
+                        "number": 246,
+                        "url": "https://github.com/prasenjeet-symon/intellectia/pull/246",
+                        "author": {
+                            "login": "Syphonphilter",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/24352275?u=82a809cf4dc687b732c35052a1b007f1ca8f9262&v=4"
+                        },
+                        "repository": {
+                            "name": "intellectia",
+                            "owner": {
+                                "login": "prasenjeet-symon"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "enhancement"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "help wanted"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "server"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "high-priority"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "added elfajriharsuda.js",
+                        "number": 757,
+                        "url": "https://github.com/mazipan/hello-open-source/pull/757",
+                        "author": {
+                            "login": "elfajriharsuda",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/116298172?u=8aa19aa694bcd5d53363a7bf4619a93a4f977b78&v=4"
+                        },
+                        "repository": {
+                            "name": "hello-open-source",
+                            "owner": {
+                                "login": "mazipan"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "automerge"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "test: Add tests in Incoming Payment Controller ",
+                        "number": 1019,
+                        "url": "https://github.com/interledger/testnet/pull/1019",
+                        "author": {
+                            "login": "rico191013",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/101926344?u=f7d72299191def70a5910a878108b1c09a4a95f2&v=4"
+                        },
+                        "repository": {
+                            "name": "testnet",
+                            "owner": {
+                                "login": "interledger"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "package: wallet/backend"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "type: test"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "do not merge"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "test: Add Rafiki Controller Tests",
+                        "number": 1018,
+                        "url": "https://github.com/interledger/testnet/pull/1018",
+                        "author": {
+                            "login": "rico191013",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/101926344?u=f7d72299191def70a5910a878108b1c09a4a95f2&v=4"
+                        },
+                        "repository": {
+                            "name": "testnet",
+                            "owner": {
+                                "login": "interledger"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "package: wallet/backend"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "type: test"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "test: added tests for outgoingPayment controller",
+                        "number": 1017,
+                        "url": "https://github.com/interledger/testnet/pull/1017",
+                        "author": {
+                            "login": "rico191013",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/101926344?u=f7d72299191def70a5910a878108b1c09a4a95f2&v=4"
+                        },
+                        "repository": {
+                            "name": "testnet",
+                            "owner": {
+                                "login": "interledger"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "package: wallet/backend"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "type: test"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Feat: add email route and its logic",
+                        "number": 23,
+                        "url": "https://github.com/Projeto-Adocao-Caosciente/adocao-caosciente-backend/pull/23",
+                        "author": {
+                            "login": "NicolasGoes01",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/97046728?u=0f6aac3577fc4e034a323a12e23aad36ddaa4ce6&v=4"
+                        },
+                        "repository": {
+                            "name": "adocao-caosciente-backend",
+                            "owner": {
+                                "login": "Projeto-Adocao-Caosciente"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "render"
+                                        },
+                                        "body": "Your [Render](https://render.com) PR Server URL is https://adocaosciente-pr-23.onrender.com.\n\nFollow its progress at https://dashboard.render.com/web/srv-clpa64pjvg7s73akjh1g."
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": " Refactoring google route 233",
+                        "number": 243,
+                        "url": "https://github.com/prasenjeet-symon/intellectia/pull/243",
+                        "author": {
+                            "login": "sabbellasri",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/34259114?v=4"
+                        },
+                        "repository": {
+                            "name": "intellectia",
+                            "owner": {
+                                "login": "prasenjeet-symon"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "enhancement"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "server"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "high-priority"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "prasenjeet-symon"
+                                        },
+                                        "body": "From the next time plzz do mention issue number in the commit to close it automatically. Thanks"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Hacktober fest Contribution 4",
+                        "number": 150,
+                        "url": "https://github.com/mlhaus/Open-Source-2023-mon-wed/pull/150",
+                        "author": {
+                            "login": "Karrop",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/111982133?u=09eebf9e62d6833273ef9c81c4f773fc8601012e&v=4"
+                        },
+                        "repository": {
+                            "name": "Open-Source-2023-mon-wed",
+                            "owner": {
+                                "login": "mlhaus"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Hacktober fest Contribution 3",
+                        "number": 149,
+                        "url": "https://github.com/mlhaus/Open-Source-2023-mon-wed/pull/149",
+                        "author": {
+                            "login": "Karrop",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/111982133?u=09eebf9e62d6833273ef9c81c4f773fc8601012e&v=4"
+                        },
+                        "repository": {
+                            "name": "Open-Source-2023-mon-wed",
+                            "owner": {
+                                "login": "mlhaus"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Wyatt's calculator",
+                        "number": 148,
+                        "url": "https://github.com/mlhaus/Open-Source-2023-mon-wed/pull/148",
+                        "author": {
+                            "login": "Karrop",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/111982133?u=09eebf9e62d6833273ef9c81c4f773fc8601012e&v=4"
+                        },
+                        "repository": {
+                            "name": "Open-Source-2023-mon-wed",
+                            "owner": {
+                                "login": "mlhaus"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "[IV-23-24]Objetivo 4",
+                        "number": 34,
+                        "url": "https://github.com/Christianlr/MIBarberSchedule/pull/34",
+                        "author": {
+                            "login": "Christianlr",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/45923550?u=fd7a204c9da8d8b03c308f34d9b7cb7245684c64&v=4"
+                        },
+                        "repository": {
+                            "name": "MIBarberSchedule",
+                            "owner": {
+                                "login": "Christianlr"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "Christianlr"
+                                        },
+                                        "body": "@Enaraque Muchas gracias por la aclaración. Creía que lo hacía bien y resulta que el `close` lo colocaba mal. No volverá a pasar! :wink::ok_hand: "
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "Christianlr"
+                                        },
+                                        "body": "Buenas @Enaraque!! Como puedes ver, he cambiado bastantes cosas desde la última vez que revisaste. El principal cambio más grande es el de la lógica de negocio. Esto se debe a que la anterior presentaba una serie de problemas que no llegaban a tener relación con lo que realmente se pide en las HU y ha llegado un momento en el que he perdido más tiempo en eso que en enfocarme en lo que realmente es importante. De ahí la nueva lógica. \r\n\r\nPor otra parte he resuelto los comentarios, sino la gran mayoría, que me has hecho. Te agradezco que te fijaras en todo eso y gracias por tu revisión tan temprana. Destacar que tienes razón en que necesitaba algún reparto no óptimo de tareas para demostrar que mi lógica si cumple con lo que se pide y sigue siendo más óptima que la que se usa en los tests, en los cuales he añadido una nueva funcionalidad de ajuste de prioridad.\r\n\r\nPor último, he arreglado las expresiones que no se deben en el documento de elección de herramientas así como he añadido los 'scores' usados en la determinación de estas. Échale un ojo cuando puedas y me dices que te parece! :sunglasses: :ok_hand: "
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "Christianlr"
+                                        },
+                                        "body": "Buenas @pluque01!! Gracias por los comentarios y la revisión. Ya los he solucionado. Cuando puedas, me comentas que tal! :wink: "
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "added: people/github_devxoxo",
+                        "number": 755,
+                        "url": "https://github.com/mazipan/hello-open-source/pull/755",
+                        "author": {
+                            "login": "Sahildarunde",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/90788734?u=77d5a7ea8502eee0edecd3ed9fc1f55a833d3e36&v=4"
+                        },
+                        "repository": {
+                            "name": "hello-open-source",
+                            "owner": {
+                                "login": "mazipan"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "automerge"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Add files via upload",
+                        "number": 1,
+                        "url": "https://github.com/iconic12345/hacktoberfest/pull/1",
+                        "author": {
+                            "login": "Pragyasingh100",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/126460503?v=4"
+                        },
+                        "repository": {
+                            "name": "hacktoberfest",
+                            "owner": {
+                                "login": "iconic12345"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Run migration to Angular standalone API",
+                        "number": 6,
+                        "url": "https://github.com/maykon-oliveira/ngx-password-strength-meter/pull/6",
+                        "author": {
+                            "login": "ducthang-vu",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/60708009?u=bfc1389a2a69fe71ae05949b1ac1412a3a2b97bd&v=4"
+                        },
+                        "repository": {
+                            "name": "ngx-password-strength-meter",
+                            "owner": {
+                                "login": "maykon-oliveira"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "maykon-oliveira"
+                                        },
+                                        "body": "🎉 🎉 🎉 🎉 \r\n\r\n[Version 2.0.0](https://www.npmjs.com/package/ngx-password-strength-meter) was finally published!\r\n\r\n@ducthang-vu, all credit goes to you\r\n"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "updated my details",
+                        "number": 754,
+                        "url": "https://github.com/mazipan/hello-open-source/pull/754",
+                        "author": {
+                            "login": "prasanna1225",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/94883909?u=8b69995e6a52ede02423fd14747284759aaa6efe&v=4"
+                        },
+                        "repository": {
+                            "name": "hello-open-source",
+                            "owner": {
+                                "login": "mazipan"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "automerge"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "added favorites page",
+                        "number": 47,
+                        "url": "https://github.com/lcrojano/Giphy_Explorer/pull/47",
+                        "author": {
+                            "login": "CrisitoJ",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/115337506?u=7fee618be112958dd2c1da80c387d78c0d206841&v=4"
+                        },
+                        "repository": {
+                            "name": "Giphy_Explorer",
+                            "owner": {
+                                "login": "lcrojano"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "good first issue"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "[IV-23-24] Objetivo 4",
+                        "number": 28,
+                        "url": "https://github.com/Enaraque/bus_stadistics/pull/28",
+                        "author": {
+                            "login": "Enaraque",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/74021522?u=43a2fac8effa1ac86861b0f1b9ab953e5c8f21bc&v=4"
+                        },
+                        "repository": {
+                            "name": "bus_stadistics",
+                            "owner": {
+                                "login": "Enaraque"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "Enaraque"
+                                        },
+                                        "body": "@puchy22 Muchas gracias por dedicarle tiempo a mi repositorio 😄. He arreglado los fallos que me has ido comentando. Échale un vistazo y coméntame que tal te parecen.\r\n\r\nListo para revisión"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "Enaraque"
+                                        },
+                                        "body": "@JJ Listo para revisión"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "Enaraque"
+                                        },
+                                        "body": "@JJ Listo para revisión 🤞"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Update README.md",
+                        "number": 78,
+                        "url": "https://github.com/AvineshTripathi/cred/pull/78",
+                        "author": {
+                            "login": "AvineshTripathi",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/73980067?u=e28365331a4be395d75608609fa5dfdafb1588cc&v=4"
+                        },
+                        "repository": {
+                            "name": "cred",
+                            "owner": {
+                                "login": "AvineshTripathi"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "AvineshTripathi"
+                                        },
+                                        "body": "This PR has been merged and labeled \"okayy\"! Thanks @AvineshTripathi for your contribution!\n![Image](assets/gh/image.png)"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Update README.md",
+                        "number": 56,
+                        "url": "https://github.com/AvineshTripathi/cred/pull/56",
+                        "author": {
+                            "login": "AvineshTripathi",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/73980067?u=e28365331a4be395d75608609fa5dfdafb1588cc&v=4"
+                        },
+                        "repository": {
+                            "name": "cred",
+                            "owner": {
+                                "login": "AvineshTripathi"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "AvineshTripathi"
+                                        },
+                                        "body": "This PR has been merged and labeled \"okayy\"! Thanks @AvineshTripathi for your contribution!\n![Image](assets/gh/image.png)"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Create github_isatyamks.js",
+                        "number": 753,
+                        "url": "https://github.com/mazipan/hello-open-source/pull/753",
+                        "author": {
+                            "login": "isatyamks",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/121108110?u=16c5d029996920bc838fae9c891264793fcdf272&v=4"
+                        },
+                        "repository": {
+                            "name": "hello-open-source",
+                            "owner": {
+                                "login": "mazipan"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "automerge"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "isatyamks"
+                                        },
+                                        "body": "🚀 **Merged with Gratitude!**\r\n\r\nThank you so much for merging my pull request! 🎉 I'm thrilled to see my contributions become a part of the project.\r\n\r\nI appreciate the time and effort you and the team have put into reviewing and integrating the changes. Your feedback was invaluable, and I'm grateful for the collaborative spirit of this community.\r\n\r\nLooking forward to more contributions and making this project even better together!\r\n\r\nCheers,\r\n[Satyam Kumar Singh]\r\n"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Max conversion calculator",
+                        "number": 143,
+                        "url": "https://github.com/mlhaus/Open-Source-2023-mon-wed/pull/143",
+                        "author": {
+                            "login": "maxkf629",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/123006456?u=2258e8375a558567ebdd454303dd703fcfe725e5&v=4"
+                        },
+                        "repository": {
+                            "name": "Open-Source-2023-mon-wed",
+                            "owner": {
+                                "login": "mlhaus"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "build: updating libraries versions",
+                        "number": 199,
+                        "url": "https://github.com/Lucs1590/Nkocr/pull/199",
+                        "author": {
+                            "login": "Lucs1590",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/38580547?u=7fa82aa1a962377e58f83a418cb99bd3910b8055&v=4"
+                        },
+                        "repository": {
+                            "name": "Nkocr",
+                            "owner": {
+                                "login": "Lucs1590"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "enhancement"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "dependencies"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "python"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "github_actions"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "codecov"
+                                        },
+                                        "body": "## [Codecov](https://app.codecov.io/gh/Lucs1590/Nkocr/pull/199?src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=Lucas+Brito) Report\n> Merging [#199](https://app.codecov.io/gh/Lucs1590/Nkocr/pull/199?src=pr&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=Lucas+Brito) (105e147) into [master](https://app.codecov.io/gh/Lucs1590/Nkocr/commit/c801cae24b85d0cfac4c7e8487276ae6330e7c45?el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=Lucas+Brito) (c801cae) will **not change** coverage.\n> The diff coverage is `100.00%`.\n\n```diff\n@@           Coverage Diff           @@\n##           master     #199   +/-   ##\n=======================================\n  Coverage   98.13%   98.13%           \n=======================================\n  Files           7        7           \n  Lines         590      590           \n=======================================\n  Hits          579      579           \n  Misses         11       11           \n```\n\n| [Flag](https://app.codecov.io/gh/Lucs1590/Nkocr/pull/199/flags?src=pr&el=flags&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=Lucas+Brito) | Coverage Δ | |\n|---|---|---|\n| [unittests](https://app.codecov.io/gh/Lucs1590/Nkocr/pull/199/flags?src=pr&el=flag&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=Lucas+Brito) | `98.13% <100.00%> (ø)` | |\n\nFlags with carried forward coverage won't be shown. [Click here](https://docs.codecov.io/docs/carryforward-flags?utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=Lucas+Brito#carryforward-flags-in-the-pull-request-comment) to find out more.\n\n| [Files](https://app.codecov.io/gh/Lucs1590/Nkocr/pull/199?src=pr&el=tree&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=Lucas+Brito) | Coverage Δ | |\n|---|---|---|\n| [src/auxiliary.py](https://app.codecov.io/gh/Lucs1590/Nkocr/pull/199?src=pr&el=tree&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=Lucas+Brito#diff-c3JjL2F1eGlsaWFyeS5weQ==) | `98.22% <100.00%> (ø)` | |\n\n"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "github-advanced-security"
+                                        },
+                                        "body": "This pull request sets up GitHub code scanning for this repository. Once the scans have completed and the checks have passed, the analysis results for this pull request branch will appear on [this overview](/Lucs1590/Nkocr/security/code-scanning?query=pr%3A199+is%3Aopen). Once you merge this pull request, the 'Security' tab will show more code scanning analysis results (for example, for the default branch). Depending on your configuration and choice of analysis tool, future pull requests will be annotated with code scanning analysis results. For more information about GitHub code scanning, check out [the documentation](https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning). "
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "feat: Added shadow_brown theme",
+                        "number": 109,
+                        "url": "https://github.com/FajarKim/github-readme-profile/pull/109",
+                        "author": {
+                            "login": "FajarKim",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/86386385?u=241446d210ca114424f786bdd1ddfbb5fd374305&v=4"
+                        },
+                        "repository": {
+                            "name": "github-readme-profile",
+                            "owner": {
+                                "login": "FajarKim"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "themes"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "vercel"
+                                        },
+                                        "body": "[vc]: #JraRAfwCjRXeiekyQIJZgz6BpdZJZk2rEo1WmGTszUQ=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJnaXRodWItcmVhZG1lLXByb2ZpbGUiLCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vZmFqYXJraW0vZ2l0aHViLXJlYWRtZS1wcm9maWxlL0Zub0FXV1A2VGd1QVc5cGdhaTU2RkFSa2JmUFMiLCJwcmV2aWV3VXJsIjoiZ2l0aHViLXJlYWRtZS1wcm9maWxlLWdpdC1hZGRlZHNoYWRvd2Jyb3dudGhlbWUtZmFqYXJraW0udmVyY2VsLmFwcCIsIm5leHRDb21taXRTdGF0dXMiOiJERVBMT1lFRCJ9XX0=\n**The latest updates on your projects**. Learn more about [Vercel for Git ↗︎](https://vercel.link/github-learn-more)\n\n| Name | Status | Preview | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| **github-readme-profile** | ✅ Ready ([Inspect](https://vercel.com/fajarkim/github-readme-profile/FnoAWWP6TguAW9pgai56FARkbfPS)) | [Visit Preview](https://github-readme-profile-git-addedshadowbrowntheme-fajarkim.vercel.app) | Nov 12, 2023 10:01am |\n\n"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Added a dsa question with solution",
+                        "number": 83,
+                        "url": "https://github.com/riz4d/Hacktoberfest23/pull/83",
+                        "author": {
+                            "login": "Parvezkhan0",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/137421089?v=4"
+                        },
+                        "repository": {
+                            "name": "Hacktoberfest23",
+                            "owner": {
+                                "login": "riz4d"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "[IV-23-24] Objetivo-3",
+                        "number": 24,
+                        "url": "https://github.com/Christianlr/MIBarberSchedule/pull/24",
+                        "author": {
+                            "login": "Christianlr",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/45923550?u=fd7a204c9da8d8b03c308f34d9b7cb7245684c64&v=4"
+                        },
+                        "repository": {
+                            "name": "MIBarberSchedule",
+                            "owner": {
+                                "login": "Christianlr"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "Christianlr"
+                                        },
+                                        "body": "Buenas @pluque01 @PabloBarTo !! Lo primero de todo, gracias por la revisión tan rápida y disculpad por mi tardanza, he tenido carga en otras asignaturas.\r\n\r\nHe arreglado todos los errores de sintaxis que me habéis reflejado. Os lo agradezco. Por otro lado, he cambiado el criterio de elección para el gestor de tareas ya que, tal y como habéis comentado, no era correcto. Ya me comentáis que os parece el nuevo.\r\n\r\nTras leer los errores frecuentes, he tratado de reflejar de alguna manera el rendimiento allá donde se menciona en las herramientas que se eligen con imágenes que muestran resultados medidos y se puede por tanto tener una constancia más clara. ¿Qué os parece? ¿Pensáis que se refleja bien o es necesario una mejor práctica? Espero vuestra respuesta y muchas gracias de nuevo! :+1: "
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "Christianlr"
+                                        },
+                                        "body": "@JJ Listo para revisión!"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "Christianlr"
+                                        },
+                                        "body": "@JJ Te agradezco que me hayas indicado aquellos apartados que pueden ser mejorados. Creo que las modificaciones que he realizado se acercan más a lo que se busca. Listo para revisión! :+1: "
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Conversion Calculator",
+                        "number": 142,
+                        "url": "https://github.com/mlhaus/Open-Source-2023-mon-wed/pull/142",
+                        "author": {
+                            "login": "Ialbashair",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/112139510?v=4"
+                        },
+                        "repository": {
+                            "name": "Open-Source-2023-mon-wed",
+                            "owner": {
+                                "login": "mlhaus"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Fix default values cropper component, update dependencies",
+                        "number": 256,
+                        "url": "https://github.com/CropperBlazor/Cropper.Blazor/pull/256",
+                        "author": {
+                            "login": "MaxymGorn",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/50423072?u=0d812105cb7aa1d89531dfa00bffd2a46174965f&v=4"
+                        },
+                        "repository": {
+                            "name": "Cropper.Blazor",
+                            "owner": {
+                                "login": "CropperBlazor"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "documentation"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "enhancement"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "dependencies"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "Hacktoberfest"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "codecov"
+                                        },
+                                        "body": "## [Codecov](https://app.codecov.io/gh/CropperBlazor/Cropper.Blazor/pull/256?src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=CropperBlazor) Report\n> Merging [#256](https://app.codecov.io/gh/CropperBlazor/Cropper.Blazor/pull/256?src=pr&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=CropperBlazor) (6cf1b26) into [dev](https://app.codecov.io/gh/CropperBlazor/Cropper.Blazor/commit/da58751ca88059c9c505bdff6b0c5a5262905f7f?el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=CropperBlazor) (da58751) will **not change** coverage.\n> The diff coverage is `100.00%`.\n\n```diff\n@@            Coverage Diff            @@\n##               dev      #256   +/-   ##\n=========================================\n  Coverage   100.00%   100.00%           \n=========================================\n  Files           13        14    +1     \n  Lines          616       656   +40     \n  Branches        62        62           \n=========================================\n+ Hits           616       656   +40     \n```\n\n\n| [Files](https://app.codecov.io/gh/CropperBlazor/Cropper.Blazor/pull/256?src=pr&el=tree&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=CropperBlazor) | Coverage Δ | |\n|---|---|---|\n| [...ropper.Blazor/Components/CropperComponent.razor.cs](https://app.codecov.io/gh/CropperBlazor/Cropper.Blazor/pull/256?src=pr&el=tree&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=CropperBlazor#diff-c3JjL0Nyb3BwZXIuQmxhem9yL0Nyb3BwZXIuQmxhem9yL0NvbXBvbmVudHMvQ3JvcHBlckNvbXBvbmVudC5yYXpvci5jcw==) | `100.00% <ø> (ø)` | |\n| [...r/Cropper.Blazor/Models/GetCroppedCanvasOptions.cs](https://app.codecov.io/gh/CropperBlazor/Cropper.Blazor/pull/256?src=pr&el=tree&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=CropperBlazor#diff-c3JjL0Nyb3BwZXIuQmxhem9yL0Nyb3BwZXIuQmxhem9yL01vZGVscy9HZXRDcm9wcGVkQ2FudmFzT3B0aW9ucy5jcw==) | `100.00% <100.00%> (ø)` | |\n| [...rc/Cropper.Blazor/Cropper.Blazor/Models/Options.cs](https://app.codecov.io/gh/CropperBlazor/Cropper.Blazor/pull/256?src=pr&el=tree&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=CropperBlazor#diff-c3JjL0Nyb3BwZXIuQmxhem9yL0Nyb3BwZXIuQmxhem9yL01vZGVscy9PcHRpb25zLmNz) | `100.00% <100.00%> (ø)` | |\n\n:mega: Codecov offers a browser extension for seamless coverage viewing on GitHub. Try it in [Chrome](https://chrome.google.com/webstore/detail/codecov/gedikamndpbemklijjkncpnolildpbgo) or [Firefox](https://addons.mozilla.org/en-US/firefox/addon/codecov/) today!\n"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Create Bubblesort.cpp",
+                        "number": 1,
+                        "url": "https://github.com/Alex-Mth/HactoberFest2023/pull/1",
+                        "author": {
+                            "login": "Alex-Mth",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/96028055?v=4"
+                        },
+                        "repository": {
+                            "name": "HactoberFest2023",
+                            "owner": {
+                                "login": "Alex-Mth"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Create Combine n ropes with minimum cost",
+                        "number": 1,
+                        "url": "https://github.com/Atul245/Hacktoberfest2023-Open-source-/pull/1",
+                        "author": {
+                            "login": "Atul245",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/98544302?u=9756fcf3598a9e5a0aaf25f3f43579318f90ba46&v=4"
+                        },
+                        "repository": {
+                            "name": "Hacktoberfest2023-Open-source-",
+                            "owner": {
+                                "login": "Atul245"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Update Panagram.cpp",
+                        "number": 1,
+                        "url": "https://github.com/Atul245/helloAlgorithm/pull/1",
+                        "author": {
+                            "login": "Atul245",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/98544302?u=9756fcf3598a9e5a0aaf25f3f43579318f90ba46&v=4"
+                        },
+                        "repository": {
+                            "name": "helloAlgorithm",
+                            "owner": {
+                                "login": "Atul245"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Add files via upload",
+                        "number": 1,
+                        "url": "https://github.com/Atul245/hacktoberfest2023/pull/1",
+                        "author": {
+                            "login": "Atul245",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/98544302?u=9756fcf3598a9e5a0aaf25f3f43579318f90ba46&v=4"
+                        },
+                        "repository": {
+                            "name": "hacktoberfest2023",
+                            "owner": {
+                                "login": "Atul245"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Conversion Calculator",
+                        "number": 102,
+                        "url": "https://github.com/mlhaus/Open-Source-2023-tue-night/pull/102",
+                        "author": {
+                            "login": "NikolasBell",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/122946198?u=074f2ed47d6ce7d06a6b639fe08b932601a81364&v=4"
+                        },
+                        "repository": {
+                            "name": "Open-Source-2023-tue-night",
+                            "owner": {
+                                "login": "mlhaus"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Caspian conversion calculator",
+                        "number": 101,
+                        "url": "https://github.com/mlhaus/Open-Source-2023-tue-night/pull/101",
+                        "author": {
+                            "login": "Caspian427",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/122946145?u=ae1f7d69ff5dc672dfc45c16e6ee937a152b7335&v=4"
+                        },
+                        "repository": {
+                            "name": "Open-Source-2023-tue-night",
+                            "owner": {
+                                "login": "mlhaus"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Beck calculator7",
+                        "number": 100,
+                        "url": "https://github.com/mlhaus/Open-Source-2023-tue-night/pull/100",
+                        "author": {
+                            "login": "Beck-Jonathan",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/80435606?u=04bcef32850447e1891196013faed47a01dc6b23&v=4"
+                        },
+                        "repository": {
+                            "name": "Open-Source-2023-tue-night",
+                            "owner": {
+                                "login": "mlhaus"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Updated conversion calc to do Between conversions",
+                        "number": 99,
+                        "url": "https://github.com/mlhaus/Open-Source-2023-tue-night/pull/99",
+                        "author": {
+                            "login": "JaLindauer",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/96332460?u=592d4b1207226f5783c93e04ce5dd1e3c44303ab&v=4"
+                        },
+                        "repository": {
+                            "name": "Open-Source-2023-tue-night",
+                            "owner": {
+                                "login": "mlhaus"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "TVM Calculator Entry",
+                        "number": 141,
+                        "url": "https://github.com/mlhaus/Open-Source-2023-mon-wed/pull/141",
+                        "author": {
+                            "login": "mallenspringer",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/119228105?u=8f3de2c3b0f1639bf76010c0dc7b7a7e3c8f6701&v=4"
+                        },
+                        "repository": {
+                            "name": "Open-Source-2023-mon-wed",
+                            "owner": {
+                                "login": "mlhaus"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "docs: update modul implementasi",
+                        "number": 52,
+                        "url": "https://github.com/arsitektur-jaringan-komputer/Modul-Jarkom/pull/52",
+                        "author": {
+                            "login": "elshiraphine",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/89353307?u=fcb897a15157678dd87d02a15cdde68e2a7b22b9&v=4"
+                        },
+                        "repository": {
+                            "name": "Modul-Jarkom",
+                            "owner": {
+                                "login": "arsitektur-jaringan-komputer"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "masnurrm"
+                                        },
+                                        "body": "LGTM"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Andrew calculator",
+                        "number": 138,
+                        "url": "https://github.com/mlhaus/Open-Source-2023-mon-wed/pull/138",
+                        "author": {
+                            "login": "AndrewJLarsonJr",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/123006211?u=dea02c47d8b2e1e2f498305950adf6b13f0e8848&v=4"
+                        },
+                        "repository": {
+                            "name": "Open-Source-2023-mon-wed",
+                            "owner": {
+                                "login": "mlhaus"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "#25169 Apps Framework README > Split out admin content to child pages",
+                        "number": 481,
+                        "url": "https://github.com/mattermost/mattermost-plugin-apps/pull/481",
+                        "author": {
+                            "login": "Reene-Simon",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/112744886?u=a7d8e595cf16b32172cb81bef813a133b4146462&v=4"
+                        },
+                        "repository": {
+                            "name": "mattermost-plugin-apps",
+                            "owner": {
+                                "login": "mattermost"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "4: Reviews Complete"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "Hacktoberfest"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "mattermost-build"
+                                        },
+                                        "body": "Hello @Reene-Simon,\n\nThanks for your pull request! A Core Committer will review your pull request soon. For code contributions, you can learn more about the review process [here](https://developers.mattermost.com/contribute/getting-started/code-review/)."
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "codecov-commenter"
+                                        },
+                                        "body": "## [Codecov](https://app.codecov.io/gh/mattermost/mattermost-plugin-apps/pull/481?src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=mattermost) Report\nAll modified and coverable lines are covered by tests :white_check_mark:\n> Comparison is base [(`c0be1b2`)](https://app.codecov.io/gh/mattermost/mattermost-plugin-apps/commit/c0be1b24113232157671d02d8abe501478bfa2d6?el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=mattermost) 20.11% compared to head [(`d09066d`)](https://app.codecov.io/gh/mattermost/mattermost-plugin-apps/pull/481?src=pr&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=mattermost) 20.11%.\n\n> :exclamation: Current head d09066d differs from pull request most recent head c49a93c. Consider uploading reports for the commit c49a93c to get more accurate results\n\n<details><summary>Additional details and impacted files</summary>\n\n\n```diff\n@@           Coverage Diff           @@\n##           master     #481   +/-   ##\n=======================================\n  Coverage   20.11%   20.11%           \n=======================================\n  Files          80       80           \n  Lines        6628     6628           \n=======================================\n  Hits         1333     1333           \n  Misses       5163     5163           \n  Partials      132      132           \n```\n\n\n\n\n</details>\n\n[:umbrella: View full report in Codecov by Sentry](https://app.codecov.io/gh/mattermost/mattermost-plugin-apps/pull/481?src=pr&el=continue&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=mattermost).   \n:loudspeaker: Have feedback on the report? [Share it here](https://about.codecov.io/codecov-pr-comment-feedback/?utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=mattermost).\n"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "Reene-Simon"
+                                        },
+                                        "body": "@cwarnermm @mickmister I have made the requested changes. Please do review it."
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "mickmister"
+                                        },
+                                        "body": "Approving assuming the above change is done"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "Reene-Simon"
+                                        },
+                                        "body": "@cwarnermm @mickmister I have made the relevant changes. Do check it out"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Create ReversePrefixOfWord.java",
+                        "number": 1,
+                        "url": "https://github.com/Tushar2001bbdu/Java/pull/1",
+                        "author": {
+                            "login": "Tushar2001bbdu",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/146729736?v=4"
+                        },
+                        "repository": {
+                            "name": "Java",
+                            "owner": {
+                                "login": "Tushar2001bbdu"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Add documentation to create a new component",
+                        "number": 26,
+                        "url": "https://github.com/casavo/habitat/pull/26",
+                        "author": {
+                            "login": "Serse2",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/45994216?u=2dbf2efe6295d5f518bd9f5b2316da11ecd3c3db&v=4"
+                        },
+                        "repository": {
+                            "name": "habitat",
+                            "owner": {
+                                "login": "casavo"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "documentation"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Standardize export Badge component",
+                        "number": 25,
+                        "url": "https://github.com/casavo/habitat/pull/25",
+                        "author": {
+                            "login": "Serse2",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/45994216?u=2dbf2efe6295d5f518bd9f5b2316da11ecd3c3db&v=4"
+                        },
+                        "repository": {
+                            "name": "habitat",
+                            "owner": {
+                                "login": "casavo"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "enhancement"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "#25168 Microsoft Calendar O365 README > Split out admin content to child pages",
+                        "number": 344,
+                        "url": "https://github.com/mattermost/mattermost-plugin-mscalendar/pull/344",
+                        "author": {
+                            "login": "Reene-Simon",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/112744886?u=a7d8e595cf16b32172cb81bef813a133b4146462&v=4"
+                        },
+                        "repository": {
+                            "name": "mattermost-plugin-mscalendar",
+                            "owner": {
+                                "login": "mattermost"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "4: Reviews Complete"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "Hacktoberfest"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "codecov-commenter"
+                                        },
+                                        "body": "## [Codecov](https://app.codecov.io/gh/mattermost/mattermost-plugin-mscalendar/pull/344?src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=mattermost) Report\nAll modified and coverable lines are covered by tests :white_check_mark:\n> Comparison is base [(`65b2e67`)](https://app.codecov.io/gh/mattermost/mattermost-plugin-mscalendar/commit/65b2e6734e76a6384a71101d809377f8b104aa62?el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=mattermost) 23.71% compared to head [(`897d1a6`)](https://app.codecov.io/gh/mattermost/mattermost-plugin-mscalendar/pull/344?src=pr&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=mattermost) 23.71%.\n\n<details><summary>Additional details and impacted files</summary>\n\n\n```diff\n@@           Coverage Diff           @@\n##           master     #344   +/-   ##\n=======================================\n  Coverage   23.71%   23.71%           \n=======================================\n  Files          62       62           \n  Lines        3087     3087           \n=======================================\n  Hits          732      732           \n  Misses       2274     2274           \n  Partials       81       81           \n```\n\n\n\n\n</details>\n\n[:umbrella: View full report in Codecov by Sentry](https://app.codecov.io/gh/mattermost/mattermost-plugin-mscalendar/pull/344?src=pr&el=continue&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=mattermost).   \n:loudspeaker: Have feedback on the report? [Share it here](https://about.codecov.io/codecov-pr-comment-feedback/?utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=mattermost).\n"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "Reene-Simon"
+                                        },
+                                        "body": "@cwarnermm @mickmister all the changes have been made. Please do review it."
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "mickmister"
+                                        },
+                                        "body": "@hanzei There is a similar lint issue here too like https://github.com/mattermost/mattermost-plugin-bitbucket/pull/127#discussion_r1384577956"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "mickmister"
+                                        },
+                                        "body": "@Reene-Simon We are in the process of resolving a linting issue in our CI pipeline. We can merge once this is fixed"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "Reene-Simon"
+                                        },
+                                        "body": "@mickmister yeah sure no worries!"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Update buy-product.component.html",
+                        "number": 3,
+                        "url": "https://github.com/santoshb99/ECOMM/pull/3",
+                        "author": {
+                            "login": "sonup97",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/30662033?v=4"
+                        },
+                        "repository": {
+                            "name": "ECOMM",
+                            "owner": {
+                                "login": "santoshb99"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "update: stand-alone local proxy packaging",
+                        "number": 2013,
+                        "url": "https://github.com/lablup/backend.ai-webui/pull/2013",
+                        "author": {
+                            "login": "inureyes",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/949915?v=4"
+                        },
+                        "repository": {
+                            "name": "backend.ai-webui",
+                            "owner": {
+                                "login": "lablup"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "effort:hard"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "platform:app"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "urgency:4"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "type:refactor"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "aws-amplify-ap-northeast-2"
+                                        },
+                                        "body": "This pull request is automatically being deployed by Amplify Hosting ([learn more](https://aws.amazon.com/amplify/hosting/)).<br/><br/>Access this pull request here: https://pr-2013.d3g9cs6u59b8lw.amplifyapp.com"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "github-actions"
+                                        },
+                                        "body": "<!-- jest coverage report action for options with hash 3b390f55dc732c89c2c5419146425e29 -->\n\n## Coverage report for `./react`\n\n\n\n| <div title=\"Status of coverage:&#10; 🟢 - ok&#10; 🟡 - slightly more than threshold&#10; 🔴 - under the threshold\">St.<sup>:grey_question:</sup></div> | Category   | Percentage | Covered / Total |\n| :----------------------------------------------------------------------------------------------------------------------------------------------------: | :--------- | :--------- | :-------------: |\n|                                                                           🔴                                                                           | Statements | 3.83%      |     84/2192     |\n|                                                                           🔴                                                                           | Branches   | 4.39%      |     51/1163     |\n|                                                                           🔴                                                                           | Functions  | 1.73%      |      13/750     |\n|                                                                           🔴                                                                           | Lines      | 3.9%       |     84/2155     |\n\n\n## Test suite run success\n11 tests passing in 4 suites.\n\n<p align=\"right\">Report generated by <a href=\"https://github.com/ArtiomTr/jest-coverage-report-action\">🧪jest coverage report action</a> from 55ddcd6669f44b7c25c3ad79b86856a8bccbc40b</p>\n"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Add additional tests",
+                        "number": 134,
+                        "url": "https://github.com/vczb/sagu-ui/pull/134",
+                        "author": {
+                            "login": "vivek-p-a",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/43650207?v=4"
+                        },
+                        "repository": {
+                            "name": "sagu-ui",
+                            "owner": {
+                                "login": "vczb"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Michael calculator",
+                        "number": 137,
+                        "url": "https://github.com/mlhaus/Open-Source-2023-mon-wed/pull/137",
+                        "author": {
+                            "login": "mallenspringer",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/119228105?u=8f3de2c3b0f1639bf76010c0dc7b7a7e3c8f6701&v=4"
+                        },
+                        "repository": {
+                            "name": "Open-Source-2023-mon-wed",
+                            "owner": {
+                                "login": "mlhaus"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Commiting partially completed jennifer-calculator",
+                        "number": 136,
+                        "url": "https://github.com/mlhaus/Open-Source-2023-mon-wed/pull/136",
+                        "author": {
+                            "login": "nicewajs",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/112139508?u=ff6bd23afffc7568296213b6573b34dda1c277ae&v=4"
+                        },
+                        "repository": {
+                            "name": "Open-Source-2023-mon-wed",
+                            "owner": {
+                                "login": "mlhaus"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Fixed",
+                        "number": 135,
+                        "url": "https://github.com/mlhaus/Open-Source-2023-mon-wed/pull/135",
+                        "author": {
+                            "login": "MStirmel02",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/142832339?v=4"
+                        },
+                        "repository": {
+                            "name": "Open-Source-2023-mon-wed",
+                            "owner": {
+                                "login": "mlhaus"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "MatthewBaccam calculator",
+                        "number": 134,
+                        "url": "https://github.com/mlhaus/Open-Source-2023-mon-wed/pull/134",
+                        "author": {
+                            "login": "MattBaccam",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/123006028?v=4"
+                        },
+                        "repository": {
+                            "name": "Open-Source-2023-mon-wed",
+                            "owner": {
+                                "login": "mlhaus"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Tyler updated calculator",
+                        "number": 133,
+                        "url": "https://github.com/mlhaus/Open-Source-2023-mon-wed/pull/133",
+                        "author": {
+                            "login": "devtrades",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/111449142?u=fdb76d1c6910b85cccdbd4bccba1dfee36e91e85&v=4"
+                        },
+                        "repository": {
+                            "name": "Open-Source-2023-mon-wed",
+                            "owner": {
+                                "login": "mlhaus"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Directives",
+                        "number": 15,
+                        "url": "https://github.com/galczo5/ng-badger/pull/15",
+                        "author": {
+                            "login": "galczo5",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/6080725?u=f3f542f4abbe20cf736b8524b8e8cca37f06dcfb&v=4"
+                        },
+                        "repository": {
+                            "name": "ng-badger",
+                            "owner": {
+                                "login": "galczo5"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "docs: Fix loader styles. Fix title size",
+                        "number": 253,
+                        "url": "https://github.com/CropperBlazor/Cropper.Blazor/pull/253",
+                        "author": {
+                            "login": "ColdForeign",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/38187349?u=cdd5393292eada8a4237f5109c70e023e9509269&v=4"
+                        },
+                        "repository": {
+                            "name": "Cropper.Blazor",
+                            "owner": {
+                                "login": "CropperBlazor"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "bug"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "documentation"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "Hacktoberfest"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "2048 python gui clone",
+                        "number": 272,
+                        "url": "https://github.com/Punit-Choudhary/Python-beginner-scripts/pull/272",
+                        "author": {
+                            "login": "choidf",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/39011839?v=4"
+                        },
+                        "repository": {
+                            "name": "Python-beginner-scripts",
+                            "owner": {
+                                "login": "Punit-Choudhary"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "Project"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "Punit-Choudhary"
+                                        },
+                                        "body": "Hey @choidf, please lint your code properly. Here is the flake8 output:\r\n>./Projects/2048/2048.py:48:1: E302 expected 2 blank lines, found 1\r\n./Projects/2048/2048.py:79:80: E501 line too long (85 > 79 characters)\r\n./Projects/2048/2048.py:82:80: E501 line too long (81 > 79 characters)\r\n./Projects/2048/2048.py:84:80: E501 line too long (82 > 79 characters)\r\n./Projects/2048/2048.py:96:80: E501 line too long (80 > 79 characters)\r\n./Projects/2048/2048.py:106:5: E266 too many leading '#' for block comment\r\n\r\nPlease let me know if you need any sort of help regarding this."
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "choidf"
+                                        },
+                                        "body": "> Hey @choidf, please lint your code properly. Here is the flake8 output:\r\n> \r\n> > ./Projects/2048/2048.py:48:1: E302 expected 2 blank lines, found 1\r\n> > ./Projects/2048/2048.py:79:80: E501 line too long (85 > 79 characters)\r\n> > ./Projects/2048/2048.py:82:80: E501 line too long (81 > 79 characters)\r\n> > ./Projects/2048/2048.py:84:80: E501 line too long (82 > 79 characters)\r\n> > ./Projects/2048/2048.py:96:80: E501 line too long (80 > 79 characters)\r\n> > ./Projects/2048/2048.py:106:5: E266 too many leading '#' for block comment\r\n> \r\n> Please let me know if you need any sort of help regarding this.\r\n\r\nMy bad. I've linted the script. Could you check it again?"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "Punit-Choudhary"
+                                        },
+                                        "body": "Hey @choidf, Thank you so much for your contribution 🎉 💜 "
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Feature/botao idiomas",
+                        "number": 52,
+                        "url": "https://github.com/adalbertobrant/metabolismobasal/pull/52",
+                        "author": {
+                            "login": "jldurigan",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/8905582?u=8017cbf55f676bf36f0462464316991063bc7f76&v=4"
+                        },
+                        "repository": {
+                            "name": "metabolismobasal",
+                            "owner": {
+                                "login": "adalbertobrant"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "enhancement"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "good first issue"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "update"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "fix: added footer to UserProfile.jsx and removed footer from Events.jsx",
+                        "number": 1169,
+                        "url": "https://github.com/milancommunity/Milan/pull/1169",
+                        "author": {
+                            "login": "Yash-Sajwan24",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/52412969?u=d756fea947b0b977c30426b5aef0e94706b70f33&v=4"
+                        },
+                        "repository": {
+                            "name": "Milan",
+                            "owner": {
+                                "login": "milancommunity"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "status: ready ✅"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "🐞 bug"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "coderabbitai"
+                                        },
+                                        "body": "<!-- This is an auto-generated comment: summarize by coderabbit.ai -->\n<!-- walkthrough_start -->\n\n## Walkthrough\n\nThe changes made involve the relocation of the `Footer` component from the `Events` page to the `UserProfile` page. This means that the `Footer` component is no longer rendered on the `Events` page, but is now rendered on the `UserProfile` page instead.\n\n## Changes\n\n| File Path | Summary |\n| --- | --- |\n| `.../Event/AllEvents/Events.jsx` | The `Footer` component was removed from this file, both from the import statements and the JSX rendering. |\n| `.../User/UserProfile.jsx` | The `Footer` component was added to this file, both in the import statements and at the end of the `UserProfile` component. |\n\n<!-- walkthrough_end --><!-- This is an auto-generated comment: raw summary by coderabbit.ai -->\n<!--\n\n\nsrc/pages/Event/AllEvents/Events.jsx: The diff removes the import statement for the `Footer` component and removes the `Footer` component from the JSX rendering in the `Events` component. The `Footer` component is no longer used in this file.\nsrc/pages/User/UserProfile.jsx: Added import statement for the `Footer` component. Added `<Footer />` component at the end of the `UserProfile` component.\n\n-->\n<!-- end of auto-generated comment: raw summary by coderabbit.ai --><!-- This is an auto-generated comment: short summary by coderabbit.ai -->\n<!--\n\n\nThis pull request, titled `fix: added footer to UserProfile.jsx and removed footer from Events.jsx`, addresses issue #1160. The changes made involve two primary operations: the removal of the footer from the `Events.jsx` file and the addition of the footer to the `UserProfile.jsx` file. \n\nIn the `Events.jsx` file, the import statement for the `Footer` component has been removed, and the `Footer` component is no longer rendered within the `Events` component. This change was made in preparation for the upcoming launch of the Events page.\n\nConversely, in the `UserProfile.jsx` file, the `Footer` component has been added. The import statement for the `Footer` component was included, and the `Footer` component was added to the JSX rendering of the `UserProfile` component. This ensures that logged-in users can view the footer within their profile page. \n\nThese changes aim to improve the user interface and experience by ensuring the appropriate display of the footer on different pages of the application.\n\n-->\n<!-- end of auto-generated comment: short summary by coderabbit.ai --><!-- commit_ids_reviewed_start -->\n\n<!-- 8189df0853ac84c947e4a41a81bb3a2294ab8c46 -->\n\n<!-- commit_ids_reviewed_end --><!-- tips_start -->\n\n---\n\n<details>\n<summary>Tips</summary>\n\n### Chat with CodeRabbit Bot (`@coderabbitai`)\n- If you reply to a *review comment*  from CodeRabbit, the bot will automatically respond.\n- To engage with CodeRabbit bot directly around the specific lines of code in the PR, mention @coderabbitai in your review comment\n- Note: Review comments are made on code diffs or files, not on the PR overview.\n- Add `@coderabbitai ignore` anywhere in the PR description to prevent this PR from being reviewed.\n\n### CodeRabbit Commands (invoked as PR comments)\n\n- `@coderabbitai pause` to pause the reviews on a PR.\n- `@coderabbitai resume` to resume the paused reviews.\n- `@coderabbitai review` to trigger a review. This is useful when automatic reviews are disabled for the repository.\n- `@coderabbitai resolve` resolve all the CodeRabbit review comments.\n- `@coderabbitai help` to get help.\n\n\nNote: For conversation with the bot, please use the review comments on code diffs or files.\n\n### CodeRabbit Configration File (`.coderabbit.yaml`)\n\n- You can programmatically configure CodeRabbit by adding a `.coderabbit.yaml` file to the root of your repository.\n- The JSON schema for the configuration file is available [here](https://coderabbit.ai/integrations/coderabbit-overrides.v2.json).\n- If your editor has YAML language server enabled, you can add the path at the top of this file to enable auto-completion and validation: `# yaml-language-server: $schema=https://coderabbit.ai/integrations/coderabbit-overrides.v2.json`\n\n</details>\n\n<!-- tips_end -->"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "github-actions"
+                                        },
+                                        "body": "\nThis pull request has been deployed to Vercel.\n\n<table>\n<tr>\n<td><strong>Latest commit:</strong></td>\n<td><code>43463d2</code></td>\n</tr>\n<tr>\n<td><strong>✅ Preview:</strong></td>\n<td><a href='https://milan-nuuplne3w-iamtamal.vercel.app'>https://milan-nuuplne3w-iamtamal.vercel.app</a></td>\n</tr>\n<tr>\n<td><strong>🔍 Inspect:</strong></td>\n<td><a href='https://vercel.com/iamtamal/milan/7yh649Fj9THqviDdiFB4VPoZG8yW'>https://vercel.com/iamtamal/milan/7yh649Fj9THqviDdiFB4VPoZG8yW</a></td>\n</tr>\n</table>\n\n[View Workflow Logs](https://github.com/MilanCommunity/Milan/actions/runs/6900486229)\n"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "docs: typo in docs/CloneSetup.md from repo to repository",
+                        "number": 1168,
+                        "url": "https://github.com/milancommunity/Milan/pull/1168",
+                        "author": {
+                            "login": "Yash-Sajwan24",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/52412969?u=d756fea947b0b977c30426b5aef0e94706b70f33&v=4"
+                        },
+                        "repository": {
+                            "name": "Milan",
+                            "owner": {
+                                "login": "milancommunity"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "📚 docs"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "status: todo ⏳"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "coderabbitai"
+                                        },
+                                        "body": "<!-- This is an auto-generated comment: summarize by coderabbit.ai -->\n<!-- walkthrough_start -->\n\n## Walkthrough\n\nThe recent changes primarily focus on enhancing the readability and understanding of the documentation. The term \"repo\" has been uniformly replaced with \"repository\" throughout the CloneSetup.md document. However, the core instructions for forking and cloning a repository remain unchanged. These modifications do not affect the code's logic or functionality.\n\n## Changes\n\n| File Path | Summary |\n| --- | --- |\n| `docs/CloneSetup.md` | The term \"repo\" has been replaced with \"repository\" throughout the document. The instructions for forking and cloning a repository remain the same. No changes to code logic or functionality. |\n\n<!-- walkthrough_end --><!-- This is an auto-generated comment: raw summary by coderabbit.ai -->\n<!--\n\n\ndocs/CloneSetup.md: The diff shows changes in the documentation for forking and cloning a repository. The word \"repo\" has been replaced with \"repository\" throughout the document. The instructions for forking and cloning remain the same. The diff does not involve any modifications to the logic or functionality of the code.\n\n-->\n<!-- end of auto-generated comment: raw summary by coderabbit.ai --><!-- This is an auto-generated comment: short summary by coderabbit.ai -->\n<!--\n\n\nThe pull request titled \"docs: typo in docs/CloneSetup.md from repo to repository\" is a documentation update. The changes are confined to the `docs/CloneSetup.md` file. The primary modification is the replacement of the term \"repo\" with the full word \"repository\" throughout the document. This change is aimed at enhancing clarity and readability in the documentation. The instructions for forking and cloning a repository remain unchanged. No alterations to the code's logic or functionality are involved in this pull request. The changes are purely textual and pertain to the documentation only.\n\n-->\n<!-- end of auto-generated comment: short summary by coderabbit.ai --><!-- commit_ids_reviewed_start -->\n\n<!-- 950968324edd9b1c35bea75ec8889b63a198942f -->\n\n<!-- commit_ids_reviewed_end --><!-- tips_start -->\n\n---\n\n<details>\n<summary>Tips</summary>\n\n### Chat with CodeRabbit Bot (`@coderabbitai`)\n- If you reply to a *review comment*  from CodeRabbit, the bot will automatically respond.\n- To engage with CodeRabbit bot directly around the specific lines of code in the PR, mention @coderabbitai in your review comment\n- Note: Review comments are made on code diffs or files, not on the PR overview.\n- Add `@coderabbitai ignore` anywhere in the PR description to prevent this PR from being reviewed.\n\n### CodeRabbit Commands (invoked as PR comments)\n\n- `@coderabbitai pause` to pause the reviews on a PR.\n- `@coderabbitai resume` to resume the paused reviews.\n- `@coderabbitai review` to trigger a review. This is useful when automatic reviews are disabled for the repository.\n- `@coderabbitai resolve` resolve all the CodeRabbit review comments.\n- `@coderabbitai help` to get help.\n\n\nNote: For conversation with the bot, please use the review comments on code diffs or files.\n\n### CodeRabbit Configration File (`.coderabbit.yaml`)\n\n- You can programmatically configure CodeRabbit by adding a `.coderabbit.yaml` file to the root of your repository.\n- The JSON schema for the configuration file is available [here](https://coderabbit.ai/integrations/coderabbit-overrides.v2.json).\n- If your editor has YAML language server enabled, you can add the path at the top of this file to enable auto-completion and validation: `# yaml-language-server: $schema=https://coderabbit.ai/integrations/coderabbit-overrides.v2.json`\n\n</details>\n\n<!-- tips_end -->"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "github-actions"
+                                        },
+                                        "body": "\nThis pull request has been deployed to Vercel.\n\n<table>\n<tr>\n<td><strong>Latest commit:</strong></td>\n<td><code>9509683</code></td>\n</tr>\n<tr>\n<td><strong>✅ Preview:</strong></td>\n<td><a href='https://milan-50eei0ubr-iamtamal.vercel.app'>https://milan-50eei0ubr-iamtamal.vercel.app</a></td>\n</tr>\n<tr>\n<td><strong>🔍 Inspect:</strong></td>\n<td><a href='https://vercel.com/iamtamal/milan/2avc9dLWNpaPLRy38WR9tAX8k6zj'>https://vercel.com/iamtamal/milan/2avc9dLWNpaPLRy38WR9tAX8k6zj</a></td>\n</tr>\n</table>\n\n[View Workflow Logs](https://github.com/MilanCommunity/Milan/actions/runs/6757071248)\n"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Added a new C program",
+                        "number": 18,
+                        "url": "https://github.com/muntaxir4/DSA_questions/pull/18",
+                        "author": {
+                            "login": "J-Ferdous",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/148969045?u=9a2b4af8ae9d8f7a2c9467ae42695cd64524e1dd&v=4"
+                        },
+                        "repository": {
+                            "name": "DSA_questions",
+                            "owner": {
+                                "login": "muntaxir4"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "muntaxir4"
+                                        },
+                                        "body": "Hacktoberfest has ended btw. But you can still continue to contribute if you wish."
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Create binarySerach.cpp",
+                        "number": 1,
+                        "url": "https://github.com/RushikeshGaikwad78/hacktoberfest/pull/1",
+                        "author": {
+                            "login": "RushikeshGaikwad78",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/136995273?v=4"
+                        },
+                        "repository": {
+                            "name": "hacktoberfest",
+                            "owner": {
+                                "login": "RushikeshGaikwad78"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Feature/add basic and advanced usage cropping",
+                        "number": 252,
+                        "url": "https://github.com/CropperBlazor/Cropper.Blazor/pull/252",
+                        "author": {
+                            "login": "MaxymGorn",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/50423072?u=0d812105cb7aa1d89531dfa00bffd2a46174965f&v=4"
+                        },
+                        "repository": {
+                            "name": "Cropper.Blazor",
+                            "owner": {
+                                "login": "CropperBlazor"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "documentation"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "enhancement"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "Hacktoberfest"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Chris's commit 5",
+                        "number": 132,
+                        "url": "https://github.com/mlhaus/Open-Source-2023-mon-wed/pull/132",
+                        "author": {
+                            "login": "ChrisBaenziger",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/111913453?v=4"
+                        },
+                        "repository": {
+                            "name": "Open-Source-2023-mon-wed",
+                            "owner": {
+                                "login": "mlhaus"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Create TicTacToeGame.java",
+                        "number": 1,
+                        "url": "https://github.com/AanshOjha/Web-Devlopement-2023/pull/1",
+                        "author": {
+                            "login": "AanshOjha",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/108977462?u=025e077aa6eddce2dde153248a4c1d6e1271e48b&v=4"
+                        },
+                        "repository": {
+                            "name": "Web-Devlopement-2023",
+                            "owner": {
+                                "login": "AanshOjha"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Completed contribution5",
+                        "number": 130,
+                        "url": "https://github.com/mlhaus/Open-Source-2023-mon-wed/pull/130",
+                        "author": {
+                            "login": "ChristivieD",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/123006402?u=6094abe555a622f9a7b7677a56fc632db1ec6a09&v=4"
+                        },
+                        "repository": {
+                            "name": "Open-Source-2023-mon-wed",
+                            "owner": {
+                                "login": "mlhaus"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Create pygame.py",
+                        "number": 1,
+                        "url": "https://github.com/supriyo010/HactoberFest2023..../pull/1",
+                        "author": {
+                            "login": "supriyo010",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/122034818?u=b523d382d0aab4c8cb177f1f31debf7e7d99a5e3&v=4"
+                        },
+                        "repository": {
+                            "name": "HactoberFest2023....",
+                            "owner": {
+                                "login": "supriyo010"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Create rock.py",
+                        "number": 1,
+                        "url": "https://github.com/supriyo010/HactoberFest2023.../pull/1",
+                        "author": {
+                            "login": "supriyo010",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/122034818?u=b523d382d0aab4c8cb177f1f31debf7e7d99a5e3&v=4"
+                        },
+                        "repository": {
+                            "name": "HactoberFest2023...",
+                            "owner": {
+                                "login": "supriyo010"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Create loginPage.html",
+                        "number": 1,
+                        "url": "https://github.com/Salute4ayush/DSA_Hacktoberfest2023/pull/1",
+                        "author": {
+                            "login": "Salute4ayush",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/102402263?u=78ca061f2520f9764916a3d507670d0e1d25e90c&v=4"
+                        },
+                        "repository": {
+                            "name": "DSA_Hacktoberfest2023",
+                            "owner": {
+                                "login": "Salute4ayush"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Update validator routes",
+                        "number": 220,
+                        "url": "https://github.com/prasenjeet-symon/intellectia/pull/220",
+                        "author": {
+                            "login": "Milcke",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/104478135?v=4"
+                        },
+                        "repository": {
+                            "name": "intellectia",
+                            "owner": {
+                                "login": "prasenjeet-symon"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "bug"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "help wanted"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "server"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Added Docs layout for API and contract",
+                        "number": 251,
+                        "url": "https://github.com/CropperBlazor/Cropper.Blazor/pull/251",
+                        "author": {
+                            "login": "MaxymGorn",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/50423072?u=0d812105cb7aa1d89531dfa00bffd2a46174965f&v=4"
+                        },
+                        "repository": {
+                            "name": "Cropper.Blazor",
+                            "owner": {
+                                "login": "CropperBlazor"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "documentation"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "Hacktoberfest"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Implement Compass",
+                        "number": 5,
+                        "url": "https://github.com/tarun06/AircraftGauges-/pull/5",
+                        "author": {
+                            "login": "tarun06",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/2249775?u=27da9ca0db5a7ceab814b1d3289f036bed966969&v=4"
+                        },
+                        "repository": {
+                            "name": "AircraftGauges-",
+                            "owner": {
+                                "login": "tarun06"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "enhancement"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Julien calculator",
+                        "number": 129,
+                        "url": "https://github.com/mlhaus/Open-Source-2023-mon-wed/pull/129",
+                        "author": {
+                            "login": "julien-metrot",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/98339047?u=c8efd4612368d26a6a42cd2fe2335d91eadb0e7a&v=4"
+                        },
+                        "repository": {
+                            "name": "Open-Source-2023-mon-wed",
+                            "owner": {
+                                "login": "mlhaus"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Criando tela de cadastro de boletos",
+                        "number": 4,
+                        "url": "https://github.com/amintasvrp/payflow/pull/4",
+                        "author": {
+                            "login": "amintasvrp",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/25506431?u=bf5a80767620178ae87e9adc135091cf127b22b5&v=4"
+                        },
+                        "repository": {
+                            "name": "payflow",
+                            "owner": {
+                                "login": "amintasvrp"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Added Shopping Cart Analytics Stack",
+                        "number": 82,
+                        "url": "https://github.com/airbytehq/quickstarts/pull/82",
+                        "author": {
+                            "login": "bishalbera",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/123734227?u=6c3d7dc68a6111faf27ab16cc2dc2f9b261c7d05&v=4"
+                        },
+                        "repository": {
+                            "name": "quickstarts",
+                            "owner": {
+                                "login": "airbytehq"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Create loginpage.html",
+                        "number": 1,
+                        "url": "https://github.com/Rupalsoni123/Web-development-Basic-hacktoberfest2023/pull/1",
+                        "author": {
+                            "login": "Rupalsoni123",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/100207168?u=132203a0b770d961d07e47732b5087bbbf6df4e6&v=4"
+                        },
+                        "repository": {
+                            "name": "Web-development-Basic-hacktoberfest2023",
+                            "owner": {
+                                "login": "Rupalsoni123"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "Hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "03_november_2k23",
+                        "number": 59,
+                        "url": "https://github.com/Gyanthakur/GFG_POTD/pull/59",
+                        "author": {
+                            "login": "Gyanthakur",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/98226958?u=db20227ea69110af54d14655a367aa9389e2d02e&v=4"
+                        },
+                        "repository": {
+                            "name": "GFG_POTD",
+                            "owner": {
+                                "login": "Gyanthakur"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hactoberfest"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-2023"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Create Selection Sort.C",
+                        "number": 1,
+                        "url": "https://github.com/Teja205001/ohmyzsh/pull/1",
+                        "author": {
+                            "login": "Teja205001",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/148524303?u=2bf2c6c1231bc7566f35306a19c2dcfbe9c48f1a&v=4"
+                        },
+                        "repository": {
+                            "name": "ohmyzsh",
+                            "owner": {
+                                "login": "Teja205001"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "Hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Yoloooo",
+                        "number": 22,
+                        "url": "https://github.com/rizkytegar/indonesian-digital-clock/pull/22",
+                        "author": {
+                            "login": "ilsyaa",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/76580335?u=6002be551741cf61d7b1ab94418d46ac443ba9eb&v=4"
+                        },
+                        "repository": {
+                            "name": "indonesian-digital-clock",
+                            "owner": {
+                                "login": "rizkytegar"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "good first issue"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "author": {
+                                            "login": "vercel"
+                                        },
+                                        "body": "[vc]: #c7mC7+j2DtLvfQvP/MvGbOr/+Bu94aoVxY1A4D1qlAg=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJyZWFjdC1kaWdpdGFsLWNsb2NrIiwicm9vdERpcmVjdG9yeSI6bnVsbCwiaW5zcGVjdG9yVXJsIjoiaHR0cHM6Ly92ZXJjZWwuY29tL3Jpemt5dGVnYXIvcmVhY3QtZGlnaXRhbC1jbG9jay9EdjIzbkZWaWJTMjFDbUdIOW1LeW5KNVRpdXNwIiwicHJldmlld1VybCI6InJlYWN0LWRpZ2l0YWwtY2xvY2stZ2l0LWZvcmstaWxzeWFhLW1haW4tcml6a3l0ZWdhci52ZXJjZWwuYXBwIiwibmV4dENvbW1pdFN0YXR1cyI6IkRFUExPWUVEIiwibGl2ZUZlZWRiYWNrIjp7InJlc29sdmVkIjowLCJ1bnJlc29sdmVkIjowLCJ0b3RhbCI6MCwibGluayI6InJlYWN0LWRpZ2l0YWwtY2xvY2stZ2l0LWZvcmstaWxzeWFhLW1haW4tcml6a3l0ZWdhci52ZXJjZWwuYXBwIn19XX0=\n**The latest updates on your projects**. Learn more about [Vercel for Git ↗︎](https://vercel.link/github-learn-more)\n\n| Name | Status | Preview | Comments | Updated (UTC) |\n| :--- | :----- | :------ | :------- | :------ |\n| **react-digital-clock** | ✅ Ready ([Inspect](https://vercel.com/rizkytegar/react-digital-clock/Dv23nFVibS21CmGH9mKynJ5Tiusp)) | [Visit Preview](https://vercel.live/open-feedback/react-digital-clock-git-fork-ilsyaa-main-rizkytegar.vercel.app?via=pr-comment-visit-preview-link&passThrough=1) | 💬 [**Add feedback**](https://vercel.live/open-feedback/react-digital-clock-git-fork-ilsyaa-main-rizkytegar.vercel.app?via=pr-comment-feedback-link) | Nov 3, 2023 10:54am |\n\n"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "CREATE PYSFTP_DOWNLOAD.PY",
+                        "number": 7002,
+                        "url": "https://github.com/ossamamehmood/Hacktoberfest/pull/7002",
+                        "author": {
+                            "login": "sumitawate2312",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/148269404?u=ff19d7ad2d6a65a82e38ab52c3dc3ecffe59f5cb&v=4"
+                        },
+                        "repository": {
+                            "name": "Hacktoberfest",
+                            "owner": {
+                                "login": "ossamamehmood"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Create Circular_Linked_List_Traversal",
+                        "number": 10,
+                        "url": "https://github.com/janusjerom/HacktoberFest-2023/pull/10",
+                        "author": {
+                            "login": "janusjerom",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/26627673?u=21045c74bc2256e0b42fc04fa657ee10fc8c706b&v=4"
+                        },
+                        "repository": {
+                            "name": "HacktoberFest-2023",
+                            "owner": {
+                                "login": "janusjerom"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Add Low-Latency Data Availability Stack",
+                        "number": 81,
+                        "url": "https://github.com/airbytehq/quickstarts/pull/81",
+                        "author": {
+                            "login": "topefolorunso",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/66448986?u=080d87542f0b194e70806c8be12b322c7f1d1389&v=4"
+                        },
+                        "repository": {
+                            "name": "quickstarts",
+                            "owner": {
+                                "login": "airbytehq"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "title": "Everett calculator",
+                        "number": 128,
+                        "url": "https://github.com/mlhaus/Open-Source-2023-mon-wed/pull/128",
+                        "author": {
+                            "login": "eardevaux",
+                            "avatarUrl": "https://avatars.githubusercontent.com/u/123006167?u=12e9253c19f4004d086b9277a600db3f05c56eb3&v=4"
+                        },
+                        "repository": {
+                            "name": "Open-Source-2023-mon-wed",
+                            "owner": {
+                                "login": "mlhaus"
+                            }
+                        },
+                        "labels": {
+                            "edges": [
+                                {
+                                    "node": {
+                                        "name": "hacktoberfest-accepted"
+                                    }
+                                }
+                            ]
+                        },
+                        "comments": {
+                            "edges": []
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
