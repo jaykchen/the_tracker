@@ -1,137 +1,8 @@
 {
   "data": {
     "search": {
-      "issueCount": 446354,
+      "issueCount": 57705,
       "edges": [
-        {
-          "node": {
-            "title": "user",
-            "number": 777,
-            "url": "https://github.com/mazipan/hello-open-source/pull/777",
-            "author": {
-              "login": "SHUBHAMRAJPUT9665",
-              "avatarUrl": "https://avatars.githubusercontent.com/u/113655062?u=25ace03402bfc4ba0e213d5bb8be85dc89d72655&v=4"
-            },
-            "repository": {
-              "name": "hello-open-source",
-              "owner": {
-                "login": "mazipan"
-              }
-            },
-            "labels": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "automerge"
-                  }
-                },
-                {
-                  "node": {
-                    "name": "hacktoberfest-accepted"
-                  }
-                }
-              ]
-            }
-          }
-        },
-        {
-          "node": {
-            "title": "Update github_username.js",
-            "number": 776,
-            "url": "https://github.com/mazipan/hello-open-source/pull/776",
-            "author": {
-              "login": "T1-Praveen",
-              "avatarUrl": "https://avatars.githubusercontent.com/u/157484020?v=4"
-            },
-            "repository": {
-              "name": "hello-open-source",
-              "owner": {
-                "login": "mazipan"
-              }
-            },
-            "labels": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "automerge"
-                  }
-                },
-                {
-                  "node": {
-                    "name": "hacktoberfest-accepted"
-                  }
-                }
-              ]
-            }
-          }
-        },
-        {
-          "node": {
-            "title": "fix: pin catppuccin to <2.0.0",
-            "number": 153,
-            "url": "https://github.com/catppuccin/gtk/pull/153",
-            "author": {
-              "login": "backwardspy",
-              "avatarUrl": "https://avatars.githubusercontent.com/u/289746?v=4"
-            },
-            "repository": {
-              "name": "gtk",
-              "owner": {
-                "login": "catppuccin"
-              }
-            },
-            "labels": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "wontfix"
-                  }
-                },
-                {
-                  "node": {
-                    "name": "hacktoberfest-accepted"
-                  }
-                },
-                {
-                  "node": {
-                    "name": "spam"
-                  }
-                }
-              ]
-            }
-          }
-        },
-        {
-          "node": {
-            "title": "Added alrakib1.js file on people folder",
-            "number": 773,
-            "url": "https://github.com/mazipan/hello-open-source/pull/773",
-            "author": {
-              "login": "alrakib1",
-              "avatarUrl": "https://avatars.githubusercontent.com/u/138372162?u=4bf79fe2c5321b52d4734d9289619a9f0620a0d1&v=4"
-            },
-            "repository": {
-              "name": "hello-open-source",
-              "owner": {
-                "login": "mazipan"
-              }
-            },
-            "labels": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "automerge"
-                  }
-                },
-                {
-                  "node": {
-                    "name": "hacktoberfest-accepted"
-                  }
-                }
-              ]
-            }
-          }
-        },
         {
           "node": {
             "title": "feat: beta release",
@@ -139,13 +10,7 @@
             "url": "https://github.com/milancommunity/Milan-Backend/pull/60",
             "author": {
               "login": "tamalCodes",
-              "avatarUrl": "https://avatars.githubusercontent.com/u/72851613?u=9495819a525a0bb350a9aee906618759004c8a51&v=4"
-            },
-            "repository": {
-              "name": "Milan-Backend",
-              "owner": {
-                "login": "milancommunity"
-              }
+              "avatarUrl": "https://avatars.githubusercontent.com/u/72851613?u=556b353dad9cf8b8b3ef345a12c5b4d4973b3775&v=4"
             },
             "labels": {
               "edges": [
@@ -165,37 +30,12 @@
                   }
                 }
               ]
-            }
-          }
-        },
-        {
-          "node": {
-            "title": "rahulagg7/add-rahulagg7",
-            "number": 772,
-            "url": "https://github.com/mazipan/hello-open-source/pull/772",
-            "author": {
-              "login": "rahulagg7",
-              "avatarUrl": "https://avatars.githubusercontent.com/u/98452650?u=c77c513eb740c58b02c686e4be0660826ea21b7e&v=4"
             },
-            "repository": {
-              "name": "hello-open-source",
-              "owner": {
-                "login": "mazipan"
-              }
+            "reviews": {
+              "edges": []
             },
-            "labels": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "automerge"
-                  }
-                },
-                {
-                  "node": {
-                    "name": "hacktoberfest-accepted"
-                  }
-                }
-              ]
+            "mergedBy": {
+              "login": "tamalCodes"
             }
           }
         },
@@ -206,13 +46,7 @@
             "url": "https://github.com/milancommunity/Milan/pull/1210",
             "author": {
               "login": "tamalCodes",
-              "avatarUrl": "https://avatars.githubusercontent.com/u/72851613?u=9495819a525a0bb350a9aee906618759004c8a51&v=4"
-            },
-            "repository": {
-              "name": "Milan",
-              "owner": {
-                "login": "milancommunity"
-              }
+              "avatarUrl": "https://avatars.githubusercontent.com/u/72851613?u=556b353dad9cf8b8b3ef345a12c5b4d4973b3775&v=4"
             },
             "labels": {
               "edges": [
@@ -232,254 +66,12 @@
                   }
                 }
               ]
-            }
-          }
-        },
-        {
-          "node": {
-            "title": "feat: add github_soufianeouk.js",
-            "number": 769,
-            "url": "https://github.com/mazipan/hello-open-source/pull/769",
-            "author": {
-              "login": "soufianeouk",
-              "avatarUrl": "https://avatars.githubusercontent.com/u/37966094?u=ab5e0cb74e0c8939630cdb3d9f8130e248e2602b&v=4"
             },
-            "repository": {
-              "name": "hello-open-source",
-              "owner": {
-                "login": "mazipan"
-              }
+            "reviews": {
+              "edges": []
             },
-            "labels": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "automerge"
-                  }
-                },
-                {
-                  "node": {
-                    "name": "hacktoberfest-accepted"
-                  }
-                }
-              ]
-            }
-          }
-        },
-        {
-          "node": {
-            "title": "Create github_oliverTwist2.js",
-            "number": 768,
-            "url": "https://github.com/mazipan/hello-open-source/pull/768",
-            "author": {
-              "login": "oliverTwist2",
-              "avatarUrl": "https://avatars.githubusercontent.com/u/104382427?u=529bf6bbb3f08fe68aa998c89ba413cb36f4077f&v=4"
-            },
-            "repository": {
-              "name": "hello-open-source",
-              "owner": {
-                "login": "mazipan"
-              }
-            },
-            "labels": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "automerge"
-                  }
-                },
-                {
-                  "node": {
-                    "name": "hacktoberfest-accepted"
-                  }
-                }
-              ]
-            }
-          }
-        },
-        {
-          "node": {
-            "title": "file added",
-            "number": 767,
-            "url": "https://github.com/mazipan/hello-open-source/pull/767",
-            "author": {
-              "login": "EkaterineSheshelidze",
-              "avatarUrl": "https://avatars.githubusercontent.com/u/85356244?v=4"
-            },
-            "repository": {
-              "name": "hello-open-source",
-              "owner": {
-                "login": "mazipan"
-              }
-            },
-            "labels": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "automerge"
-                  }
-                },
-                {
-                  "node": {
-                    "name": "hacktoberfest-accepted"
-                  }
-                }
-              ]
-            }
-          }
-        },
-        {
-          "node": {
-            "title": "Thanks to you all,first time trying this haaa",
-            "number": 766,
-            "url": "https://github.com/mazipan/hello-open-source/pull/766",
-            "author": {
-              "login": "Aryan-AAP",
-              "avatarUrl": "https://avatars.githubusercontent.com/u/115885141?v=4"
-            },
-            "repository": {
-              "name": "hello-open-source",
-              "owner": {
-                "login": "mazipan"
-              }
-            },
-            "labels": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "automerge"
-                  }
-                },
-                {
-                  "node": {
-                    "name": "hacktoberfest-accepted"
-                  }
-                }
-              ]
-            }
-          }
-        },
-        {
-          "node": {
-            "title": "added name ",
-            "number": 765,
-            "url": "https://github.com/mazipan/hello-open-source/pull/765",
-            "author": {
-              "login": "favy-codez",
-              "avatarUrl": "https://avatars.githubusercontent.com/u/107569845?v=4"
-            },
-            "repository": {
-              "name": "hello-open-source",
-              "owner": {
-                "login": "mazipan"
-              }
-            },
-            "labels": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "automerge"
-                  }
-                },
-                {
-                  "node": {
-                    "name": "hacktoberfest-accepted"
-                  }
-                }
-              ]
-            }
-          }
-        },
-        {
-          "node": {
-            "title": "added jonasermert",
-            "number": 764,
-            "url": "https://github.com/mazipan/hello-open-source/pull/764",
-            "author": {
-              "login": "jonasermert",
-              "avatarUrl": "https://avatars.githubusercontent.com/u/1409808?u=2f4e8025f90541b59d7446ea77c138410eac2d40&v=4"
-            },
-            "repository": {
-              "name": "hello-open-source",
-              "owner": {
-                "login": "mazipan"
-              }
-            },
-            "labels": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "automerge"
-                  }
-                },
-                {
-                  "node": {
-                    "name": "hacktoberfest-accepted"
-                  }
-                }
-              ]
-            }
-          }
-        },
-        {
-          "node": {
-            "title": "add my details",
-            "number": 763,
-            "url": "https://github.com/mazipan/hello-open-source/pull/763",
-            "author": {
-              "login": "manojtharindu11",
-              "avatarUrl": "https://avatars.githubusercontent.com/u/114139836?u=7ae863da9f99655b7cb4a22b7274d8dc8f725344&v=4"
-            },
-            "repository": {
-              "name": "hello-open-source",
-              "owner": {
-                "login": "mazipan"
-              }
-            },
-            "labels": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "automerge"
-                  }
-                },
-                {
-                  "node": {
-                    "name": "hacktoberfest-accepted"
-                  }
-                }
-              ]
-            }
-          }
-        },
-        {
-          "node": {
-            "title": "added my details",
-            "number": 762,
-            "url": "https://github.com/mazipan/hello-open-source/pull/762",
-            "author": {
-              "login": "kelvinokumu",
-              "avatarUrl": "https://avatars.githubusercontent.com/u/105194367?v=4"
-            },
-            "repository": {
-              "name": "hello-open-source",
-              "owner": {
-                "login": "mazipan"
-              }
-            },
-            "labels": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "automerge"
-                  }
-                },
-                {
-                  "node": {
-                    "name": "hacktoberfest-accepted"
-                  }
-                }
-              ]
+            "mergedBy": {
+              "login": "tamalCodes"
             }
           }
         },
@@ -491,12 +83,6 @@
             "author": {
               "login": "Enaraque",
               "avatarUrl": "https://avatars.githubusercontent.com/u/74021522?u=43a2fac8effa1ac86861b0f1b9ab953e5c8f21bc&v=4"
-            },
-            "repository": {
-              "name": "bus_stadistics",
-              "owner": {
-                "login": "Enaraque"
-              }
             },
             "labels": {
               "edges": [
@@ -511,68 +97,21 @@
                   }
                 }
               ]
-            }
-          }
-        },
-        {
-          "node": {
-            "title": "Add-MohamedBoukthir",
-            "number": 761,
-            "url": "https://github.com/mazipan/hello-open-source/pull/761",
-            "author": {
-              "login": "MohamedBoukthir",
-              "avatarUrl": "https://avatars.githubusercontent.com/u/124532428?u=a672bb4f33076b8b635531482a77fe0c80d3f528&v=4"
             },
-            "repository": {
-              "name": "hello-open-source",
-              "owner": {
-                "login": "mazipan"
-              }
-            },
-            "labels": {
+            "reviews": {
               "edges": [
                 {
                   "node": {
-                    "name": "automerge"
-                  }
-                },
-                {
-                  "node": {
-                    "name": "hacktoberfest-accepted"
+                    "author": {
+                      "login": "JJ"
+                    },
+                    "state": "APPROVED"
                   }
                 }
               ]
-            }
-          }
-        },
-        {
-          "node": {
-            "title": "prasannakumarboddeda02",
-            "number": 760,
-            "url": "https://github.com/mazipan/hello-open-source/pull/760",
-            "author": {
-              "login": "prasannakumarboddeda02",
-              "avatarUrl": "https://avatars.githubusercontent.com/u/112362123?v=4"
             },
-            "repository": {
-              "name": "hello-open-source",
-              "owner": {
-                "login": "mazipan"
-              }
-            },
-            "labels": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "automerge"
-                  }
-                },
-                {
-                  "node": {
-                    "name": "hacktoberfest-accepted"
-                  }
-                }
-              ]
+            "mergedBy": {
+              "login": "Enaraque"
             }
           }
         },
@@ -584,12 +123,6 @@
             "author": {
               "login": "Nikhilh26",
               "avatarUrl": "https://avatars.githubusercontent.com/u/121549009?v=4"
-            },
-            "repository": {
-              "name": "nike",
-              "owner": {
-                "login": "warmachine028"
-              }
             },
             "labels": {
               "edges": [
@@ -614,37 +147,21 @@
                   }
                 }
               ]
-            }
-          }
-        },
-        {
-          "node": {
-            "title": "This is my first pull request!",
-            "number": 758,
-            "url": "https://github.com/mazipan/hello-open-source/pull/758",
-            "author": {
-              "login": "bharath143775",
-              "avatarUrl": "https://avatars.githubusercontent.com/u/64431449?v=4"
             },
-            "repository": {
-              "name": "hello-open-source",
-              "owner": {
-                "login": "mazipan"
-              }
-            },
-            "labels": {
+            "reviews": {
               "edges": [
                 {
                   "node": {
-                    "name": "automerge"
-                  }
-                },
-                {
-                  "node": {
-                    "name": "hacktoberfest-accepted"
+                    "author": {
+                      "login": "warmachine028"
+                    },
+                    "state": "APPROVED"
                   }
                 }
               ]
+            },
+            "mergedBy": {
+              "login": "warmachine028"
             }
           }
         },
@@ -656,12 +173,6 @@
             "author": {
               "login": "Syphonphilter",
               "avatarUrl": "https://avatars.githubusercontent.com/u/24352275?u=82a809cf4dc687b732c35052a1b007f1ca8f9262&v=4"
-            },
-            "repository": {
-              "name": "intellectia",
-              "owner": {
-                "login": "prasenjeet-symon"
-              }
             },
             "labels": {
               "edges": [
@@ -691,37 +202,21 @@
                   }
                 }
               ]
-            }
-          }
-        },
-        {
-          "node": {
-            "title": "added elfajriharsuda.js",
-            "number": 757,
-            "url": "https://github.com/mazipan/hello-open-source/pull/757",
-            "author": {
-              "login": "elfajriharsuda",
-              "avatarUrl": "https://avatars.githubusercontent.com/u/116298172?u=8aa19aa694bcd5d53363a7bf4619a93a4f977b78&v=4"
             },
-            "repository": {
-              "name": "hello-open-source",
-              "owner": {
-                "login": "mazipan"
-              }
-            },
-            "labels": {
+            "reviews": {
               "edges": [
                 {
                   "node": {
-                    "name": "automerge"
-                  }
-                },
-                {
-                  "node": {
-                    "name": "hacktoberfest-accepted"
+                    "author": {
+                      "login": "prasenjeet-symon"
+                    },
+                    "state": "APPROVED"
                   }
                 }
               ]
+            },
+            "mergedBy": {
+              "login": "prasenjeet-symon"
             }
           }
         },
@@ -733,12 +228,6 @@
             "author": {
               "login": "rico191013",
               "avatarUrl": "https://avatars.githubusercontent.com/u/101926344?u=f7d72299191def70a5910a878108b1c09a4a95f2&v=4"
-            },
-            "repository": {
-              "name": "testnet",
-              "owner": {
-                "login": "interledger"
-              }
             },
             "labels": {
               "edges": [
@@ -763,6 +252,21 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "Tymmmy"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "Tymmmy"
             }
           }
         },
@@ -775,12 +279,6 @@
               "login": "rico191013",
               "avatarUrl": "https://avatars.githubusercontent.com/u/101926344?u=f7d72299191def70a5910a878108b1c09a4a95f2&v=4"
             },
-            "repository": {
-              "name": "testnet",
-              "owner": {
-                "login": "interledger"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -799,6 +297,21 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "Tymmmy"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "Tymmmy"
             }
           }
         },
@@ -811,12 +324,6 @@
               "login": "rico191013",
               "avatarUrl": "https://avatars.githubusercontent.com/u/101926344?u=f7d72299191def70a5910a878108b1c09a4a95f2&v=4"
             },
-            "repository": {
-              "name": "testnet",
-              "owner": {
-                "login": "interledger"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -835,6 +342,21 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "Tymmmy"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "Tymmmy"
             }
           }
         },
@@ -847,12 +369,6 @@
               "login": "NicolasGoes01",
               "avatarUrl": "https://avatars.githubusercontent.com/u/97046728?u=0f6aac3577fc4e034a323a12e23aad36ddaa4ce6&v=4"
             },
-            "repository": {
-              "name": "adocao-caosciente-backend",
-              "owner": {
-                "login": "Projeto-Adocao-Caosciente"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -861,6 +377,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "NicolasGoes01"
             }
           }
         },
@@ -872,12 +394,6 @@
             "author": {
               "login": "sabbellasri",
               "avatarUrl": "https://avatars.githubusercontent.com/u/34259114?v=4"
-            },
-            "repository": {
-              "name": "intellectia",
-              "owner": {
-                "login": "prasenjeet-symon"
-              }
             },
             "labels": {
               "edges": [
@@ -907,6 +423,21 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "prasenjeet-symon"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "prasenjeet-symon"
             }
           }
         },
@@ -919,12 +450,6 @@
               "login": "Karrop",
               "avatarUrl": "https://avatars.githubusercontent.com/u/111982133?u=09eebf9e62d6833273ef9c81c4f773fc8601012e&v=4"
             },
-            "repository": {
-              "name": "Open-Source-2023-mon-wed",
-              "owner": {
-                "login": "mlhaus"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -933,6 +458,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "mlhaus"
             }
           }
         },
@@ -945,12 +476,6 @@
               "login": "Karrop",
               "avatarUrl": "https://avatars.githubusercontent.com/u/111982133?u=09eebf9e62d6833273ef9c81c4f773fc8601012e&v=4"
             },
-            "repository": {
-              "name": "Open-Source-2023-mon-wed",
-              "owner": {
-                "login": "mlhaus"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -959,6 +484,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "mlhaus"
             }
           }
         },
@@ -971,12 +502,6 @@
               "login": "Karrop",
               "avatarUrl": "https://avatars.githubusercontent.com/u/111982133?u=09eebf9e62d6833273ef9c81c4f773fc8601012e&v=4"
             },
-            "repository": {
-              "name": "Open-Source-2023-mon-wed",
-              "owner": {
-                "login": "mlhaus"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -985,6 +510,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "mlhaus"
             }
           }
         },
@@ -997,12 +528,6 @@
               "login": "Christianlr",
               "avatarUrl": "https://avatars.githubusercontent.com/u/45923550?u=fd7a204c9da8d8b03c308f34d9b7cb7245684c64&v=4"
             },
-            "repository": {
-              "name": "MIBarberSchedule",
-              "owner": {
-                "login": "Christianlr"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -1011,37 +536,21 @@
                   }
                 }
               ]
-            }
-          }
-        },
-        {
-          "node": {
-            "title": "added: people/github_devxoxo",
-            "number": 755,
-            "url": "https://github.com/mazipan/hello-open-source/pull/755",
-            "author": {
-              "login": "Sahildarunde",
-              "avatarUrl": "https://avatars.githubusercontent.com/u/90788734?u=77d5a7ea8502eee0edecd3ed9fc1f55a833d3e36&v=4"
             },
-            "repository": {
-              "name": "hello-open-source",
-              "owner": {
-                "login": "mazipan"
-              }
-            },
-            "labels": {
+            "reviews": {
               "edges": [
                 {
                   "node": {
-                    "name": "automerge"
-                  }
-                },
-                {
-                  "node": {
-                    "name": "hacktoberfest-accepted"
+                    "author": {
+                      "login": "JJ"
+                    },
+                    "state": "APPROVED"
                   }
                 }
               ]
+            },
+            "mergedBy": {
+              "login": "Christianlr"
             }
           }
         },
@@ -1054,12 +563,6 @@
               "login": "Pragyasingh100",
               "avatarUrl": "https://avatars.githubusercontent.com/u/126460503?v=4"
             },
-            "repository": {
-              "name": "hacktoberfest",
-              "owner": {
-                "login": "iconic12345"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -1068,6 +571,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "Pragyasingh100"
             }
           }
         },
@@ -1079,12 +588,6 @@
             "author": {
               "login": "ducthang-vu",
               "avatarUrl": "https://avatars.githubusercontent.com/u/60708009?u=bfc1389a2a69fe71ae05949b1ac1412a3a2b97bd&v=4"
-            },
-            "repository": {
-              "name": "ngx-password-strength-meter",
-              "owner": {
-                "login": "maykon-oliveira"
-              }
             },
             "labels": {
               "edges": [
@@ -1099,37 +602,12 @@
                   }
                 }
               ]
-            }
-          }
-        },
-        {
-          "node": {
-            "title": "updated my details",
-            "number": 754,
-            "url": "https://github.com/mazipan/hello-open-source/pull/754",
-            "author": {
-              "login": "prasanna1225",
-              "avatarUrl": "https://avatars.githubusercontent.com/u/94883909?u=8b69995e6a52ede02423fd14747284759aaa6efe&v=4"
             },
-            "repository": {
-              "name": "hello-open-source",
-              "owner": {
-                "login": "mazipan"
-              }
+            "reviews": {
+              "edges": []
             },
-            "labels": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "automerge"
-                  }
-                },
-                {
-                  "node": {
-                    "name": "hacktoberfest-accepted"
-                  }
-                }
-              ]
+            "mergedBy": {
+              "login": "maykon-oliveira"
             }
           }
         },
@@ -1141,12 +619,6 @@
             "author": {
               "login": "CrisitoJ",
               "avatarUrl": "https://avatars.githubusercontent.com/u/115337506?u=7fee618be112958dd2c1da80c387d78c0d206841&v=4"
-            },
-            "repository": {
-              "name": "Giphy_Explorer",
-              "owner": {
-                "login": "lcrojano"
-              }
             },
             "labels": {
               "edges": [
@@ -1161,6 +633,21 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "lcrojano"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "lcrojano"
             }
           }
         },
@@ -1173,12 +660,6 @@
               "login": "Enaraque",
               "avatarUrl": "https://avatars.githubusercontent.com/u/74021522?u=43a2fac8effa1ac86861b0f1b9ab953e5c8f21bc&v=4"
             },
-            "repository": {
-              "name": "bus_stadistics",
-              "owner": {
-                "login": "Enaraque"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -1187,6 +668,29 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "puchy22"
+                    },
+                    "state": "APPROVED"
+                  }
+                },
+                {
+                  "node": {
+                    "author": {
+                      "login": "JJ"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "Enaraque"
             }
           }
         },
@@ -1199,12 +703,6 @@
               "login": "AvineshTripathi",
               "avatarUrl": "https://avatars.githubusercontent.com/u/73980067?u=e28365331a4be395d75608609fa5dfdafb1588cc&v=4"
             },
-            "repository": {
-              "name": "cred",
-              "owner": {
-                "login": "AvineshTripathi"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -1213,6 +711,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "AvineshTripathi"
             }
           }
         },
@@ -1225,12 +729,6 @@
               "login": "AvineshTripathi",
               "avatarUrl": "https://avatars.githubusercontent.com/u/73980067?u=e28365331a4be395d75608609fa5dfdafb1588cc&v=4"
             },
-            "repository": {
-              "name": "cred",
-              "owner": {
-                "login": "AvineshTripathi"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -1239,37 +737,12 @@
                   }
                 }
               ]
-            }
-          }
-        },
-        {
-          "node": {
-            "title": "Create github_isatyamks.js",
-            "number": 753,
-            "url": "https://github.com/mazipan/hello-open-source/pull/753",
-            "author": {
-              "login": "isatyamks",
-              "avatarUrl": "https://avatars.githubusercontent.com/u/121108110?u=16c5d029996920bc838fae9c891264793fcdf272&v=4"
             },
-            "repository": {
-              "name": "hello-open-source",
-              "owner": {
-                "login": "mazipan"
-              }
+            "reviews": {
+              "edges": []
             },
-            "labels": {
-              "edges": [
-                {
-                  "node": {
-                    "name": "automerge"
-                  }
-                },
-                {
-                  "node": {
-                    "name": "hacktoberfest-accepted"
-                  }
-                }
-              ]
+            "mergedBy": {
+              "login": "AvineshTripathi"
             }
           }
         },
@@ -1282,12 +755,6 @@
               "login": "maxkf629",
               "avatarUrl": "https://avatars.githubusercontent.com/u/123006456?u=2258e8375a558567ebdd454303dd703fcfe725e5&v=4"
             },
-            "repository": {
-              "name": "Open-Source-2023-mon-wed",
-              "owner": {
-                "login": "mlhaus"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -1296,6 +763,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "mlhaus"
             }
           }
         },
@@ -1307,12 +780,6 @@
             "author": {
               "login": "Lucs1590",
               "avatarUrl": "https://avatars.githubusercontent.com/u/38580547?u=7fa82aa1a962377e58f83a418cb99bd3910b8055&v=4"
-            },
-            "repository": {
-              "name": "Nkocr",
-              "owner": {
-                "login": "Lucs1590"
-              }
             },
             "labels": {
               "edges": [
@@ -1340,8 +807,19 @@
                   "node": {
                     "name": "hacktoberfest-accepted"
                   }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "Lucs1590"
             }
           }
         },
@@ -1353,12 +831,6 @@
             "author": {
               "login": "FajarKim",
               "avatarUrl": "https://avatars.githubusercontent.com/u/86386385?u=241446d210ca114424f786bdd1ddfbb5fd374305&v=4"
-            },
-            "repository": {
-              "name": "github-readme-profile",
-              "owner": {
-                "login": "FajarKim"
-              }
             },
             "labels": {
               "edges": [
@@ -1373,6 +845,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "FajarKim"
             }
           }
         },
@@ -1385,12 +863,6 @@
               "login": "Parvezkhan0",
               "avatarUrl": "https://avatars.githubusercontent.com/u/137421089?v=4"
             },
-            "repository": {
-              "name": "Hacktoberfest23",
-              "owner": {
-                "login": "riz4d"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -1399,6 +871,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "riz4d"
             }
           }
         },
@@ -1411,12 +889,6 @@
               "login": "Christianlr",
               "avatarUrl": "https://avatars.githubusercontent.com/u/45923550?u=fd7a204c9da8d8b03c308f34d9b7cb7245684c64&v=4"
             },
-            "repository": {
-              "name": "MIBarberSchedule",
-              "owner": {
-                "login": "Christianlr"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -1425,6 +897,45 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "pluque01"
+                    },
+                    "state": "APPROVED"
+                  }
+                },
+                {
+                  "node": {
+                    "author": {
+                      "login": "PabloBarTo"
+                    },
+                    "state": "APPROVED"
+                  }
+                },
+                {
+                  "node": {
+                    "author": {
+                      "login": "PabloBarTo"
+                    },
+                    "state": "APPROVED"
+                  }
+                },
+                {
+                  "node": {
+                    "author": {
+                      "login": "JJ"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "Christianlr"
             }
           }
         },
@@ -1437,12 +948,6 @@
               "login": "Ialbashair",
               "avatarUrl": "https://avatars.githubusercontent.com/u/112139510?v=4"
             },
-            "repository": {
-              "name": "Open-Source-2023-mon-wed",
-              "owner": {
-                "login": "mlhaus"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -1451,6 +956,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "mlhaus"
             }
           }
         },
@@ -1462,12 +973,6 @@
             "author": {
               "login": "MaxymGorn",
               "avatarUrl": "https://avatars.githubusercontent.com/u/50423072?u=0d812105cb7aa1d89531dfa00bffd2a46174965f&v=4"
-            },
-            "repository": {
-              "name": "Cropper.Blazor",
-              "owner": {
-                "login": "CropperBlazor"
-              }
             },
             "labels": {
               "edges": [
@@ -1497,6 +1002,21 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "ColdForeign"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "MaxymGorn"
             }
           }
         },
@@ -1509,12 +1029,6 @@
               "login": "Alex-Mth",
               "avatarUrl": "https://avatars.githubusercontent.com/u/96028055?v=4"
             },
-            "repository": {
-              "name": "HactoberFest2023",
-              "owner": {
-                "login": "Alex-Mth"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -1523,6 +1037,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "Alex-Mth"
             }
           }
         },
@@ -1535,12 +1055,6 @@
               "login": "Atul245",
               "avatarUrl": "https://avatars.githubusercontent.com/u/98544302?u=9756fcf3598a9e5a0aaf25f3f43579318f90ba46&v=4"
             },
-            "repository": {
-              "name": "Hacktoberfest2023-Open-source-",
-              "owner": {
-                "login": "Atul245"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -1549,6 +1063,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "Atul245"
             }
           }
         },
@@ -1561,12 +1081,6 @@
               "login": "Atul245",
               "avatarUrl": "https://avatars.githubusercontent.com/u/98544302?u=9756fcf3598a9e5a0aaf25f3f43579318f90ba46&v=4"
             },
-            "repository": {
-              "name": "helloAlgorithm",
-              "owner": {
-                "login": "Atul245"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -1575,6 +1089,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "Atul245"
             }
           }
         },
@@ -1587,12 +1107,6 @@
               "login": "Atul245",
               "avatarUrl": "https://avatars.githubusercontent.com/u/98544302?u=9756fcf3598a9e5a0aaf25f3f43579318f90ba46&v=4"
             },
-            "repository": {
-              "name": "hacktoberfest2023",
-              "owner": {
-                "login": "Atul245"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -1601,6 +1115,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "Atul245"
             }
           }
         },
@@ -1613,12 +1133,6 @@
               "login": "NikolasBell",
               "avatarUrl": "https://avatars.githubusercontent.com/u/122946198?u=074f2ed47d6ce7d06a6b639fe08b932601a81364&v=4"
             },
-            "repository": {
-              "name": "Open-Source-2023-tue-night",
-              "owner": {
-                "login": "mlhaus"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -1627,6 +1141,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "mlhaus"
             }
           }
         },
@@ -1639,12 +1159,6 @@
               "login": "Caspian427",
               "avatarUrl": "https://avatars.githubusercontent.com/u/122946145?u=ae1f7d69ff5dc672dfc45c16e6ee937a152b7335&v=4"
             },
-            "repository": {
-              "name": "Open-Source-2023-tue-night",
-              "owner": {
-                "login": "mlhaus"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -1653,6 +1167,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "mlhaus"
             }
           }
         },
@@ -1665,12 +1185,6 @@
               "login": "Beck-Jonathan",
               "avatarUrl": "https://avatars.githubusercontent.com/u/80435606?u=04bcef32850447e1891196013faed47a01dc6b23&v=4"
             },
-            "repository": {
-              "name": "Open-Source-2023-tue-night",
-              "owner": {
-                "login": "mlhaus"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -1679,6 +1193,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "mlhaus"
             }
           }
         },
@@ -1691,12 +1211,6 @@
               "login": "JaLindauer",
               "avatarUrl": "https://avatars.githubusercontent.com/u/96332460?u=592d4b1207226f5783c93e04ce5dd1e3c44303ab&v=4"
             },
-            "repository": {
-              "name": "Open-Source-2023-tue-night",
-              "owner": {
-                "login": "mlhaus"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -1705,6 +1219,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "mlhaus"
             }
           }
         },
@@ -1717,12 +1237,6 @@
               "login": "mallenspringer",
               "avatarUrl": "https://avatars.githubusercontent.com/u/119228105?u=8f3de2c3b0f1639bf76010c0dc7b7a7e3c8f6701&v=4"
             },
-            "repository": {
-              "name": "Open-Source-2023-mon-wed",
-              "owner": {
-                "login": "mlhaus"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -1731,6 +1245,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "mlhaus"
             }
           }
         },
@@ -1743,12 +1263,6 @@
               "login": "elshiraphine",
               "avatarUrl": "https://avatars.githubusercontent.com/u/89353307?u=fcb897a15157678dd87d02a15cdde68e2a7b22b9&v=4"
             },
-            "repository": {
-              "name": "Modul-Jarkom",
-              "owner": {
-                "login": "arsitektur-jaringan-komputer"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -1757,6 +1271,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "elshiraphine"
             }
           }
         },
@@ -1769,12 +1289,6 @@
               "login": "AndrewJLarsonJr",
               "avatarUrl": "https://avatars.githubusercontent.com/u/123006211?u=dea02c47d8b2e1e2f498305950adf6b13f0e8848&v=4"
             },
-            "repository": {
-              "name": "Open-Source-2023-mon-wed",
-              "owner": {
-                "login": "mlhaus"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -1783,6 +1297,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "mlhaus"
             }
           }
         },
@@ -1794,12 +1314,6 @@
             "author": {
               "login": "Reene-Simon",
               "avatarUrl": "https://avatars.githubusercontent.com/u/112744886?u=a7d8e595cf16b32172cb81bef813a133b4146462&v=4"
-            },
-            "repository": {
-              "name": "mattermost-plugin-apps",
-              "owner": {
-                "login": "mattermost"
-              }
             },
             "labels": {
               "edges": [
@@ -1819,6 +1333,29 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "cwarnermm"
+                    },
+                    "state": "APPROVED"
+                  }
+                },
+                {
+                  "node": {
+                    "author": {
+                      "login": "mickmister"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "cwarnermm"
             }
           }
         },
@@ -1831,12 +1368,6 @@
               "login": "Tushar2001bbdu",
               "avatarUrl": "https://avatars.githubusercontent.com/u/146729736?v=4"
             },
-            "repository": {
-              "name": "Java",
-              "owner": {
-                "login": "Tushar2001bbdu"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -1845,6 +1376,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "Tushar2001bbdu"
             }
           }
         },
@@ -1856,12 +1393,6 @@
             "author": {
               "login": "Serse2",
               "avatarUrl": "https://avatars.githubusercontent.com/u/45994216?u=2dbf2efe6295d5f518bd9f5b2316da11ecd3c3db&v=4"
-            },
-            "repository": {
-              "name": "habitat",
-              "owner": {
-                "login": "casavo"
-              }
             },
             "labels": {
               "edges": [
@@ -1876,6 +1407,21 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "moebiusmania"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "moebiusmania"
             }
           }
         },
@@ -1887,12 +1433,6 @@
             "author": {
               "login": "Serse2",
               "avatarUrl": "https://avatars.githubusercontent.com/u/45994216?u=2dbf2efe6295d5f518bd9f5b2316da11ecd3c3db&v=4"
-            },
-            "repository": {
-              "name": "habitat",
-              "owner": {
-                "login": "casavo"
-              }
             },
             "labels": {
               "edges": [
@@ -1907,6 +1447,21 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "moebiusmania"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "moebiusmania"
             }
           }
         },
@@ -1918,12 +1473,6 @@
             "author": {
               "login": "Reene-Simon",
               "avatarUrl": "https://avatars.githubusercontent.com/u/112744886?u=a7d8e595cf16b32172cb81bef813a133b4146462&v=4"
-            },
-            "repository": {
-              "name": "mattermost-plugin-mscalendar",
-              "owner": {
-                "login": "mattermost"
-              }
             },
             "labels": {
               "edges": [
@@ -1943,6 +1492,37 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "cwarnermm"
+                    },
+                    "state": "APPROVED"
+                  }
+                },
+                {
+                  "node": {
+                    "author": {
+                      "login": "mickmister"
+                    },
+                    "state": "APPROVED"
+                  }
+                },
+                {
+                  "node": {
+                    "author": {
+                      "login": "mickmister"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "cwarnermm"
             }
           }
         },
@@ -1955,12 +1535,6 @@
               "login": "sonup97",
               "avatarUrl": "https://avatars.githubusercontent.com/u/30662033?v=4"
             },
-            "repository": {
-              "name": "ECOMM",
-              "owner": {
-                "login": "santoshb99"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -1969,6 +1543,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "santoshb99"
             }
           }
         },
@@ -1980,12 +1560,6 @@
             "author": {
               "login": "inureyes",
               "avatarUrl": "https://avatars.githubusercontent.com/u/949915?v=4"
-            },
-            "repository": {
-              "name": "backend.ai-webui",
-              "owner": {
-                "login": "lablup"
-              }
             },
             "labels": {
               "edges": [
@@ -2013,8 +1587,48 @@
                   "node": {
                     "name": "type:refactor"
                   }
+                },
+                {
+                  "node": {
+                    "name": "platform:general"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "area:upstream"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "area:infra"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "impact:invisible"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "comp:JS SDK"
+                  }
                 }
               ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "achimnol"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "achimnol"
             }
           }
         },
@@ -2027,12 +1641,6 @@
               "login": "vivek-p-a",
               "avatarUrl": "https://avatars.githubusercontent.com/u/43650207?v=4"
             },
-            "repository": {
-              "name": "sagu-ui",
-              "owner": {
-                "login": "vczb"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -2041,6 +1649,21 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "vczb"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "vczb"
             }
           }
         },
@@ -2053,12 +1676,6 @@
               "login": "mallenspringer",
               "avatarUrl": "https://avatars.githubusercontent.com/u/119228105?u=8f3de2c3b0f1639bf76010c0dc7b7a7e3c8f6701&v=4"
             },
-            "repository": {
-              "name": "Open-Source-2023-mon-wed",
-              "owner": {
-                "login": "mlhaus"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -2067,6 +1684,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "mlhaus"
             }
           }
         },
@@ -2079,12 +1702,6 @@
               "login": "nicewajs",
               "avatarUrl": "https://avatars.githubusercontent.com/u/112139508?u=ff6bd23afffc7568296213b6573b34dda1c277ae&v=4"
             },
-            "repository": {
-              "name": "Open-Source-2023-mon-wed",
-              "owner": {
-                "login": "mlhaus"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -2093,6 +1710,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "mlhaus"
             }
           }
         },
@@ -2105,12 +1728,6 @@
               "login": "MStirmel02",
               "avatarUrl": "https://avatars.githubusercontent.com/u/142832339?v=4"
             },
-            "repository": {
-              "name": "Open-Source-2023-mon-wed",
-              "owner": {
-                "login": "mlhaus"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -2119,6 +1736,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "mlhaus"
             }
           }
         },
@@ -2131,12 +1754,6 @@
               "login": "MattBaccam",
               "avatarUrl": "https://avatars.githubusercontent.com/u/123006028?v=4"
             },
-            "repository": {
-              "name": "Open-Source-2023-mon-wed",
-              "owner": {
-                "login": "mlhaus"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -2145,6 +1762,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "mlhaus"
             }
           }
         },
@@ -2157,12 +1780,6 @@
               "login": "devtrades",
               "avatarUrl": "https://avatars.githubusercontent.com/u/111449142?u=fdb76d1c6910b85cccdbd4bccba1dfee36e91e85&v=4"
             },
-            "repository": {
-              "name": "Open-Source-2023-mon-wed",
-              "owner": {
-                "login": "mlhaus"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -2171,6 +1788,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "mlhaus"
             }
           }
         },
@@ -2183,12 +1806,6 @@
               "login": "galczo5",
               "avatarUrl": "https://avatars.githubusercontent.com/u/6080725?u=f3f542f4abbe20cf736b8524b8e8cca37f06dcfb&v=4"
             },
-            "repository": {
-              "name": "ng-badger",
-              "owner": {
-                "login": "galczo5"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -2197,6 +1814,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "galczo5"
             }
           }
         },
@@ -2208,12 +1831,6 @@
             "author": {
               "login": "ColdForeign",
               "avatarUrl": "https://avatars.githubusercontent.com/u/38187349?u=cdd5393292eada8a4237f5109c70e023e9509269&v=4"
-            },
-            "repository": {
-              "name": "Cropper.Blazor",
-              "owner": {
-                "login": "CropperBlazor"
-              }
             },
             "labels": {
               "edges": [
@@ -2238,6 +1855,21 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "MaxymGorn"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "ColdForeign"
             }
           }
         },
@@ -2249,12 +1881,6 @@
             "author": {
               "login": "choidf",
               "avatarUrl": "https://avatars.githubusercontent.com/u/39011839?v=4"
-            },
-            "repository": {
-              "name": "Python-beginner-scripts",
-              "owner": {
-                "login": "Punit-Choudhary"
-              }
             },
             "labels": {
               "edges": [
@@ -2269,6 +1895,21 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "Punit-Choudhary"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "Punit-Choudhary"
             }
           }
         },
@@ -2280,12 +1921,6 @@
             "author": {
               "login": "jldurigan",
               "avatarUrl": "https://avatars.githubusercontent.com/u/8905582?u=8017cbf55f676bf36f0462464316991063bc7f76&v=4"
-            },
-            "repository": {
-              "name": "metabolismobasal",
-              "owner": {
-                "login": "adalbertobrant"
-              }
             },
             "labels": {
               "edges": [
@@ -2315,6 +1950,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "adalbertobrant"
             }
           }
         },
@@ -2326,12 +1967,6 @@
             "author": {
               "login": "Yash-Sajwan24",
               "avatarUrl": "https://avatars.githubusercontent.com/u/52412969?u=d756fea947b0b977c30426b5aef0e94706b70f33&v=4"
-            },
-            "repository": {
-              "name": "Milan",
-              "owner": {
-                "login": "milancommunity"
-              }
             },
             "labels": {
               "edges": [
@@ -2351,6 +1986,21 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "tamalCodes"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "tamalCodes"
             }
           }
         },
@@ -2362,12 +2012,6 @@
             "author": {
               "login": "Yash-Sajwan24",
               "avatarUrl": "https://avatars.githubusercontent.com/u/52412969?u=d756fea947b0b977c30426b5aef0e94706b70f33&v=4"
-            },
-            "repository": {
-              "name": "Milan",
-              "owner": {
-                "login": "milancommunity"
-              }
             },
             "labels": {
               "edges": [
@@ -2387,6 +2031,21 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "tamalCodes"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "tamalCodes"
             }
           }
         },
@@ -2398,12 +2057,6 @@
             "author": {
               "login": "J-Ferdous",
               "avatarUrl": "https://avatars.githubusercontent.com/u/148969045?u=9a2b4af8ae9d8f7a2c9467ae42695cd64524e1dd&v=4"
-            },
-            "repository": {
-              "name": "DSA_questions",
-              "owner": {
-                "login": "muntaxir4"
-              }
             },
             "labels": {
               "edges": [
@@ -2418,6 +2071,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "muntaxir4"
             }
           }
         },
@@ -2430,12 +2089,6 @@
               "login": "RushikeshGaikwad78",
               "avatarUrl": "https://avatars.githubusercontent.com/u/136995273?v=4"
             },
-            "repository": {
-              "name": "hacktoberfest",
-              "owner": {
-                "login": "RushikeshGaikwad78"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -2444,6 +2097,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "RushikeshGaikwad78"
             }
           }
         },
@@ -2455,12 +2114,6 @@
             "author": {
               "login": "MaxymGorn",
               "avatarUrl": "https://avatars.githubusercontent.com/u/50423072?u=0d812105cb7aa1d89531dfa00bffd2a46174965f&v=4"
-            },
-            "repository": {
-              "name": "Cropper.Blazor",
-              "owner": {
-                "login": "CropperBlazor"
-              }
             },
             "labels": {
               "edges": [
@@ -2485,6 +2138,21 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "ColdForeign"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "MaxymGorn"
             }
           }
         },
@@ -2497,12 +2165,6 @@
               "login": "ChrisBaenziger",
               "avatarUrl": "https://avatars.githubusercontent.com/u/111913453?v=4"
             },
-            "repository": {
-              "name": "Open-Source-2023-mon-wed",
-              "owner": {
-                "login": "mlhaus"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -2511,6 +2173,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "mlhaus"
             }
           }
         },
@@ -2523,12 +2191,6 @@
               "login": "AanshOjha",
               "avatarUrl": "https://avatars.githubusercontent.com/u/108977462?u=025e077aa6eddce2dde153248a4c1d6e1271e48b&v=4"
             },
-            "repository": {
-              "name": "Web-Devlopement-2023",
-              "owner": {
-                "login": "AanshOjha"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -2537,6 +2199,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "AanshOjha"
             }
           }
         },
@@ -2549,12 +2217,6 @@
               "login": "ChristivieD",
               "avatarUrl": "https://avatars.githubusercontent.com/u/123006402?u=6094abe555a622f9a7b7677a56fc632db1ec6a09&v=4"
             },
-            "repository": {
-              "name": "Open-Source-2023-mon-wed",
-              "owner": {
-                "login": "mlhaus"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -2563,6 +2225,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "mlhaus"
             }
           }
         },
@@ -2575,12 +2243,6 @@
               "login": "supriyo010",
               "avatarUrl": "https://avatars.githubusercontent.com/u/122034818?u=b523d382d0aab4c8cb177f1f31debf7e7d99a5e3&v=4"
             },
-            "repository": {
-              "name": "HactoberFest2023....",
-              "owner": {
-                "login": "supriyo010"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -2589,6 +2251,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "supriyo010"
             }
           }
         },
@@ -2601,12 +2269,6 @@
               "login": "supriyo010",
               "avatarUrl": "https://avatars.githubusercontent.com/u/122034818?u=b523d382d0aab4c8cb177f1f31debf7e7d99a5e3&v=4"
             },
-            "repository": {
-              "name": "HactoberFest2023...",
-              "owner": {
-                "login": "supriyo010"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -2615,6 +2277,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "supriyo010"
             }
           }
         },
@@ -2627,12 +2295,6 @@
               "login": "Salute4ayush",
               "avatarUrl": "https://avatars.githubusercontent.com/u/102402263?u=78ca061f2520f9764916a3d507670d0e1d25e90c&v=4"
             },
-            "repository": {
-              "name": "DSA_Hacktoberfest2023",
-              "owner": {
-                "login": "Salute4ayush"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -2641,6 +2303,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "Salute4ayush"
             }
           }
         },
@@ -2652,12 +2320,6 @@
             "author": {
               "login": "Milcke",
               "avatarUrl": "https://avatars.githubusercontent.com/u/104478135?v=4"
-            },
-            "repository": {
-              "name": "intellectia",
-              "owner": {
-                "login": "prasenjeet-symon"
-              }
             },
             "labels": {
               "edges": [
@@ -2685,8 +2347,28 @@
                   "node": {
                     "name": "hacktoberfest-accepted"
                   }
+                },
+                {
+                  "node": {
+                    "name": "high-priority"
+                  }
                 }
               ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "prasenjeet-symon"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "prasenjeet-symon"
             }
           }
         },
@@ -2698,12 +2380,6 @@
             "author": {
               "login": "MaxymGorn",
               "avatarUrl": "https://avatars.githubusercontent.com/u/50423072?u=0d812105cb7aa1d89531dfa00bffd2a46174965f&v=4"
-            },
-            "repository": {
-              "name": "Cropper.Blazor",
-              "owner": {
-                "login": "CropperBlazor"
-              }
             },
             "labels": {
               "edges": [
@@ -2723,6 +2399,21 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "ColdForeign"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "MaxymGorn"
             }
           }
         },
@@ -2734,12 +2425,6 @@
             "author": {
               "login": "tarun06",
               "avatarUrl": "https://avatars.githubusercontent.com/u/2249775?u=27da9ca0db5a7ceab814b1d3289f036bed966969&v=4"
-            },
-            "repository": {
-              "name": "AircraftGauges-",
-              "owner": {
-                "login": "tarun06"
-              }
             },
             "labels": {
               "edges": [
@@ -2759,6 +2444,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "tarun06"
             }
           }
         },
@@ -2771,12 +2462,6 @@
               "login": "julien-metrot",
               "avatarUrl": "https://avatars.githubusercontent.com/u/98339047?u=c8efd4612368d26a6a42cd2fe2335d91eadb0e7a&v=4"
             },
-            "repository": {
-              "name": "Open-Source-2023-mon-wed",
-              "owner": {
-                "login": "mlhaus"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -2785,6 +2470,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "mlhaus"
             }
           }
         },
@@ -2797,12 +2488,6 @@
               "login": "amintasvrp",
               "avatarUrl": "https://avatars.githubusercontent.com/u/25506431?u=bf5a80767620178ae87e9adc135091cf127b22b5&v=4"
             },
-            "repository": {
-              "name": "payflow",
-              "owner": {
-                "login": "amintasvrp"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -2811,6 +2496,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "amintasvrp"
             }
           }
         },
@@ -2823,12 +2514,6 @@
               "login": "bishalbera",
               "avatarUrl": "https://avatars.githubusercontent.com/u/123734227?u=6c3d7dc68a6111faf27ab16cc2dc2f9b261c7d05&v=4"
             },
-            "repository": {
-              "name": "quickstarts",
-              "owner": {
-                "login": "airbytehq"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -2837,6 +2522,21 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "ThaliaBarrera"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "ThaliaBarrera"
             }
           }
         },
@@ -2849,12 +2549,6 @@
               "login": "Rupalsoni123",
               "avatarUrl": "https://avatars.githubusercontent.com/u/100207168?u=132203a0b770d961d07e47732b5087bbbf6df4e6&v=4"
             },
-            "repository": {
-              "name": "Web-development-Basic-hacktoberfest2023",
-              "owner": {
-                "login": "Rupalsoni123"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -2863,6 +2557,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "Rupalsoni123"
             }
           }
         },
@@ -2874,12 +2574,6 @@
             "author": {
               "login": "Gyanthakur",
               "avatarUrl": "https://avatars.githubusercontent.com/u/98226958?u=db20227ea69110af54d14655a367aa9389e2d02e&v=4"
-            },
-            "repository": {
-              "name": "GFG_POTD",
-              "owner": {
-                "login": "Gyanthakur"
-              }
             },
             "labels": {
               "edges": [
@@ -2899,6 +2593,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "Gyanthakur"
             }
           }
         },
@@ -2911,12 +2611,6 @@
               "login": "Teja205001",
               "avatarUrl": "https://avatars.githubusercontent.com/u/148524303?u=2bf2c6c1231bc7566f35306a19c2dcfbe9c48f1a&v=4"
             },
-            "repository": {
-              "name": "ohmyzsh",
-              "owner": {
-                "login": "Teja205001"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -2925,6 +2619,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "Teja205001"
             }
           }
         },
@@ -2936,12 +2636,6 @@
             "author": {
               "login": "ilsyaa",
               "avatarUrl": "https://avatars.githubusercontent.com/u/76580335?u=6002be551741cf61d7b1ab94418d46ac443ba9eb&v=4"
-            },
-            "repository": {
-              "name": "indonesian-digital-clock",
-              "owner": {
-                "login": "rizkytegar"
-              }
             },
             "labels": {
               "edges": [
@@ -2961,6 +2655,29 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "rizkytegar"
+                    },
+                    "state": "APPROVED"
+                  }
+                },
+                {
+                  "node": {
+                    "author": {
+                      "login": "rizkytegar"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "rizkytegar"
             }
           }
         },
@@ -2973,12 +2690,6 @@
               "login": "sumitawate2312",
               "avatarUrl": "https://avatars.githubusercontent.com/u/148269404?u=ff19d7ad2d6a65a82e38ab52c3dc3ecffe59f5cb&v=4"
             },
-            "repository": {
-              "name": "Hacktoberfest",
-              "owner": {
-                "login": "ossamamehmood"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -2987,6 +2698,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "ossamamehmood"
             }
           }
         },
@@ -2999,12 +2716,6 @@
               "login": "janusjerom",
               "avatarUrl": "https://avatars.githubusercontent.com/u/26627673?u=21045c74bc2256e0b42fc04fa657ee10fc8c706b&v=4"
             },
-            "repository": {
-              "name": "HacktoberFest-2023",
-              "owner": {
-                "login": "janusjerom"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -3013,6 +2724,12 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "janusjerom"
             }
           }
         },
@@ -3025,12 +2742,6 @@
               "login": "topefolorunso",
               "avatarUrl": "https://avatars.githubusercontent.com/u/66448986?u=080d87542f0b194e70806c8be12b322c7f1d1389&v=4"
             },
-            "repository": {
-              "name": "quickstarts",
-              "owner": {
-                "login": "airbytehq"
-              }
-            },
             "labels": {
               "edges": [
                 {
@@ -3039,6 +2750,21 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "ThaliaBarrera"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "ThaliaBarrera"
             }
           }
         },
@@ -3051,11 +2777,93 @@
               "login": "eardevaux",
               "avatarUrl": "https://avatars.githubusercontent.com/u/123006167?u=12e9253c19f4004d086b9277a600db3f05c56eb3&v=4"
             },
-            "repository": {
-              "name": "Open-Source-2023-mon-wed",
-              "owner": {
-                "login": "mlhaus"
-              }
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "mlhaus"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Deprecate HyperDither app recipes",
+            "number": 77,
+            "url": "https://github.com/autopkg/jaharmi-recipes/pull/77",
+            "author": {
+              "login": "Jaharmi",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/214152?v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "deprecate"
+                  }
+                }
+              ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "Jaharmi"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Deprecate Manuscript app recipes",
+            "number": 76,
+            "url": "https://github.com/autopkg/jaharmi-recipes/pull/76",
+            "author": {
+              "login": "Jaharmi",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/214152?v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "deprecate"
+                  }
+                }
+              ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "Jaharmi"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Map1 Map2 Test.",
+            "number": 126,
+            "url": "https://github.com/mlhaus/Open-Source-2023-mon-wed/pull/126",
+            "author": {
+              "login": "CaptainGyhutawrod",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/116676643?u=7067d904ea90db0ca258b01f7d40ba2a544f9da8&v=4"
             },
             "labels": {
               "edges": [
@@ -3065,6 +2873,534 @@
                   }
                 }
               ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "mlhaus"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "add my name and github",
+            "number": 18,
+            "url": "https://github.com/bratergit/webSiteCreation/pull/18",
+            "author": {
+              "login": "B2005848",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/141793800?u=1596a30f202678b71acbdbd48b248819f2aa8983&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "documentation"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "enhancement"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "good first issue"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "configuration"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "directory"
+                  }
+                }
+              ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "bratergit"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "2023-11-2 - Contribution 5 - Ben Collins",
+            "number": 125,
+            "url": "https://github.com/mlhaus/Open-Source-2023-mon-wed/pull/125",
+            "author": {
+              "login": "BenCollins98",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/16037884?u=71e2bfba861f26cda5399a658feabbc4a1aa60e7&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "mlhaus"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Added Include plugin to readme",
+            "number": 54,
+            "url": "https://github.com/figma/plugin-resources/pull/54",
+            "author": {
+              "login": "mkbhuiyan96",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/107896019?u=8117aecc52549780e4bcb34c3c0dc042cdd05762&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "akbarbmirza"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "akbarbmirza"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "test: add test for TextContent component",
+            "number": 133,
+            "url": "https://github.com/vczb/sagu-ui/pull/133",
+            "author": {
+              "login": "sweetyTW",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/126869417?u=2a30d1ab07707c17c8c03b9e45fd64b6ba377697&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "vczb"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "vczb"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Create MergeSort",
+            "number": 1,
+            "url": "https://github.com/Arpan011/Hacktoberfe2023/pull/1",
+            "author": {
+              "login": "Arpan011",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/101383912?u=819d23089fa26466b816452882b26f27555ca4fe&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "Hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "Arpan011"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Create BinarySearch",
+            "number": 1,
+            "url": "https://github.com/Arpan011/Hacktoberfes2/pull/1",
+            "author": {
+              "login": "Arpan011",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/101383912?u=819d23089fa26466b816452882b26f27555ca4fe&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "Hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "Arpan011"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Create Histogram",
+            "number": 1,
+            "url": "https://github.com/Arpan011/Hacktoberfest202/pull/1",
+            "author": {
+              "login": "Arpan011",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/101383912?u=819d23089fa26466b816452882b26f27555ca4fe&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "Hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "Arpan011"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "test: add test for Toaster component",
+            "number": 132,
+            "url": "https://github.com/vczb/sagu-ui/pull/132",
+            "author": {
+              "login": "sweetyTW",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/126869417?u=2a30d1ab07707c17c8c03b9e45fd64b6ba377697&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "vczb"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "vczb"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "changed title bar icon to clock",
+            "number": 20,
+            "url": "https://github.com/rizkytegar/indonesian-digital-clock/pull/20",
+            "author": {
+              "login": "sanskarmalkhede",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/85408959?u=9a479dda6d7c14a16436a5c2929301aad7ef723a&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "enhancement"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                }
+              ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "rizkytegar"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "rizkytegar"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Create shop.html",
+            "number": 1,
+            "url": "https://github.com/Salute4ayush/Hacktoberfest2023./pull/1",
+            "author": {
+              "login": "Salute4ayush",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/102402263?u=78ca061f2520f9764916a3d507670d0e1d25e90c&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "Salute4ayush"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Fix rating component: Star width set to medium",
+            "number": 131,
+            "url": "https://github.com/vczb/sagu-ui/pull/131",
+            "author": {
+              "login": "ManiTWIndia",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/104359410?v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "reviews": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "vczb"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "vczb"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "added bucket sort algo",
+            "number": 82,
+            "url": "https://github.com/riz4d/Hacktoberfest23/pull/82",
+            "author": {
+              "login": "Parvezkhan0",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/137421089?v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "riz4d"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Create Bubble Sort.cpp",
+            "number": 1,
+            "url": "https://github.com/Teja205001/terminal/pull/1",
+            "author": {
+              "login": "Teja205001",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/148524303?u=2bf2c6c1231bc7566f35306a19c2dcfbe9c48f1a&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "Hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "Teja205001"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "added counting sort algo",
+            "number": 81,
+            "url": "https://github.com/riz4d/Hacktoberfest23/pull/81",
+            "author": {
+              "login": "Parvezkhan0",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/137421089?v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "riz4d"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Create Selection Sort.C",
+            "number": 1,
+            "url": "https://github.com/Teja205001/git/pull/1",
+            "author": {
+              "login": "Teja205001",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/148524303?u=2bf2c6c1231bc7566f35306a19c2dcfbe9c48f1a&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "Hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "Teja205001"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "added reddix sort algo",
+            "number": 80,
+            "url": "https://github.com/riz4d/Hacktoberfest23/pull/80",
+            "author": {
+              "login": "Parvezkhan0",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/137421089?v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "riz4d"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "added heap sort algo",
+            "number": 79,
+            "url": "https://github.com/riz4d/Hacktoberfest23/pull/79",
+            "author": {
+              "login": "Parvezkhan0",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/137421089?v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "reviews": {
+              "edges": []
+            },
+            "mergedBy": {
+              "login": "riz4d"
             }
           }
         }

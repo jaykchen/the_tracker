@@ -1,0 +1,69 @@
+{
+  ... on ReferencedEvent {
+    actor {
+      login
+    }
+    subject {
+      __typename
+      ... on PullRequest {
+        number
+        title
+        url
+        state
+        author {
+          login
+        }
+        createdAt
+        mergedAt
+      }
+      ... on Issue {
+        number
+        title
+        url
+        author {
+          login
+        }
+        createdAt
+      }
+    }
+    createdAt
+    commit {
+      oid
+      message
+      committedDate
+    }
+  }
+  ... on CrossReferencedEvent {
+    actor {
+      login
+    }
+    source {
+      __typename
+      ... on PullRequest {
+        number
+        title
+        url
+        state
+        author {
+          login
+        }
+        createdAt
+        mergedAt
+      }
+      ... on Issue {
+        number
+        title
+        url
+        state
+        author {
+          login
+        }
+        createdAt
+      }
+    }
+    createdAt
+    referencedAt
+    isCrossRepository
+    willCloseTarget
+  }
+}

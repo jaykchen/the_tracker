@@ -33,7 +33,7 @@ query($query: String!, $firstIssues: Int!) {
 }
 
 
-{
-    "query": "label:hacktoberfest-accepted is:pr is:merged",
+  {
+    "query": "label:hacktoberfest-accepted is:pr is:merged created:>2023-10-01",
     "firstIssues": 100
   }

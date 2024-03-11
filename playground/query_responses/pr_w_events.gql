@@ -1,15 +1,25 @@
 query ($owner: String!, $repo: String!, $issueNumber: Int!) {
   repository(owner: $owner, name: $repo) {
-    issue(number: $issueNumber) {
+    pullRequest(number: $issueNumber) {
       title
       number
-      url
-      createdAt
-      updatedAt
+      author {
+        login
+      }
       labels(first: 10) {
         edges {
           node {
             name
+          }
+        }
+      }
+      reviews(first: 10) {
+        edges {
+          node {
+            author {
+              login
+            }
+            state
           }
         }
       }
@@ -22,12 +32,18 @@ query ($owner: String!, $repo: String!, $issueNumber: Int!) {
       }
       timelineItems(
         first: 200
-        itemTypes: [CLOSED_EVENT, ISSUE_COMMENT, CROSS_REFERENCED_EVENT]
+        itemTypes: [CLOSED_EVENT, MERGED_EVENT, CROSS_REFERENCED_EVENT]
       ) {
         edges {
           node {
             __typename
             ... on ClosedEvent {
+              actor {
+                login
+              }
+              createdAt
+            }
+            ... on MergedEvent {
               actor {
                 login
               }
@@ -46,10 +62,13 @@ query ($owner: String!, $repo: String!, $issueNumber: Int!) {
               }
               source {
                 __typename
-                ... on PullRequest {
+                ... on Issue {
                   number
+                  title
+                  url
                 }
               }
+              createdAt
             }
           }
         }
@@ -61,5 +80,5 @@ query ($owner: String!, $repo: String!, $issueNumber: Int!) {
 {
   "owner": "ohmyzsh",
   "repo": "ohmyzsh",
-  "issueNumber": 7175
+  "issueNumber": 8277
 }

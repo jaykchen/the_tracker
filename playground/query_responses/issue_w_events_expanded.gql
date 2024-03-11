@@ -3,10 +3,7 @@ query ($owner: String!, $repo: String!, $issueNumber: Int!) {
     issue(number: $issueNumber) {
       title
       number
-      url
-      createdAt
-      updatedAt
-      labels(first: 10) {
+      labels(first: 5) {
         edges {
           node {
             name
@@ -22,7 +19,12 @@ query ($owner: String!, $repo: String!, $issueNumber: Int!) {
       }
       timelineItems(
         first: 200
-        itemTypes: [CLOSED_EVENT, ISSUE_COMMENT, CROSS_REFERENCED_EVENT]
+        itemTypes: [
+          CLOSED_EVENT
+          ISSUE_COMMENT
+          REFERENCED_EVENT
+          CROSS_REFERENCED_EVENT
+        ]
       ) {
         edges {
           node {
@@ -40,16 +42,35 @@ query ($owner: String!, $repo: String!, $issueNumber: Int!) {
               body
               createdAt
             }
+            ... on ReferencedEvent {
+              actor {
+                login
+              }
+              commit {
+                oid
+                message
+                url
+              }
+              createdAt
+            }
             ... on CrossReferencedEvent {
               actor {
                 login
               }
               source {
                 __typename
+                ... on Issue {
+                  number
+                  title
+                  url
+                }
                 ... on PullRequest {
                   number
+                  title
+                  url
                 }
               }
+              createdAt
             }
           }
         }

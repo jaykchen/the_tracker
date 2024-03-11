@@ -1,0 +1,4149 @@
+{
+  "data": {
+    "search": {
+      "issueCount": 10522,
+      "edges": [
+        {
+          "node": {
+            "title": "[FIX 🛠️] About us link not found in footer",
+            "number": 241,
+            "url": "https://github.com/warmachine028/nike/pull/241",
+            "author": {
+              "login": "Nikhilh26",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/121549009?v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "🛠 goal: fix"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "🐞 bug"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "warmachine028"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "warmachine028"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Logout all route tasks",
+            "number": 246,
+            "url": "https://github.com/prasenjeet-symon/intellectia/pull/246",
+            "author": {
+              "login": "Syphonphilter",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/24352275?u=82a809cf4dc687b732c35052a1b007f1ca8f9262&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "enhancement"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "help wanted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "server"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "high-priority"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "prasenjeet-symon"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "prasenjeet-symon"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "test: Add tests in Incoming Payment Controller ",
+            "number": 1019,
+            "url": "https://github.com/interledger/testnet/pull/1019",
+            "author": {
+              "login": "rico191013",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/101926344?u=f7d72299191def70a5910a878108b1c09a4a95f2&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "package: wallet/backend"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "type: test"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "do not merge"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "Tymmmy"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "Tymmmy"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "test: Add Rafiki Controller Tests",
+            "number": 1018,
+            "url": "https://github.com/interledger/testnet/pull/1018",
+            "author": {
+              "login": "rico191013",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/101926344?u=f7d72299191def70a5910a878108b1c09a4a95f2&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "package: wallet/backend"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "type: test"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "Tymmmy"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "Tymmmy"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "test: added tests for outgoingPayment controller",
+            "number": 1017,
+            "url": "https://github.com/interledger/testnet/pull/1017",
+            "author": {
+              "login": "rico191013",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/101926344?u=f7d72299191def70a5910a878108b1c09a4a95f2&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "package: wallet/backend"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "type: test"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "Tymmmy"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "Tymmmy"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": " Refactoring google route 233",
+            "number": 243,
+            "url": "https://github.com/prasenjeet-symon/intellectia/pull/243",
+            "author": {
+              "login": "sabbellasri",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/34259114?v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "enhancement"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "server"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "high-priority"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "prasenjeet-symon"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "prasenjeet-symon"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "added favorites page",
+            "number": 47,
+            "url": "https://github.com/lcrojano/Giphy_Explorer/pull/47",
+            "author": {
+              "login": "CrisitoJ",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/115337506?u=7fee618be112958dd2c1da80c387d78c0d206841&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "good first issue"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "lcrojano"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "lcrojano"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Fix default values cropper component, update dependencies",
+            "number": 256,
+            "url": "https://github.com/CropperBlazor/Cropper.Blazor/pull/256",
+            "author": {
+              "login": "MaxymGorn",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/50423072?u=0d812105cb7aa1d89531dfa00bffd2a46174965f&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "documentation"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "enhancement"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "dependencies"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "Hacktoberfest"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "ColdForeign"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "MaxymGorn"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "#25169 Apps Framework README > Split out admin content to child pages",
+            "number": 481,
+            "url": "https://github.com/mattermost/mattermost-plugin-apps/pull/481",
+            "author": {
+              "login": "Reene-Simon",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/112744886?u=a7d8e595cf16b32172cb81bef813a133b4146462&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "4: Reviews Complete"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "Hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "cwarnermm"
+                    },
+                    "state": "APPROVED"
+                  }
+                },
+                {
+                  "node": {
+                    "author": {
+                      "login": "mickmister"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "cwarnermm"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Add documentation to create a new component",
+            "number": 26,
+            "url": "https://github.com/casavo/habitat/pull/26",
+            "author": {
+              "login": "Serse2",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/45994216?u=2dbf2efe6295d5f518bd9f5b2316da11ecd3c3db&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "documentation"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "moebiusmania"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "moebiusmania"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Standardize export Badge component",
+            "number": 25,
+            "url": "https://github.com/casavo/habitat/pull/25",
+            "author": {
+              "login": "Serse2",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/45994216?u=2dbf2efe6295d5f518bd9f5b2316da11ecd3c3db&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "enhancement"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "moebiusmania"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "moebiusmania"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "#25168 Microsoft Calendar O365 README > Split out admin content to child pages",
+            "number": 344,
+            "url": "https://github.com/mattermost/mattermost-plugin-mscalendar/pull/344",
+            "author": {
+              "login": "Reene-Simon",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/112744886?u=a7d8e595cf16b32172cb81bef813a133b4146462&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "4: Reviews Complete"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "Hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "cwarnermm"
+                    },
+                    "state": "APPROVED"
+                  }
+                },
+                {
+                  "node": {
+                    "author": {
+                      "login": "mickmister"
+                    },
+                    "state": "APPROVED"
+                  }
+                },
+                {
+                  "node": {
+                    "author": {
+                      "login": "mickmister"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "cwarnermm"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "update: stand-alone local proxy packaging",
+            "number": 2013,
+            "url": "https://github.com/lablup/backend.ai-webui/pull/2013",
+            "author": {
+              "login": "inureyes",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/949915?v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "effort:hard"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "platform:app"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "urgency:4"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "type:refactor"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "platform:general"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "area:upstream"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "area:infra"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "impact:invisible"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "comp:JS SDK"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "achimnol"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "achimnol"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Add additional tests",
+            "number": 134,
+            "url": "https://github.com/vczb/sagu-ui/pull/134",
+            "author": {
+              "login": "vivek-p-a",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/43650207?v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "vczb"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "vczb"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "docs: Fix loader styles. Fix title size",
+            "number": 253,
+            "url": "https://github.com/CropperBlazor/Cropper.Blazor/pull/253",
+            "author": {
+              "login": "ColdForeign",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/38187349?u=cdd5393292eada8a4237f5109c70e023e9509269&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "bug"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "documentation"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "Hacktoberfest"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "MaxymGorn"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "ColdForeign"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "2048 python gui clone",
+            "number": 272,
+            "url": "https://github.com/Punit-Choudhary/Python-beginner-scripts/pull/272",
+            "author": {
+              "login": "choidf",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/39011839?v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "Project"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "Punit-Choudhary"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "Punit-Choudhary"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "fix: added footer to UserProfile.jsx and removed footer from Events.jsx",
+            "number": 1169,
+            "url": "https://github.com/milancommunity/Milan/pull/1169",
+            "author": {
+              "login": "Yash-Sajwan24",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/52412969?u=d756fea947b0b977c30426b5aef0e94706b70f33&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "status: ready ✅"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "🐞 bug"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "tamalCodes"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "tamalCodes"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "docs: typo in docs/CloneSetup.md from repo to repository",
+            "number": 1168,
+            "url": "https://github.com/milancommunity/Milan/pull/1168",
+            "author": {
+              "login": "Yash-Sajwan24",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/52412969?u=d756fea947b0b977c30426b5aef0e94706b70f33&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "📚 docs"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "status: todo ⏳"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "tamalCodes"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "tamalCodes"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Feature/add basic and advanced usage cropping",
+            "number": 252,
+            "url": "https://github.com/CropperBlazor/Cropper.Blazor/pull/252",
+            "author": {
+              "login": "MaxymGorn",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/50423072?u=0d812105cb7aa1d89531dfa00bffd2a46174965f&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "documentation"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "enhancement"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "Hacktoberfest"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "ColdForeign"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "MaxymGorn"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Update validator routes",
+            "number": 220,
+            "url": "https://github.com/prasenjeet-symon/intellectia/pull/220",
+            "author": {
+              "login": "Milcke",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/104478135?v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "bug"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "help wanted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "server"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "high-priority"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "prasenjeet-symon"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "prasenjeet-symon"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Added Docs layout for API and contract",
+            "number": 251,
+            "url": "https://github.com/CropperBlazor/Cropper.Blazor/pull/251",
+            "author": {
+              "login": "MaxymGorn",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/50423072?u=0d812105cb7aa1d89531dfa00bffd2a46174965f&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "documentation"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "Hacktoberfest"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "ColdForeign"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "MaxymGorn"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Added Shopping Cart Analytics Stack",
+            "number": 82,
+            "url": "https://github.com/airbytehq/quickstarts/pull/82",
+            "author": {
+              "login": "bishalbera",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/123734227?u=6c3d7dc68a6111faf27ab16cc2dc2f9b261c7d05&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "ThaliaBarrera"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "ThaliaBarrera"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Yoloooo",
+            "number": 22,
+            "url": "https://github.com/rizkytegar/indonesian-digital-clock/pull/22",
+            "author": {
+              "login": "ilsyaa",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/76580335?u=6002be551741cf61d7b1ab94418d46ac443ba9eb&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "good first issue"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "rizkytegar"
+                    },
+                    "state": "APPROVED"
+                  }
+                },
+                {
+                  "node": {
+                    "author": {
+                      "login": "rizkytegar"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "rizkytegar"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Add Low-Latency Data Availability Stack",
+            "number": 81,
+            "url": "https://github.com/airbytehq/quickstarts/pull/81",
+            "author": {
+              "login": "topefolorunso",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/66448986?u=080d87542f0b194e70806c8be12b322c7f1d1389&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "ThaliaBarrera"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "ThaliaBarrera"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Added Include plugin to readme",
+            "number": 54,
+            "url": "https://github.com/figma/plugin-resources/pull/54",
+            "author": {
+              "login": "mkbhuiyan96",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/107896019?u=8117aecc52549780e4bcb34c3c0dc042cdd05762&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "akbarbmirza"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "akbarbmirza"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "test: add test for TextContent component",
+            "number": 133,
+            "url": "https://github.com/vczb/sagu-ui/pull/133",
+            "author": {
+              "login": "sweetyTW",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/126869417?u=2a30d1ab07707c17c8c03b9e45fd64b6ba377697&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "vczb"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "vczb"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "test: add test for Toaster component",
+            "number": 132,
+            "url": "https://github.com/vczb/sagu-ui/pull/132",
+            "author": {
+              "login": "sweetyTW",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/126869417?u=2a30d1ab07707c17c8c03b9e45fd64b6ba377697&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "vczb"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "vczb"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "changed title bar icon to clock",
+            "number": 20,
+            "url": "https://github.com/rizkytegar/indonesian-digital-clock/pull/20",
+            "author": {
+              "login": "sanskarmalkhede",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/85408959?u=9a479dda6d7c14a16436a5c2929301aad7ef723a&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "enhancement"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "rizkytegar"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "rizkytegar"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Fix rating component: Star width set to medium",
+            "number": 131,
+            "url": "https://github.com/vczb/sagu-ui/pull/131",
+            "author": {
+              "login": "ManiTWIndia",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/104359410?v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "vczb"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "vczb"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Related to #6- Created simplestack.java",
+            "number": 134,
+            "url": "https://github.com/d-coder111/DSAmplify/pull/134",
+            "author": {
+              "login": "shubhalgupta",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/107386458?u=f15911fe08f15dc714d296ded7460311606ac91e&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "d-coder111"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "d-coder111"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Added delete functionality and refactored preview note method",
+            "number": 146,
+            "url": "https://github.com/harshal255/Unique-Javascript/pull/146",
+            "author": {
+              "login": "Luwa-Tech",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/111466842?u=ab840fd988602919f99c49d7c3521164e9316cab&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "harshal255"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "harshal255"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Calculates Foreign Exchange Rates to USD for Invoices and Invoice Lines",
+            "number": 797,
+            "url": "https://github.com/sul-dlss/libsys-airflow/pull/797",
+            "author": {
+              "login": "jermnelson",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/71847?v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "payments"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "shelleydoljack"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "jermnelson"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Fixed SA_DISPEL not working in duels",
+            "number": 3246,
+            "url": "https://github.com/HerculesWS/Hercules/pull/3246",
+            "author": {
+              "login": "csnv",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/890582?u=991fb1307634191079e52244b0dfd045d669b032&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "skyleo"
+                    },
+                    "state": "APPROVED"
+                  }
+                },
+                {
+                  "node": {
+                    "author": {
+                      "login": "MishimaHaruna"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "MishimaHaruna"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Added About Us Page.",
+            "number": 38,
+            "url": "https://github.com/KriteshTimsina/sastobazaar-ecommerce/pull/38",
+            "author": {
+              "login": "R4Rohit23",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/80148306?u=831ff355bc4d917b4c0e49388c87300a0a64a0c7&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "KriteshTimsina"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "KriteshTimsina"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Create Improved Layout Design for Book Lists",
+            "number": 47,
+            "url": "https://github.com/suryanshsingh2001/MyLibrary/pull/47",
+            "author": {
+              "login": "A1ya1",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/146150772?u=d22a333d17c0f3d4d126c1b4768105c85b565ccc&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "suryanshsingh2001"
+                    },
+                    "state": "APPROVED"
+                  }
+                },
+                {
+                  "node": {
+                    "author": {
+                      "login": "suryanshsingh2001"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "suryanshsingh2001"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Update Array Chapters",
+            "number": 199,
+            "url": "https://github.com/sumn2u/learn-javascript/pull/199",
+            "author": {
+              "login": "Anuj-Khadka",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/68344176?u=13aea4bb73066b2b15109abc385b88c1dc0c555a&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "sumn2u"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "sumn2u"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Add files via upload",
+            "number": 684,
+            "url": "https://github.com/KwickerHub/WebCraftifyAI/pull/684",
+            "author": {
+              "login": "A1ya1",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/146150772?u=d22a333d17c0f3d4d126c1b4768105c85b565ccc&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest2023"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "NtemKenyor"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "NtemKenyor"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "add merge sort in javascript",
+            "number": 22,
+            "url": "https://github.com/matheusvtna/Hacktoberfest/pull/22",
+            "author": {
+              "login": "aqb",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/39406612?v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "matheusvtna"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "matheusvtna"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "docs: fix an undefined reference in generating-a-new-ssh-key-and-addi…",
+            "number": 29633,
+            "url": "https://github.com/github/docs/pull/29633",
+            "author": {
+              "login": "luketzh",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/33000171?u=ce3551c903ffb7cfece6ba2e45182ac93d7de87b&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "content"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "waiting for review"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "authentication"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "lecoursen"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "lecoursen"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Merge sort js",
+            "number": 19,
+            "url": "https://github.com/matheusvtna/Hacktoberfest/pull/19",
+            "author": {
+              "login": "aqb",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/39406612?v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "matheusvtna"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "matheusvtna"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Begin Adding Translations",
+            "number": 2,
+            "url": "https://github.com/community-garden-kitchen/feed-mckinney/pull/2",
+            "author": {
+              "login": "meg-gutshall",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/37842352?u=a6e0dcd998c710141c2b53d5d86a282150381e8d&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "community-garden-kitchen"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "community-garden-kitchen"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "1. Added GenerateCombinations.py which generate all possible combinat…",
+            "number": 4,
+            "url": "https://github.com/mehtakaran9/hacktoberfest-2023/pull/4",
+            "author": {
+              "login": "tanegupta1997",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/22172209?u=87d0e734b1a6ad7f0e5c25ab8090fad8768f73e1&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "mehtakaran9"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "mehtakaran9"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Functions to comput nCr",
+            "number": 3,
+            "url": "https://github.com/mehtakaran9/hacktoberfest-2023/pull/3",
+            "author": {
+              "login": "tanegupta1997",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/22172209?u=87d0e734b1a6ad7f0e5c25ab8090fad8768f73e1&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "mehtakaran9"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "mehtakaran9"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Generate all permutations of Die Roll given number of rolls",
+            "number": 2,
+            "url": "https://github.com/mehtakaran9/hacktoberfest-2023/pull/2",
+            "author": {
+              "login": "tanegupta1997",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/22172209?u=87d0e734b1a6ad7f0e5c25ab8090fad8768f73e1&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "mehtakaran9"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "mehtakaran9"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Increased ASC_BREAKER range from 7 to 9 cells",
+            "number": 3245,
+            "url": "https://github.com/HerculesWS/Hercules/pull/3245",
+            "author": {
+              "login": "csnv",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/890582?u=991fb1307634191079e52244b0dfd045d669b032&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "skyleo"
+                    },
+                    "state": "APPROVED"
+                  }
+                },
+                {
+                  "node": {
+                    "author": {
+                      "login": "MishimaHaruna"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "MishimaHaruna"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Generate all permutations of Coin Toss given number of tosses",
+            "number": 1,
+            "url": "https://github.com/mehtakaran9/hacktoberfest-2023/pull/1",
+            "author": {
+              "login": "tanegupta1997",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/22172209?u=87d0e734b1a6ad7f0e5c25ab8090fad8768f73e1&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "mehtakaran9"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "mehtakaran9"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "refac: Remove unnecessary triggers and steps in GitHub Actions",
+            "number": 520,
+            "url": "https://github.com/activist-org/activist/pull/520",
+            "author": {
+              "login": "wkyoshida",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/15043193?u=eb7e706078c2fcc295d0874f75586e06203d074d&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "andrewtavis"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "andrewtavis"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Removes the vistigial comment agent config",
+            "number": 10118,
+            "url": "https://github.com/BeeStation/BeeStation-Hornet/pull/10118",
+            "author": {
+              "login": "Crossedfall",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/26130695?u=2ba7f83817aaa0e0c21fbc1a47b9f87d4605749c&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "GitHub"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "EvilDragonfiend"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "EvilDragonfiend"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Solution Weekly Contest 369 - Problem 1",
+            "number": 4,
+            "url": "https://github.com/tanegupta1997/tane_prac/pull/4",
+            "author": {
+              "login": "mehtakaran9",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/22137222?u=4a23073a82f895db77c11cad3d6ce009717490d2&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "tanegupta1997"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "tanegupta1997"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Solution Weekly Contest 368 - Problem 3",
+            "number": 3,
+            "url": "https://github.com/tanegupta1997/tane_prac/pull/3",
+            "author": {
+              "login": "mehtakaran9",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/22137222?u=4a23073a82f895db77c11cad3d6ce009717490d2&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "tanegupta1997"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "tanegupta1997"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "feat: Add code sample to delete webhook",
+            "number": 109,
+            "url": "https://github.com/nylas-samples/nylas-hacktoberfest-2023/pull/109",
+            "author": {
+              "login": "navascogt",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/53056349?u=1db932b4bb3cc495d27a87f2c60f32e3d305784c&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "relaxedtomato"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "relaxedtomato"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Solution Weekly Contest 368 - Problem 2",
+            "number": 2,
+            "url": "https://github.com/tanegupta1997/tane_prac/pull/2",
+            "author": {
+              "login": "mehtakaran9",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/22137222?u=4a23073a82f895db77c11cad3d6ce009717490d2&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "tanegupta1997"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "tanegupta1997"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Update Array Chapter",
+            "number": 198,
+            "url": "https://github.com/sumn2u/learn-javascript/pull/198",
+            "author": {
+              "login": "Anuj-Khadka",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/68344176?u=13aea4bb73066b2b15109abc385b88c1dc0c555a&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "sumn2u"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "sumn2u"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "NEW Project: Number guessing game",
+            "number": 7,
+            "url": "https://github.com/mohitkadwe19/hacktoberfest2023/pull/7",
+            "author": {
+              "login": "mandeep-s1ngh",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/92678152?u=58e52155cd5b4521395ea71a8d5336836e64a32b&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "mohitkadwe19"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "mohitkadwe19"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "73 fix failing tests and format files",
+            "number": 82,
+            "url": "https://github.com/extinctsion/easyPythonpi/pull/82",
+            "author": {
+              "login": "AndrewHUNGNguyen",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/42189273?v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest2023"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "extinctsion"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "extinctsion"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Color",
+            "number": 41,
+            "url": "https://github.com/banderablanca/banderablanca/pull/41",
+            "author": {
+              "login": "KattAzabache",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/11574047?u=b17e9452dc82863d0cbdec597e1bb5fc0081e8ee&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "Hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "EdHuamani"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "EdHuamani"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "deprecated text",
+            "number": 40,
+            "url": "https://github.com/banderablanca/banderablanca/pull/40",
+            "author": {
+              "login": "KattAzabache",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/11574047?u=b17e9452dc82863d0cbdec597e1bb5fc0081e8ee&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "Hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "EdHuamani"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "EdHuamani"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Add ADSL Quickstart",
+            "number": 78,
+            "url": "https://github.com/airbytehq/quickstarts/pull/78",
+            "author": {
+              "login": "topefolorunso",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/66448986?u=080d87542f0b194e70806c8be12b322c7f1d1389&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "ThaliaBarrera"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "ThaliaBarrera"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "change text",
+            "number": 39,
+            "url": "https://github.com/banderablanca/banderablanca/pull/39",
+            "author": {
+              "login": "KattAzabache",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/11574047?u=b17e9452dc82863d0cbdec597e1bb5fc0081e8ee&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "Hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "EdHuamani"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "EdHuamani"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "[Added]validation for group",
+            "number": 441,
+            "url": "https://github.com/tcet-opensource/erp-backend/pull/441",
+            "author": {
+              "login": "shreyam462",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/136878624?u=cd7a5f8408085128335388b5b3d1a79915944e5a&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "TejasNair9977"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "TejasNair9977"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "change theme",
+            "number": 38,
+            "url": "https://github.com/banderablanca/banderablanca/pull/38",
+            "author": {
+              "login": "KattAzabache",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/11574047?u=b17e9452dc82863d0cbdec597e1bb5fc0081e8ee&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "Hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "EdHuamani"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "EdHuamani"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Make tests pass on macOS M2",
+            "number": 3256,
+            "url": "https://github.com/Unidata/MetPy/pull/3256",
+            "author": {
+              "login": "dopplershift",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/221526?u=e3250fe391427dadd035e39f51b3763b83df50d8&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "Type: Maintenance"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "Area: Tests"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "dcamron"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "dcamron"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Reset score feature",
+            "number": 26,
+            "url": "https://github.com/Grow-with-Open-Source/Javascript-Projects/pull/26",
+            "author": {
+              "login": "HeemahMuslad",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/105224304?u=df96ad9903d0a8d924309ad17102cf45fadc33b9&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "iamwatchdogs"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "iamwatchdogs"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Cleanup warnings from tests",
+            "number": 3255,
+            "url": "https://github.com/Unidata/MetPy/pull/3255",
+            "author": {
+              "login": "dopplershift",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/221526?u=e3250fe391427dadd035e39f51b3763b83df50d8&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "Type: Maintenance"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "Area: Tests"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "dcamron"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "dcamron"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Display score feature",
+            "number": 25,
+            "url": "https://github.com/Grow-with-Open-Source/Javascript-Projects/pull/25",
+            "author": {
+              "login": "HeemahMuslad",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/105224304?u=df96ad9903d0a8d924309ad17102cf45fadc33b9&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "iamwatchdogs"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "iamwatchdogs"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Update README.md",
+            "number": 245,
+            "url": "https://github.com/CropperBlazor/Cropper.Blazor/pull/245",
+            "author": {
+              "login": "ColdForeign",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/38187349?u=cdd5393292eada8a4237f5109c70e023e9509269&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "Hacktoberfest"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "MaxymGorn"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "ColdForeign"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Ajout d'un nouveau profil",
+            "number": 45,
+            "url": "https://github.com/GalsenDev221/galsendev.first.contributions/pull/45",
+            "author": {
+              "login": "kumbissk",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/92331192?u=37e6bbc3cae5dabf8c7b124a85cf7a770e9d223f&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "MedouneSGB"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "MedouneSGB"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "docs: navmenu fix",
+            "number": 244,
+            "url": "https://github.com/CropperBlazor/Cropper.Blazor/pull/244",
+            "author": {
+              "login": "ColdForeign",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/38187349?u=cdd5393292eada8a4237f5109c70e023e9509269&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "Hacktoberfest"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "MaxymGorn"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "ColdForeign"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Ajout d'un nouveau projet",
+            "number": 20,
+            "url": "https://github.com/daoodaba975/add.me.in/pull/20",
+            "author": {
+              "login": "kumbissk",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/92331192?u=37e6bbc3cae5dabf8c7b124a85cf7a770e9d223f&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "daoodaba975"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "daoodaba975"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "docs: Fix loader scss styles",
+            "number": 243,
+            "url": "https://github.com/CropperBlazor/Cropper.Blazor/pull/243",
+            "author": {
+              "login": "ColdForeign",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/38187349?u=cdd5393292eada8a4237f5109c70e023e9509269&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "Hacktoberfest"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "MaxymGorn"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "MaxymGorn"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Update linter files location",
+            "number": 22,
+            "url": "https://github.com/nanlabs/aws-glue-etl-boilerplate/pull/22",
+            "author": {
+              "login": "AgusCastro",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/26949757?u=86a3c21e417cf92c822ea0aa5b56a5e854cd975d&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "Hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "AgusPk"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "AgusPk"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "docs: Create footer, routing to examples page fix",
+            "number": 242,
+            "url": "https://github.com/CropperBlazor/Cropper.Blazor/pull/242",
+            "author": {
+              "login": "ColdForeign",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/38187349?u=cdd5393292eada8a4237f5109c70e023e9509269&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "Hacktoberfest"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "MaxymGorn"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "ColdForeign"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "#68 - super-linter implementation",
+            "number": 79,
+            "url": "https://github.com/nanlabs/frontend-reference/pull/79",
+            "author": {
+              "login": "AgusCastro",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/26949757?u=86a3c21e417cf92c822ea0aa5b56a5e854cd975d&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "Hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "AgusPk"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "AgusPk"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "feat: add unit tests for translations package",
+            "number": 211,
+            "url": "https://github.com/crowdin/crowdin-api-client-java/pull/211",
+            "author": {
+              "login": "Sebaszjuh",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/49611750?u=ed39b53e91149a6cddc5f456eb3bfa497b239762&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "andrii-bodnar"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "andrii-bodnar"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Read calendar code sample",
+            "number": 108,
+            "url": "https://github.com/nylas-samples/nylas-hacktoberfest-2023/pull/108",
+            "author": {
+              "login": "kelbri10",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/61571417?u=464dd008672da3a179fb075df525cb2ac3a528e8&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "relaxedtomato"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "relaxedtomato"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Added footer to the project.html",
+            "number": 96,
+            "url": "https://github.com/Gyanthakur/Dev_Profiles/pull/96",
+            "author": {
+              "login": "SeaBebop",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/54507045?v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-2023"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "Gyanthakur"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "Gyanthakur"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "#54 - Super-linter implementation",
+            "number": 68,
+            "url": "https://github.com/nanlabs/backend-reference/pull/68",
+            "author": {
+              "login": "AgusCastro",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/26949757?u=86a3c21e417cf92c822ea0aa5b56a5e854cd975d&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "Hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "AgusPk"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "AgusPk"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "setup and include example in package.json",
+            "number": 10,
+            "url": "https://github.com/Raqueldutra/e2e-cypress-best-practices/pull/10",
+            "author": {
+              "login": "andreyAut",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/48703992?v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "Raqueldutra"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "Raqueldutra"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Implement Responsive Toaster Notification Feature",
+            "number": 130,
+            "url": "https://github.com/vczb/sagu-ui/pull/130",
+            "author": {
+              "login": "KushalNerella07",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/106776313?u=c779953e1e31ba7e4941e2bd5d71c973768efb50&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "vczb"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "vczb"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Support -n (select only) in //place",
+            "number": 2475,
+            "url": "https://github.com/IntellectualSites/FastAsyncWorldEdit/pull/2475",
+            "author": {
+              "login": "SirYwell",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/11150076?u=3b7a3666445cfa6596dcc326a405c457f7f2fea2&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "Bugfix"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "NotMyFault"
+                    },
+                    "state": "APPROVED"
+                  }
+                },
+                {
+                  "node": {
+                    "author": {
+                      "login": "dordsor21"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "NotMyFault"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Added lazy-loading for pages and images",
+            "number": 49,
+            "url": "https://github.com/Genesis-ISE-DSCE/Catalysis2.0/pull/49",
+            "author": {
+              "login": "eternalconflict",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/66135369?u=8e97cc106004f2e41aa238a71db8dd732a9c124d&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "HACKTOBERFEST"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "HACKTOBERFEST-ACCEPTED"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "Astraxx04"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "Astraxx04"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "build: release v16.5.0",
+            "number": 466,
+            "url": "https://github.com/po-ui/po-style/pull/466",
+            "author": {
+              "login": "jnrpalma",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/50326350?u=2cf4eafd9e1bff0e9b707203cefa0b16194b84d1&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "anliben"
+                    },
+                    "state": "APPROVED"
+                  }
+                },
+                {
+                  "node": {
+                    "author": {
+                      "login": "CSimoesJr"
+                    },
+                    "state": "APPROVED"
+                  }
+                },
+                {
+                  "node": {
+                    "author": {
+                      "login": "alinelariguet"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "jnrpalma"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Added \"Hadrian's Wall\" game",
+            "number": 464,
+            "url": "https://github.com/edm00se/awesome-board-games/pull/464",
+            "author": {
+              "login": "ShilpiBG12",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/149189983?v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "edm00se"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "edm00se"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Updated the readMe with additonal information.",
+            "number": 41,
+            "url": "https://github.com/graph-quilt/graphql-authorization-java/pull/41",
+            "author": {
+              "login": "GayathriMuthukrishnan",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/23521431?v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "ashpak-shaikh"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "ashpak-shaikh"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "text_on_image Creator - Web design #125 #625",
+            "number": 683,
+            "url": "https://github.com/KwickerHub/WebCraftifyAI/pull/683",
+            "author": {
+              "login": "GauravGupta993",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/123398315?v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest2023"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "NtemKenyor"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "NtemKenyor"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "#343 added Grid by devesh711",
+            "number": 682,
+            "url": "https://github.com/KwickerHub/WebCraftifyAI/pull/682",
+            "author": {
+              "login": "devesh711",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/113835041?u=4d9dd779cd90576a5788ae64c092b5078a0139f2&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest2023"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "NtemKenyor"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "NtemKenyor"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "doc: Update Files section of READMEs from t to z (#660)",
+            "number": 722,
+            "url": "https://github.com/webinstall/webi-installers/pull/722",
+            "author": {
+              "login": "RubenRam",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/7392880?u=eae8923026ce466dfc59933212a85255b5f8fcb6&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "coolaj86"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "coolaj86"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Update README.md",
+            "number": 51,
+            "url": "https://github.com/rakesht2499/Blacklisting/pull/51",
+            "author": {
+              "login": "anantnema",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/13468370?u=3ebea763f6ea7d38ea7a9f73db7ac904507a0ac8&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "rakesht2499"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "rakesht2499"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "feat(#226) : Implement the possibility to `reset password` in `forgot password` section",
+            "number": 228,
+            "url": "https://github.com/JordyHers-org/Times-up-flutter/pull/228",
+            "author": {
+              "login": "bhoomikshetty",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/76581406?u=8f4717e9f3713da5655190d5aa9b8388211c9bb5&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "JordyHers"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "JordyHers"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Update requirements.txt",
+            "number": 47,
+            "url": "https://github.com/rakesht2499/Blacklisting/pull/47",
+            "author": {
+              "login": "anantnema",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/13468370?u=3ebea763f6ea7d38ea7a9f73db7ac904507a0ac8&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "rakesht2499"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "rakesht2499"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Update requirements.txt",
+            "number": 46,
+            "url": "https://github.com/rakesht2499/Blacklisting/pull/46",
+            "author": {
+              "login": "anantnema",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/13468370?u=3ebea763f6ea7d38ea7a9f73db7ac904507a0ac8&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "rakesht2499"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "rakesht2499"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Update requirements.txt",
+            "number": 45,
+            "url": "https://github.com/rakesht2499/Blacklisting/pull/45",
+            "author": {
+              "login": "anantnema",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/13468370?u=3ebea763f6ea7d38ea7a9f73db7ac904507a0ac8&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "rakesht2499"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "rakesht2499"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Update starting.sh",
+            "number": 44,
+            "url": "https://github.com/rakesht2499/Blacklisting/pull/44",
+            "author": {
+              "login": "anantnema",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/13468370?u=3ebea763f6ea7d38ea7a9f73db7ac904507a0ac8&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "rakesht2499"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "rakesht2499"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Update requirements.txt",
+            "number": 43,
+            "url": "https://github.com/rakesht2499/Blacklisting/pull/43",
+            "author": {
+              "login": "anantnema",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/13468370?u=3ebea763f6ea7d38ea7a9f73db7ac904507a0ac8&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "rakesht2499"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "rakesht2499"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Update requirements.txt",
+            "number": 42,
+            "url": "https://github.com/rakesht2499/Blacklisting/pull/42",
+            "author": {
+              "login": "anantnema",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/13468370?u=3ebea763f6ea7d38ea7a9f73db7ac904507a0ac8&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "rakesht2499"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "rakesht2499"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Enhancement: Github Bot enhancements",
+            "number": 336,
+            "url": "https://github.com/Chimoney/chimoney-community-projects/pull/336",
+            "author": {
+              "login": "Ayo-Awe",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/82258944?u=4b508d5a8a676c11263c16221927354972651f5e&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "uchibeke"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "uchibeke"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "#152 - Super-linter implementation",
+            "number": 161,
+            "url": "https://github.com/nanlabs/devops-reference/pull/161",
+            "author": {
+              "login": "AgusCastro",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/26949757?u=86a3c21e417cf92c822ea0aa5b56a5e854cd975d&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "Hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "ulises-jeremias"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "ulises-jeremias"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "changed some css for the footer",
+            "number": 73,
+            "url": "https://github.com/Anudeep-313/mini-project/pull/73",
+            "author": {
+              "login": "tylergajendra",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/146378053?v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "bug"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "Anudeep-313"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "Anudeep-313"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "VF-94 lag nytt utlegg skjema",
+            "number": 256,
+            "url": "https://github.com/vektorprogrammet/vektor-frontend/pull/256",
+            "author": {
+              "login": "ErlendMariusOmmundsen",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/43030358?u=024a553786615c4a9b6b81d5096049815cec4991&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "aaryanneupane"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "aaryanneupane"
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Added variant release info",
+            "number": 325,
+            "url": "https://github.com/tcet-opensource/documentation/pull/325",
+            "author": {
+              "login": "saashaspace",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/114816254?u=eedcf5979a1515794ccfca7350d9bdd53623c784&v=4"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "vish-rt"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "vish-rt"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

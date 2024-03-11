@@ -1,21 +1,16 @@
-query($query: String!, $firstIssues: Int!, $firstComments: Int!) {
+query ($query: String!, $firstIssues: Int!) {
   search(query: $query, type: ISSUE, first: $firstIssues) {
     issueCount
     edges {
       node {
-        ... on Issue {
+        ... on PullRequest {
           title
           number
+          url
           author {
             login
             ... on User {
               avatarUrl
-            }
-          }
-          repository {
-            name
-            owner {
-              login
             }
           }
           labels(first: 10) {
@@ -25,15 +20,18 @@ query($query: String!, $firstIssues: Int!, $firstComments: Int!) {
               }
             }
           }
-          comments(first: $firstComments) {
+          hasApprovedReview: reviews(first: 5, states: [APPROVED]) {  # Check for at least one approved review
             edges {
               node {
                 author {
                   login
                 }
-                body
+                state
               }
             }
+          }
+          mergedBy {
+            login
           }
         }
       }
@@ -42,7 +40,6 @@ query($query: String!, $firstIssues: Int!, $firstComments: Int!) {
 }
 
 {
-    "query": "label:hacktoberfest is:issue is:open no:assignee created:>2023-10-01",
-    "firstIssues": 100,
-    "firstComments": 10
-  }
+  "query": "label:hacktoberfest-accepted is:pr is:merged created:>2023-10-01 review:approved -label:spam -label:invalid -label:duplicate -label:automerge",
+  "firstIssues": 100
+}

@@ -1,0 +1,65 @@
+{
+    "data": {
+        "repository": {
+            "pullRequest": {
+                "title": "added eecms plugin readme",
+                "number": 8277,
+                "author": {
+                    "login": "deltaclock"
+                },
+                "labels": {
+                    "edges": [
+                        {
+                            "node": {
+                                "name": "Area: plugin"
+                            }
+                        }
+                    ]
+                },
+                "reviews": {
+                    "edges": []
+                },
+                "assignees": {
+                    "edges": []
+                },
+                "timelineItems": {
+                    "edges": [
+                        {
+                            "node": {
+                                "__typename": "CrossReferencedEvent",
+                                "actor": {
+                                    "login": "deltaclock"
+                                },
+                                "source": {
+                                    "__typename": "Issue",
+                                    "number": 7175,
+                                    "title": "[Good first PR] Add READMEs to undocumented plugins",
+                                    "url": "https://github.com/ohmyzsh/ohmyzsh/issues/7175"
+                                },
+                                "createdAt": "2019-10-17T16:01:25Z"
+                            }
+                        },
+                        {
+                            "node": {
+                                "__typename": "MergedEvent",
+                                "actor": {
+                                    "login": "mcornella"
+                                },
+                                "createdAt": "2019-10-18T17:05:48Z"
+                            }
+                        },
+                        {
+                            "node": {
+                                "__typename": "ClosedEvent",
+                                "actor": {
+                                    "login": "mcornella"
+                                },
+                                "createdAt": "2019-10-18T17:05:48Z"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
