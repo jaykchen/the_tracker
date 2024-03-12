@@ -21,7 +21,8 @@ async fn main() -> anyhow::Result<()> {
         .format("%Y-%m-%dT%H:%M:%SZ")
         .to_string();
 
-    let query = format!("is:issue mentions:Hacktoberfest updated:>{one_year_ago}");
+    // let query = format!("is:issue mentions:Hacktoberfest updated:>{one_year_ago}");
+    let query = "label:hacktoberfest is:issue is:open no:assignee created:>2023-10-01";
     println!("query: {:?}", query.clone());
 
     // let issues = octocrab
@@ -35,7 +36,7 @@ async fn main() -> anyhow::Result<()> {
     let issues = get_issues(&query).await?;
 
     for issue in issues {
-        println!("issue: {:?}", issue.title);
+        println!("issue: {:?}: {:?}", issue.title, issue.url);
     }
 
     Ok(())
