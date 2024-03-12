@@ -161,3 +161,194 @@ pub async fn get_project_logo(owner: &str, repo: &str) -> anyhow::Result<String>
     let owner_info = parsed_response.data.repository.owner;
     Ok(owner_info.avatarUrl)
 }
+
+#[derive(Serialize, Deserialize, Clone, Debug)]
+pub struct OuterIssue {
+    pub title: String,
+    pub number: i32,
+    pub author: String,
+    pub repository: String,
+    pub labels: Vec<String>,
+    pub comments: String,
+}
+
+pub async fn get_issues(query: &str) -> anyhow::Result<Vec<OuterIssue>> {
+    use serde::{Deserialize, Serialize};
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    pub struct GraphQLResponse {
+        pub data: Data,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    pub struct Data {
+        pub search: Search,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    pub struct Search {
+        pub issueCount: i32,
+        pub edges: Vec<Edge>,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    pub struct Edge {
+        pub node: LocalIssue,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    pub struct LocalIssue {
+        pub title: String,
+        pub number: i32,
+        pub author: Author,
+        pub repository: Repository,
+        pub labels: Labels,
+        pub comments: Comments,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    pub struct Author {
+        pub login: String,
+        pub avatarUrl: String,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    pub struct Repository {
+        pub name: String,
+        pub owner: Owner,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    pub struct Owner {
+        pub login: String,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    pub struct Labels {
+        pub edges: Vec<LabelEdge>,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    pub struct LabelEdge {
+        pub node: Label,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    pub struct Label {
+        pub name: String,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    pub struct Comments {
+        pub edges: Vec<CommentEdge>,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    pub struct CommentEdge {
+        pub node: Comment,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    pub struct Comment {
+        pub author: Author,
+        pub body: String,
+    }
+
+    let first_issues = 10;
+    let first_comments = 10;
+
+    let query = "label:hacktoberfest is:issue is:open no:assignee created:>2023-10-01";
+    let query_str = format!(
+        r#"
+        query {{
+            search(query: "{}", type: ISSUE, first: {}) {{
+                issueCount
+                edges {{
+                    node {{
+                        ... on Issue {{
+                            title
+                            number
+                            body
+                            author {{
+                                login
+                                avatarUrl
+                            }}
+                            repository {{
+                                name
+                                owner {{
+                                    login
+                                }}
+                            }}
+                            labels(first: 10) {{
+                                edges {{
+                                    node {{
+                                        name
+                                    }}
+                                }}
+                            }}
+                            comments(first: {}) {{
+                                edges {{
+                                    node {{
+                                        author {{
+                                            login
+                                        }}
+                                        body
+                                    }}
+                                }}
+                            }}
+                        }}
+                    }}
+                }}
+            }}
+        }}
+        "#,
+        query.replace("\"", "\\\""), // Basic attempt to escape quotes in query string
+        first_issues,
+        first_comments
+    );
+
+    let response_body = github_http_post_gql(&query_str).await?;
+
+    let response: GraphQLResponse = serde_json::from_slice(&response_body)?;
+
+    let issues: Vec<OuterIssue> = response
+        .data
+        .search
+        .edges
+        .iter()
+        .map(|edge| {
+            let issue = &edge.node;
+
+            let labels: Vec<String> = issue
+                .labels
+                .edges
+                .iter()
+                .map(|label_edge| label_edge.node.name.clone())
+                .collect();
+
+            let comments: String = issue
+                .comments
+                .edges
+                .iter()
+                .map(|comment_edge| {
+                    format!(
+                        "{}: {}",
+                        comment_edge.node.author.login, comment_edge.node.body
+                    )
+                })
+                .collect::<Vec<String>>()
+                .join("\n"); // Using newline as a separator
+
+            OuterIssue {
+                title: issue.title.clone(),
+                number: issue.number,
+                author: issue.author.login.clone(),
+                repository: format!("{}/{}", issue.repository.owner.login, issue.repository.name),
+                labels,
+                comments,
+            }
+        })
+        .collect::<Vec<_>>();
+
+    Ok(issues)
+}
