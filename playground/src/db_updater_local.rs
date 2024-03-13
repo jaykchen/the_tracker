@@ -117,19 +117,22 @@ pub async fn add_issue_with_check(
 
         add_project(pool, project_id, &project_logo).await?;
     }
-    sqlx::query!(
-        r#"
+
+    if issue_exists(pool, issue_id).await? {
+    } else {
+        sqlx::query!(
+            r#"
             INSERT INTO issues (issue_id, project_id, issue_title, issue_description)
             VALUES ($1, $2, $3, $4)
             "#,
-        issue_id,
-        project_id,
-        title,
-        description,
-    )
-    .execute(pool)
-    .await?;
-
+            issue_id,
+            project_id,
+            title,
+            description,
+        )
+        .execute(pool)
+        .await?;
+    }
     Ok(())
 }
 

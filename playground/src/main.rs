@@ -1,4 +1,4 @@
-use chrono::{Duration, Utc};
+use chrono::{Duration, NaiveDate, TimeDelta, Utc};
 use dotenv::dotenv;
 use octocrab::Octocrab;
 use playground::db_updater_local::*;
@@ -22,22 +22,57 @@ async fn main() -> anyhow::Result<()> {
         .to_string();
 
     // let query = format!("is:issue mentions:Hacktoberfest updated:>{one_year_ago}");
-    let query = "label:hacktoberfest is:issue is:open no:assignee created:>2023-10-01";
-    println!("query: {:?}", query.clone());
+    // label:hacktoberfest is:issue is:open no:assignee created:2023-10-01..2023-10-03 sort:interactions-desc
 
-    // let issues = octocrab
-    //     .search()
-    //     .issues_and_pull_requests(&query)
-    //     .sort("comments")
-    //     .order("desc")
-    //     .send()
-    //     .await?;
+    let start_date =
+        NaiveDate::parse_from_str("2023-10-01", "%Y-%m-%d").expect("Failed to parse date");
 
-    let issues = get_issues(&query).await?;
+    let mut date_point_vec = Vec::new();
 
-    for issue in issues {
-        println!("issue: {:?}: {:?}", issue.title, issue.url);
+    for i in 0..20 {
+        let three_days_str = (start_date + Duration::days(2 * i as i64))
+            .format("%Y-%m-%d")
+            .to_string();
+
+        date_point_vec.push(three_days_str);
     }
+
+    let mut date_range_vec = date_point_vec
+        .windows(2)
+        .map(|x| x.join(".."))
+        .collect::<Vec<_>>();
+
+    let pool = PgPool::connect(&env::var("DATABASE_URL")?).await?;
+
+    for date_range in date_range_vec {
+        let query =
+            format!("label:hacktoberfest-accepted is:pr is:merged created:{date_range} review:approved -label:spam -label:invalid -label:duplicate -label:automerge");
+        println!("query: {:?}", query.clone());
+        let pulls = get_pull_requests(&query).await?;
+
+        for pull in pulls {
+            println!("pull: {:?}", pull.title);
+
+            // let body = issue.body.chars().take(200).collect::<String>();
+            // let title = issue.title.chars().take(200).collect::<String>();
+            // let _ = (&pool, &issue.url, &title, &body).await?;
+        }
+    }
+
+    // for date_range in date_range_vec {
+    //     let query =
+    //         format!("label:hacktoberfest is:issue is:open no:assignee created:{date_range}");
+    //     println!("query: {:?}", query.clone());
+    //     let issues = get_issues(&query).await?;
+
+    //     for issue in issues {
+    //         // println!("issue: {:?}", issue);
+
+    //         let body = issue.body.chars().take(200).collect::<String>();
+    //         let title = issue.title.chars().take(200).collect::<String>();
+    //         let _ = add_issue_with_check(&pool, &issue.url, &title, &body).await?;
+    //     }
+    // }
 
     Ok(())
 }
