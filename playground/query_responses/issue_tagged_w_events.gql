@@ -1,4 +1,4 @@
-query ($query: String!) {
+query ($query: String!, $firstComments: Int!, $firstTimelineItems: Int!) {
   search(query: $query, type: ISSUE, first: 100, after: null) {
     issueCount
     edges {
@@ -9,12 +9,9 @@ query ($query: String!) {
           body
           author {
             login
-            ... on User {
-              avatarUrl
-            }
           }
           repository {
-            name
+            url
             stargazers {
               totalCount
             }
@@ -26,13 +23,34 @@ query ($query: String!) {
               }
             }
           }
-          comments(first: 10) {
+          comments(first: $firstComments) {
             edges {
               node {
                 author {
                   login
                 }
                 body
+              }
+            }
+          }
+          timelineItems(first: $firstTimelineItems, itemTypes: [CROSS_REFERENCED_EVENT]) {
+            edges {
+              node {
+                ... on CrossReferencedEvent {
+                  source {
+                    __typename
+                    ... on PullRequest {
+                      url
+                      labels(first: 10) {
+                        edges {
+                          node {
+                            name
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -46,11 +64,17 @@ query ($query: String!) {
   }
 }
 
-
 {
-  "query": "label:hacktoberfest is:issue is:open no:assignee created:2023-10-01..2023-10-03"
+  "query": "label:hacktoberfest is:issue is:closed created:2023-10-01..2023-10-03 -label:spam -label:invalid",
+  "firstComments": 10,
+  "firstTimelineItems": 10
 }
 
+{
+  "query": "label:hacktoberfest is:issue is:open no:assignee created:2023-10-01..2023-10-03 -label:spam -label:invalid",
+  "firstComments": 10,
+  "firstTimelineItems": 10
+}
 #   Author: author:<username>
 # Milestone: milestone:<milestone>
 # Assignee: assignee:<username>

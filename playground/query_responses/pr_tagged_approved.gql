@@ -57,5 +57,5 @@ query ($query: String!) {
 }
 
 {
-  "query": "label:hacktoberfest-accepted is:pr is:merged created:2023-10-01..2023-10-03 review:approved -label:spam -label:invalid -label:duplicate -label:automerge"
+  "query": "label:hacktoberfest-accepted is:pr is:merged created:2023-10-01..2023-10-03 review:approved -label:spam -label:invalid"
 }
