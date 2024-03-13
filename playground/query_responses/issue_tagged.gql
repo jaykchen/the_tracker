@@ -1,11 +1,11 @@
-query($query: String!, $firstIssues: Int!, $firstComments: Int!) {
-  search(query: $query, type: ISSUE, first: $firstIssues) {
+query ($query: String!) {
+  search(query: $query, type: ISSUE, first: 100, after: null) {
     issueCount
     edges {
       node {
         ... on Issue {
           title
-          number
+          url
           body
           author {
             login
@@ -15,8 +15,8 @@ query($query: String!, $firstIssues: Int!, $firstComments: Int!) {
           }
           repository {
             name
-            owner {
-              login
+            stargazers {
+              totalCount
             }
           }
           labels(first: 10) {
@@ -26,7 +26,7 @@ query($query: String!, $firstIssues: Int!, $firstComments: Int!) {
               }
             }
           }
-          comments(first: $firstComments) {
+          comments(first: 10) {
             edges {
               node {
                 author {
@@ -39,20 +39,17 @@ query($query: String!, $firstIssues: Int!, $firstComments: Int!) {
         }
       }
     }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
   }
 }
 
+
 {
-    "query": "label:hacktoberfest is:issue is:open no:assignee created:>2023-10-01",
-    "firstIssues": 100,
-    "firstComments": 10
-  }
-  
-  {
-    "query": "label:hacktoberfest is:issue is:open no:assignee created:>2023-10-01 sort:interactions-desc",
-    "firstIssues": 100,
-    "firstComments": 10
-  }
+  "query": "label:hacktoberfest is:issue is:open no:assignee created:2023-10-01..2023-10-03"
+}
 
 #   Author: author:<username>
 # Milestone: milestone:<milestone>

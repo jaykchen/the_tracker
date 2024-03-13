@@ -1,16 +1,33 @@
-query ($query: String!, $firstIssues: Int!) {
-  search(query: $query, type: ISSUE, first: $firstIssues) {
+query ($query: String!) {
+  search(query: $query, type: ISSUE, first: 100) {
     issueCount
     edges {
       node {
         ... on PullRequest {
           title
-          number
           url
           author {
             login
-            ... on User {
-              avatarUrl
+          }
+          timelineItems(first: 10, itemTypes: [CROSS_REFERENCED_EVENT]) {
+            edges {
+              node {
+                ... on CrossReferencedEvent {
+                  source {
+                    __typename
+                    ... on Issue {
+                      url
+                      labels(first: 10) {
+                        edges {
+                          node {
+                            name
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
           labels(first: 10) {
@@ -20,7 +37,7 @@ query ($query: String!, $firstIssues: Int!) {
               }
             }
           }
-          hasApprovedReview: reviews(first: 5, states: [APPROVED]) {  # Check for at least one approved review
+          hasApprovedReview: reviews(first: 5, states: [APPROVED]) {
             edges {
               node {
                 author {
@@ -40,6 +57,5 @@ query ($query: String!, $firstIssues: Int!) {
 }
 
 {
-  "query": "label:hacktoberfest-accepted is:pr is:merged created:>2023-10-01 review:approved -label:spam -label:invalid -label:duplicate -label:automerge",
-  "firstIssues": 100
+  "query": "label:hacktoberfest-accepted is:pr is:merged created:2023-10-01..2023-10-03 review:approved -label:spam -label:invalid -label:duplicate -label:automerge"
 }

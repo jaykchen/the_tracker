@@ -1,0 +1,125 @@
+query ($query: String!) {
+  search(query: $query, type: ISSUE, first: 100, after: null) {
+    issueCount
+        edges {
+      title
+      url
+      createdAt
+      labels(first: 10) {
+        edges {
+          node {
+            name
+          }
+        }
+      }
+      assignees(first: 10) {
+        edges {
+          node {
+            name
+          }
+        }
+      }
+      timelineItems(
+        first: 200
+        itemTypes: [CLOSED_EVENT, ISSUE_COMMENT, CROSS_REFERENCED_EVENT]
+      ) {
+        edges {
+          node {
+            __typename
+            ... on ClosedEvent {
+              actor {
+                login
+              }
+              createdAt
+            }
+            ... on IssueComment {
+              author {
+                login
+              }
+              body
+              createdAt
+            }
+            ... on CrossReferencedEvent {
+              actor {
+                login
+              }
+              source {
+                __typename
+                ... on PullRequest {
+                  number
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+      pageInfo {
+      endCursor
+      hasNextPage
+    }
+  
+  }
+}
+
+{
+  "owner": "ohmyzsh",
+  "repo": "ohmyzsh",
+  "issueNumber": 7175
+}
+
+query ($query: String!) {
+  search(query: $query, type: ISSUE, first: 100, after: null) {
+    issueCount
+    edges {
+      node {
+        ... on Issue {
+          title
+          url
+          author {
+            login
+          }
+          timelineItems(first: 10, itemTypes: [CROSS_REFERENCED_EVENT]) {
+            edges {
+              node {
+                ... on CrossReferencedEvent {
+                  source {
+                    __typename
+                    ... on Issue {
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          }
+          labels(first: 10) {
+            edges {
+              node {
+                name
+              }
+            }
+          }
+          hasApprovedReview: reviews(first: 5, states: [APPROVED]) {
+            edges {
+              node {
+                author {
+                  login
+                }
+                state
+              }
+            }
+          }
+          mergedBy {
+            login
+          }
+        }
+      }
+    }
+      pageInfo {
+      endCursor
+      hasNextPage
+    }
+  
+  }
+}

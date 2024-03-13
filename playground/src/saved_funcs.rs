@@ -304,195 +304,274 @@ pub struct OuterPull {
     pub timeline_comments: Vec<String>, // Comments from timeline items
 }
 
-pub async fn get_pull_request_details(query: &str) -> anyhow::Result<OuterPull> {
-    #[derive(Serialize, Deserialize, Clone, Debug)]
+pub async fn get_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>> {
+    #[derive(Serialize, Deserialize, Debug)]
     struct GraphQLResponse {
         data: Option<Data>,
     }
 
-    #[derive(Serialize, Deserialize, Clone, Debug)]
+    #[derive(Serialize, Deserialize, Debug)]
     struct Data {
-        repository: Option<Repository>,
+        search: Option<Search>,
     }
 
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Repository {
-        pullRequest: Option<PullRequest>,
+    #[derive(Serialize, Deserialize, Debug)]
+    struct Search {
+        issueCount: Option<i32>,
+        edges: Option<Vec<Edge>>,
+        pageInfo: PageInfo,
     }
 
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct PullRequest {
+    #[derive(Serialize, Deserialize, Debug)]
+    struct PageInfo {
+        endCursor: Option<String>,
+        hasNextPage: Option<bool>,
+    }
+
+    #[derive(Serialize, Deserialize, Debug)]
+    struct Edge {
+        node: Option<LocalPull>,
+    }
+
+    #[derive(Serialize, Deserialize, Debug)]
+    struct LocalPull {
         title: Option<String>,
         number: Option<i32>,
         author: Option<Author>,
+        url: Option<String>,
         labels: Option<Labels>,
+        comments: Option<Comments>,
         reviews: Option<Reviews>,
         assignees: Option<Assignees>,
-        timelineItems: Option<TimelineItems>,
     }
 
-    #[derive(Serialize, Deserialize, Clone, Debug)]
+    #[derive(Serialize, Deserialize, Debug)]
     struct Author {
         login: Option<String>,
     }
 
-    #[derive(Serialize, Deserialize, Clone, Debug)]
+    #[derive(Serialize, Deserialize, Debug)]
     struct Labels {
         edges: Option<Vec<LabelEdge>>,
     }
 
-    #[derive(Serialize, Deserialize, Clone, Debug)]
+    #[derive(Serialize, Deserialize, Debug)]
     struct LabelEdge {
         node: Option<Label>,
     }
 
-    #[derive(Serialize, Deserialize, Clone, Debug)]
+    #[derive(Serialize, Deserialize, Debug)]
     struct Label {
         name: Option<String>,
     }
 
-    #[derive(Serialize, Deserialize, Clone, Debug)]
+    #[derive(Serialize, Deserialize, Debug)]
+    struct Comments {
+        edges: Option<Vec<CommentEdge>>,
+    }
+
+    #[derive(Serialize, Deserialize, Debug)]
+    struct CommentEdge {
+        node: Option<Comment>,
+    }
+
+    #[derive(Serialize, Deserialize, Debug)]
+    struct Comment {
+        body: Option<String>,
+    }
+
+    #[derive(Serialize, Deserialize, Debug)]
     struct Reviews {
         edges: Option<Vec<ReviewEdge>>,
     }
 
-    #[derive(Serialize, Deserialize, Clone, Debug)]
+    #[derive(Serialize, Deserialize, Debug)]
     struct ReviewEdge {
         node: Option<Review>,
     }
 
-    #[derive(Serialize, Deserialize, Clone, Debug)]
+    #[derive(Serialize, Deserialize, Debug)]
     struct Review {
         author: Option<Author>,
-        state: Option<String>,
     }
 
-    #[derive(Serialize, Deserialize, Clone, Debug)]
+    #[derive(Serialize, Deserialize, Debug)]
     struct Assignees {
         edges: Option<Vec<AssigneeEdge>>,
     }
 
-    #[derive(Serialize, Deserialize, Clone, Debug)]
+    #[derive(Serialize, Deserialize, Debug)]
     struct AssigneeEdge {
         node: Option<Assignee>,
     }
 
-    #[derive(Serialize, Deserialize, Clone, Debug)]
+    #[derive(Serialize, Deserialize, Debug)]
     struct Assignee {
-        name: Option<String>,
+        login: Option<String>,
     }
 
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct TimelineItems {
-        edges: Option<Vec<TimelineEdge>>,
-    }
+    let mut all_pulls = Vec::new();
+    let mut after_cursor: Option<String> = None;
 
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct TimelineEdge {
-        node: Option<TimelineItem>,
-    }
+    for _n in 1..11 {
+        let query_str = format!(
+            r#"
+            {{
+                search(query: "{}", type: PR, first: 100, after: {}) {{
+                    issueCount
+                    edges {{
+                        node {{
+                            ... on PullRequest {{
+                                title
+                                number
+                                url
+                                author {{
+                                    login
+                                }}
+                                labels(first: 10) {{
+                                    edges {{
+                                        node {{
+                                            name
+                                        }}
+                                    }}
+                                }}
+                                comments(first: 10) {{
+                                    edges {{
+                                        node {{
+                                            body
+                                        }}
+                                    }}
+                                }}
+                                reviews(first: 10) {{
+                                    edges {{
+                                        node {{
+                                            author {{
+                                                login
+                                            }}
+                                        }}
+                                    }}
+                                }}
+                                assignees(first: 10) {{
+                                    edges {{
+                                        node {{
+                                            login
+                                        }}
+                                    }}
+                                }}
+                            }}
+                        }}
+                    }}
+                    pageInfo {{
+                        endCursor
+                        hasNextPage
+                    }}
+                }}
+            }}
+            "#,
+            query.replace("\"", "\\\""),
+            after_cursor
+                .as_ref()
+                .map_or(String::from("null"), |c| format!("\"{}\"", c))
+        );
 
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    #[serde(tag = "__typename")]
-    enum TimelineItem {
-        ClosedEvent {
-            actor: Option<Author>,
-            createdAt: Option<String>,
-        },
-        MergedEvent {
-            actor: Option<Author>,
-            createdAt: Option<String>,
-        },
-        IssueComment {
-            author: Option<Author>,
-            body: Option<String>,
-            createdAt: Option<String>,
-        },
-        CrossReferencedEvent {
-            actor: Option<Author>,
-            source: Option<CrossReferencedSource>,
-            createdAt: Option<String>,
-        },
-    }
+        let response_body = github_http_post_gql({ &query_str }).await?;
 
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    #[serde(tag = "__typename")]
-    enum CrossReferencedSource {
-        Issue {
-            number: Option<i32>,
-            title: Option<String>,
-            url: Option<String>,
-        },
-    }
+        let response: GraphQLResponse = serde_json::from_slice(&response_body)?;
 
-    let response_body = github_http_post_gql(query)
-        .await
-        .map_err(|e| anyhow!("Failed to post GraphQL query: {}", e))?;
+        if let Some(data) = response.data {
+            if let Some(search) = data.search {
+                if let Some(edges) = search.edges {
+                    for edge in edges {
+                        if let Some(pull) = edge.node {
+                            let labels = pull
+                                .labels
+                                .as_ref()
+                                .and_then(|l| l.edges.as_ref())
+                                .map_or(vec![], |edges| {
+                                    edges
+                                        .iter()
+                                        .filter_map(|edge| {
+                                            edge.node.as_ref().and_then(|label| label.name.clone())
+                                        })
+                                        .collect()
+                                });
 
-    let response: GraphQLResponse = serde_json::from_slice(&response_body)
-        .map_err(|e| anyhow!("Failed to deserialize response: {}", e))?;
-
-    // Process the response and populate the OuterIssue struct
-    if let Some(data) = response.data {
-        if let Some(repo) = data.repository {
-            if let Some(pr) = repo.pullRequest {
-                // Process labels
-                let labels =
-                    pr.labels
-                        .as_ref()
-                        .and_then(|l| l.edges.as_ref())
-                        .map_or(vec![], |edges| {
-                            edges
-                                .iter()
-                                .filter_map(|edge| {
-                                    edge.node.as_ref().and_then(|label| label.name.clone())
-                                })
-                                .collect()
-                        });
-
-                // Process reviews
-                let reviews =
-                    pr.reviews
-                        .as_ref()
-                        .and_then(|r| r.edges.as_ref())
-                        .map_or(vec![], |edges| {
-                            edges
-                                .iter()
-                                .filter_map(|edge| {
-                                    edge.node.as_ref().map(|review| {
-                                        format!(
-                                            "{}: {}",
-                                            review
-                                                .author
+                            let comments = pull
+                                .comments
+                                .as_ref()
+                                .and_then(|c| c.edges.as_ref())
+                                .map_or(vec![], |edges| {
+                                    edges
+                                        .iter()
+                                        .filter_map(|edge| {
+                                            edge.node
                                                 .as_ref()
-                                                .and_then(|a| a.login.as_ref())
-                                                .unwrap_or(&String::new()),
-                                            review.state.as_ref().unwrap_or(&String::new())
-                                        )
-                                    })
-                                })
-                                .collect()
-                        });
+                                                .and_then(|comment| comment.body.clone())
+                                        })
+                                        .collect()
+                                });
 
-                // Add processing for assignees and timeline items similarly
+                            let reviews = pull
+                                .reviews
+                                .as_ref()
+                                .and_then(|r| r.edges.as_ref())
+                                .map_or(vec![], |edges| {
+                                    edges
+                                        .iter()
+                                        .filter_map(|edge| {
+                                            edge.node.as_ref().and_then(|review| {
+                                                review
+                                                    .author
+                                                    .as_ref()
+                                                    .and_then(|author| author.login.clone())
+                                            })
+                                        })
+                                        .collect()
+                                });
 
-                return Ok(OuterPull {
-                    title: pr.title.unwrap_or_default(),
-                    number: pr.number.unwrap_or(0),
-                    author: pr
-                        .author
-                        .as_ref()
-                        .and_then(|a| a.login.clone())
-                        .unwrap_or_default(),
-                    labels,
-                    reviews,
-                    // Populate assignees and timeline_comments based on your processing
-                    assignees: vec![],
-                    timeline_comments: vec![],
-                });
+                            let assignees = pull
+                                .assignees
+                                .as_ref()
+                                .and_then(|a| a.edges.as_ref())
+                                .map_or(vec![], |edges| {
+                                    edges
+                                        .iter()
+                                        .filter_map(|edge| {
+                                            edge.node
+                                                .as_ref()
+                                                .and_then(|assignee| assignee.login.clone())
+                                        })
+                                        .collect()
+                                });
+
+                            all_pulls.push(OuterPull {
+                                title: pull.title.clone().unwrap_or_default(),
+                                number: pull.number.unwrap_or_default(),
+                                author: pull
+                                    .author
+                                    .as_ref()
+                                    .and_then(|a| a.login.clone())
+                                    .unwrap_or_default(),
+                                labels,
+                                reviews,
+                                assignees,
+                                timeline_comments: comments,
+                            });
+                        }
+                    }
+                }
+
+                if let Some(page_info) = search.pageInfo.hasNextPage {
+                    if !page_info {
+                        break;
+                    }
+                    after_cursor = search.pageInfo.endCursor;
+                } else {
+                    break;
+                }
             }
         }
     }
 
-    Err(anyhow!("Failed to fetch pull request details"))
+    Ok(all_pulls)
 }

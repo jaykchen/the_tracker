@@ -450,7 +450,8 @@ pub struct OuterPull {
     pub labels: Vec<String>,
     pub reviews: Vec<String>, // Reviews by authors
     pub assignees: Vec<String>,
-    pub timeline_comments: Vec<String>, // Comments from timeline items
+    pub merged_by: String,    // the login of the actor
+    pub cross_ref_in: String, // the issue url of which cross referrenced in the pull_request
 }
 
 pub async fn get_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>> {
