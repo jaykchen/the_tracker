@@ -311,3 +311,92 @@ pub async fn list_comments(pool: &PgPool, issue_id: &str) -> anyhow::Result<()> 
 
     Ok(())
 }
+
+pub async fn list_pull_requests(
+    pool: &sqlx::PgPool,
+) -> anyhow::Result<Vec<(String, String, String, String, String, Vec<String>)>> {
+    let pull_requests = sqlx::query!(
+        r#"
+        SELECT pull_id, title, author, repository, merged_by, cross_referenced_issues
+        FROM pull_requests
+        "#
+    )
+    .fetch_all(pool)
+    .await?
+    .iter()
+    .map(|r| {
+        (
+            r.pull_id.clone(),
+            r.title.clone(),
+            r.author.clone(),
+            r.repository.clone(),
+            r.merged_by.clone(),
+            r.cross_referenced_issues.clone().unwrap_or_default(), // Handle Option<Vec<String>>
+        )
+    })
+    .collect();
+
+    Ok(pull_requests)
+}
+
+pub async fn add_pull_request_with_check(
+    pool: &sqlx::PgPool,
+    pull_id: &str,
+    title: &str,
+    author: &str,
+    repository: &str,
+    merged_by: &str,
+    cross_referenced_issues: Vec<String>,
+) -> anyhow::Result<()> {
+    let exists = sqlx::query!(
+        r#"
+        SELECT EXISTS(SELECT 1 FROM pull_requests WHERE pull_id = $1)
+        "#,
+        pull_id
+    )
+    .fetch_one(pool)
+    .await?
+    .exists
+    .unwrap_or(false);
+
+    if !exists {
+        add_pull_request(
+            pool,
+            pull_id,
+            title,
+            author,
+            repository,
+            merged_by,
+            cross_referenced_issues,
+        )
+        .await?;
+    }
+
+    Ok(())
+}
+pub async fn add_pull_request(
+    pool: &sqlx::PgPool,
+    pull_id: &str,
+    title: &str,
+    author: &str,
+    repository: &str,
+    merged_by: &str,
+    cross_referenced_issues: Vec<String>,
+) -> anyhow::Result<()> {
+    sqlx::query!(
+        r#"
+        INSERT INTO pull_requests (pull_id, title, author, repository, merged_by, cross_referenced_issues)
+        VALUES ($1, $2, $3, $4, $5, $6)
+        "#,
+        pull_id,
+        title,
+        author,
+        repository,
+        merged_by,
+        &cross_referenced_issues,
+    )
+    .execute(pool)
+    .await?;
+
+    Ok(())
+}

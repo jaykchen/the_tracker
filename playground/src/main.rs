@@ -48,17 +48,37 @@ async fn main() -> anyhow::Result<()> {
         let query =
             format!("label:hacktoberfest-accepted is:pr is:merged created:{date_range} review:approved -label:spam -label:invalid");
         println!("query: {:?}", query.clone());
-        let pulls = get_pull_requests(&query).await?;
+        let label_to_watch = "hacktoberfest-accepted";
+        let pulls = get_pull_requests(&query, label_to_watch).await?;
 
         for pull in pulls {
             println!("pull: {:?}", pull.url);
             println!("pull: {:?}", pull.repository);
 
+            let _ = add_pull_request_with_check(
+                &pool,
+                &pull.url,
+                &pull.title,
+                &pull.author,
+                &pull.repository,
+                &pull.merged_by,
+                pull.cross_referenced_issues,
+            )
+            .await?;
+
+            // pub async fn add_pull_request_with_check(
+            //     pool: &sqlx::PgPool,
+            //     pull_id: &str,
+            //     title: &str,
+            //     author: &str,
+            //     repository: &str,
+            //     merged_by: &str,
+            //     cross_referenced_issues: Vec<String>,
             // let body = issue.body.chars().take(200).collect::<String>();
             // let title = issue.title.chars().take(200).collect::<String>();
             // let _ = (&pool, &issue.url, &title, &body).await?;
         }
-        break;
+       
     }
 
     // for date_range in date_range_vec {

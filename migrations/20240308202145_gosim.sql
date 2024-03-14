@@ -27,3 +27,12 @@ CREATE TABLE comments (
     content TEXT NOT NULL,
     FOREIGN KEY (issue_id) REFERENCES issues(issue_id)
 );
+
+CREATE TABLE pull_requests (
+    pull_id VARCHAR(255) PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    author VARCHAR(50) NOT NULL,
+    repository VARCHAR(255) NOT NULL,
+    merged_by VARCHAR(50) NOT NULL,
+    cross_referenced_issues VARCHAR(255)[] -- Array of issue URLs
+);

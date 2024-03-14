@@ -477,7 +477,10 @@ pub struct OuterPull {
     pub merged_by: String,
 }
 
-pub async fn get_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>> {
+pub async fn get_pull_requests(
+    query: &str,
+    label_to_watch: &str,
+) -> anyhow::Result<Vec<OuterPull>> {
     #[derive(Serialize, Deserialize, Debug)]
     struct GraphQLResponse {
         data: Option<Data>,
@@ -527,17 +530,17 @@ pub async fn get_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>> {
         login: Option<String>,
     }
 
-    #[derive(Serialize, Deserialize, Debug)]
+    #[derive(Serialize, Deserialize, Debug, Clone)]// Make sure to include Clone here
     struct Labels {
         edges: Option<Vec<LabelEdge>>,
     }
 
-    #[derive(Serialize, Deserialize, Debug)]
+    #[derive(Serialize, Deserialize, Debug, Clone)] // And here
     struct LabelEdge {
         node: Option<Label>,
     }
 
-    #[derive(Serialize, Deserialize, Debug)]
+    #[derive(Serialize, Deserialize, Debug, Clone)]// And also here
     struct Label {
         name: Option<String>,
     }
@@ -590,6 +593,7 @@ pub async fn get_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>> {
     struct Source {
         __typename: Option<String>,
         url: Option<String>,
+        labels: Option<Labels>, // Add this line to include labels
     }
 
     let mut all_pulls = Vec::new();
@@ -700,9 +704,23 @@ pub async fn get_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>> {
                                         .filter_map(|edge| {
                                             edge.node.as_ref().and_then(|item| {
                                                 item.source.as_ref().and_then(|source| {
-                                                    if source.__typename.as_deref() == Some("Issue")
-                                                    {
-                                                        source.url.clone()
+                                                    if source.__typename.as_deref() == Some("Issue") {
+                                                        let has_hacktoberfest_accepted_label = source.labels.as_ref().map_or(false, |labels| {
+                                                            labels.edges.as_ref().map_or(false, |edges| {
+                                                                edges.iter().any(|edge| {
+                                                                    edge.node.as_ref().map_or(false, |label| {
+                                                                        label.name == Some(String::from(label_to_watch))
+                                                                    })
+                                                                })
+                                                            })
+                                                        });
+                                                        
+                            
+                                                        if has_hacktoberfest_accepted_label {
+                                                            source.url.clone()
+                                                        } else {
+                                                            None
+                                                        }
                                                     } else {
                                                         None
                                                     }
@@ -711,6 +729,7 @@ pub async fn get_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>> {
                                         })
                                         .collect()
                                 });
+                            
 
                             let reviews = pull
                                 .hasApprovedReview
