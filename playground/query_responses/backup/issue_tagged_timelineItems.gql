@@ -33,19 +33,14 @@ query ($query: String!, $firstComments: Int!, $firstTimelineItems: Int!) {
               }
             }
           }
-          timelineItems(first: $firstTimelineItems, itemTypes: [CLOSED_EVENT]) {
+          timelineItems(first: $firstTimelineItems, itemTypes: [CROSS_REFERENCED_EVENT]) {
             edges {
               node {
-                ... on ClosedEvent {
-                  stateReason
-                  closer {
+                ... on CrossReferencedEvent {
+                  source {
                     __typename
                     ... on PullRequest {
-                      title
                       url
-                      author {
-                        login
-                      }
                     }
                   }
                 }

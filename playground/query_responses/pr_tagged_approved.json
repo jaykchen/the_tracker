@@ -7,6 +7,9 @@
           "node": {
             "title": "Finalizado desafio 3",
             "url": "https://github.com/he4rt/he4rtoberfest-2023/pull/89",
+            "repository": {
+              "url": "https://github.com/he4rt/he4rtoberfest-2023"
+            },
             "author": {
               "login": "raffreitas"
             },
@@ -53,6 +56,9 @@
           "node": {
             "title": "Solved issue 3393 math floor",
             "url": "https://github.com/Codecademy/docs/pull/3432",
+            "repository": {
+              "url": "https://github.com/Codecademy/docs"
+            },
             "author": {
               "login": "DustyDogCodex"
             },
@@ -122,6 +128,9 @@
           "node": {
             "title": "Fix typographical error in the Open Source Incubation Program page",
             "url": "https://github.com/TBD54566975/developer.tbd.website/pull/803",
+            "repository": {
+              "url": "https://github.com/TBD54566975/developer.tbd.website"
+            },
             "author": {
               "login": "simple-codes22"
             },
@@ -158,11 +167,23 @@
           "node": {
             "title": "Implemented Quadratic Equation Intersection Calculator (Fixes #33)",
             "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/137",
+            "repository": {
+              "url": "https://github.com/SarthakKeshari/calc_for_everything"
+            },
             "author": {
               "login": "DeexithParand2k2"
             },
             "timelineItems": {
-              "edges": []
+              "edges": [
+                {
+                  "node": {
+                    "__typename": "ConnectedEvent",
+                    "subject": {
+                      "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/33"
+                    }
+                  }
+                }
+              ]
             },
             "labels": {
               "edges": [
@@ -214,6 +235,9 @@
           "node": {
             "title": "(fix): Arrumei string de acordo com o mês",
             "url": "https://github.com/artursanntos/vfoods/pull/36",
+            "repository": {
+              "url": "https://github.com/artursanntos/vfoods"
+            },
             "author": {
               "login": "nathaliafab"
             },
@@ -260,6 +284,9 @@
           "node": {
             "title": "add Python question",
             "url": "https://github.com/freeCodeCamp/Developer_Quiz_Site/pull/733",
+            "repository": {
+              "url": "https://github.com/freeCodeCamp/Developer_Quiz_Site"
+            },
             "author": {
               "login": "Wendell00"
             },
@@ -296,11 +323,23 @@
           "node": {
             "title": "Add: #119 Added the Infix to Postfix and Prefix Calculator",
             "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/136",
+            "repository": {
+              "url": "https://github.com/SarthakKeshari/calc_for_everything"
+            },
             "author": {
               "login": "maskboyAvi"
             },
             "timelineItems": {
-              "edges": []
+              "edges": [
+                {
+                  "node": {
+                    "__typename": "ConnectedEvent",
+                    "subject": {
+                      "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/119"
+                    }
+                  }
+                }
+              ]
             },
             "labels": {
               "edges": [
@@ -352,6 +391,9 @@
           "node": {
             "title": "fix: wrong schema for monitor-logs response",
             "url": "https://github.com/Apadmi-Engineering/Mockzilla/pull/22",
+            "repository": {
+              "url": "https://github.com/Apadmi-Engineering/Mockzilla"
+            },
             "author": {
               "login": "chedabob"
             },
@@ -388,6 +430,9 @@
           "node": {
             "title": "Lazy loading added with loader",
             "url": "https://github.com/rohitagr0310/Bookflow-app/pull/245",
+            "repository": {
+              "url": "https://github.com/rohitagr0310/Bookflow-app"
+            },
             "author": {
               "login": "M-A-N-I-K"
             },
@@ -429,6 +474,9 @@
           "node": {
             "title": "fixed generate button layout inconsistency",
             "url": "https://github.com/Alexandra-Haynes/memes-collection/pull/21",
+            "repository": {
+              "url": "https://github.com/Alexandra-Haynes/memes-collection"
+            },
             "author": {
               "login": "Komal914"
             },
@@ -465,6 +513,9 @@
           "node": {
             "title": "Challenge(csharp): 4 - emprestimo",
             "url": "https://github.com/he4rt/he4rtoberfest-2023/pull/88",
+            "repository": {
+              "url": "https://github.com/he4rt/he4rtoberfest-2023"
+            },
             "author": {
               "login": "offpepe"
             },
@@ -511,6 +562,9 @@
           "node": {
             "title": "Finalizado desafio",
             "url": "https://github.com/he4rt/he4rtoberfest-2023/pull/87",
+            "repository": {
+              "url": "https://github.com/he4rt/he4rtoberfest-2023"
+            },
             "author": {
               "login": "raffreitas"
             },
@@ -557,6 +611,9 @@
           "node": {
             "title": "Bug fixes",
             "url": "https://github.com/artursanntos/vfoods/pull/35",
+            "repository": {
+              "url": "https://github.com/artursanntos/vfoods"
+            },
             "author": {
               "login": "gugaccampos"
             },
@@ -598,6 +655,9 @@
           "node": {
             "title": "Challenge(csharp): 3 - Conversor de base",
             "url": "https://github.com/he4rt/he4rtoberfest-2023/pull/86",
+            "repository": {
+              "url": "https://github.com/he4rt/he4rtoberfest-2023"
+            },
             "author": {
               "login": "offpepe"
             },
@@ -644,6 +704,9 @@
           "node": {
             "title": "Finalizando o desafio 2 - Go",
             "url": "https://github.com/he4rt/he4rtoberfest-2023/pull/84",
+            "repository": {
+              "url": "https://github.com/he4rt/he4rtoberfest-2023"
+            },
             "author": {
               "login": "joao-erik2077"
             },
@@ -690,6 +753,9 @@
           "node": {
             "title": "Challenge: 6 - Numeros primos",
             "url": "https://github.com/he4rt/he4rtoberfest-2023/pull/83",
+            "repository": {
+              "url": "https://github.com/he4rt/he4rtoberfest-2023"
+            },
             "author": {
               "login": "offpepe"
             },
@@ -736,6 +802,9 @@
           "node": {
             "title": "refactor: UI enhancement",
             "url": "https://github.com/malivinayak/Tic-Tac-Toe/pull/7",
+            "repository": {
+              "url": "https://github.com/malivinayak/Tic-Tac-Toe"
+            },
             "author": {
               "login": "taylorlottdixon"
             },
@@ -743,6 +812,7 @@
               "edges": [
                 {
                   "node": {
+                    "__typename": "CrossReferencedEvent",
                     "source": {
                       "__typename": "PullRequest"
                     }
@@ -750,6 +820,7 @@
                 },
                 {
                   "node": {
+                    "__typename": "CrossReferencedEvent",
                     "source": {
                       "__typename": "PullRequest"
                     }
@@ -757,6 +828,7 @@
                 },
                 {
                   "node": {
+                    "__typename": "CrossReferencedEvent",
                     "source": {
                       "__typename": "PullRequest"
                     }
@@ -764,6 +836,7 @@
                 },
                 {
                   "node": {
+                    "__typename": "CrossReferencedEvent",
                     "source": {
                       "__typename": "Issue",
                       "url": "https://github.com/malivinayak/Tic-Tac-Toe/issues/11",
@@ -821,6 +894,9 @@
           "node": {
             "title": "Ensure loader generated export default has name",
             "url": "https://github.com/vercel/next.js/pull/56388",
+            "repository": {
+              "url": "https://github.com/vercel/next.js"
+            },
             "author": {
               "login": "ijjk"
             },
@@ -867,6 +943,9 @@
           "node": {
             "title": "Update Equality Operators to Be Type-Safe",
             "url": "https://github.com/nearbeach/NearBeach/pull/503",
+            "repository": {
+              "url": "https://github.com/nearbeach/NearBeach"
+            },
             "author": {
               "login": "AdityaRanjanJha"
             },
@@ -903,6 +982,9 @@
           "node": {
             "title": "Add contributors list",
             "url": "https://github.com/lorenzovngl/FoodExpirationDates/pull/69",
+            "repository": {
+              "url": "https://github.com/lorenzovngl/FoodExpirationDates"
+            },
             "author": {
               "login": "DeKaN"
             },
@@ -939,6 +1021,9 @@
           "node": {
             "title": "fix(ingest): refactor test markers + fix disk space issues in CI",
             "url": "https://github.com/datahub-project/datahub/pull/8938",
+            "repository": {
+              "url": "https://github.com/datahub-project/datahub"
+            },
             "author": {
               "login": "hsheth2"
             },
@@ -946,6 +1031,7 @@
               "edges": [
                 {
                   "node": {
+                    "__typename": "CrossReferencedEvent",
                     "source": {
                       "__typename": "PullRequest"
                     }
@@ -953,6 +1039,7 @@
                 },
                 {
                   "node": {
+                    "__typename": "CrossReferencedEvent",
                     "source": {
                       "__typename": "PullRequest"
                     }
@@ -1000,6 +1087,9 @@
           "node": {
             "title": "UI: Use std::shared_ptr instead of QSharedPointer",
             "url": "https://github.com/obsproject/obs-studio/pull/9663",
+            "repository": {
+              "url": "https://github.com/obsproject/obs-studio"
+            },
             "author": {
               "login": "RytoEX"
             },
@@ -1046,6 +1136,9 @@
           "node": {
             "title": "added filter bottom sheet",
             "url": "https://github.com/swciitg/college_cupid/pull/26",
+            "repository": {
+              "url": "https://github.com/swciitg/college_cupid"
+            },
             "author": {
               "login": "venkylm10"
             },
@@ -1082,6 +1175,9 @@
           "node": {
             "title": "Create README.md",
             "url": "https://github.com/atapas/fork-me/pull/657",
+            "repository": {
+              "url": "https://github.com/atapas/fork-me"
+            },
             "author": {
               "login": "jiayao99"
             },
@@ -1123,6 +1219,9 @@
           "node": {
             "title": "Solved issue 3392.",
             "url": "https://github.com/Codecademy/docs/pull/3430",
+            "repository": {
+              "url": "https://github.com/Codecademy/docs"
+            },
             "author": {
               "login": "DustyDogCodex"
             },
@@ -1197,6 +1296,9 @@
           "node": {
             "title": "Finalizado desafio",
             "url": "https://github.com/he4rt/he4rtoberfest-2023/pull/80",
+            "repository": {
+              "url": "https://github.com/he4rt/he4rtoberfest-2023"
+            },
             "author": {
               "login": "raffreitas"
             },
@@ -1251,11 +1353,23 @@
           "node": {
             "title": "Issue #3 Change in the modified dataset",
             "url": "https://github.com/Pinak-Datta/wiz-craft/pull/8",
+            "repository": {
+              "url": "https://github.com/Pinak-Datta/wiz-craft"
+            },
             "author": {
               "login": "parth-verma7"
             },
             "timelineItems": {
-              "edges": []
+              "edges": [
+                {
+                  "node": {
+                    "__typename": "ConnectedEvent",
+                    "subject": {
+                      "url": "https://github.com/Pinak-Datta/wiz-craft/issues/3"
+                    }
+                  }
+                }
+              ]
             },
             "labels": {
               "edges": [
@@ -1292,6 +1406,9 @@
           "node": {
             "title": "feat(views): Implementing pagination on listing endpoints",
             "url": "https://github.com/activist-org/activist/pull/414",
+            "repository": {
+              "url": "https://github.com/activist-org/activist"
+            },
             "author": {
               "login": "IsaacDMz"
             },
@@ -1299,6 +1416,7 @@
               "edges": [
                 {
                   "node": {
+                    "__typename": "CrossReferencedEvent",
                     "source": {
                       "__typename": "Issue",
                       "url": "https://github.com/activist-org/activist/issues/359",
@@ -1356,6 +1474,9 @@
           "node": {
             "title": "Dev/perfil colaborador",
             "url": "https://github.com/artursanntos/vfoods/pull/31",
+            "repository": {
+              "url": "https://github.com/artursanntos/vfoods"
+            },
             "author": {
               "login": "artursanntos"
             },
@@ -1400,6 +1521,9 @@
           "node": {
             "title": "Various changes (vol 1)",
             "url": "https://github.com/umbraco/UmbracoDocs/pull/5481",
+            "repository": {
+              "url": "https://github.com/umbraco/UmbracoDocs"
+            },
             "author": {
               "login": "jacksorjacksor"
             },
@@ -1451,6 +1575,9 @@
           "node": {
             "title": "Finalizando desafio 1 - Cubo Simples",
             "url": "https://github.com/he4rt/he4rtoberfest-2023/pull/78",
+            "repository": {
+              "url": "https://github.com/he4rt/he4rtoberfest-2023"
+            },
             "author": {
               "login": "joao-erik2077"
             },
@@ -1497,6 +1624,9 @@
           "node": {
             "title": "include psptypes.h in psprtc.h",
             "url": "https://github.com/pspdev/pspsdk/pull/157",
+            "repository": {
+              "url": "https://github.com/pspdev/pspsdk"
+            },
             "author": {
               "login": "sharkwouter"
             },
@@ -1533,6 +1663,9 @@
           "node": {
             "title": "Feature(csharp): 5 - Ordenar letras",
             "url": "https://github.com/he4rt/he4rtoberfest-2023/pull/77",
+            "repository": {
+              "url": "https://github.com/he4rt/he4rtoberfest-2023"
+            },
             "author": {
               "login": "offpepe"
             },
@@ -1579,6 +1712,9 @@
           "node": {
             "title": "fix: use `fs.existsSync` to avoid race condition",
             "url": "https://github.com/vercel/next.js/pull/56387",
+            "repository": {
+              "url": "https://github.com/vercel/next.js"
+            },
             "author": {
               "login": "anonrig"
             },
@@ -1620,6 +1756,9 @@
           "node": {
             "title": "Finalizando desafio 2",
             "url": "https://github.com/he4rt/he4rtoberfest-2023/pull/74",
+            "repository": {
+              "url": "https://github.com/he4rt/he4rtoberfest-2023"
+            },
             "author": {
               "login": "viniciusenari"
             },
@@ -1666,6 +1805,9 @@
           "node": {
             "title": "feat: add dark mode for ForgotPassword",
             "url": "https://github.com/warmachine028/memories/pull/95",
+            "repository": {
+              "url": "https://github.com/warmachine028/memories"
+            },
             "author": {
               "login": "amitgiri72"
             },
@@ -1722,6 +1864,9 @@
           "node": {
             "title": "[static-build] Update existing fixtures to latest of their currently pinned framework dependency ",
             "url": "https://github.com/vercel/vercel/pull/10652",
+            "repository": {
+              "url": "https://github.com/vercel/vercel"
+            },
             "author": {
               "login": "trek"
             },
@@ -1773,6 +1918,9 @@
           "node": {
             "title": "I already added the functionality whereby when a user enters a wrong superhero name it displays a message",
             "url": "https://github.com/Prajwal0225/My-Favorite-SuperHero/pull/82",
+            "repository": {
+              "url": "https://github.com/Prajwal0225/My-Favorite-SuperHero"
+            },
             "author": {
               "login": "Pavilion-devs"
             },
@@ -1809,6 +1957,9 @@
           "node": {
             "title": "Carousel",
             "url": "https://github.com/RuanAragao/saudeflix/pull/6",
+            "repository": {
+              "url": "https://github.com/RuanAragao/saudeflix"
+            },
             "author": {
               "login": "hemanth110702"
             },
@@ -1845,11 +1996,23 @@
           "node": {
             "title": "add InvalidObject",
             "url": "https://github.com/patternfly/react-component-groups/pull/45",
+            "repository": {
+              "url": "https://github.com/patternfly/react-component-groups"
+            },
             "author": {
               "login": "InsaneZein"
             },
             "timelineItems": {
-              "edges": []
+              "edges": [
+                {
+                  "node": {
+                    "__typename": "ConnectedEvent",
+                    "subject": {
+                      "url": "https://github.com/patternfly/react-component-groups/issues/47"
+                    }
+                  }
+                }
+              ]
             },
             "labels": {
               "edges": [
@@ -1899,6 +2062,9 @@
           "node": {
             "title": "Modified the changes in index.html and skills and social div container to flexbos",
             "url": "https://github.com/oyepriyansh/DevProfiles/pull/38",
+            "repository": {
+              "url": "https://github.com/oyepriyansh/DevProfiles"
+            },
             "author": {
               "login": "ramchandarkg"
             },
@@ -1929,6 +2095,9 @@
           "node": {
             "title": "use redis.with for rails >= 6.0 and < 7.1",
             "url": "https://github.com/film42/redis-cluster-activesupport/pull/7",
+            "repository": {
+              "url": "https://github.com/film42/redis-cluster-activesupport"
+            },
             "author": {
               "login": "skunkworker"
             },
@@ -1973,6 +2142,9 @@
           "node": {
             "title": "Ajusta erros na tabela de disciplinas",
             "url": "https://github.com/OpenDevUFCG/Tamburetei/pull/614",
+            "repository": {
+              "url": "https://github.com/OpenDevUFCG/Tamburetei"
+            },
             "author": {
               "login": "joaomatheusvillarim"
             },
@@ -2014,6 +2186,9 @@
           "node": {
             "title": "[DOSP]Grupo 2 de spiders",
             "url": "https://github.com/okfn-brasil/querido-diario/pull/955",
+            "repository": {
+              "url": "https://github.com/okfn-brasil/querido-diario"
+            },
             "author": {
               "login": "Winzen"
             },
@@ -2021,6 +2196,7 @@
               "edges": [
                 {
                   "node": {
+                    "__typename": "CrossReferencedEvent",
                     "source": {
                       "__typename": "Issue",
                       "url": "https://github.com/okfn-brasil/querido-diario/issues/947",
@@ -2053,6 +2229,7 @@
                 },
                 {
                   "node": {
+                    "__typename": "CrossReferencedEvent",
                     "source": {
                       "__typename": "PullRequest"
                     }
@@ -2090,6 +2267,9 @@
           "node": {
             "title": "fixed Invalid Date for CodeChef Contests",
             "url": "https://github.com/sahanmndl/UpCoding-Web/pull/51",
+            "repository": {
+              "url": "https://github.com/sahanmndl/UpCoding-Web"
+            },
             "author": {
               "login": "nnisarggada"
             },
@@ -2131,6 +2311,9 @@
           "node": {
             "title": "Challenges/1 cubo simples/php/fernandafmsf",
             "url": "https://github.com/he4rt/he4rtoberfest-2023/pull/70",
+            "repository": {
+              "url": "https://github.com/he4rt/he4rtoberfest-2023"
+            },
             "author": {
               "login": "Fernandafmsf"
             },
@@ -2182,6 +2365,9 @@
           "node": {
             "title": "Challenges/2 palindromos/typescript/clintonrocha",
             "url": "https://github.com/he4rt/he4rtoberfest-2023/pull/69",
+            "repository": {
+              "url": "https://github.com/he4rt/he4rtoberfest-2023"
+            },
             "author": {
               "login": "Clintonrocha98"
             },
@@ -2233,6 +2419,9 @@
           "node": {
             "title": "ADDED DIABETES DATASET AND DIABETES CLASSIFIER MODEL FILE",
             "url": "https://github.com/AkankshaAI/Hacktoberfest-Machine-Learning-diseases/pull/4",
+            "repository": {
+              "url": "https://github.com/AkankshaAI/Hacktoberfest-Machine-Learning-diseases"
+            },
             "author": {
               "login": "adit2005"
             },
@@ -2279,6 +2468,9 @@
           "node": {
             "title": "Changed title, description, info  in appwrite.md",
             "url": "https://github.com/ToolJet/ToolJet/pull/7584",
+            "repository": {
+              "url": "https://github.com/ToolJet/ToolJet"
+            },
             "author": {
               "login": "suiisharma"
             },
@@ -2315,6 +2507,9 @@
           "node": {
             "title": "Feature/issue 16",
             "url": "https://github.com/Yana-Gupta/real-estate-frontend/pull/21",
+            "repository": {
+              "url": "https://github.com/Yana-Gupta/real-estate-frontend"
+            },
             "author": {
               "login": "theDevSoham"
             },
@@ -2359,6 +2554,9 @@
           "node": {
             "title": "feat(api): add Organization Webhooks API",
             "url": "https://github.com/crowdin/crowdin-api-client-python/pull/122",
+            "repository": {
+              "url": "https://github.com/crowdin/crowdin-api-client-python"
+            },
             "author": {
               "login": "innomaxx"
             },
@@ -2400,6 +2598,9 @@
           "node": {
             "title": "Finalizando o desafio 1",
             "url": "https://github.com/he4rt/he4rtoberfest-2023/pull/67",
+            "repository": {
+              "url": "https://github.com/he4rt/he4rtoberfest-2023"
+            },
             "author": {
               "login": "saraaniceto"
             },
@@ -2446,11 +2647,23 @@
           "node": {
             "title": "#107 fixed Angle Type Classifier",
             "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/133",
+            "repository": {
+              "url": "https://github.com/SarthakKeshari/calc_for_everything"
+            },
             "author": {
               "login": "Sam-bhav-20"
             },
             "timelineItems": {
-              "edges": []
+              "edges": [
+                {
+                  "node": {
+                    "__typename": "ConnectedEvent",
+                    "subject": {
+                      "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/107"
+                    }
+                  }
+                }
+              ]
             },
             "labels": {
               "edges": [
@@ -2497,6 +2710,9 @@
           "node": {
             "title": "Maven quiz q71",
             "url": "https://github.com/Ebazhanov/linkedin-skill-assessments-quizzes/pull/6164",
+            "repository": {
+              "url": "https://github.com/Ebazhanov/linkedin-skill-assessments-quizzes"
+            },
             "author": {
               "login": "LostZor0"
             },
@@ -2533,6 +2749,9 @@
           "node": {
             "title": "Feat 14",
             "url": "https://github.com/Arindam200/makaut_buddy/pull/17",
+            "repository": {
+              "url": "https://github.com/Arindam200/makaut_buddy"
+            },
             "author": {
               "login": "mehulrnsit"
             },
@@ -2540,6 +2759,7 @@
               "edges": [
                 {
                   "node": {
+                    "__typename": "CrossReferencedEvent",
                     "source": {
                       "__typename": "PullRequest"
                     }
@@ -2582,6 +2802,9 @@
           "node": {
             "title": "HARMONY-1504, HARMONY-1594",
             "url": "https://github.com/nasa/harmony/pull/471",
+            "repository": {
+              "url": "https://github.com/nasa/harmony"
+            },
             "author": {
               "login": "ygliuvt"
             },
@@ -2626,6 +2849,9 @@
           "node": {
             "title": "feat: Add Unreal Sensei-Mega Tutorials Playlist in the game-development category",
             "url": "https://github.com/rupali-codes/LinksHub/pull/1787",
+            "repository": {
+              "url": "https://github.com/rupali-codes/LinksHub"
+            },
             "author": {
               "login": "SargamPuram"
             },
@@ -2685,6 +2911,9 @@
           "node": {
             "title": "Python strings .rstrip(), Closes #3363",
             "url": "https://github.com/Codecademy/docs/pull/3429",
+            "repository": {
+              "url": "https://github.com/Codecademy/docs"
+            },
             "author": {
               "login": "reganmarie"
             },
@@ -2754,6 +2983,9 @@
           "node": {
             "title": "Added a devops question.",
             "url": "https://github.com/freeCodeCamp/Developer_Quiz_Site/pull/732",
+            "repository": {
+              "url": "https://github.com/freeCodeCamp/Developer_Quiz_Site"
+            },
             "author": {
               "login": "Sauravionic"
             },
@@ -2790,6 +3022,9 @@
           "node": {
             "title": "Adding new utils header containing \"get_transposed_graph\" function",
             "url": "https://github.com/bobluppes/graaf/pull/136",
+            "repository": {
+              "url": "https://github.com/bobluppes/graaf"
+            },
             "author": {
               "login": "toadkarter"
             },
@@ -2839,6 +3074,9 @@
           "node": {
             "title": "Changed to size of Data Visualization Image in README.",
             "url": "https://github.com/Debaditya-Som/Data-Science-Codes/pull/25",
+            "repository": {
+              "url": "https://github.com/Debaditya-Som/Data-Science-Codes"
+            },
             "author": {
               "login": "nrhitik"
             },
@@ -2880,6 +3118,9 @@
           "node": {
             "title": "Implemented Loading Animation for Website",
             "url": "https://github.com/KartikeyMish/RepoSavant/pull/15",
+            "repository": {
+              "url": "https://github.com/KartikeyMish/RepoSavant"
+            },
             "author": {
               "login": "suryanshsingh2001"
             },
@@ -2916,6 +3157,9 @@
           "node": {
             "title": "Fixed Issue #70",
             "url": "https://github.com/Kritika30032002/To-Do-List-Application/pull/71",
+            "repository": {
+              "url": "https://github.com/Kritika30032002/To-Do-List-Application"
+            },
             "author": {
               "login": "Sumonta056"
             },
@@ -2957,6 +3201,9 @@
           "node": {
             "title": "Update CONTRIBUTING.md",
             "url": "https://github.com/Kali-Decoder/Eco_GRiD_H23/pull/17",
+            "repository": {
+              "url": "https://github.com/Kali-Decoder/Eco_GRiD_H23"
+            },
             "author": {
               "login": "Jatingupta9120"
             },
@@ -2993,6 +3240,9 @@
           "node": {
             "title": "Now properly checks the lockedoutdate",
             "url": "https://github.com/umbraco/Umbraco-CMS/pull/14908",
+            "repository": {
+              "url": "https://github.com/umbraco/Umbraco-CMS"
+            },
             "author": {
               "login": "Ambertvu"
             },
@@ -3054,6 +3304,9 @@
           "node": {
             "title": "fix: java Q144 same option #6093",
             "url": "https://github.com/Ebazhanov/linkedin-skill-assessments-quizzes/pull/6162",
+            "repository": {
+              "url": "https://github.com/Ebazhanov/linkedin-skill-assessments-quizzes"
+            },
             "author": {
               "login": "LostZor0"
             },
@@ -3061,6 +3314,7 @@
               "edges": [
                 {
                   "node": {
+                    "__typename": "CrossReferencedEvent",
                     "source": {
                       "__typename": "PullRequest"
                     }
@@ -3098,6 +3352,9 @@
           "node": {
             "title": "UI/fix telegram image",
             "url": "https://github.com/ta-vivo/ta-vivo/pull/122",
+            "repository": {
+              "url": "https://github.com/ta-vivo/ta-vivo"
+            },
             "author": {
               "login": "rafieltq"
             },
@@ -3139,11 +3396,23 @@
           "node": {
             "title": "Adjoint of a Matrix calculator using ReactJS",
             "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/131",
+            "repository": {
+              "url": "https://github.com/SarthakKeshari/calc_for_everything"
+            },
             "author": {
               "login": "uttkarsh1m"
             },
             "timelineItems": {
-              "edges": []
+              "edges": [
+                {
+                  "node": {
+                    "__typename": "ConnectedEvent",
+                    "subject": {
+                      "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/42"
+                    }
+                  }
+                }
+              ]
             },
             "labels": {
               "edges": [
@@ -3190,11 +3459,23 @@
           "node": {
             "title": "loan repayment calculator",
             "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/130",
+            "repository": {
+              "url": "https://github.com/SarthakKeshari/calc_for_everything"
+            },
             "author": {
               "login": "Saksham-245"
             },
             "timelineItems": {
-              "edges": []
+              "edges": [
+                {
+                  "node": {
+                    "__typename": "ConnectedEvent",
+                    "subject": {
+                      "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/61"
+                    }
+                  }
+                }
+              ]
             },
             "labels": {
               "edges": [
@@ -3241,6 +3522,9 @@
           "node": {
             "title": "add: baidu image",
             "url": "https://github.com/edoardottt/awesome-hacker-search-engines/pull/56",
+            "repository": {
+              "url": "https://github.com/edoardottt/awesome-hacker-search-engines"
+            },
             "author": {
               "login": "vaishsabu"
             },
@@ -3277,6 +3561,9 @@
           "node": {
             "title": "updated german translation",
             "url": "https://github.com/lorenzovngl/FoodExpirationDates/pull/68",
+            "repository": {
+              "url": "https://github.com/lorenzovngl/FoodExpirationDates"
+            },
             "author": {
               "login": "uDEV2019"
             },
@@ -3313,6 +3600,9 @@
           "node": {
             "title": "Create New dataset",
             "url": "https://github.com/AkankshaAI/Hacktoberfest-Machine-Learning-diseases/pull/3",
+            "repository": {
+              "url": "https://github.com/AkankshaAI/Hacktoberfest-Machine-Learning-diseases"
+            },
             "author": {
               "login": "rishikasuhag"
             },
@@ -3364,6 +3654,9 @@
           "node": {
             "title": "code of conduct updated successfully",
             "url": "https://github.com/rohitagr0310/Bookflow-app/pull/243",
+            "repository": {
+              "url": "https://github.com/rohitagr0310/Bookflow-app"
+            },
             "author": {
               "login": "qaidjoharj53"
             },
@@ -3405,6 +3698,9 @@
           "node": {
             "title": "refactor: rewrite config schema in zod",
             "url": "https://github.com/vercel/next.js/pull/56383",
+            "repository": {
+              "url": "https://github.com/vercel/next.js"
+            },
             "author": {
               "login": "SukkaW"
             },
@@ -3412,6 +3708,7 @@
               "edges": [
                 {
                   "node": {
+                    "__typename": "CrossReferencedEvent",
                     "source": {
                       "__typename": "Issue",
                       "url": "https://github.com/vercel/next.js/issues/57755",
@@ -3434,6 +3731,7 @@
                 },
                 {
                   "node": {
+                    "__typename": "CrossReferencedEvent",
                     "source": {
                       "__typename": "PullRequest"
                     }
@@ -3476,6 +3774,9 @@
           "node": {
             "title": "#15 - Added scrollIntoView for Features section",
             "url": "https://github.com/Arindam200/makaut_buddy/pull/16",
+            "repository": {
+              "url": "https://github.com/Arindam200/makaut_buddy"
+            },
             "author": {
               "login": "Ryan-Maddock-96"
             },
@@ -3483,6 +3784,7 @@
               "edges": [
                 {
                   "node": {
+                    "__typename": "CrossReferencedEvent",
                     "source": {
                       "__typename": "PullRequest"
                     }
@@ -3525,6 +3827,9 @@
           "node": {
             "title": "Newfood atomization: Meats",
             "url": "https://github.com/BeeStation/BeeStation-Hornet/pull/9951",
+            "repository": {
+              "url": "https://github.com/BeeStation/BeeStation-Hornet"
+            },
             "author": {
               "login": "Tsar-Salat"
             },
@@ -3594,6 +3899,9 @@
           "node": {
             "title": "Added more details on the form, input and label elements",
             "url": "https://github.com/KTCNigeria/html-css-amateur/pull/1",
+            "repository": {
+              "url": "https://github.com/KTCNigeria/html-css-amateur"
+            },
             "author": {
               "login": "hashkitti001"
             },
@@ -3630,6 +3938,9 @@
           "node": {
             "title": "Code Revamp: Enhanced Performance, Clear Documentation",
             "url": "https://github.com/zero-to-mastery/ascii-art/pull/120",
+            "repository": {
+              "url": "https://github.com/zero-to-mastery/ascii-art"
+            },
             "author": {
               "login": "hanisntsolo"
             },
@@ -3637,6 +3948,7 @@
               "edges": [
                 {
                   "node": {
+                    "__typename": "CrossReferencedEvent",
                     "source": {
                       "__typename": "PullRequest"
                     }
@@ -3674,6 +3986,9 @@
           "node": {
             "title": "fixed the issue #324",
             "url": "https://github.com/Diptenusarkar/Website-Template/pull/330",
+            "repository": {
+              "url": "https://github.com/Diptenusarkar/Website-Template"
+            },
             "author": {
               "login": "PratyushSinha15"
             },
@@ -3681,6 +3996,15 @@
               "edges": [
                 {
                   "node": {
+                    "__typename": "ConnectedEvent",
+                    "subject": {
+                      "url": "https://github.com/Diptenusarkar/Website-Template/issues/324"
+                    }
+                  }
+                },
+                {
+                  "node": {
+                    "__typename": "CrossReferencedEvent",
                     "source": {
                       "__typename": "Issue",
                       "url": "https://github.com/Diptenusarkar/Website-Template/issues/324",
@@ -3722,6 +4046,9 @@
           "node": {
             "title": "Contact us page added",
             "url": "https://github.com/IshaanAdarsh/ezmail/pull/64",
+            "repository": {
+              "url": "https://github.com/IshaanAdarsh/ezmail"
+            },
             "author": {
               "login": "shrutiiigupta"
             },
@@ -3758,6 +4085,9 @@
           "node": {
             "title": "Djikstras algorithm and Topological sorting algorithm in C++",
             "url": "https://github.com/Codewave-Crew/Lets-Do-Code/pull/203",
+            "repository": {
+              "url": "https://github.com/Codewave-Crew/Lets-Do-Code"
+            },
             "author": {
               "login": "Abhiram-J"
             },
@@ -3809,6 +4139,9 @@
           "node": {
             "title": "bugITwhisperer: playwright skeleton tests steps update (Issue #378)",
             "url": "https://github.com/EddieHubCommunity/good-first-issue-finder/pull/379",
+            "repository": {
+              "url": "https://github.com/EddieHubCommunity/good-first-issue-finder"
+            },
             "author": {
               "login": "bugITwhisperer"
             },
@@ -3845,6 +4178,9 @@
           "node": {
             "title": "Added various easy, medium and hard level questions",
             "url": "https://github.com/godkingjay/LeetCode/pull/31",
+            "repository": {
+              "url": "https://github.com/godkingjay/LeetCode"
+            },
             "author": {
               "login": "manmohak07"
             },
@@ -3891,11 +4227,23 @@
           "node": {
             "title": "feat: add docker and compose configs #64",
             "url": "https://github.com/Sanchitbajaj02/palettegram/pull/66",
+            "repository": {
+              "url": "https://github.com/Sanchitbajaj02/palettegram"
+            },
             "author": {
               "login": "Shrest4647"
             },
             "timelineItems": {
-              "edges": []
+              "edges": [
+                {
+                  "node": {
+                    "__typename": "ConnectedEvent",
+                    "subject": {
+                      "url": "https://github.com/Sanchitbajaj02/palettegram/issues/64"
+                    }
+                  }
+                }
+              ]
             },
             "labels": {
               "edges": [
@@ -3937,6 +4285,9 @@
           "node": {
             "title": "Feat/pandas reader parquet",
             "url": "https://github.com/DAGWorks-Inc/hamilton/pull/429",
+            "repository": {
+              "url": "https://github.com/DAGWorks-Inc/hamilton"
+            },
             "author": {
               "login": "flaviassantos"
             },
@@ -3944,6 +4295,7 @@
               "edges": [
                 {
                   "node": {
+                    "__typename": "CrossReferencedEvent",
                     "source": {
                       "__typename": "Issue",
                       "url": "https://github.com/DAGWorks-Inc/hamilton/issues/506",
@@ -3991,6 +4343,9 @@
           "node": {
             "title": "Added exmaples for `ronin encode`",
             "url": "https://github.com/ronin-rb/ronin/pull/174",
+            "repository": {
+              "url": "https://github.com/ronin-rb/ronin"
+            },
             "author": {
               "login": "Cioraz"
             },
@@ -4032,6 +4387,9 @@
           "node": {
             "title": "Added social icons such as github twitter linkdin instagram",
             "url": "https://github.com/DhanushNehru/HarmonyCode/pull/20",
+            "repository": {
+              "url": "https://github.com/DhanushNehru/HarmonyCode"
+            },
             "author": {
               "login": "Mirthhh08"
             },
@@ -4078,6 +4436,9 @@
           "node": {
             "title": "add: images section",
             "url": "https://github.com/edoardottt/awesome-hacker-search-engines/pull/55",
+            "repository": {
+              "url": "https://github.com/edoardottt/awesome-hacker-search-engines"
+            },
             "author": {
               "login": "vaishsabu"
             },
@@ -4114,6 +4475,9 @@
           "node": {
             "title": "📝 Codefactor code coverage shield badge",
             "url": "https://github.com/neon-mmd/websurfx/pull/301",
+            "repository": {
+              "url": "https://github.com/neon-mmd/websurfx"
+            },
             "author": {
               "login": "Niloth-p"
             },
@@ -4121,6 +4485,7 @@
               "edges": [
                 {
                   "node": {
+                    "__typename": "CrossReferencedEvent",
                     "source": {
                       "__typename": "Issue",
                       "url": "https://github.com/neon-mmd/websurfx/issues/300",
@@ -4233,6 +4598,9 @@
           "node": {
             "title": "Finalizando o desafio 3 - php",
             "url": "https://github.com/he4rt/he4rtoberfest-2023/pull/60",
+            "repository": {
+              "url": "https://github.com/he4rt/he4rtoberfest-2023"
+            },
             "author": {
               "login": "gdiasb"
             },
@@ -4279,6 +4647,9 @@
           "node": {
             "title": "Added information related to cache",
             "url": "https://github.com/shhossain/computer_science/pull/648",
+            "repository": {
+              "url": "https://github.com/shhossain/computer_science"
+            },
             "author": {
               "login": "manavmittal05"
             },
@@ -4325,11 +4696,23 @@
           "node": {
             "title": "Graph Maker is created using JS",
             "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/129",
+            "repository": {
+              "url": "https://github.com/SarthakKeshari/calc_for_everything"
+            },
             "author": {
               "login": "imsoumik03"
             },
             "timelineItems": {
-              "edges": []
+              "edges": [
+                {
+                  "node": {
+                    "__typename": "ConnectedEvent",
+                    "subject": {
+                      "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/31"
+                    }
+                  }
+                }
+              ]
             },
             "labels": {
               "edges": [
@@ -4381,6 +4764,9 @@
           "node": {
             "title": "fix(client): tooltip for logout",
             "url": "https://github.com/amplication/amplication/pull/7145",
+            "repository": {
+              "url": "https://github.com/amplication/amplication"
+            },
             "author": {
               "login": "Sheersendu"
             },
@@ -4388,6 +4774,7 @@
               "edges": [
                 {
                   "node": {
+                    "__typename": "CrossReferencedEvent",
                     "source": {
                       "__typename": "PullRequest"
                     }
@@ -4430,6 +4817,9 @@
           "node": {
             "title": "feat: Tic-Tac-Toe Rules added as pop-up ",
             "url": "https://github.com/malivinayak/Tic-Tac-Toe/pull/6",
+            "repository": {
+              "url": "https://github.com/malivinayak/Tic-Tac-Toe"
+            },
             "author": {
               "login": "Sankalp20Tiwari"
             },
@@ -4437,6 +4827,7 @@
               "edges": [
                 {
                   "node": {
+                    "__typename": "CrossReferencedEvent",
                     "source": {
                       "__typename": "PullRequest"
                     }
@@ -4444,6 +4835,7 @@
                 },
                 {
                   "node": {
+                    "__typename": "CrossReferencedEvent",
                     "source": {
                       "__typename": "PullRequest"
                     }
@@ -4486,6 +4878,9 @@
           "node": {
             "title": "fixed logo on sign up page",
             "url": "https://github.com/faisalnazir7/battleHost-frontend/pull/214",
+            "repository": {
+              "url": "https://github.com/faisalnazir7/battleHost-frontend"
+            },
             "author": {
               "login": "Prajjawal-Sharma"
             },
@@ -4527,6 +4922,9 @@
           "node": {
             "title": "useState hell problem in Appreciation.jsx & Participation.jsx Solved! ",
             "url": "https://github.com/11WALTER11/Certify/pull/9",
+            "repository": {
+              "url": "https://github.com/11WALTER11/Certify"
+            },
             "author": {
               "login": "khubaibkm"
             },
@@ -4563,6 +4961,9 @@
           "node": {
             "title": "Revert \"[next] Correct output file tracing and limit calculation (#10631)\"",
             "url": "https://github.com/vercel/vercel/pull/10651",
+            "repository": {
+              "url": "https://github.com/vercel/vercel"
+            },
             "author": {
               "login": "styfle"
             },
@@ -4570,6 +4971,7 @@
               "edges": [
                 {
                   "node": {
+                    "__typename": "CrossReferencedEvent",
                     "source": {
                       "__typename": "PullRequest"
                     }
@@ -4633,6 +5035,9 @@
           "node": {
             "title": "Edit readme title itallics",
             "url": "https://github.com/sumn2u/learn-javascript/pull/59",
+            "repository": {
+              "url": "https://github.com/sumn2u/learn-javascript"
+            },
             "author": {
               "login": "bj-rutledge"
             },
@@ -4674,6 +5079,9 @@
           "node": {
             "title": "[EDIT] Add gifs to demonstrate CSS animations",
             "url": "https://github.com/Codecademy/docs/pull/3428",
+            "repository": {
+              "url": "https://github.com/Codecademy/docs"
+            },
             "author": {
               "login": "Jamesllllllllll"
             },
@@ -4743,6 +5151,9 @@
           "node": {
             "title": "Group Anagrams",
             "url": "https://github.com/kanchuka123/Hacktorberfest2023/pull/14",
+            "repository": {
+              "url": "https://github.com/kanchuka123/Hacktorberfest2023"
+            },
             "author": {
               "login": "monubucky"
             },
@@ -4775,7 +5186,11 @@
             }
           }
         }
-      ]
+      ],
+      "pageInfo": {
+        "endCursor": "Y3Vyc29yOjEwMA==",
+        "hasNextPage": true
+      }
     }
   }
 }

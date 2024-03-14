@@ -12,18 +12,9 @@ query ($query: String!) {
           author {
             login
           }
-          timelineItems(first: 10, itemTypes: [CONNECTED_EVENT, CROSS_REFERENCED_EVENT]) {
+          timelineItems(first: 10, itemTypes: [CROSS_REFERENCED_EVENT]) {
             edges {
               node {
-                __typename
-                ... on ConnectedEvent {
-                  subject {
-                    ... on Issue {
-                      url
-                    }
-                  }
-                }
-                __typename
                 ... on CrossReferencedEvent {
                   source {
                     __typename
@@ -65,14 +56,14 @@ query ($query: String!) {
         }
       }
     }
-    pageInfo {
+  pageInfo {
       endCursor
       hasNextPage
     }
   }
 }
 
+
 {
   "query": "label:hacktoberfest-accepted is:pr is:merged created:2023-10-01..2023-10-03 review:approved -label:spam -label:invalid"
 }
-
