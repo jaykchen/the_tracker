@@ -41,13 +41,6 @@ query ($query: String!, $firstComments: Int!, $firstTimelineItems: Int!) {
                     __typename
                     ... on PullRequest {
                       url
-                      labels(first: 10) {
-                        edges {
-                          node {
-                            name
-                          }
-                        }
-                      }
                     }
                   }
                 }

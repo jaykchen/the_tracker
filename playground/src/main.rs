@@ -46,17 +46,19 @@ async fn main() -> anyhow::Result<()> {
 
     for date_range in date_range_vec {
         let query =
-            format!("label:hacktoberfest-accepted is:pr is:merged created:{date_range} review:approved -label:spam -label:invalid -label:duplicate -label:automerge");
+            format!("label:hacktoberfest-accepted is:pr is:merged created:{date_range} review:approved -label:spam -label:invalid");
         println!("query: {:?}", query.clone());
         let pulls = get_pull_requests(&query).await?;
 
         for pull in pulls {
-            println!("pull: {:?}", pull.title);
+            println!("pull: {:?}", pull.url);
+            println!("pull: {:?}", pull.repository);
 
             // let body = issue.body.chars().take(200).collect::<String>();
             // let title = issue.title.chars().take(200).collect::<String>();
             // let _ = (&pool, &issue.url, &title, &body).await?;
         }
+        break;
     }
 
     // for date_range in date_range_vec {
@@ -66,7 +68,7 @@ async fn main() -> anyhow::Result<()> {
     //     let issues = get_issues(&query).await?;
 
     //     for issue in issues {
-    //         // println!("issue: {:?}", issue);
+    //         println!("issue: {:?}", issue.url);
 
     //         let body = issue.body.chars().take(200).collect::<String>();
     //         let title = issue.title.chars().take(200).collect::<String>();

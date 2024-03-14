@@ -1,4 +1,4 @@
-use chrono::Utc;
+/* use chrono::Utc;
 
 use anyhow::anyhow;
 use octocrab::{models::issues::Issue, Octocrab};
@@ -11,7 +11,6 @@ use http_req::{
 };
 use serde::{Deserialize, Serialize};
 use std::io::Write;
-
 #[derive(Serialize, Deserialize, Clone, Debug)]
 pub struct OuterIssue {
     pub title: String,
@@ -127,7 +126,7 @@ pub async fn get_issues(query: &str) -> anyhow::Result<Vec<OuterIssue>> {
         .append(true)
         .open(file_path)?;
     let mut count = 0;
-    for _n in 1..55 {
+    for _n in 1..11 {
         let query_str = format!(
             r#"
             query {{
@@ -292,7 +291,6 @@ pub async fn get_issues(query: &str) -> anyhow::Result<Vec<OuterIssue>> {
     Ok(all_issues)
 }
 
-
 #[derive(Serialize, Deserialize, Clone, Debug)]
 pub struct OuterPull {
     pub title: String,
@@ -301,7 +299,8 @@ pub struct OuterPull {
     pub labels: Vec<String>,
     pub reviews: Vec<String>, // Reviews by authors
     pub assignees: Vec<String>,
-    pub timeline_comments: Vec<String>, // Comments from timeline items
+    pub merged_by: String,    // the login of the actor
+    pub cross_ref_in: String, // the issue url of which cross referrenced in the pull_request
 }
 
 pub async fn get_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>> {
@@ -575,3 +574,4 @@ pub async fn get_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>> {
 
     Ok(all_pulls)
 }
+*/

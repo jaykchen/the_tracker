@@ -1,11 +1,14 @@
 query ($query: String!) {
-  search(query: $query, type: ISSUE, first: 100) {
+  search(query: $query, type: ISSUE, first: 100, after: null) {
     issueCount
     edges {
       node {
         ... on PullRequest {
           title
           url
+          repository {
+            url
+          }
           author {
             login
           }
@@ -53,8 +56,13 @@ query ($query: String!) {
         }
       }
     }
+  pageInfo {
+      endCursor
+      hasNextPage
+    }
   }
 }
+
 
 {
   "query": "label:hacktoberfest-accepted is:pr is:merged created:2023-10-01..2023-10-03 review:approved -label:spam -label:invalid"

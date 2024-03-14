@@ -165,110 +165,127 @@ pub async fn get_project_logo(owner: &str, repo: &str) -> anyhow::Result<String>
 #[derive(Serialize, Deserialize, Clone, Debug)]
 pub struct OuterIssue {
     pub title: String,
-    pub number: i32,
-    pub author: String,
-    pub body: String, // newly added field
-    pub repository: String,
     pub url: String,
-    pub labels: Vec<String>,
-    pub comments: String,
+    pub author: String,
+    pub body: String,
+    pub repository: String,
+    pub repository_stars: i64,
+    pub issue_labels: Vec<String>,
+    pub comments: Vec<String>,             // Concat of author and comment
+    pub cross_referenced_prs: Vec<String>, // URLs of cross-referenced pull requests
 }
 
 pub async fn get_issues(query: &str) -> anyhow::Result<Vec<OuterIssue>> {
-    #[derive(Serialize, Deserialize, Debug)]
+    #[derive(Serialize, Deserialize, Clone, Debug)]
     struct GraphQLResponse {
         data: Option<Data>,
     }
 
-    #[derive(Serialize, Deserialize, Debug)]
+    #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Data {
         search: Option<Search>,
     }
 
-    #[derive(Serialize, Deserialize, Debug)]
+    #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Search {
         issueCount: Option<i32>,
         edges: Option<Vec<Edge>>,
         pageInfo: PageInfo,
     }
 
-    #[derive(Serialize, Deserialize, Debug)]
+    #[derive(Serialize, Deserialize, Clone, Debug)]
     struct PageInfo {
         endCursor: Option<String>,
-        hasNextPage: Option<bool>,
+        hasNextPage: bool,
     }
 
-    #[derive(Serialize, Deserialize, Debug)]
+    #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Edge {
         node: Option<LocalIssue>,
     }
 
-    #[derive(Serialize, Deserialize, Debug)]
+    #[derive(Serialize, Deserialize, Clone, Debug)]
     struct LocalIssue {
         title: Option<String>,
-        number: Option<i32>,
+        url: Option<String>,
         author: Option<Author>,
         body: Option<String>,
         repository: Option<Repository>,
-        url: Option<String>,
         labels: Option<Labels>,
         comments: Option<Comments>,
+        timelineItems: Option<TimelineItems>,
     }
 
-    #[derive(Serialize, Deserialize, Debug)]
+    #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Author {
         login: Option<String>,
-        avatarUrl: Option<String>,
     }
 
-    #[derive(Serialize, Deserialize, Debug)]
+    #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Repository {
-        name: Option<String>,
-        owner: Option<Owner>,
+        url: Option<String>,
         stargazers: Option<Stargazers>,
     }
 
-    #[derive(Serialize, Deserialize, Debug)]
+    #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Stargazers {
-        totalCount: Option<i32>,
+        totalCount: Option<i64>,
     }
 
-    #[derive(Serialize, Deserialize, Debug)]
-    struct Owner {
-        login: Option<String>,
-    }
-
-    #[derive(Serialize, Deserialize, Debug)]
+    #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Labels {
         edges: Option<Vec<LabelEdge>>,
     }
 
-    #[derive(Serialize, Deserialize, Debug)]
+    #[derive(Serialize, Deserialize, Clone, Debug)]
     struct LabelEdge {
         node: Option<Label>,
     }
 
-    #[derive(Serialize, Deserialize, Debug)]
+    #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Label {
         name: Option<String>,
     }
 
-    #[derive(Serialize, Deserialize, Debug)]
+    #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Comments {
         edges: Option<Vec<CommentEdge>>,
     }
 
-    #[derive(Serialize, Deserialize, Debug)]
+    #[derive(Serialize, Deserialize, Clone, Debug)]
     struct CommentEdge {
         node: Option<Comment>,
     }
 
-    #[derive(Serialize, Deserialize, Debug)]
+    #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Comment {
         author: Option<Author>,
         body: Option<String>,
     }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct TimelineItems {
+        edges: Option<Vec<TimelineEdge>>,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct TimelineEdge {
+        node: Option<CrossReferencedEvent>,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct CrossReferencedEvent {
+        source: Option<Source>,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct Source {
+        __typename: Option<String>,
+        url: Option<String>,
+    }
+
     let first_comments = 10;
+    let first_timeline_items = 10;
     let mut all_issues = Vec::new();
     let mut after_cursor: Option<String> = None;
     let file_path = "issues.txt";
@@ -277,28 +294,24 @@ pub async fn get_issues(query: &str) -> anyhow::Result<Vec<OuterIssue>> {
         .append(true)
         .open(file_path)?;
     let mut count = 0;
-    for _n in 1..11 {
+
+    for _ in 0..10 {
         let query_str = format!(
             r#"
             query {{
-                search(query: "{}", type: ISSUE, first: 100, after: {}) {{
+                search(query: "{}", type: ISSUE, first: 10, after: {}) {{
                     issueCount
                     edges {{
                         node {{
                             ... on Issue {{
                                 title
-                                number
                                 url
                                 body
                                 author {{
                                     login
-                                    avatarUrl
                                 }}
                                 repository {{
-                                    name
-                                    owner {{
-                                        login
-                                    }}
+                                    url
                                     stargazers {{
                                         totalCount
                                     }}
@@ -320,6 +333,20 @@ pub async fn get_issues(query: &str) -> anyhow::Result<Vec<OuterIssue>> {
                                         }}
                                     }}
                                 }}
+                                timelineItems(first: {}, itemTypes: [CROSS_REFERENCED_EVENT]) {{
+                                    edges {{
+                                        node {{
+                                            ... on CrossReferencedEvent {{
+                                                source {{
+                                                    __typename
+                                                    ... on PullRequest {{
+                                                        url
+                                                    }}
+                                                }}
+                                            }}
+                                        }}
+                                    }}
+                                }}
                             }}
                         }}
                     }}
@@ -334,7 +361,8 @@ pub async fn get_issues(query: &str) -> anyhow::Result<Vec<OuterIssue>> {
             after_cursor
                 .as_ref()
                 .map_or(String::from("null"), |c| format!("\"{}\"", c)),
-            first_comments
+            first_comments,
+            first_timeline_items
         );
 
         let response_body = github_http_post_gql(&query_str)
@@ -346,94 +374,89 @@ pub async fn get_issues(query: &str) -> anyhow::Result<Vec<OuterIssue>> {
 
         if let Some(data) = response.data {
             if let Some(search) = data.search {
-                if let Some(edges) = search.edges {
-                    for edge in edges {
-                        if let Some(issue) = edge.node {
-                            let labels = issue
-                                .labels
-                                .as_ref()
-                                .and_then(|l| l.edges.as_ref())
-                                .map_or(vec![], |edges| {
-                                    edges
-                                        .iter()
-                                        .filter_map(|edge| {
-                                            edge.node.as_ref().and_then(|label| label.name.clone())
+                for edge in search.edges.unwrap_or_default() {
+                    if let Some(issue) = edge.node {
+                        let labels = issue.labels.map_or(Vec::new(), |labels| {
+                            labels.edges.map_or(Vec::new(), |edges| {
+                                edges
+                                    .iter()
+                                    .filter_map(|edge| {
+                                        edge.node
+                                            .as_ref()
+                                            .map(|label| label.name.clone().unwrap_or_default())
+                                    })
+                                    .collect()
+                            })
+                        });
+                        let temp_str = String::from("");
+                        let comments = issue.comments.map_or(Vec::new(), |comments| {
+                            comments.edges.map_or(Vec::new(), |edges| {
+                                edges
+                                    .iter()
+                                    .filter_map(|edge| {
+                                        edge.node.as_ref().map(|comment| {
+                                            format!(
+                                                "{}: {}",
+                                                comment.author.as_ref().map_or("", |a| a
+                                                    .login
+                                                    .as_ref()
+                                                    .unwrap_or(&temp_str)),
+                                                comment.body.as_ref().unwrap_or(&"".to_string())
+                                            )
                                         })
-                                        .collect()
-                                });
+                                    })
+                                    .collect()
+                            })
+                        });
 
-                            let comments = issue
-                                .comments
-                                .as_ref()
-                                .and_then(|c| c.edges.as_ref())
-                                .map_or(String::new(), |edges| {
+                        let cross_referenced_prs =
+                            issue.timelineItems.map_or(Vec::new(), |items| {
+                                items.edges.map_or(Vec::new(), |edges| {
                                     edges
                                         .iter()
                                         .filter_map(|edge| {
-                                            edge.node.as_ref().map(|comment| {
-                                                format!(
-                                                    "{}: {}",
-                                                    comment
-                                                        .author
-                                                        .as_ref()
-                                                        .and_then(|a| a.login.as_ref())
-                                                        .unwrap_or(&String::new()),
-                                                    comment.body.as_ref().unwrap_or(&String::new())
+                                            edge.node.as_ref().map(|item| {
+                                                item.source.as_ref().map_or(
+                                                    "".to_string(),
+                                                    |source| {
+                                                        source
+                                                            .url
+                                                            .as_ref()
+                                                            .unwrap_or(&"".to_string())
+                                                            .clone()
+                                                    },
                                                 )
                                             })
                                         })
-                                        .collect::<Vec<String>>()
-                                        .join("\n")
-                                });
-
-                            let issue_url = issue.url.clone().unwrap_or_default();
-                            writeln!(file, "{}", issue_url)?;
-                            count += 1;
-                            // println!(
-                            //     "issue {count}: {:?}",
-                            //     issue.title.clone().unwrap_or_default()
-                            // );
-
-                            all_issues.push(OuterIssue {
-                                title: issue.title.clone().unwrap_or_default(),
-                                number: issue.number.unwrap_or_default(),
-                                author: issue
-                                    .author
-                                    .as_ref()
-                                    .and_then(|a| a.login.clone())
-                                    .unwrap_or_default(),
-                                body: issue.body.clone().unwrap_or_default(),
-                                repository: format!(
-                                    "{}/{}",
-                                    issue
-                                        .repository
-                                        .as_ref()
-                                        .and_then(|r| r
-                                            .owner
-                                            .as_ref()
-                                            .and_then(|o| o.login.as_ref()))
-                                        .unwrap_or(&String::new()),
-                                    issue
-                                        .repository
-                                        .as_ref()
-                                        .and_then(|r| r.name.as_ref())
-                                        .unwrap_or(&String::new())
-                                ),
-                                url: issue.url.clone().unwrap_or_default(),
-                                labels,
-                                comments,
+                                        .collect()
+                                })
                             });
-                        }
+
+                        all_issues.push(OuterIssue {
+                            title: issue.title.unwrap_or_default(),
+                            url: issue.url.unwrap_or_default(),
+                            author: issue
+                                .author
+                                .map_or(String::new(), |author| author.login.unwrap_or_default()),
+                            body: issue.body.unwrap_or_default(),
+                            repository: issue
+                                .repository
+                                .clone() // Clone here
+                                .map_or(String::new(), |repo| repo.url.unwrap_or_default()),
+                            repository_stars: issue.repository.map_or(0, |repo| {
+                                repo.stargazers
+                                    .map_or(0, |stars| stars.totalCount.unwrap_or(0))
+                            }),
+                            issue_labels: labels,
+                            comments: comments,
+                            cross_referenced_prs: cross_referenced_prs,
+                        });
                     }
                 }
-
-                match search.pageInfo.hasNextPage {
-                    Some(true) => {
-                        println!("{:?}", search.pageInfo.endCursor.clone());
-
-                        after_cursor = search.pageInfo.endCursor
-                    }
-                    _ => break,
+                if search.pageInfo.hasNextPage {
+                    after_cursor = search.pageInfo.endCursor
+                } else {
+                    break;
                 }
             }
         }
@@ -445,13 +468,13 @@ pub async fn get_issues(query: &str) -> anyhow::Result<Vec<OuterIssue>> {
 #[derive(Serialize, Deserialize, Clone, Debug)]
 pub struct OuterPull {
     pub title: String,
-    pub number: i32,
+    pub url: String,
     pub author: String,
+    pub repository: String, // URL of the repository where the pull request was opened
+    pub cross_referenced_issues: Vec<String>, // URLs of cross-referenced issues
     pub labels: Vec<String>,
-    pub reviews: Vec<String>, // Reviews by authors
-    pub assignees: Vec<String>,
-    pub merged_by: String,    // the login of the actor
-    pub cross_ref_in: String, // the issue url of which cross referrenced in the pull_request
+    pub reviews: Vec<String>, // authors whose review state is approved
+    pub merged_by: String,
 }
 
 pub async fn get_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>> {
@@ -475,7 +498,7 @@ pub async fn get_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>> {
     #[derive(Serialize, Deserialize, Debug)]
     struct PageInfo {
         endCursor: Option<String>,
-        hasNextPage: Option<bool>,
+        hasNextPage: bool,
     }
 
     #[derive(Serialize, Deserialize, Debug)]
@@ -486,13 +509,17 @@ pub async fn get_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>> {
     #[derive(Serialize, Deserialize, Debug)]
     struct LocalPull {
         title: Option<String>,
-        number: Option<i32>,
-        author: Option<Author>,
         url: Option<String>,
+        author: Option<Author>,
         labels: Option<Labels>,
-        comments: Option<Comments>,
-        reviews: Option<Reviews>,
-        assignees: Option<Assignees>,
+        timelineItems: Option<TimelineItems>,
+        hasApprovedReview: Option<Reviews>,
+        mergedBy: Option<Author>,
+        repository: Option<Repository>,
+    }
+    #[derive(Serialize, Deserialize, Debug)]
+    struct Repository {
+        url: Option<String>,
     }
 
     #[derive(Serialize, Deserialize, Debug)]
@@ -544,20 +571,25 @@ pub async fn get_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>> {
     struct Review {
         author: Option<Author>,
     }
-
-    #[derive(Serialize, Deserialize, Debug)]
-    struct Assignees {
-        edges: Option<Vec<AssigneeEdge>>,
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct TimelineItems {
+        edges: Option<Vec<TimelineEdge>>,
     }
 
-    #[derive(Serialize, Deserialize, Debug)]
-    struct AssigneeEdge {
-        node: Option<Assignee>,
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct TimelineEdge {
+        node: Option<CrossReferencedEvent>,
     }
 
-    #[derive(Serialize, Deserialize, Debug)]
-    struct Assignee {
-        login: Option<String>,
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct CrossReferencedEvent {
+        source: Option<Source>,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct Source {
+        __typename: Option<String>,
+        url: Option<String>,
     }
 
     let mut all_pulls = Vec::new();
@@ -566,17 +598,40 @@ pub async fn get_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>> {
     for _n in 1..11 {
         let query_str = format!(
             r#"
-            {{
-                search(query: "{}", type: PR, first: 100, after: {}) {{
+            query {{
+                search(query: "{}", type: ISSUE, first: 100, after: {}) {{
                     issueCount
                     edges {{
                         node {{
                             ... on PullRequest {{
                                 title
-                                number
                                 url
+                                repository {{
+                                    url
+                                }}
                                 author {{
                                     login
+                                }}
+                                timelineItems(first: 10, itemTypes: [CROSS_REFERENCED_EVENT]) {{
+                                    edges {{
+                                        node {{
+                                            ... on CrossReferencedEvent {{
+                                                source {{
+                                                    __typename
+                                                    ... on Issue {{
+                                                        url
+                                                        labels(first: 10) {{
+                                                            edges {{
+                                                                node {{
+                                                                    name
+                                                                }}
+                                                            }}
+                                                        }}
+                                                    }}
+                                                }}
+                                            }}
+                                        }}
+                                    }}
                                 }}
                                 labels(first: 10) {{
                                     edges {{
@@ -585,28 +640,18 @@ pub async fn get_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>> {
                                         }}
                                     }}
                                 }}
-                                comments(first: 10) {{
-                                    edges {{
-                                        node {{
-                                            body
-                                        }}
-                                    }}
-                                }}
-                                reviews(first: 10) {{
+                                hasApprovedReview: reviews(first: 5, states: [APPROVED]) {{
                                     edges {{
                                         node {{
                                             author {{
                                                 login
                                             }}
+                                            state
                                         }}
                                     }}
                                 }}
-                                assignees(first: 10) {{
-                                    edges {{
-                                        node {{
-                                            login
-                                        }}
-                                    }}
+                                mergedBy {{
+                                    login
                                 }}
                             }}
                         }}
@@ -618,14 +663,13 @@ pub async fn get_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>> {
                 }}
             }}
             "#,
-            query.replace("\"", "\\\""),
+            query,
             after_cursor
                 .as_ref()
                 .map_or(String::from("null"), |c| format!("\"{}\"", c))
         );
 
-        let response_body = github_http_post_gql({ &query_str }).await?;
-
+        let response_body = github_http_post_gql(&query_str).await?;
         let response: GraphQLResponse = serde_json::from_slice(&response_body)?;
 
         if let Some(data) = response.data {
@@ -646,23 +690,30 @@ pub async fn get_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>> {
                                         .collect()
                                 });
 
-                            let comments = pull
-                                .comments
+                            let cross_referenced_issues = pull
+                                .timelineItems
                                 .as_ref()
-                                .and_then(|c| c.edges.as_ref())
+                                .and_then(|t| t.edges.as_ref())
                                 .map_or(vec![], |edges| {
                                     edges
                                         .iter()
                                         .filter_map(|edge| {
-                                            edge.node
-                                                .as_ref()
-                                                .and_then(|comment| comment.body.clone())
+                                            edge.node.as_ref().and_then(|item| {
+                                                item.source.as_ref().and_then(|source| {
+                                                    if source.__typename.as_deref() == Some("Issue")
+                                                    {
+                                                        source.url.clone()
+                                                    } else {
+                                                        None
+                                                    }
+                                                })
+                                            })
                                         })
                                         .collect()
                                 });
 
                             let reviews = pull
-                                .reviews
+                                .hasApprovedReview
                                 .as_ref()
                                 .and_then(|r| r.edges.as_ref())
                                 .map_or(vec![], |edges| {
@@ -679,43 +730,37 @@ pub async fn get_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>> {
                                         .collect()
                                 });
 
-                            let assignees = pull
-                                .assignees
-                                .as_ref()
-                                .and_then(|a| a.edges.as_ref())
-                                .map_or(vec![], |edges| {
-                                    edges
-                                        .iter()
-                                        .filter_map(|edge| {
-                                            edge.node
-                                                .as_ref()
-                                                .and_then(|assignee| assignee.login.clone())
-                                        })
-                                        .collect()
+                            let merged_by =
+                                pull.mergedBy.as_ref().map_or(String::from("N/A"), |m| {
+                                    m.login.clone().unwrap_or_default()
                                 });
+
+                            let repository_url = pull
+                                .repository
+                                .as_ref()
+                                .and_then(|repo| repo.url.clone())
+                                .unwrap_or_default();
 
                             all_pulls.push(OuterPull {
                                 title: pull.title.clone().unwrap_or_default(),
-                                number: pull.number.unwrap_or_default(),
+                                url: pull.url.clone().unwrap_or_default(),
                                 author: pull
                                     .author
                                     .as_ref()
                                     .and_then(|a| a.login.clone())
                                     .unwrap_or_default(),
+                                repository: repository_url,
+                                cross_referenced_issues,
                                 labels,
                                 reviews,
-                                assignees,
-                                timeline_comments: comments,
+                                merged_by,
                             });
                         }
                     }
                 }
 
-                if let Some(page_info) = search.pageInfo.hasNextPage {
-                    if !page_info {
-                        break;
-                    }
-                    after_cursor = search.pageInfo.endCursor;
+                if search.pageInfo.hasNextPage {
+                    after_cursor = search.pageInfo.endCursor
                 } else {
                     break;
                 }
