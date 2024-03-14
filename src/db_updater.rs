@@ -59,7 +59,7 @@ pub async fn add_project(
 }
 
 pub async fn add_project_test_1(pool: &PgPool) -> anyhow::Result<()> {
-    let project_id = "jaykchen/issue-labeler";
+    let project_id = "https://github.com/jaykchen/issue-labeler";
     let project_logo = "https://avatars.githubusercontent.com/u/112579101?v=4";
 
     let _ = add_project(pool, project_id, project_logo).await?;
@@ -114,23 +114,26 @@ pub async fn add_issue_with_check(
     let repo = owner_repo[0];
     if project_exists(pool, project_id).await? {
     } else {
-        let project_logo = get_project_logo(owner, repo).await?;
+        let project_logo: String = get_project_logo(owner, repo).await?;
 
         add_project(pool, project_id, &project_logo).await?;
     }
-    sqlx::query!(
-        r#"
+
+    if issue_exists(pool, issue_id).await? {
+    } else {
+        sqlx::query!(
+            r#"
             INSERT INTO issues (issue_id, project_id, issue_title, issue_description)
             VALUES ($1, $2, $3, $4)
             "#,
-        issue_id,
-        project_id,
-        title,
-        description,
-    )
-    .execute(pool)
-    .await?;
-
+            issue_id,
+            project_id,
+            title,
+            description,
+        )
+        .execute(pool)
+        .await?;
+    }
     Ok(())
 }
 
@@ -157,7 +160,7 @@ pub async fn add_issue(
 }
 pub async fn add_issue_test_1(pool: &PgPool) -> anyhow::Result<()> {
     let issue_id = "https://github.com/jaykchen/issue-labeler/issues/24";
-    let project_id = "jaykchen/issue-labeler";
+    let project_id = "https://github.com/jaykchen/issue-labeler";
     let title = "WASI-NN with GPU on Jetson Orin Nano";
     let description = "demo";
 
@@ -185,6 +188,29 @@ pub async fn list_issues(pool: &PgPool, project_id: &str) -> anyhow::Result<()> 
         ORDER BY issue_id
         "#,
         project_id
+    )
+    .fetch_all(pool)
+    .await?;
+
+    for rec in recs {
+        println!(
+            "- [{}] {}: {} (${:?})",
+            rec.issue_id, rec.issue_title, rec.issue_description, rec.issue_budget
+        );
+    }
+
+    Ok(())
+}
+
+pub async fn get_issue(pool: &PgPool, issue_id: &str) -> anyhow::Result<()> {
+    let recs = sqlx::query!(
+        r#"
+        SELECT issue_id, issue_title, issue_description, issue_budget
+        FROM issues
+        WHERE issue_id = $1
+        ORDER BY issue_id
+        "#,
+        issue_id
     )
     .fetch_all(pool)
     .await?;
@@ -283,6 +309,95 @@ pub async fn list_comments(pool: &PgPool, issue_id: &str) -> anyhow::Result<()> 
     for rec in recs {
         println!("- [{}] {}", rec.comment_id, rec.content);
     }
+
+    Ok(())
+}
+
+pub async fn list_pull_requests(
+    pool: &sqlx::PgPool,
+) -> anyhow::Result<Vec<(String, String, String, String, String, Vec<String>)>> {
+    let pull_requests = sqlx::query!(
+        r#"
+        SELECT pull_id, title, author, repository, merged_by, cross_referenced_issues
+        FROM pull_requests
+        "#
+    )
+    .fetch_all(pool)
+    .await?
+    .iter()
+    .map(|r| {
+        (
+            r.pull_id.clone(),
+            r.title.clone(),
+            r.author.clone(),
+            r.repository.clone(),
+            r.merged_by.clone(),
+            r.cross_referenced_issues.clone().unwrap_or_default(), // Handle Option<Vec<String>>
+        )
+    })
+    .collect();
+
+    Ok(pull_requests)
+}
+
+pub async fn add_pull_request_with_check(
+    pool: &sqlx::PgPool,
+    pull_id: &str,
+    title: &str,
+    author: &str,
+    repository: &str,
+    merged_by: &str,
+    cross_referenced_issues: Vec<String>,
+) -> anyhow::Result<()> {
+    let exists = sqlx::query!(
+        r#"
+        SELECT EXISTS(SELECT 1 FROM pull_requests WHERE pull_id = $1)
+        "#,
+        pull_id
+    )
+    .fetch_one(pool)
+    .await?
+    .exists
+    .unwrap_or(false);
+
+    if !exists {
+        add_pull_request(
+            pool,
+            pull_id,
+            title,
+            author,
+            repository,
+            merged_by,
+            cross_referenced_issues,
+        )
+        .await?;
+    }
+
+    Ok(())
+}
+pub async fn add_pull_request(
+    pool: &sqlx::PgPool,
+    pull_id: &str,
+    title: &str,
+    author: &str,
+    repository: &str,
+    merged_by: &str,
+    cross_referenced_issues: Vec<String>,
+) -> anyhow::Result<()> {
+    sqlx::query!(
+        r#"
+        INSERT INTO pull_requests (pull_id, title, author, repository, merged_by, cross_referenced_issues)
+        VALUES ($1, $2, $3, $4, $5, $6)
+        "#,
+        pull_id,
+        title,
+        author,
+        repository,
+        merged_by,
+        &cross_referenced_issues,
+    )
+    .execute(pool)
+    .await?;
 
     Ok(())
 }
