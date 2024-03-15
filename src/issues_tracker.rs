@@ -533,7 +533,7 @@ pub async fn get_pull_requests(
         login: Option<String>,
     }
 
-    #[derive(Serialize, Deserialize, Debug, Clone)]// Make sure to include Clone here
+    #[derive(Serialize, Deserialize, Debug, Clone)] // Make sure to include Clone here
     struct Labels {
         edges: Option<Vec<LabelEdge>>,
     }
@@ -543,7 +543,7 @@ pub async fn get_pull_requests(
         node: Option<Label>,
     }
 
-    #[derive(Serialize, Deserialize, Debug, Clone)]// And also here
+    #[derive(Serialize, Deserialize, Debug, Clone)] // And also here
     struct Label {
         name: Option<String>,
     }
@@ -732,7 +732,6 @@ pub async fn get_pull_requests(
                                         })
                                         .collect()
                                 });
-                            
 
                             let reviews = pull
                                 .hasApprovedReview
