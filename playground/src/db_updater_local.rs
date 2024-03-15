@@ -1,4 +1,4 @@
-use crate::issues_tracker_local::get_project_logo;
+/* use crate::issues_tracker_local::get_project_logo;
 use sqlx::postgres::PgPool;
 
 pub async fn project_exists(pool: &PgPool, project_id: &str) -> anyhow::Result<bool> {
@@ -400,3 +400,4 @@ pub async fn add_pull_request(
 
     Ok(())
 }
+*/

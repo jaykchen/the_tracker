@@ -1,64 +1,59 @@
-use chrono::Utc;
+use chrono::{Duration, NaiveDate, Utc};
 
 use anyhow::anyhow;
 use octocrab::{models::issues::Issue, Octocrab};
 use std::env;
 
-use chrono::Duration;
 use http_req::{
     request::{Method, Request},
     uri::Uri,
 };
 use serde::{Deserialize, Serialize};
 use std::io::Write;
-// #[schedule_handler]
-// async fn handler(body: Vec<u8>) {
-//     dotenv().ok();
-//     logger::init();
 
-//     let _ = search_for_initial_hits().await;
-// }
-pub async fn search_for_initial_hits() -> anyhow::Result<()> {
-    let token = std::env::var("GITHUB_TOKEN").expect("GITHUB_TOKEN env variable is required");
-    let octocrab = Octocrab::builder()
-        .personal_token(token)
-        .build()
-        .expect("token invalid");
-    let one_hour_ago = (Utc::now() - Duration::hours(100i64))
-        .format("%Y-%m-%dT%H:%M:%SZ")
-        .to_string();
-    let one_year_ago = (Utc::now() - Duration::weeks(52i64))
-        .format("%Y-%m-%dT%H:%M:%SZ")
-        .to_string();
+pub fn inner_query_by_date_range(
+    start_date: &str,
+    n_days: i64,
+    issue_label: &str,
+    pr_label: &str,
+    is_issue: bool,
+    is_start: bool,
+) -> Vec<String> {
+    // let start_date ="2023-10-01";
+    // let issue_label = "hacktoberfest";
+    // let pr_label = "hacktoberfest-accepted";
+    let start_date =
+        NaiveDate::parse_from_str(start_date, "%Y-%m-%d").expect("Failed to parse date");
 
-    // label:hacktoberfest is:issue is:open no:assignee
-    let query = format!("label:hacktoberfest is:issue is:open no:assignee updated:>{one_year_ago}");
-    let encoded_query = urlencoding::encode(&query);
+    let date_point_vec = (0..20)
+        .map(|i| {
+            (start_date + Duration::days(n_days * i as i64))
+                .format("%Y-%m-%d")
+                .to_string()
+        })
+        .collect::<Vec<_>>();
 
-    let query_url = format!("https://api.github.com/search/issues?q={encoded_query}");
-    log::error!("query: {:?}", query_url.clone());
+    let date_range_vec = date_point_vec
+        .windows(2)
+        .map(|x| x.join(".."))
+        .collect::<Vec<_>>();
 
-    // let issues = octocrab
-    //     .search()
-    //     .issues_and_pull_requests(&query)
-    //     .sort("comments")
-    //     .order("desc")
-    //     .send()
-    //     .await?;
-
-    if let Ok(writer) = github_http_get(&query_url).await {
-        let issues: Vec<Issue> = serde_json::from_slice(&writer).unwrap();
-
-        for issue in issues {
-            log::error!("issue: {:?}", issue.title);
-        }
+    let mut out = Vec::new();
+    for date_range in date_range_vec {
+        let query = if is_issue && is_start {
+            format!("label:{issue_label} is:issue is:open no:assignee created:{date_range} -label:spam -label:invalid")
+        } else if is_issue && !is_start {
+            format!("label:{issue_label} is:issue is:closed created:{date_range} -label:spam -label:invalid")
+        } else {
+            format!("label:{pr_label} is:pr is:merged created:{date_range} review:approved -label:spam -label:invalid")
+        };
+        out.push(query);
     }
 
-    Ok(())
+    out
 }
 
 pub async fn github_http_post_gql(query: &str) -> anyhow::Result<Vec<u8>> {
-    use http_req::{request::Method, request::Request, uri::Uri};
     let token = env::var("GITHUB_TOKEN").expect("github_token is required");
     let base_url = "https://api.github.com/graphql";
     let base_url = Uri::try_from(base_url).unwrap();
@@ -472,15 +467,13 @@ pub struct OuterPull {
     pub author: String,
     pub repository: String, // URL of the repository where the pull request was opened
     pub cross_referenced_issues: Vec<String>, // URLs of cross-referenced issues
+    pub connected_issues: Vec<String>, // URLs of cross-referenced issues
     pub labels: Vec<String>,
     pub reviews: Vec<String>, // authors whose review state is approved
     pub merged_by: String,
 }
 
-pub async fn get_pull_requests(
-    query: &str,
-    label_to_watch: &str,
-) -> anyhow::Result<Vec<OuterPull>> {
+pub async fn get_pull_requests(query: &str, issue_label: &str) -> anyhow::Result<Vec<OuterPull>> {
     #[derive(Serialize, Deserialize, Debug)]
     struct GraphQLResponse {
         data: Option<Data>,
@@ -520,6 +513,18 @@ pub async fn get_pull_requests(
         mergedBy: Option<Author>,
         repository: Option<Repository>,
     }
+    // #[derive(Debug)]
+    // enum TimelineItem {
+    //     ConnectedEvent {
+    //         subject_url: String,
+    //     },
+    //     CrossReferencedEvent {
+    //         source_url: String,
+    //         labels: Vec<String>,
+    //     },
+    //     // Other event types as necessary
+    // }
+
     #[derive(Serialize, Deserialize, Debug)]
     struct Repository {
         url: Option<String>,
@@ -530,34 +535,19 @@ pub async fn get_pull_requests(
         login: Option<String>,
     }
 
-    #[derive(Serialize, Deserialize, Debug, Clone)]// Make sure to include Clone here
+    #[derive(Serialize, Deserialize, Debug, Clone)]
     struct Labels {
         edges: Option<Vec<LabelEdge>>,
     }
 
-    #[derive(Serialize, Deserialize, Debug, Clone)] // And here
+    #[derive(Serialize, Deserialize, Debug, Clone)]
     struct LabelEdge {
         node: Option<Label>,
     }
 
-    #[derive(Serialize, Deserialize, Debug, Clone)]// And also here
+    #[derive(Serialize, Deserialize, Debug, Clone)]
     struct Label {
         name: Option<String>,
-    }
-
-    #[derive(Serialize, Deserialize, Debug)]
-    struct Comments {
-        edges: Option<Vec<CommentEdge>>,
-    }
-
-    #[derive(Serialize, Deserialize, Debug)]
-    struct CommentEdge {
-        node: Option<Comment>,
-    }
-
-    #[derive(Serialize, Deserialize, Debug)]
-    struct Comment {
-        body: Option<String>,
     }
 
     #[derive(Serialize, Deserialize, Debug)]
@@ -573,7 +563,9 @@ pub async fn get_pull_requests(
     #[derive(Serialize, Deserialize, Debug)]
     struct Review {
         author: Option<Author>,
+        state: Option<String>, // Include state if needed for further logic
     }
+
     #[derive(Serialize, Deserialize, Clone, Debug)]
     struct TimelineItems {
         edges: Option<Vec<TimelineEdge>>,
@@ -581,19 +573,39 @@ pub async fn get_pull_requests(
 
     #[derive(Serialize, Deserialize, Clone, Debug)]
     struct TimelineEdge {
-        node: Option<CrossReferencedEvent>,
+        node: Option<TimelineEvent>,
     }
 
     #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct CrossReferencedEvent {
+    struct TimelineEvent {
+        __typename: Option<String>,
+        subject: Option<Subject>,
         source: Option<Source>,
+        connectedEvent: Option<ConnectedEvent>,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct ConnectedEvent {
+        actor: Option<Actor>,
+        createdAt: Option<String>,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct Actor {
+        login: Option<String>,
+        url: Option<String>,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct Subject {
+        url: Option<String>,
     }
 
     #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Source {
         __typename: Option<String>,
         url: Option<String>,
-        labels: Option<Labels>, // Add this line to include labels
+        labels: Option<Labels>,
     }
 
     let mut all_pulls = Vec::new();
@@ -604,30 +616,39 @@ pub async fn get_pull_requests(
             r#"
             query {{
                 search(query: "{}", type: ISSUE, first: 100, after: {}) {{
-                    issueCount
-                    edges {{
-                        node {{
-                            ... on PullRequest {{
-                                title
-                                url
-                                repository {{
+                        issueCount
+                        edges {{
+                            node {{
+                                ... on PullRequest {{
+                                    title
                                     url
-                                }}
-                                author {{
-                                    login
-                                }}
-                                timelineItems(first: 10, itemTypes: [CROSS_REFERENCED_EVENT]) {{
-                                    edges {{
-                                        node {{
-                                            ... on CrossReferencedEvent {{
-                                                source {{
-                                                    __typename
-                                                    ... on Issue {{
-                                                        url
-                                                        labels(first: 10) {{
-                                                            edges {{
-                                                                node {{
-                                                                    name
+                                    repository {{
+                                        url
+                                    }}
+                                    author {{
+                                        login
+                                    }}
+                                    timelineItems(first: 10, itemTypes: [CONNECTED_EVENT, CROSS_REFERENCED_EVENT]) {{
+                                        edges {{
+                                            node {{
+                                                __typename
+                                                ... on ConnectedEvent {{
+                                                    subject {{
+                                                        ... on Issue {{
+                                                            url
+                                                        }}
+                                                    }}
+                                                }}
+                                                ... on CrossReferencedEvent {{
+                                                    source {{
+                                                        __typename
+                                                        ... on Issue {{
+                                                            url
+                                                            labels(first: 10) {{
+                                                                edges {{
+                                                                    node {{
+                                                                        name
+                                                                    }}
                                                                 }}
                                                             }}
                                                         }}
@@ -636,37 +657,36 @@ pub async fn get_pull_requests(
                                             }}
                                         }}
                                     }}
-                                }}
-                                labels(first: 10) {{
-                                    edges {{
-                                        node {{
-                                            name
-                                        }}
-                                    }}
-                                }}
-                                hasApprovedReview: reviews(first: 5, states: [APPROVED]) {{
-                                    edges {{
-                                        node {{
-                                            author {{
-                                                login
+                                    labels(first: 10) {{
+                                        edges {{
+                                            node {{
+                                                name
                                             }}
-                                            state
                                         }}
                                     }}
-                                }}
-                                mergedBy {{
-                                    login
+                                    hasApprovedReview: reviews(first: 5, states: [APPROVED]) {{
+                                        edges {{
+                                            node {{
+                                                author {{
+                                                    login
+                                                }}
+                                                state
+                                            }}
+                                        }}
+                                    }}
+                                    mergedBy {{
+                                        login
+                                    }}
                                 }}
                             }}
                         }}
-                    }}
-                    pageInfo {{
-                        endCursor
-                        hasNextPage
+                        pageInfo {{
+                            endCursor
+                            hasNextPage
+                        }}
                     }}
                 }}
-            }}
-            "#,
+                "#,
             query,
             after_cursor
                 .as_ref()
@@ -709,13 +729,12 @@ pub async fn get_pull_requests(
                                                             labels.edges.as_ref().map_or(false, |edges| {
                                                                 edges.iter().any(|edge| {
                                                                     edge.node.as_ref().map_or(false, |label| {
-                                                                        label.name == Some(String::from(label_to_watch))
+                                                                        label.name == Some(String::from(issue_label))
                                                                     })
                                                                 })
                                                             })
                                                         });
-                                                        
-                            
+
                                                         if has_hacktoberfest_accepted_label {
                                                             source.url.clone()
                                                         } else {
@@ -729,7 +748,33 @@ pub async fn get_pull_requests(
                                         })
                                         .collect()
                                 });
-                            
+
+                            let connected_issues = pull
+                                .timelineItems
+                                .as_ref()
+                                .and_then(|t| t.edges.as_ref())
+                                .map_or(vec![], |edges| {
+                                    edges
+                                        .iter()
+                                        .filter_map(|edge| {
+                                            edge.node.as_ref().and_then(|item| {
+                                                item.connectedEvent.as_ref().and_then(
+                                                    |connectedEvent| {
+                                                        if connectedEvent.__typename.as_deref()
+                                                            == Some("Issue")
+                                                        {
+                                                            connectedEvent.source.as_ref().and_then(
+                                                                |source| source.url.clone(),
+                                                            )
+                                                        } else {
+                                                            None
+                                                        }
+                                                    },
+                                                )
+                                            })
+                                        })
+                                        .collect()
+                                });
 
                             let reviews = pull
                                 .hasApprovedReview
@@ -770,6 +815,7 @@ pub async fn get_pull_requests(
                                     .unwrap_or_default(),
                                 repository: repository_url,
                                 cross_referenced_issues,
+                                connected_issues,
                                 labels,
                                 reviews,
                                 merged_by,

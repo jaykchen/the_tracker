@@ -1,0 +1,78 @@
+query ($query: String!) {
+  search(query: $query, type: ISSUE, first: 100, after: null) {
+    issueCount
+    edges {
+      node {
+        ... on PullRequest {
+          title
+          url
+          repository {
+            url
+          }
+          author {
+            login
+          }
+          timelineItems(first: 10, itemTypes: [CONNECTED_EVENT, CROSS_REFERENCED_EVENT]) {
+            edges {
+              node {
+                __typename
+                ... on ConnectedEvent {
+                  subject {
+                    ... on Issue {
+                      url
+                    }
+                  }
+                }
+                __typename
+                ... on CrossReferencedEvent {
+                  source {
+                    __typename
+                    ... on Issue {
+                      url
+                      labels(first: 10) {
+                        edges {
+                          node {
+                            name
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          labels(first: 10) {
+            edges {
+              node {
+                name
+              }
+            }
+          }
+          hasApprovedReview: reviews(first: 5, states: [APPROVED]) {
+            edges {
+              node {
+                author {
+                  login
+                }
+                state
+              }
+            }
+          }
+          mergedBy {
+            login
+          }
+        }
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}
+
+{
+  "query": "label:hacktoberfest-accepted is:pr is:merged created:2023-10-01..2023-10-03 review:approved -label:spam -label:invalid"
+}
+

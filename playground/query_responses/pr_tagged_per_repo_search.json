@@ -1,0 +1,1669 @@
+{
+  "data": {
+    "search": {
+      "nodes": [
+        {
+          "title": "Implemented Quadratic Equation Intersection Calculator (Fixes #33)",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/137",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "DeexithParand2k2"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/33"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "medium"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              },
+              {
+                "name": "admin-appreciation 🎁"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "Add: #119 Added the Infix to Postfix and Prefix Calculator",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/136",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "maskboyAvi"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/119"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "easy"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              },
+              {
+                "name": "admin-appreciation 🎁"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "#107 fixed Angle Type Classifier",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/133",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "Sam-bhav-20"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/107"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "easy"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "Adjoint of a Matrix calculator using ReactJS",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/131",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "uttkarsh1m"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/42"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "medium"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "loan repayment calculator",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/130",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "Saksham-245"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/61"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "medium"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "Graph Maker is created using JS",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/129",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "imsoumik03"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/31"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "hard"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              },
+              {
+                "name": "admin-appreciation 🎁"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "Savings Calculator",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/128",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "Saksham-245"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/58"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "medium"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              },
+              {
+                "name": "admin-appreciation 🎁"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "Inverse of a matrix #40",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/127",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "Sam-bhav-20"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/40"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "medium"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "Added Hexadecimal to Decimal and vice versa Calculator",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/125",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "anushka-srivastava22"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/63"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "easy"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "Added OR Operator",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/117",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "7twik"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/55"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "easy"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "Added AND operator",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/116",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "7twik"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/54"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "easy"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "Added RD Maturity Calculator",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/103",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "farhanalws4u"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/53"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "easy"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "Expense-Tracker",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/101",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "capsy14"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/68"
+                }
+              },
+              {
+                "__typename": "CrossReferencedEvent"
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "hard"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "Fd maturity calc",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/93",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "hiren2599"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/52"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "easy"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "Fix: #89 Added ML performance Evaluation Calculator",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/92",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "Celebi07"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/89"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "easy"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              },
+              {
+                "name": "admin-appreciation 🎁"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "added the desired funcationality and some additional features",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/91",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "Vimal-Dubey"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/78"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "easy"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "Fix: #74 Added the Sorting Visualizer",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/90",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "maskboyAvi"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/74"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "hard"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              },
+              {
+                "name": "admin-appreciation 🎁"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "Added MainAsciiTextToBinAndBinToAsciiText.js",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/87",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "Saifullah00"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/70"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "easy"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "Fix: #75 Added the Searching Visualizer",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/84",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "maskboyAvi"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/75"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "hard"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              },
+              {
+                "name": "admin-appreciation 🎁"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "BMI Calculator",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/83",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "uttkarsh1m"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/22"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "easy"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              },
+              {
+                "name": "admin-appreciation 🎁"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "Added MainPHCalc.js",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/80",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "Saifullah00"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/71"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "easy"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "Added Hexadecimal to Octal and vice versa Calculator",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/79",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "anushka-srivastava22"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/64"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "easy"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "functionality to calculate age is added",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/76",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "Vimal-Dubey"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/47"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "easy"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "added decimal to binary convertor",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/73",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "abhijithhegde"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/4"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "easy"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "number_type_finder",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/69",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "ashishnallana"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/49"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "easy"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "Determinant of Matrix",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/65",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "Akash0420"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/41"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "easy"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              },
+              {
+                "name": "admin-appreciation 🎁"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "BODMAS Equation solver is created",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/59",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "imsoumik03"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/29"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "hard"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              },
+              {
+                "name": "admin-appreciation 🎁"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "Added Binary Subraction",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/57",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "ArnabBCA"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/50"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "easy"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "Body Fat Calculator",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/56",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "Saksham-245"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/23"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "easy"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              },
+              {
+                "name": "admin-appreciation 🎁"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "Linear Equations intersection Calculator",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/44",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "rishirohilla"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/34"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "easy"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "Statistics calculator",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/21",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "govardhanshah456"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/18"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "medium"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              },
+              {
+                "name": "admin-appreciation 🎁"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "Added Copy To Clipboard (Feature)",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/19",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "ArnabBCA"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/20"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "easy"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        },
+        {
+          "title": "Added BIN to hexadecimal calculater and vice versa",
+          "url": "https://github.com/SarthakKeshari/calc_for_everything/pull/16",
+          "repository": {
+            "url": "https://github.com/SarthakKeshari/calc_for_everything"
+          },
+          "author": {
+            "login": "TANYA03GUPTA"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "__typename": "ConnectedEvent",
+                "subject": {
+                  "url": "https://github.com/SarthakKeshari/calc_for_everything/issues/5"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "easy"
+              },
+              {
+                "name": "hacktoberfest2023"
+              },
+              {
+                "name": "🎉ranked"
+              },
+              {
+                "name": "hacktoberfest-accepted"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "SarthakKeshari"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "SarthakKeshari"
+          }
+        }
+      ],
+      "issueCount": 33,
+      "pageInfo": {
+        "endCursor": "Y3Vyc29yOjMz",
+        "hasNextPage": false
+      }
+    }
+  }
+}

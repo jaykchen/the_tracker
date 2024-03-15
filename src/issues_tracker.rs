@@ -530,17 +530,17 @@ pub async fn get_pull_requests(
         login: Option<String>,
     }
 
-    #[derive(Serialize, Deserialize, Debug, Clone)]// Make sure to include Clone here
+    #[derive(Serialize, Deserialize, Debug, Clone)] // Make sure to include Clone here
     struct Labels {
         edges: Option<Vec<LabelEdge>>,
     }
 
-    #[derive(Serialize, Deserialize, Debug, Clone)]// And here
+    #[derive(Serialize, Deserialize, Debug, Clone)] // And here
     struct LabelEdge {
         node: Option<Label>,
     }
 
-    #[derive(Serialize, Deserialize, Debug, Clone)]// And also here
+    #[derive(Serialize, Deserialize, Debug, Clone)] // And also here
     struct Label {
         name: Option<String>,
     }
@@ -674,14 +674,15 @@ pub async fn get_pull_requests(
         );
 
         let response_body = match github_http_post_gql(&query_str).await {
-
-Ok(res) => res,
-Err(e) => {log::error!("Error getting response from Github: {:?}", e); panic!("Error getting response from Github: {:?}", e) }
-
+            Ok(res) => res,
+            Err(e) => {
+                log::error!("Error getting response from Github: {:?}", e);
+                panic!("Error getting response from Github: {:?}", e)
+            }
         };
 
         let response: GraphQLResponse = serde_json::from_slice(&response_body)?;
-log::error!("loop: {_n}");
+        log::error!("loop: {_n}");
 
         if let Some(data) = response.data {
             if let Some(search) = data.search {

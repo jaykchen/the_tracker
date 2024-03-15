@@ -99,7 +99,7 @@ pub async fn search_issue_init() -> anyhow::Result<()> {
         }
     }
 
-    let _= upload_to_gist(&texts).await?;
+    let _ = upload_to_gist(&texts).await?;
     Ok(())
 }
 

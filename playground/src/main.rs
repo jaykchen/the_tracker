@@ -17,54 +17,41 @@ async fn main() -> anyhow::Result<()> {
         .build()
         .expect("token invalid");
 
-    let one_year_ago = (Utc::now() - Duration::weeks(52i64))
-        .format("%Y-%m-%dT%H:%M:%SZ")
-        .to_string();
-
-    // let query = format!("is:issue mentions:Hacktoberfest updated:>{one_year_ago}");
-    // label:hacktoberfest is:issue is:open no:assignee created:2023-10-01..2023-10-03 sort:interactions-desc
-
-    let start_date =
-        NaiveDate::parse_from_str("2023-10-01", "%Y-%m-%d").expect("Failed to parse date");
-
-    let mut date_point_vec = Vec::new();
-
-    for i in 0..20 {
-        let three_days_str = (start_date + Duration::days(2 * i as i64))
-            .format("%Y-%m-%d")
-            .to_string();
-
-        date_point_vec.push(three_days_str);
-    }
-
-    let mut date_range_vec = date_point_vec
-        .windows(2)
-        .map(|x| x.join(".."))
-        .collect::<Vec<_>>();
+    let start_date = "2023-10-01";
+    let issue_label = "hacktoberfest";
+    let pr_label = "hacktoberfest-accepted";
+    let n_days = 3;
+    let is_issue = true;
+    let is_start = true;
+    let query_vec = inner_query_by_date_range(
+        start_date,
+        n_days,
+        issue_label,
+        pr_label,
+        is_issue,
+        is_start,
+    );
 
     let pool = PgPool::connect(&env::var("DATABASE_URL")?).await?;
 
-    for date_range in date_range_vec {
-        let query =
-            format!("label:hacktoberfest-accepted is:pr is:merged created:{date_range} review:approved -label:spam -label:invalid");
+    for query in query_vec {
         println!("query: {:?}", query.clone());
-        let label_to_watch = "hacktoberfest-accepted";
-        let pulls = get_pull_requests(&query, label_to_watch).await?;
+        let pulls = get_pull_requests(&query, issue_label).await?;
 
         for pull in pulls {
             println!("pull: {:?}", pull.url);
             println!("pull: {:?}", pull.repository);
 
-            let _ = add_pull_request_with_check(
-                &pool,
-                &pull.url,
-                &pull.title,
-                &pull.author,
-                &pull.repository,
-                &pull.merged_by,
-                pull.cross_referenced_issues,
-            )
-            .await?;
+            // let _ = add_pull_request_with_check(
+            //     &pool,
+            //     &pull.url,
+            //     &pull.title,
+            //     &pull.author,
+            //     &pull.repository,
+            //     &pull.merged_by,
+            //     pull.cross_referenced_issues,
+            // )
+            // .await?;
 
             // pub async fn add_pull_request_with_check(
             //     pool: &sqlx::PgPool,
@@ -77,8 +64,8 @@ async fn main() -> anyhow::Result<()> {
             // let body = issue.body.chars().take(200).collect::<String>();
             // let title = issue.title.chars().take(200).collect::<String>();
             // let _ = (&pool, &issue.url, &title, &body).await?;
+            break;
         }
-       
     }
 
     // for date_range in date_range_vec {
@@ -115,7 +102,7 @@ async fn run_db() -> anyhow::Result<()> {
 
     let issue_id = "https://github.com/jaykchen/issue-labeler/issues/24";
 
-    let res = list_comments(&pool, issue_id).await?;
-    println!("Comments: {:?}", res);
+    // let res = list_comments(&pool, issue_id).await?;
+    // println!("Comments: {:?}", res);
     Ok(())
 }
