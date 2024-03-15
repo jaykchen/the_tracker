@@ -1,12 +1,10 @@
-use crate::issues_tracker::get_project_logo;
-use sqlx::postgres::PgPool;
+/* use crate::issues_tracker::get_project_logo;
+use sqlx::{postgres::PgPool, sqlx_macros};
 use std::env;
 
 pub async fn project_exists(pool: &PgPool, project_id: &str) -> anyhow::Result<bool> {
     let exists = sqlx::query!(
-        r#"
-        SELECT EXISTS(SELECT 1 FROM projects WHERE project_id = $1) AS "exists!"
-        "#,
+        "SELECT EXISTS(SELECT 1 FROM projects WHERE project_id = $1) AS 'exists!'",
         project_id
     )
     .fetch_one(pool)
@@ -401,3 +399,4 @@ pub async fn add_pull_request(
 
     Ok(())
 }
+ */

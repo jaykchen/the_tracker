@@ -1,6 +1,6 @@
 pub mod db_updater;
 pub mod issues_tracker;
-use chrono::{Datelike, Timelike, NaiveDate, Utc};
+use chrono::{Datelike, NaiveDate, Timelike, Utc};
 use dotenv::dotenv;
 use flowsnet_platform_sdk::logger;
 use github_flows::{get_octo, GithubLogin};
@@ -24,7 +24,6 @@ pub use issues_tracker::*;
 use serde::{Deserialize, Serialize};
 use sqlx::postgres::PgPool;
 
-
 #[no_mangle]
 #[tokio::main(flavor = "current_thread")]
 pub async fn on_deploy() {
@@ -36,10 +35,10 @@ pub async fn on_deploy() {
 
 #[schedule_handler]
 async fn handler(body: Vec<u8>) {
-    let _ = inner(body).await;
+    let _ = search_issue_init().await;
 }
 
-pub async fn inner(body: Vec<u8>) -> anyhow::Result<()> {
+/* pub async fn inner(body: Vec<u8>) -> anyhow::Result<()> {
     dotenv().ok();
     logger::init();
 
@@ -52,9 +51,9 @@ pub async fn inner(body: Vec<u8>) -> anyhow::Result<()> {
     log::info!("Comments: {:?}", res);
 
     Ok(())
-}
+} */
 
-async fn run_db() -> anyhow::Result<()> {
+/* async fn run_db() -> anyhow::Result<()> {
     dotenv::dotenv().ok();
     let pool = PgPool::connect(&env::var("DATABASE_URL")?).await?;
 
@@ -73,9 +72,42 @@ async fn run_db() -> anyhow::Result<()> {
     let res = list_comments(&pool, issue_id).await?;
     println!("Comments: {:?}", res);
     Ok(())
+} */
+
+pub async fn search_issue_init() -> anyhow::Result<()> {
+    let start_date =
+        NaiveDate::parse_from_str("2023-10-01", "%Y-%m-%d").expect("Failed to parse date");
+
+    let mut date_point_vec = Vec::new();
+
+    for i in 0..20 {
+        let three_days_str = (start_date + Duration::days(2 * i as i64))
+            .format("%Y-%m-%d")
+            .to_string();
+
+        date_point_vec.push(three_days_str);
+    }
+
+    let mut date_range_vec = date_point_vec
+        .windows(2)
+        .map(|x| x.join(".."))
+        .collect::<Vec<_>>();
+
+    for date_range in date_range_vec {
+        let query =
+            format!("label:hacktoberfest-accepted is:pr is:merged created:{date_range} review:approved -label:spam -label:invalid");
+        let label_to_watch = "hacktoberfest-accepted";
+        let pulls = get_pull_requests(&query, label_to_watch).await?;
+
+        for pull in pulls {
+            log::info!("pull: {:?}", pull.url);
+            break;
+        }
+    }
+    Ok(())
 }
 
-pub async fn github_to_db() -> anyhow::Result<()> {
+/* pub async fn github_to_db() -> anyhow::Result<()> {
     let start_date =
         NaiveDate::parse_from_str("2023-10-01", "%Y-%m-%d").expect("Failed to parse date");
 
@@ -132,4 +164,4 @@ pub async fn github_to_db() -> anyhow::Result<()> {
         }
     }
     Ok(())
-}
+} */
