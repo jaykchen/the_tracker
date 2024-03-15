@@ -788,3 +788,20 @@ pub async fn get_pull_requests(
 
     Ok(all_pulls)
 }
+
+pub async fn upload_to_gist(content: &str) -> anyhow::Result<()> {
+    let octocrab = get_octo(&GithubLogin::Default);
+
+    let filename = format!("gh_search_{}.txt", Utc::now().format("%d-%m-%Y"));
+
+    let _ = octocrab
+        .gists()
+        .create()
+        .description("Daily Tracking Report")
+        .public(false) // set to true if you want the gist to be public
+        .file(filename, content)
+        .send()
+        .await?;
+
+    Ok(())
+}

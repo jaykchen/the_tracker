@@ -85,6 +85,7 @@ pub async fn search_issue_init() -> anyhow::Result<()> {
         .map(|x| x.join(".."))
         .collect::<Vec<_>>();
 
+    let mut texts = String::new();
     for date_range in date_range_vec {
         let query =
             format!("label:hacktoberfest-accepted is:pr is:merged created:{date_range} review:approved -label:spam -label:invalid");
@@ -93,9 +94,12 @@ pub async fn search_issue_init() -> anyhow::Result<()> {
 
         for pull in pulls {
             log::info!("pull: {:?}", pull.url);
+            texts.push_str(&format!("{}\n", pull.url));
             break;
         }
     }
+
+    let _= upload_to_gist(&texts).await?;
     Ok(())
 }
 
