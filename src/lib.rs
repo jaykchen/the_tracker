@@ -3,23 +3,15 @@ pub mod issues_tracker;
 use chrono::{Datelike, NaiveDate, Timelike, Utc};
 use dotenv::dotenv;
 use flowsnet_platform_sdk::logger;
-use github_flows::{get_octo, GithubLogin};
 use octocrab_wasi::{models::issues::Issue, params::issues::Sort, params::Direction};
 use openai_flows::{
     chat::{ChatModel, ChatOptions},
     OpenAIFlows,
 };
 use schedule_flows::{schedule_cron_job, schedule_handler};
-use serde_json::{json, to_string_pretty, Value};
-use std::{collections::HashMap, env};
 
 use chrono::Duration;
 pub use db_updater::*;
-use http_req::{
-    request::{Method, Request},
-    response::Response,
-    uri::Uri,
-};
 pub use issues_tracker::*;
 use serde::{Deserialize, Serialize};
 use sqlx::postgres::PgPool;
@@ -96,7 +88,7 @@ pub async fn search_issue_init() -> anyhow::Result<()> {
     for date_range in date_range_vec {
         let query =
             format!("label:hacktoberfest-accepted is:pr is:merged created:{date_range} review:approved -label:spam -label:invalid");
-        let label_to_watch = "hacktoberfest-accepted";
+        let label_to_watch = "hacktoberfest";
         let pulls = get_pull_requests(&query, label_to_watch).await?;
 
         for pull in pulls {

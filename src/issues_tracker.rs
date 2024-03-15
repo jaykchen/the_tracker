@@ -7,19 +7,16 @@ use openai_flows::{
     chat::{ChatModel, ChatOptions},
     OpenAIFlows,
 };
-use schedule_flows::{schedule_cron_job, schedule_handler};
 use serde_json::{json, to_string_pretty, Value};
-use std::{collections::HashMap, env};
+use std::env;
 
 use anyhow::anyhow;
 use chrono::Duration;
 use http_req::{
     request::{Method, Request},
-    response::Response,
     uri::Uri,
 };
 use serde::{Deserialize, Serialize};
-use sqlx::postgres::PgPool;
 
 pub async fn search_for_initial_hits() -> anyhow::Result<()> {
     let token = std::env::var("GITHUB_TOKEN").expect("GITHUB_TOKEN env variable is required");
