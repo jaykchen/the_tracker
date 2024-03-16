@@ -55,6 +55,8 @@ pub async fn inner(body: Vec<u8>) -> anyhow::Result<()> {
         let content = format!("{:?}", pull);
         let _ = upload_to_gist(&content).await?;
     }
+    let _ = upload_to_gist("hard coded test").await?;
+
     // let pulls = get_per_repo_pull_requests(&query).await?;
     // for pull in pulls {
     //     log::info!("pulls: {:?}", pull.url);
