@@ -3,6 +3,7 @@ pub mod issues_tracker;
 use chrono::{Datelike, NaiveDate, Timelike, Utc};
 use dotenv::dotenv;
 use flowsnet_platform_sdk::logger;
+use github_flows::{get_octo, GithubLogin};
 use octocrab_wasi::{
     models::{issues::Issue, pulls},
     params::{issues::Sort, Direction},
@@ -36,10 +37,21 @@ async fn handler(body: Vec<u8>) {
 pub async fn inner(body: Vec<u8>) -> anyhow::Result<()> {
     let query = "repo:SarthakKeshari/calc_for_everything is:pr is:merged label:hacktoberfest-accepted created:2023-10-01..2023-10-03 review:approved -label:spam -label:invalid";
 
-    let pulls = get_per_repo_pull_requests(&query).await?;
-    for pull in pulls {
+    let octocrab = get_octo(&GithubLogin::Default);
+
+    let pulls = octocrab
+        .search()
+        .issues_and_pull_requests(&query)
+        .send()
+        .await?;
+
+    for pull in pulls.items {
         log::info!("pulls: {:?}", pull.url);
     }
+    // let pulls = get_per_repo_pull_requests(&query).await?;
+    // for pull in pulls {
+    //     log::info!("pulls: {:?}", pull.url);
+    // }
 
     Ok(())
 }
