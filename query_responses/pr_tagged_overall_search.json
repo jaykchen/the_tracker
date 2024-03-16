@@ -1,0 +1,59 @@
+{
+  "data": {
+    "search": {
+      "issueCount": 1742,
+      "edges": [
+        {
+          "node": {
+            "title": "Finalizado desafio 3",
+            "url": "https://github.com/he4rt/he4rtoberfest-2023/pull/89",
+            "repository": {
+              "url": "https://github.com/he4rt/he4rtoberfest-2023"
+            },
+            "author": {
+              "login": "raffreitas"
+            },
+            "labels": {
+              "edges": [
+                {
+                  "node": {
+                    "name": "hacktoberfest-accepted"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "go"
+                  }
+                },
+                {
+                  "node": {
+                    "name": "Challenge 3"
+                  }
+                }
+              ]
+            },
+            "hasApprovedReview": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "lanjoni"
+                    },
+                    "state": "APPROVED"
+                  }
+                }
+              ]
+            },
+            "mergedBy": {
+              "login": "lanjoni"
+            }
+          }
+        }
+      ],
+      "pageInfo": {
+        "endCursor": "Y3Vyc29yOjE=",
+        "hasNextPage": true
+      }
+    }
+  }
+}

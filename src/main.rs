@@ -1,9 +1,9 @@
 use chrono::{Duration, NaiveDate, TimeDelta, Utc};
 use dotenv::dotenv;
 use octocrab::Octocrab;
-use playground::db_updater_local::*;
-use playground::issues_tracker_local::*;
 use sqlx::postgres::PgPool;
+use the_tracker::db_updater_local::*;
+use the_tracker::issues_tracker_local::*;
 
 use std::env;
 

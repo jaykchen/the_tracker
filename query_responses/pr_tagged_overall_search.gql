@@ -12,36 +12,6 @@ query ($query: String!) {
           author {
             login
           }
-          timelineItems(first: 10, itemTypes: [CONNECTED_EVENT, CROSS_REFERENCED_EVENT]) {
-            edges {
-              node {
-                __typename
-                ... on ConnectedEvent {
-                  subject {
-                    ... on Issue {
-                      url
-                    }
-                  }
-                }
-                __typename
-                ... on CrossReferencedEvent {
-                  source {
-                    __typename
-                    ... on Issue {
-                      url
-                      labels(first: 10) {
-                        edges {
-                          node {
-                            name
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
           labels(first: 10) {
             edges {
               node {
