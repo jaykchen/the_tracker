@@ -13,6 +13,7 @@ use openai_flows::{
     OpenAIFlows,
 };
 use schedule_flows::{schedule_cron_job, schedule_handler};
+use slack_flows::send_message_to_channel;
 
 use chrono::Duration;
 pub use db_updater::*;
@@ -55,7 +56,8 @@ pub async fn inner(body: Vec<u8>) -> anyhow::Result<()> {
         let content = format!("{:?}", pull);
         let _ = upload_to_gist(&content).await?;
     }
-    let _ = upload_to_gist("hard coded test").await?;
+
+    let _=   send_message_to_channel("ik8", "general", "text".to_string()).await?;
 
     // let pulls = get_per_repo_pull_requests(&query).await?;
     // for pull in pulls {
