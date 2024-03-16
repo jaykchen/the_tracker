@@ -57,7 +57,7 @@ pub async fn inner(body: Vec<u8>) -> anyhow::Result<()> {
         let _ = upload_to_gist(&content).await?;
     }
 
-    let _=   send_message_to_channel("ik8", "general", "text".to_string()).await?;
+    let _=   send_message_to_channel("ik8", "general", "text".to_string()).await;
 
     // let pulls = get_per_repo_pull_requests(&query).await?;
     // for pull in pulls {
