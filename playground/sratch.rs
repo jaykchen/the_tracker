@@ -1,56 +1,33 @@
-async fn get_watchers(owner_repo: &str) -> anyhow::Result<HashMap<String, (String, String)>> {
-
-
-    #[derive(Serialize, Deserialize, Debug)]
-    struct PageInfo {
-        #[serde(rename = "endCursor")]
-        end_cursor: Option<String>,
-        #[serde(rename = "hasNextPage")]
-        has_next_page: Option<bool>,
-    }
-
-    #[derive(Serialize, Deserialize, Debug)]
-    struct WatchersConnection {
-        edges: Option<Vec<WatcherEdge>>,
-        #[serde(rename = "pageInfo")]
-        page_info: Option<PageInfo>,
-    }
-    let mut watchers_map = HashMap::<String, (String, String)>::new();
-
-    let mut after_cursor = None;
-    let (owner, repo) = owner_repo.split_once("/").unwrap_or_default();
-
-    for _n in 1..499 {
-        let query_str = format!(
-
-                        pageInfo {{
-                            endCursor
-                            hasNextPage
-                        }}
-                    }}
-                }}
-            }}
-            "#,
-            owner,
-            repo,
-            after_cursor
-                .as_ref()
-                .map_or("null".to_string(), |c| format!(r#""{}""#, c))
-        );
-
-
-            match watchers.page_info {
-                Some(page_info) if page_info.has_next_page.unwrap_or(false) => {
-                    after_cursor = page_info.end_cursor;
-                }
-                _ => {
-                    log::info!("watchers loop {}", _n);
-                    break;
-                }
-            }
-        } else {
-            break;
-        }
-    }
-    Ok(watchers_map)
-}
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/137"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/136"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/133"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/131"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/130"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/129"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/128"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/127"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/125"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/117"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/116"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/103"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/101"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/93"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/92"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/91"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/90"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/87"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/84"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/83"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/80"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/79"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/76"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/73"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/69"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/65"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/59"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/57"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/56"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/44"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/21"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/19"
+pull: "https://github.com/SarthakKeshari/calc_for_everything/pull/16"

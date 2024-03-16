@@ -32,41 +32,41 @@ async fn main() -> anyhow::Result<()> {
         is_start,
     );
 
+    let query = "repo:SarthakKeshari/calc_for_everything is:pr is:merged label:hacktoberfest-accepted created:2023-10-01..2023-10-03 review:approved -label:spam -label:invalid";
+
     let pool = PgPool::connect(&env::var("DATABASE_URL")?).await?;
 
-    for query in query_vec {
-        println!("query: {:?}", query.clone());
-        let pulls = get_pull_requests(&query, issue_label).await?;
+    // for query in query_vec {
+    println!("query: {:?}", query.clone());
+    let pulls = get_per_repo_pull_requests(&query).await?;
 
-        for pull in pulls {
-            println!("pull: {:?}", pull.url);
-            println!("pull: {:?}", pull.repository);
+    for pull in pulls {
+        println!("pull: {:?}", pull);
 
-            // let _ = add_pull_request_with_check(
-            //     &pool,
-            //     &pull.url,
-            //     &pull.title,
-            //     &pull.author,
-            //     &pull.repository,
-            //     &pull.merged_by,
-            //     pull.cross_referenced_issues,
-            // )
-            // .await?;
+        // let _ = add_pull_request_with_check(
+        //     &pool,
+        //     &pull.url,
+        //     &pull.title,
+        //     &pull.author,
+        //     &pull.repository,
+        //     &pull.merged_by,
+        //     pull.cross_referenced_issues,
+        // )
+        // .await?;
 
-            // pub async fn add_pull_request_with_check(
-            //     pool: &sqlx::PgPool,
-            //     pull_id: &str,
-            //     title: &str,
-            //     author: &str,
-            //     repository: &str,
-            //     merged_by: &str,
-            //     cross_referenced_issues: Vec<String>,
-            // let body = issue.body.chars().take(200).collect::<String>();
-            // let title = issue.title.chars().take(200).collect::<String>();
-            // let _ = (&pool, &issue.url, &title, &body).await?;
-            break;
-        }
+        // pub async fn add_pull_request_with_check(
+        //     pool: &sqlx::PgPool,
+        //     pull_id: &str,
+        //     title: &str,
+        //     author: &str,
+        //     repository: &str,
+        //     merged_by: &str,
+        //     cross_referenced_issues: Vec<String>,
+        // let body = issue.body.chars().take(200).collect::<String>();
+        // let title = issue.title.chars().take(200).collect::<String>();
+        // let _ = (&pool, &issue.url, &title, &body).await?;
     }
+    // }
 
     // for date_range in date_range_vec {
     //     let query =

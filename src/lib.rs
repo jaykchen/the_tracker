@@ -3,7 +3,10 @@ pub mod issues_tracker;
 use chrono::{Datelike, NaiveDate, Timelike, Utc};
 use dotenv::dotenv;
 use flowsnet_platform_sdk::logger;
-use octocrab_wasi::{models::issues::Issue, params::issues::Sort, params::Direction};
+use octocrab_wasi::{
+    models::{issues::Issue, pulls},
+    params::{issues::Sort, Direction},
+};
 use openai_flows::{
     chat::{ChatModel, ChatOptions},
     OpenAIFlows,
@@ -27,9 +30,19 @@ pub async fn on_deploy() {
 
 #[schedule_handler]
 async fn handler(body: Vec<u8>) {
-    let _ = search_issue_init().await;
+    let _   = inner(body).await;
 }
 
+pub async fn inner(body: Vec<u8>) -> anyhow::Result<()> {
+    let query = "repo:SarthakKeshari/calc_for_everything is:pr is:merged label:hacktoberfest-accepted created:2023-10-01..2023-10-03 review:approved -label:spam -label:invalid";
+
+    let pulls = get_per_repo_pull_requests(&query).await?;
+    for pull in pulls {
+        log::info!("pulls: {:?}", pull.url);
+    }
+
+    Ok(())
+}
 /* pub async fn inner(body: Vec<u8>) -> anyhow::Result<()> {
     dotenv().ok();
     logger::init();
