@@ -39,14 +39,19 @@ pub async fn inner(body: Vec<u8>) -> anyhow::Result<()> {
 
     let octocrab = get_octo(&GithubLogin::Default);
 
+    // let pulls = octocrab
+    //     .search()
+    //     .issues_and_pull_requests(&query)
+    //     .send()
+    //     .await?;
     let pulls = octocrab
-        .search()
-        .issues_and_pull_requests(&query)
+        .repos("SarthakKeshari", "calc_for_everything")
+        .list_stargazers()
         .send()
         .await?;
 
     for pull in pulls.items {
-        log::info!("pulls: {:?}", pull.url);
+        log::error!("pulls: {:?}", pull);
     }
     // let pulls = get_per_repo_pull_requests(&query).await?;
     // for pull in pulls {
