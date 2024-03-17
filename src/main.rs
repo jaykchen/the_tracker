@@ -32,13 +32,18 @@ async fn main() -> anyhow::Result<()> {
         is_start,
     );
 
-    let query = "repo:SarthakKeshari/calc_for_everything is:pr is:merged label:hacktoberfest-accepted created:2023-10-01..2023-10-03 review:approved -label:spam -label:invalid";
+    let query = "repo:SarthakKeshari/calc_for_everything is:pr is:merged label:hacktoberfest-accepted created:2023-10-01..2023-10-02 review:approved -label:spam -label:invalid";
+
+    let query = "label:hacktoberfest-accepted is:pr is:merged created:2023-10-01..2023-10-03 review:approved -label:spam -label:invalid";
+
+    let query = "label:hacktoberfest is:issue is:closed created:2023-10-01..2023-10-03 -label:spam -label:invalid";
+    let query = "label:hacktoberfest is:issue is:open no:assignee created:2023-10-01..2023-10-03 -label:spam -label:invalid";
 
     let pool = PgPool::connect(&env::var("DATABASE_URL")?).await?;
 
     // for query in query_vec {
     println!("query: {:?}", query.clone());
-    let pulls = get_per_repo_pull_requests(&query).await?;
+    let pulls = search_issues_open(&query).await?;
 
     for pull in pulls {
         println!("pull: {:?}", pull);

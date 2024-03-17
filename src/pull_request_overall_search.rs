@@ -22,86 +22,85 @@ pub struct OuterPull {
     pub merged_by: String,
 }
 
-#[derive(Serialize, Deserialize, Debug)]
-struct GraphQLResponse {
-    data: Data,
-}
+pub async fn overall_search_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>> {
+    #[derive(Serialize, Deserialize, Debug)]
+    struct GraphQLResponse {
+        data: Data,
+    }
 
-#[derive(Serialize, Deserialize, Debug)]
-struct Data {
-    search: Search,
-}
+    #[derive(Serialize, Deserialize, Debug)]
+    struct Data {
+        search: Search,
+    }
 
-#[derive(Serialize, Deserialize, Debug)]
-struct Search {
-    issueCount: i32,
-    edges: Vec<Edge>,
-    pageInfo: PageInfo,
-}
+    #[derive(Serialize, Deserialize, Debug)]
+    struct Search {
+        issueCount: i32,
+        edges: Vec<Edge>,
+        pageInfo: PageInfo,
+    }
 
-#[derive(Serialize, Deserialize, Debug)]
-struct PageInfo {
-    endCursor: Option<String>,
-    hasNextPage: bool,
-}
+    #[derive(Serialize, Deserialize, Debug)]
+    struct PageInfo {
+        endCursor: Option<String>,
+        hasNextPage: bool,
+    }
 
-#[derive(Serialize, Deserialize, Debug)]
-struct Edge {
-    node: PullRequest,
-}
+    #[derive(Serialize, Deserialize, Debug)]
+    struct Edge {
+        node: PullRequest,
+    }
 
-#[derive(Serialize, Deserialize, Debug)]
-struct PullRequest {
-    title: String,
-    url: String,
-    repository: Repository,
-    author: Author,
-    labels: Labels,
-    hasApprovedReview: Reviews,
-    mergedBy: Author,
-}
+    #[derive(Serialize, Deserialize, Debug)]
+    struct PullRequest {
+        title: String,
+        url: String,
+        repository: Repository,
+        author: Option<Author>,
+        labels: Labels,
+        hasApprovedReview: Reviews,
+        mergedBy: Option<Author>,
+    }
+    #[derive(Serialize, Deserialize, Debug)]
+    struct Repository {
+        url: Option<String>,
+    }
 
-#[derive(Serialize, Deserialize, Debug)]
-struct Repository {
-    url: String,
-}
+    #[derive(Serialize, Deserialize, Debug)]
+    struct Author {
+        login: Option<String>,
+    }
 
-#[derive(Serialize, Deserialize, Debug)]
-struct Author {
-    login: String,
-}
+    #[derive(Serialize, Deserialize, Debug)]
+    struct Labels {
+        edges: Option<Vec<LabelEdge>>,
+    }
 
-#[derive(Serialize, Deserialize, Debug)]
-struct Labels {
-    edges: Vec<LabelEdge>,
-}
+    #[derive(Serialize, Deserialize, Debug)]
+    struct LabelEdge {
+        node: Option<Label>,
+    }
 
-#[derive(Serialize, Deserialize, Debug)]
-struct LabelEdge {
-    node: Label,
-}
+    #[derive(Serialize, Deserialize, Debug)]
+    struct Label {
+        name: Option<String>,
+    }
 
-#[derive(Serialize, Deserialize, Debug)]
-struct Label {
-    name: String,
-}
+    #[derive(Serialize, Deserialize, Debug)]
+    struct Reviews {
+        edges: Option<Vec<ReviewEdge>>,
+    }
 
-#[derive(Serialize, Deserialize, Debug)]
-struct Reviews {
-    edges: Vec<ReviewEdge>,
-}
+    #[derive(Serialize, Deserialize, Debug)]
+    struct ReviewEdge {
+        node: Option<Review>,
+    }
 
-#[derive(Serialize, Deserialize, Debug)]
-struct ReviewEdge {
-    node: Review,
-}
-
-#[derive(Serialize, Deserialize, Debug)]
-struct Review {
-    author: Author,
-}
-
-pub async fn overall_search_pull_requests(query: &str) -> Result<Vec<OuterPull>> {
+    #[derive(Serialize, Deserialize, Debug)]
+    struct Review {
+        author: Option<Author>,
+    }
+    
     let mut all_pulls = Vec::new();
     let mut after_cursor = None;
     for _n in 0..10 {
@@ -166,25 +165,43 @@ pub async fn overall_search_pull_requests(query: &str) -> Result<Vec<OuterPull>>
             let labels = pull
                 .labels
                 .edges
+                .as_ref()
+                .unwrap_or(&Vec::new())
                 .into_iter()
-                .map(|edge| edge.node.name)
-                .collect();
+                .filter_map(|edge| edge.node.as_ref())
+                .map(|node| node.name.clone())
+                .collect::<Vec<Option<_>>>();
 
             let reviews = pull
                 .hasApprovedReview
                 .edges
+                .as_ref()
+                .unwrap_or(&Vec::new())
                 .into_iter()
-                .map(|edge| edge.node.author.login)
-                .collect();
+                .filter_map(|edge| edge.node.as_ref())
+                .map(|node| node.author.as_ref().and_then(|author| author.login.clone()))
+                .collect::<Vec<Option<_>>>();
 
             all_pulls.push(OuterPull {
-                title: pull.title,
-                url: pull.url,
-                author: pull.author.login,
-                repository: pull.repository.url,
-                labels,
-                reviews,
-                merged_by: pull.mergedBy.login,
+                title: pull.title.clone(),
+                url: pull.url.clone(),
+                author: pull
+                    .author
+                    .as_ref()
+                    .and_then(|author| author.login.clone())
+                    .unwrap_or_else(|| String::from("Unknown author")),
+                repository: pull
+                    .repository
+                    .url
+                    .clone()
+                    .unwrap_or_else(|| String::from("Unknown repository")),
+                labels: labels.into_iter().filter_map(|x| x).collect(),
+                reviews: reviews.into_iter().filter_map(|x| x).collect(),
+                merged_by: pull
+                    .mergedBy
+                    .as_ref()
+                    .and_then(|author| author.login.clone())
+                    .unwrap_or_else(|| String::from("Unknown merged_by")),
             });
         }
 
@@ -196,6 +213,5 @@ pub async fn overall_search_pull_requests(query: &str) -> Result<Vec<OuterPull>>
             _ => break,
         }
     }
-
     Ok(all_pulls)
 }

@@ -20,11 +20,10 @@ pub struct OuterIssue {
     pub repository: String,
     pub repository_stars: i64,
     pub issue_labels: Vec<String>,
-    pub comments: Vec<String>,             // Concat of author and comment
-    pub cross_referenced_prs: Vec<String>, // URLs of cross-referenced pull requests
+    pub comments: Vec<String>,
 }
 
-pub async fn get_issues(query: &str) -> anyhow::Result<Vec<OuterIssue>> {
+pub async fn search_issues_open(query: &str) -> anyhow::Result<Vec<OuterIssue>> {
     #[derive(Serialize, Deserialize, Clone, Debug)]
     struct GraphQLResponse {
         data: Option<Data>,
@@ -50,19 +49,18 @@ pub async fn get_issues(query: &str) -> anyhow::Result<Vec<OuterIssue>> {
 
     #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Edge {
-        node: Option<LocalIssue>,
+        node: Option<Issue>,
     }
 
     #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct LocalIssue {
+    struct Issue {
         title: Option<String>,
         url: Option<String>,
-        author: Option<Author>,
         body: Option<String>,
+        author: Option<Author>,
         repository: Option<Repository>,
         labels: Option<Labels>,
         comments: Option<Comments>,
-        timelineItems: Option<TimelineItems>,
     }
 
     #[derive(Serialize, Deserialize, Clone, Debug)]
@@ -112,27 +110,6 @@ pub async fn get_issues(query: &str) -> anyhow::Result<Vec<OuterIssue>> {
         body: Option<String>,
     }
 
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct TimelineItems {
-        edges: Option<Vec<TimelineEdge>>,
-    }
-
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct TimelineEdge {
-        node: Option<CrossReferencedEvent>,
-    }
-
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct CrossReferencedEvent {
-        source: Option<Source>,
-    }
-
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Source {
-        __typename: Option<String>,
-        url: Option<String>,
-    }
-
     let first_comments = 10;
     let first_timeline_items = 10;
     let mut all_issues = Vec::new();
@@ -148,7 +125,7 @@ pub async fn get_issues(query: &str) -> anyhow::Result<Vec<OuterIssue>> {
         let query_str = format!(
             r#"
             query {{
-                search(query: "{}", type: ISSUE, first: 10, after: {}) {{
+                search(query: "{}", type: ISSUE, first: 100, after: {}) {{
                     issueCount
                     edges {{
                         node {{
@@ -172,27 +149,13 @@ pub async fn get_issues(query: &str) -> anyhow::Result<Vec<OuterIssue>> {
                                         }}
                                     }}
                                 }}
-                                comments(first: {}) {{
+                                comments(first: 10) {{
                                     edges {{
                                         node {{
                                             author {{
                                                 login
                                             }}
                                             body
-                                        }}
-                                    }}
-                                }}
-                                timelineItems(first: {}, itemTypes: [CROSS_REFERENCED_EVENT]) {{
-                                    edges {{
-                                        node {{
-                                            ... on CrossReferencedEvent {{
-                                                source {{
-                                                    __typename
-                                                    ... on PullRequest {{
-                                                        url
-                                                    }}
-                                                }}
-                                            }}
                                         }}
                                     }}
                                 }}
@@ -210,8 +173,6 @@ pub async fn get_issues(query: &str) -> anyhow::Result<Vec<OuterIssue>> {
             after_cursor
                 .as_ref()
                 .map_or(String::from("null"), |c| format!("\"{}\"", c)),
-            first_comments,
-            first_timeline_items
         );
 
         let response_body = github_http_post_gql(&query_str)
@@ -258,29 +219,6 @@ pub async fn get_issues(query: &str) -> anyhow::Result<Vec<OuterIssue>> {
                             })
                         });
 
-                        let cross_referenced_prs =
-                            issue.timelineItems.map_or(Vec::new(), |items| {
-                                items.edges.map_or(Vec::new(), |edges| {
-                                    edges
-                                        .iter()
-                                        .filter_map(|edge| {
-                                            edge.node.as_ref().map(|item| {
-                                                item.source.as_ref().map_or(
-                                                    "".to_string(),
-                                                    |source| {
-                                                        source
-                                                            .url
-                                                            .as_ref()
-                                                            .unwrap_or(&"".to_string())
-                                                            .clone()
-                                                    },
-                                                )
-                                            })
-                                        })
-                                        .collect()
-                                })
-                            });
-
                         all_issues.push(OuterIssue {
                             title: issue.title.unwrap_or_default(),
                             url: issue.url.unwrap_or_default(),
@@ -298,7 +236,6 @@ pub async fn get_issues(query: &str) -> anyhow::Result<Vec<OuterIssue>> {
                             }),
                             issue_labels: labels,
                             comments: comments,
-                            cross_referenced_prs: cross_referenced_prs,
                         });
                     }
                 }

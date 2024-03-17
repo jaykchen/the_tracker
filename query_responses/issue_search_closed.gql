@@ -1,5 +1,5 @@
-query ($query: String!, $firstComments: Int!, $firstTimelineItems: Int!) {
-  search(query: $query, type: ISSUE, first: 100, after: null) {
+query ($query: String!) {
+  search(query: $query, type: ISSUE, first: 1, after: null) {
     issueCount
     edges {
       node {
@@ -23,7 +23,7 @@ query ($query: String!, $firstComments: Int!, $firstTimelineItems: Int!) {
               }
             }
           }
-          comments(first: $firstComments) {
+          comments(first:10) {
             edges {
               node {
                 author {
@@ -33,7 +33,7 @@ query ($query: String!, $firstComments: Int!, $firstTimelineItems: Int!) {
               }
             }
           }
-          timelineItems(first: $firstTimelineItems, itemTypes: [CLOSED_EVENT]) {
+          timelineItems(first: 10, itemTypes: [CLOSED_EVENT]) {
             edges {
               node {
                 ... on ClosedEvent {
