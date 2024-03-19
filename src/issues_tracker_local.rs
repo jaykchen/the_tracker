@@ -156,7 +156,6 @@ pub async fn get_project_logo(owner: &str, repo: &str) -> anyhow::Result<String>
     let owner_info = parsed_response.data.repository.owner;
     Ok(owner_info.avatarUrl)
 }
-
 #[derive(Serialize, Deserialize, Clone, Debug)]
 pub struct OuterIssue {
     pub title: String,
@@ -165,6 +164,7 @@ pub struct OuterIssue {
     pub body: String,
     pub repository: String,
     pub repository_stars: i64,
+    pub repository_avatar: String,
     pub issue_labels: Vec<String>,
     pub comments: Vec<String>,
 }
@@ -215,9 +215,15 @@ pub async fn search_issues_open(query: &str) -> anyhow::Result<Vec<OuterIssue>> 
     }
 
     #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct Owner {
+        avatarUrl: Option<String>,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Repository {
         url: Option<String>,
         stargazers: Option<Stargazers>,
+        owner: Option<Owner>,
     }
 
     #[derive(Serialize, Deserialize, Clone, Debug)]
@@ -286,6 +292,9 @@ pub async fn search_issues_open(query: &str) -> anyhow::Result<Vec<OuterIssue>> 
                                     url
                                     stargazers {{
                                         totalCount
+                                    }}
+                                    owner {{
+                                        avatarUrl
                                     }}
                                 }}
                                 labels(first: 10) {{
@@ -369,17 +378,23 @@ pub async fn search_issues_open(query: &str) -> anyhow::Result<Vec<OuterIssue>> 
                             title: issue.title.unwrap_or_default(),
                             url: issue.url.unwrap_or_default(),
                             author: issue
-                                .author
+                                .author.clone()
                                 .map_or(String::new(), |author| author.login.unwrap_or_default()),
-                            body: issue.body.unwrap_or_default(),
+                            body: issue.body.clone().unwrap_or_default(),
                             repository: issue
                                 .repository
                                 .clone() // Clone here
                                 .map_or(String::new(), |repo| repo.url.unwrap_or_default()),
-                            repository_stars: issue.repository.map_or(0, |repo| {
+                            repository_stars: issue.repository.clone().map_or(0, |repo| {
                                 repo.stargazers
                                     .map_or(0, |stars| stars.totalCount.unwrap_or(0))
                             }),
+                            repository_avatar: issue
+                                .repository
+                                .map_or(String::new(), |repo| {
+                                    repo.owner
+                                        .map_or(String::new(), |owner| owner.avatarUrl.unwrap_or_default())
+                                }),
                             issue_labels: labels,
                             comments: comments,
                         });

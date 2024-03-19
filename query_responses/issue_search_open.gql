@@ -15,6 +15,10 @@ query ($query: String!) {
             stargazers {
               totalCount
             }
+            owner {
+              avatarUrl
+            }
+            usesCustomOpenGraphImage
           }
           labels(first: 10) {
             edges {

@@ -1,5 +1,4 @@
-/* use crate::issues_tracker_local::get_project_logo;
-use sqlx::postgres::PgPool;
+/* use sqlx::postgres::PgPool;
 
 pub async fn project_exists(pool: &PgPool, project_id: &str) -> anyhow::Result<bool> {
     let exists = sqlx::query!(
@@ -14,62 +13,71 @@ pub async fn project_exists(pool: &PgPool, project_id: &str) -> anyhow::Result<b
 
     Ok(exists)
 }
-pub async fn add_project_with_check(
-    pool: &PgPool,
-    project_id: &str,
-    project_logo: &str,
-) -> anyhow::Result<()> {
-    if project_exists(pool, project_id).await? {
-        return Err(anyhow::anyhow!(
-            "Project with ID '{}' already exists.",
-            project_id
-        ));
-    }
-
-    sqlx::query!(
-        r#"
-        INSERT INTO projects (project_id, project_logo)
-        VALUES ($1, $2)
-        "#,
-        project_id,
-        project_logo
-    )
-    .execute(pool)
-    .await?;
-    Ok(())
-}
-
 pub async fn add_project(
     pool: &PgPool,
     project_id: &str,
     project_logo: &str,
+    issue_id: &str,
 ) -> anyhow::Result<()> {
     sqlx::query!(
         r#"
-        INSERT INTO projects (project_id, project_logo)
-        VALUES ($1, $2)
+        INSERT INTO projects (project_id, project_logo, issues_list)
+        VALUES ($1, $2, ARRAY[$3]::text[])
         "#,
         project_id,
-        project_logo
+        project_logo,
+        issue_id,
     )
     .execute(pool)
     .await?;
+
+    Ok(())
+}
+pub async fn add_project_checked(
+    pool: &PgPool,
+    project_id: &str,
+    project_logo: &str,
+    issue_id: &str,
+) -> anyhow::Result<()> {
+    if project_exists(pool, project_id).await? {
+        update_project(pool, project_id, issue_id).await?;
+    } else {
+        add_project(pool, project_id, project_logo, issue_id).await?;
+    }
+
+    Ok(())
+}
+
+pub async fn update_project(pool: &PgPool, project_id: &str, issue_id: &str) -> anyhow::Result<()> {
+    sqlx::query!(
+        r#"
+        UPDATE projects
+        SET issues_list = array_append(issues_list, $1)
+        WHERE project_id = $2
+        "#,
+        issue_id,
+        project_id,
+    )
+    .execute(pool)
+    .await?;
+
     Ok(())
 }
 
 pub async fn add_project_test_1(pool: &PgPool) -> anyhow::Result<()> {
     let project_id = "https://github.com/jaykchen/issue-labeler";
+    let issue_id = "https://github.com/jaykchen/issue-labeler/issues/24";
     let project_logo = "https://avatars.githubusercontent.com/u/112579101?v=4";
 
-    let _ = add_project(pool, project_id, project_logo).await?;
+    let _ = add_project(pool, project_id, project_logo, issue_id).await?;
 
     Ok(())
 }
 
-pub async fn list_projects(pool: &PgPool) -> anyhow::Result<()> {
+pub async fn list_projects(pool: &PgPool) -> anyhow::Result<Vec<(String, String, Vec<String>)>> {
     let recs = sqlx::query!(
         r#"
-        SELECT project_id, project_logo
+        SELECT project_id, project_logo, issues_list
         FROM projects
         ORDER BY project_id
         "#
@@ -77,13 +85,19 @@ pub async fn list_projects(pool: &PgPool) -> anyhow::Result<()> {
     .fetch_all(pool)
     .await?;
 
-    for rec in recs {
-        println!("{}: {}", rec.project_id, rec.project_logo);
-    }
+    let projects = recs
+        .iter()
+        .map(|r| {
+            (
+                r.project_id.clone(),
+                r.project_logo.clone(),
+                r.issues_list.clone().unwrap_or_default(), // Handle Option<Vec<String>>
+            )
+        })
+        .collect();
 
-    Ok(())
+    Ok(projects)
 }
-
 pub async fn issue_exists(pool: &PgPool, issue_id: &str) -> anyhow::Result<bool> {
     let exists = sqlx::query!(
         r#"
@@ -98,40 +112,23 @@ pub async fn issue_exists(pool: &PgPool, issue_id: &str) -> anyhow::Result<bool>
     Ok(exists)
 }
 
-pub async fn add_issue_with_check(
+pub async fn add_issue_checked(
     pool: &PgPool,
     issue_id: &str,
+    project_id: &str,
     title: &str,
     description: &str,
+    repository_avatar: &str,
 ) -> anyhow::Result<()> {
-    // let issue_id = "https://github.com/jaykchen/issue-labeler/issues/24";
-
-    let project_id = issue_id.rsplitn(3, '/').nth(2).unwrap();
-
-    let owner_repo = project_id.rsplitn(3, '/').take(2).collect::<Vec<_>>();
-    let owner = owner_repo[1];
-    let repo = owner_repo[0];
     if project_exists(pool, project_id).await? {
+        update_project(pool, project_id, issue_id).await?;
     } else {
-        let project_logo: String = get_project_logo(owner, repo).await?;
-
-        add_project(pool, project_id, &project_logo).await?;
+        add_project(pool, project_id, repository_avatar, issue_id).await?;
     }
 
     if issue_exists(pool, issue_id).await? {
     } else {
-        sqlx::query!(
-            r#"
-            INSERT INTO issues (issue_id, project_id, issue_title, issue_description)
-            VALUES ($1, $2, $3, $4)
-            "#,
-            issue_id,
-            project_id,
-            title,
-            description,
-        )
-        .execute(pool)
-        .await?;
+        add_issue(pool, issue_id, project_id, title, description).await?;
     }
     Ok(())
 }
@@ -157,24 +154,14 @@ pub async fn add_issue(
     .await?;
     Ok(())
 }
+
 pub async fn add_issue_test_1(pool: &PgPool) -> anyhow::Result<()> {
     let issue_id = "https://github.com/jaykchen/issue-labeler/issues/24";
     let project_id = "https://github.com/jaykchen/issue-labeler";
     let title = "WASI-NN with GPU on Jetson Orin Nano";
     let description = "demo";
 
-    sqlx::query!(
-        r#"
-        INSERT INTO issues (issue_id, project_id, issue_title, issue_description)
-        VALUES ($1, $2, $3, $4)
-        "#,
-        issue_id,
-        project_id,
-        title,
-        description,
-    )
-    .execute(pool)
-    .await?;
+    let _ = add_issue(pool, issue_id, project_id, title, description).await?;
     Ok(())
 }
 
@@ -224,7 +211,7 @@ pub async fn get_issue(pool: &PgPool, issue_id: &str) -> anyhow::Result<()> {
     Ok(())
 }
 
-pub async fn add_comment(
+/* pub async fn add_comment(
     pool: &PgPool,
     comment_id: &str,
     issue_id: &str,
@@ -239,13 +226,15 @@ pub async fn add_comment(
         comment_id,
         issue_id,
         creator,
-        content
+        content,
     )
     .execute(pool)
     .await?;
     Ok(())
 }
-pub async fn add_comment_with_check(
+*/
+
+/* pub async fn add_comment_checked(
     pool: &PgPool,
     comment_id: &str,
     issue_id: &str,
@@ -254,7 +243,7 @@ pub async fn add_comment_with_check(
 ) -> anyhow::Result<()> {
     if issue_exists(pool, issue_id).await? {
     } else {
-        let _ = add_issue_with_check(pool, issue_id, "title", "description").await?;
+        let _ = add_issue_checked(pool, issue_id, "title", "description").await?;
     }
 
     sqlx::query!(
@@ -291,8 +280,8 @@ pub async fn add_comment_test_1(pool: &PgPool) -> anyhow::Result<()> {
     .await?;
     Ok(())
 }
-
-pub async fn list_comments(pool: &PgPool, issue_id: &str) -> anyhow::Result<()> {
+*/
+/* pub async fn list_comments(pool: &PgPool, issue_id: &str) -> anyhow::Result<()> {
     let recs = sqlx::query!(
         r#"
         SELECT comment_id, content
@@ -311,13 +300,23 @@ pub async fn list_comments(pool: &PgPool, issue_id: &str) -> anyhow::Result<()> 
 
     Ok(())
 }
-
-pub async fn list_pull_requests(
+*/
+/* pub async fn list_pull_requests(
     pool: &sqlx::PgPool,
-) -> anyhow::Result<Vec<(String, String, String, String, String, Vec<String>)>> {
+) -> anyhow::Result<
+    Vec<(
+        String,
+        String,
+        String,
+        String,
+        String,
+        Vec<String>,
+        Vec<String>,
+    )>,
+> {
     let pull_requests = sqlx::query!(
         r#"
-        SELECT pull_id, title, author, repository, merged_by, cross_referenced_issues
+        SELECT pull_id, title, author, repository, merged_by, cross_referenced_issues, connected_issues
         FROM pull_requests
         "#
     )
@@ -332,22 +331,14 @@ pub async fn list_pull_requests(
             r.repository.clone(),
             r.merged_by.clone(),
             r.cross_referenced_issues.clone().unwrap_or_default(), // Handle Option<Vec<String>>
+            r.connected_issues.clone().unwrap_or_default(), // Handle Option<Vec<String>>
         )
     })
     .collect();
 
     Ok(pull_requests)
 }
-
-pub async fn add_pull_request_with_check(
-    pool: &sqlx::PgPool,
-    pull_id: &str,
-    title: &str,
-    author: &str,
-    repository: &str,
-    merged_by: &str,
-    cross_referenced_issues: Vec<String>,
-) -> anyhow::Result<()> {
+pub async fn pull_request_exists(pool: &sqlx::PgPool, pull_id: &str) -> anyhow::Result<bool> {
     let exists = sqlx::query!(
         r#"
         SELECT EXISTS(SELECT 1 FROM pull_requests WHERE pull_id = $1)
@@ -359,6 +350,20 @@ pub async fn add_pull_request_with_check(
     .exists
     .unwrap_or(false);
 
+    Ok(exists)
+}
+pub async fn add_pull_request_checked(
+    pool: &sqlx::PgPool,
+    pull_id: &str,
+    title: &str,
+    author: &str,
+    repository: &str,
+    merged_by: &str,
+    cross_referenced_issues: &Vec<String>,
+    connected_issues: &Vec<String>,
+) -> anyhow::Result<()> {
+    let exists = pull_request_exists(pool, pull_id).await?;
+
     if !exists {
         add_pull_request(
             pool,
@@ -368,36 +373,40 @@ pub async fn add_pull_request_with_check(
             repository,
             merged_by,
             cross_referenced_issues,
+            connected_issues,
         )
         .await?;
     }
 
     Ok(())
 }
+
 pub async fn add_pull_request(
-    pool: &sqlx::PgPool,
+    pool: &PgPool,
     pull_id: &str,
     title: &str,
     author: &str,
     repository: &str,
     merged_by: &str,
-    cross_referenced_issues: Vec<String>,
+    cross_referenced_issues: &Vec<String>,
+    connected_issues: &Vec<String>,
 ) -> anyhow::Result<()> {
     sqlx::query!(
         r#"
-        INSERT INTO pull_requests (pull_id, title, author, repository, merged_by, cross_referenced_issues)
-        VALUES ($1, $2, $3, $4, $5, $6)
+        INSERT INTO pull_requests (pull_id, title, author, repository, merged_by, cross_referenced_issues, connected_issues)
+        VALUES ($1, $2, $3, $4, $5, $6, $7)
         "#,
         pull_id,
         title,
         author,
         repository,
         merged_by,
-        &cross_referenced_issues,
+        cross_referenced_issues,
+        connected_issues,
     )
     .execute(pool)
     .await?;
-
     Ok(())
 }
 */
+ */
