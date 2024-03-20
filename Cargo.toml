@@ -4,13 +4,19 @@ version = "0.1.0"
 edition = "2021"
 resolver = "2"
 
+[lib]
+path = "src/lib.rs"
+
  
 [dependencies]
 anyhow = "1.0"
 futures = "0.3"
-sqlx = { version = "0.6.2", features = ["postgres", "runtime-tokio-native-tls", "bigdecimal"] }
-tokio = { version = "1.20.0", features = ["rt", "macros"]}
-dotenvy = "0.15.0"
+mysql_async = "0.33.0"
+hyper = { version = "1", features = ["full"] }
+tokio = { version = "1", features = ["io-util", "fs", "net", "time", "rt", "macros", "rt-multi-thread"] }
+# mysql_async_wasi = "0.33.0"
+# hyper_wasi = { version = "0.15", features = ["full"] }
+# tokio_wasi = { version = "1", features = ["io-util", "fs", "net", "time", "rt", "macros"] }
 dotenv = "0.15.0"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1.0.111"
@@ -19,6 +25,6 @@ log = "0.4.19"
 base64 = "0.21.2"
 derivative = "2.2.0"
 chrono = { version = "0.4.26", features = ["serde"] }
-async-openai = "0.17.1"
 octocrab = "0.20.0"
 http_req = "0.10.2"
+async-trait = "0.1.78"

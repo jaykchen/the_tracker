@@ -3,7 +3,6 @@ use dotenv::dotenv;
 use octocrab::search;
 use octocrab::Octocrab;
 use serde::{Deserialize, Serialize};
-use sqlx::postgres::PgPool;
 use std::env;
 use the_tracker::db_updater_local::*;
 use the_tracker::issues_tracker_local::*;
