@@ -1,12 +1,11 @@
 use anyhow::Result;
 use dotenv::dotenv;
-pub use mysql_async::*;
-use mysql_async::{prelude::*, Error as MySQLError, Pool};
-use serde::{Deserialize, Serialize};
-use serde_json::json;
-use std::collections::HashMap;
 use mysql_async::Error;
-use std::convert::Infallible;
+pub use mysql_async::*;
+use mysql_async::{prelude::*, Pool};
+
+
+
 
 
 async fn get_pool() -> Pool {
@@ -18,8 +17,8 @@ async fn get_pool() -> Pool {
     // The connection pool will have a min of 5 and max of 10 connections.
     let constraints = PoolConstraints::new(5, 10).unwrap();
     let pool_opts = PoolOpts::default().with_constraints(constraints);
-    let pool = Pool::new(builder.pool_opts(pool_opts));
-    pool
+    
+    Pool::new(builder.pool_opts(pool_opts))
 }
 
 pub async fn project_exists(
@@ -60,7 +59,6 @@ pub async fn add_project(
 
     Ok(())
 }
-
 
 pub async fn update_project(
     pool: &mysql_async::Pool,
@@ -168,7 +166,9 @@ pub async fn add_issue_checked(
     if project_exists(pool, project_id).await? {
         update_project(pool, project_id, issue_id).await?;
     } else {
-        add_project(pool, project_id, repository_avatar, issue_id).await.unwrap();
+        add_project(pool, project_id, repository_avatar, issue_id)
+            .await
+            .unwrap();
     }
 
     if issue_exists(pool, issue_id).await? {
@@ -427,7 +427,7 @@ mod tests {
     use async_trait::async_trait;
     use mysql_async::prelude::Queryable;
     use mysql_async::Pool;
-    use std::env;
+    
 
     #[async_trait]
     trait TestDbSetup {

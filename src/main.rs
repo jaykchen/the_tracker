@@ -1,10 +1,10 @@
-use chrono::{Duration, NaiveDate, TimeDelta, Utc};
+
 use dotenv::dotenv;
-use octocrab::search;
+
 use octocrab::Octocrab;
 use serde::{Deserialize, Serialize};
-use std::env;
-use the_tracker::db_updater_local::*;
+
+
 use the_tracker::issues_tracker_local::*;
 
 #[tokio::main]
@@ -59,7 +59,7 @@ async fn search_issues() -> anyhow::Result<()> {
     let query = "label:hacktoberfest is:issue is:closed created:2023-10-01..2023-10-03 -label:spam -label:invalid";
     let query = "label:hacktoberfest is:issue is:open no:assignee created:2023-10-01..2023-10-03 -label:spam -label:invalid";
 
-    let iss = search_issues_open(&query).await?;
+    let iss = search_issues_open(query).await?;
 
     for issue in iss {
         println!("issue: {:?}", issue);
@@ -85,7 +85,7 @@ async fn search_pulls() -> anyhow::Result<()> {
     let query = "label:hacktoberfest-accepted is:pr is:merged created:2023-10-01..2023-10-03 review:approved -label:spam -label:invalid";
 
     let query = "repo:SarthakKeshari/calc_for_everything is:pr is:merged label:hacktoberfest-accepted created:2023-10-01..2023-10-30 review:approved -label:spam -label:invalid";
-    let pulls = get_per_repo_pull_requests(&query).await?;
+    let pulls = get_per_repo_pull_requests(query).await?;
 
     for issue in pulls {
         println!("issue: {:?}", issue);
