@@ -22,7 +22,7 @@ pub struct SimplePull {
     pub merged_by: Option<String>, // This field can be empty if the PR is not merged
 }
 
-pub async fn get_per_repo_pull_requests(query: &str) -> anyhow::Result<Vec<SimplePull>> {
+pub async fn search_pull_requests_per_repo(query: &str) -> anyhow::Result<Vec<SimplePull>> {
     #[derive(Serialize, Deserialize, Clone, Debug)]
     struct GraphQLResponse {
         data: Data,

@@ -85,7 +85,7 @@ async fn search_pulls() -> anyhow::Result<()> {
     let query = "label:hacktoberfest-accepted is:pr is:merged created:2023-10-01..2023-10-03 review:approved -label:spam -label:invalid";
 
     let query = "repo:SarthakKeshari/calc_for_everything is:pr is:merged label:hacktoberfest-accepted created:2023-10-01..2023-10-30 review:approved -label:spam -label:invalid";
-    let pulls = get_per_repo_pull_requests(query).await?;
+    let pulls = search_pull_requests_per_repo(query).await?;
 
     for issue in pulls {
         println!("issue: {:?}", issue);
@@ -104,7 +104,7 @@ pub struct SimplePull {
     pub merged_by: Option<String>, // This field can be empty if the PR is not merged
 }
 
-pub async fn get_per_repo_pull_requests(query: &str) -> anyhow::Result<Vec<SimplePull>> {
+pub async fn search_pull_requests_per_repo(query: &str) -> anyhow::Result<Vec<SimplePull>> {
     #[derive(Serialize, Deserialize, Clone, Debug)]
     struct GraphQLResponse {
         data: Data,

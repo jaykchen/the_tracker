@@ -1,0 +1,49 @@
+{
+  "data": {
+    "search": {
+      "issueCount": 8824,
+      "edges": [
+        {
+          "node": {
+            "url": "https://github.com/carbon-design-system/carbon/issues/16019",
+            "body": "",
+            "comments": {
+              "edges": []
+            }
+          }
+        },
+        {
+          "node": {
+            "url": "https://github.com/KwickerHub/WebCraftifyAI/issues/2776",
+            "body": "https://images01.nicepagecdn.com/page/36/51/html-template-365193.jpg Design a shapes, like the above image\n\nCreate a file \"shapes,_NUM_by_(YourName).html\" in the modules/shapes, folder.\n\nUse simple HTML and CSS and JAVASCRIPT to create the shapes, animation. You can use the interface development https://roynek.com/kwickerhub/WebCraftifyAI/pages/dashboard.html (This project) or you can write the lines of code yourself. You can review and merge your PR yourself. simply follow the guide on accepting a PR at the bottom. It is simple but if you do have any issues with reviewing the PR, you can then reach out to the Admins.\n\nStep by Step Guide on Contributing.\n\nFork this project(Use the 'fork' button in the top right corner) and Clone your Fork.\ngit clone https://github.com/YOUR_USERNAME/frontend\n\nOpen your code Editor and Create a file \"shapes,_NUM_YOUR_NAME_.html\" in the \"modules/shapes,\" folder of this project you just cloned. No need to create head, title and body tags, Just Add a div tag with some embedded style(i.e use the style tag) and the script tag where necessary.\n\nIf you want to add an image resource, please add it in the folder ••\n\"modules/shapes,/images_and_icons\"\nWe recommend you use an svg for your image/icon.\n\nPush your Code: You need to push your recent changes back to the cloud. Use the command below in the main directory of this Repository\n\ngit push origin dev\n\nor use a GUI tool to avoid mistakes or complexity. LOL.\n\nThen make you Pull Request...\n\nBelow is a example of the code structure we need:\n\n```\n<div>\n    <!---YOUR CODE---->\n</div>\n\n<style>\n    /* YOUR STYLE */\n</style>\n\n<script>\n    // YOUR SCRIPT if any\n</script>\n\n```\n\nThe goal of this issue is to create modules that other people/dev/designers can use or easily import into their projects. Avoid the desire to style all elements in the page by using codes like:\n```\n<style>\n\n*{\n\n}\n/* OR */\n\ndiv, a, h1, pre{\n\n}\n\n\n</style>\n\n```\nuse classes or id to style the elements to avoid a collision of styles.\n\nRemember to make your module usable across different screens(Make your design responsive).\n\nFor more examples: \nmodules->buttons\nmodules->cards\nfor examples of contributions or Pull request accepted in to the project.\n\n\nAnd please do not wait for this issue to be assigned to you as we have limited hands but have a lot to do/cover. Please send in your PR.\n\n### Accepting Pull Request\nThis Issue has the auto-review so you can review and merge your code yourself. when you have made your PR, click this link: https://roynek.com/alltrenders/codes/theWorld.php?post_id=181 and then follow the few steps outlined to get your PR merged..\n\nIf this project looks promising or interesting to you, you can use the watch button or the star button above to keep an eye out for new developments.\n\nGood-luck and thank you.\n",
+            "comments": {
+              "edges": []
+            }
+          }
+        },
+        {
+          "node": {
+            "url": "https://github.com/WeblateOrg/weblate/issues/11239",
+            "body": "### Describe the problem\n\nToday we are able to download all translations of a project using this method: https://docs.weblate.org/en/latest/user/files.html#downloading-components-categories-or-projects \r\n\r\nThat makes a request to this path: {{ host }}/download/{{ project }}/?format=zip:csv\r\n\r\nBut this requires us to leave our projects and components public, since this request is made by a service we have, that fetches all translations and upload them to S3 to be consumed elsewhere. \n\n### Describe the solution you would like\n\nBeing able to download all translations of a project in one request, like the one provided in the File menu, but expose it to the api so we can make authenticated requests to it, removing the necessity of making our project public.\n\n### Describe alternatives you have considered\n\nThe alternative right now is to make a request to https://docs.weblate.org/en/latest/api.html#get--api-components-\r\n\r\nAnd iterate on every component making new separated requests to https://docs.weblate.org/en/latest/api.html#get--api-translations-(string-project)-(string-component)-(string-language)-\r\n\r\n\n\n### Screenshots\n\n_No response_\n\n### Additional context\n\n_No response_",
+            "comments": {
+              "edges": [
+                {
+                  "node": {
+                    "author": {
+                      "login": "github-actions"
+                    },
+                    "body": "This issue seems to be a good fit for newbie contributors. You are welcome to contribute to Weblate! Don't hesitate to ask any questions you would have while implementing this.\n\nYou can learn about how to get started in our [contributors documentation](https://docs.weblate.org/en/latest/contributing/index.html)."
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pageInfo": {
+        "endCursor": "Y3Vyc29yOjM=",
+        "hasNextPage": true
+      }
+    }
+  }
+}

@@ -3,10 +3,7 @@ use dotenv::dotenv;
 use mysql_async::Error;
 pub use mysql_async::*;
 use mysql_async::{prelude::*, Pool};
-
-
-
-
+use serde_json::json;
 
 async fn get_pool() -> Pool {
     dotenv().ok();
@@ -17,7 +14,7 @@ async fn get_pool() -> Pool {
     // The connection pool will have a min of 5 and max of 10 connections.
     let constraints = PoolConstraints::new(5, 10).unwrap();
     let pool_opts = PoolOpts::default().with_constraints(constraints);
-    
+
     Pool::new(builder.pool_opts(pool_opts))
 }
 
@@ -42,7 +39,7 @@ pub async fn add_project(
     issue_id: &str,
 ) -> Result<()> {
     let mut conn = pool.get_conn().await?;
-    let issue_id_json: Value = serde_json::json!(issue_id).into();
+    let issue_id_json: Value = json!(issue_id).into();
 
     let query = r"INSERT INTO projects (project_id, project_logo, issues_list)
                   VALUES (:project_id, :project_logo, :issues_list)";
@@ -67,7 +64,7 @@ pub async fn update_project(
 ) -> Result<(), Error> {
     let mut conn = pool.get_conn().await?;
 
-    let issue_id_json: Value = serde_json::json!(issue_id).into();
+    let issue_id_json: Value = json!(issue_id).into();
 
     let params = params! {
         "issue_id" => &issue_id_json,
@@ -83,23 +80,6 @@ pub async fn update_project(
     Ok(())
 }
 
-/* pub async fn add_project_checked(
-    pool: &Pool,
-    project_id: &str,
-    project_logo: &str,
-    issue_id: &str,
-) -> Result<()> {
-    if project_exists(pool, project_id).await? {
-        update_project(pool, project_id, issue_id).await?;
-    } else {
-        add_project(pool, project_id, project_logo, issue_id).await?;
-    }
-
-    Ok(())
-}
-
-
-
 pub async fn list_projects(pool: &Pool) -> Result<Vec<(String, String, Vec<String>)>> {
     let mut conn = pool.get_conn().await?;
     let projects: Vec<(String, String, Vec<String>)> = conn
@@ -113,7 +93,6 @@ pub async fn list_projects(pool: &Pool) -> Result<Vec<(String, String, Vec<Strin
 
     Ok(projects)
 }
- */
 
 pub async fn issue_exists(
     pool: &mysql_async::Pool,
@@ -155,6 +134,53 @@ pub async fn add_issue(
     Ok(())
 }
 
+pub async fn select_issue(
+    pool: &mysql_async::Pool,
+    issue_id: &str,
+    issue_budget: i64,
+) -> Result<(), mysql_async::Error> {
+    let mut conn = pool.get_conn().await?;
+
+    let query = r"UPDATE issues 
+                  SET issue_budget = :issue_budget, 
+                      review_status = 'approve'
+                  WHERE issue_id = :issue_id";
+
+    conn.exec_drop(
+        query,
+        params! {
+            "issue_id" => issue_id,
+            "issue_budget" => issue_budget,
+        },
+    )
+    .await?;
+
+    Ok(())
+}
+
+pub async fn approve_issue(
+    pool: &mysql_async::Pool,
+    issue_id: &str,
+) -> Result<(), mysql_async::Error> {
+    let mut conn = pool.get_conn().await?;
+
+    let query = r"UPDATE issues 
+                  SET issue_budget_approved = True, 
+                      review_status = 'approve'
+                  WHERE issue_id = :issue_id";
+
+    let result = conn
+        .exec_drop(
+            query,
+            params! {
+                "issue_id" => issue_id,
+            },
+        )
+        .await;
+
+    Ok(())
+}
+
 pub async fn add_issue_checked(
     pool: &mysql_async::Pool,
     issue_id: &str,
@@ -178,53 +204,105 @@ pub async fn add_issue_checked(
     Ok(())
 }
 
-/* pub async fn list_issues(pool: &PgPool, project_id: &str) -> anyhow::Result<()> {
-    let recs = sqlx::query!(
-        r#"
-        SELECT issue_id, issue_title, issue_description, issue_budget
-        FROM issues
-        WHERE project_id = $1
-        ORDER BY issue_id
-        "#,
-        project_id
-    )
-    .fetch_all(pool)
-    .await?;
+pub async fn update_issue(
+    pool: &mysql_async::Pool,
+    issue_id: &str,
+    issue_assignee: &str,
+    issue_linked_pr: &str,
+) -> Result<(), Error> {
+    let mut conn = pool.get_conn().await?;
 
-    for rec in recs {
-        println!(
-            "- [{}] {}: {} (${:?})",
-            rec.issue_id, rec.issue_title, rec.issue_description, rec.issue_budget
-        );
-    }
+    let query = r"UPDATE issues 
+                  SET issue_assignee = :issue_assignee, 
+                      issue_linked_pr = :issue_linked_pr
+                  WHERE issue_id = :issue_id";
+
+    conn.exec_drop(
+        query,
+        params! {
+            "issue_id" => issue_id,
+            "issue_assignee" => issue_assignee,
+            "issue_linked_pr" => issue_linked_pr,
+        },
+    )
+    .await?;
 
     Ok(())
 }
 
-pub async fn get_issue(pool: &PgPool, issue_id: &str) -> anyhow::Result<()> {
-    let recs = sqlx::query!(
-        r#"
-        SELECT issue_id, issue_title, issue_description, issue_budget
-        FROM issues
-        WHERE issue_id = $1
-        ORDER BY issue_id
-        "#,
-        issue_id
-    )
-    .fetch_all(pool)
-    .await?;
+pub async fn pull_request_exists(pool: &Pool, pull_id: &str) -> Result<bool, Error> {
+    let mut conn = pool.get_conn().await?;
+    let result: Option<(i32,)> = conn
+        .query_first(format!(
+            "SELECT 1 FROM pull_requests WHERE pull_id = '{}'",
+            pull_id
+        ))
+        .await?;
+    Ok(result.is_some())
+}
 
-    for rec in recs {
-        println!(
-            "- [{}] {}: {} (${:?})",
-            rec.issue_id, rec.issue_title, rec.issue_description, rec.issue_budget
-        );
-    }
+pub async fn add_pull_request(
+    pool: &Pool,
+    pull_id: &str,
+    title: &str,
+    author: &str,
+    repository: &str,
+    merged_by: &str,
+) -> Result<(), Error> {
+    let mut conn = pool.get_conn().await?;
+
+    let query = r"INSERT INTO pull_requests (pull_id, title, author, repository, merged_by)
+                  VALUES (:pull_id, :title, :author, :repository, :merged_by)";
+
+    conn.exec_drop(
+        query,
+        params! {
+            "pull_id" => pull_id,
+            "title" => title,
+            "author" => author,
+            "repository" => repository,
+            "merged_by" => merged_by,
+        },
+    )
+    .await?;
 
     Ok(())
 }
 
-pub async fn add_comment(
+pub async fn update_pull_request(
+    pool: &Pool,
+    pull_id: &str,
+    merged_by: &str,
+    cross_referenced_issues: &Vec<String>,
+    connected_issues: &Vec<String>,
+) -> Result<(), Error> {
+    let mut conn = pool.get_conn().await?;
+
+    let cross_referenced_issues_json: Value = json!(cross_referenced_issues).into();
+    let connected_issues_json: Value = json!(connected_issues).into();
+
+    let query = r"UPDATE pull_requests 
+                  SET merged_by = :merged_by, 
+                      cross_referenced_issues = :cross_referenced_issues, 
+                      connected_issues = :connected_issues
+                  WHERE pull_id = :pull_id";
+
+    let result = conn
+        .exec_drop(
+            query,
+            params! {
+                "pull_id" => pull_id,
+                "merged_by" => merged_by,
+                "cross_referenced_issues" => cross_referenced_issues_json,
+                "connected_issues" => connected_issues_json,
+            },
+        )
+        .await;
+
+    result
+}
+
+/* pub async fn add_comment(
     pool: &PgPool,
     comment_id: &str,
     issue_id: &str,
@@ -246,218 +324,66 @@ pub async fn add_comment(
     Ok(())
 }
  */
-/* pub async fn add_comment_checked(
-    pool: &PgPool,
-    comment_id: &str,
-    issue_id: &str,
-    creator: &str,
-    content: &str,
-) -> anyhow::Result<()> {
-    if issue_exists(pool, issue_id).await? {
-    } else {
-        let _ = add_issue_checked(pool, issue_id, "title", "description").await?;
-    }
-
-    sqlx::query!(
-        r#"
-            INSERT INTO comments (comment_id, issue_id, creator, content)
-            VALUES ($1, $2, $3, $4)
-            "#,
-        comment_id,
-        issue_id,
-        creator,
-        content
-    )
-    .execute(pool)
-    .await?;
-    Ok(())
-}
-
-pub async fn add_comment_test_1(pool: &PgPool) -> anyhow::Result<()> {
-    let comment_id = "https://github.com/jaykchen/issue-labeler/issues/24#issuecomment-1979927212";
-    let issue_id = "https://github.com/jaykchen/issue-labeler/issues/24";
-    let creator = "jaykchen";
-    let content = "This is a placeholder comment on this issue.";
-    sqlx::query!(
-        r#"
-        INSERT INTO comments (comment_id, issue_id, creator, content)
-        VALUES ($1, $2, $3, $4)
-        "#,
-        comment_id,
-        issue_id,
-        creator,
-        content
-    )
-    .execute(pool)
-    .await?;
-    Ok(())
-}
- pub async fn list_comments(pool: &PgPool, issue_id: &str) -> anyhow::Result<()> {
-    let recs = sqlx::query!(
-        r#"
-        SELECT comment_id, content
-        FROM comments
-        WHERE issue_id = $1
-        ORDER BY comment_id
-        "#,
-        issue_id
-    )
-    .fetch_all(pool)
-    .await?;
-
-    for rec in recs {
-        println!("- [{}] {}", rec.comment_id, rec.content);
-    }
-
-    Ok(())
-}
-
-pub async fn list_pull_requests(
-    pool: &sqlx::PgPool,
-) -> anyhow::Result<
-    Vec<(
-        String,
-        String,
-        String,
-        String,
-        String,
-        Vec<String>,
-        Vec<String>,
-    )>,
-> {
-    let pull_requests = sqlx::query!(
-        r#"
-        SELECT pull_id, title, author, repository, merged_by, cross_referenced_issues, connected_issues
-        FROM pull_requests
-        "#
-    )
-    .fetch_all(pool)
-    .await?
-    .iter()
-    .map(|r| {
-        (
-            r.pull_id.clone(),
-            r.title.clone(),
-            r.author.clone(),
-            r.repository.clone(),
-            r.merged_by.clone(),
-            r.cross_referenced_issues.clone().unwrap_or_default(), // Handle Option<Vec<String>>
-            r.connected_issues.clone().unwrap_or_default(), // Handle Option<Vec<String>>
-        )
-    })
-    .collect();
-
-    Ok(pull_requests)
-}
-pub async fn pull_request_exists(pool: &sqlx::PgPool, pull_id: &str) -> anyhow::Result<bool> {
-    let exists = sqlx::query!(
-        r#"
-        SELECT EXISTS(SELECT 1 FROM pull_requests WHERE pull_id = $1)
-        "#,
-        pull_id
-    )
-    .fetch_one(pool)
-    .await?
-    .exists
-    .unwrap_or(false);
-
-    Ok(exists)
-}
-pub async fn add_pull_request_checked(
-    pool: &sqlx::PgPool,
-    pull_id: &str,
-    title: &str,
-    author: &str,
-    repository: &str,
-    merged_by: &str,
-    cross_referenced_issues: &Vec<String>,
-    connected_issues: &Vec<String>,
-) -> anyhow::Result<()> {
-    let exists = pull_request_exists(pool, pull_id).await?;
-
-    if !exists {
-        add_pull_request(
-            pool,
-            pull_id,
-            title,
-            author,
-            repository,
-            merged_by,
-            cross_referenced_issues,
-            connected_issues,
-        )
-        .await?;
-    }
-
-    Ok(())
-}
-
-pub async fn add_pull_request(
-    pool: &PgPool,
-    pull_id: &str,
-    title: &str,
-    author: &str,
-    repository: &str,
-    merged_by: &str,
-    cross_referenced_issues: &Vec<String>,
-    connected_issues: &Vec<String>,
-) -> anyhow::Result<()> {
-    sqlx::query!(
-        r#"
-        INSERT INTO pull_requests (pull_id, title, author, repository, merged_by, cross_referenced_issues, connected_issues)
-        VALUES ($1, $2, $3, $4, $5, $6, $7)
-        "#,
-        pull_id,
-        title,
-        author,
-        repository,
-        merged_by,
-        cross_referenced_issues,
-        connected_issues,
-    )
-    .execute(pool)
-    .await?;
-    Ok(())
-}
-*/
 
 #[cfg(test)]
 mod tests {
     use super::*;
-    use async_trait::async_trait;
     use mysql_async::prelude::Queryable;
     use mysql_async::Pool;
-    
 
-    #[async_trait]
-    trait TestDbSetup {
-        async fn setup_db(&self);
+    #[tokio::test]
+    async fn test_list_projects() {
+        let pool = get_pool().await;
+        let projects = list_projects(&pool).await.unwrap();
+
+        println!("projects: {:?}", projects);
+
+        assert_eq!(projects[1].2, vec!["issue3", "issue4"]);
     }
 
-    #[async_trait]
-    impl TestDbSetup for Pool {
-        async fn setup_db(&self) {
-            let mut conn = self.get_conn().await.unwrap();
-            conn.query_drop("CREATE DATABASE IF NOT EXISTS test_db")
-                .await
-                .unwrap();
-            conn.query_drop("USE test_db").await.unwrap();
-            conn.query_drop(
-                "CREATE TABLE IF NOT EXISTS projects (
-                    project_id VARCHAR(255) PRIMARY KEY,
-                    project_logo VARCHAR(255) NOT NULL,
-                    issues_list JSON
-                )",
-            )
-            .await
-            .unwrap();
-        }
+    #[tokio::test]
+    async fn test_update_pull_request() {
+        let pool = get_pool().await;
+
+        let pull_id = "https://github.com/test/test/pull/4";
+        let merged_by = "test_updated";
+        let cross_referenced_issues = vec!["https://github.com/test/test/issues/5".to_string()];
+        let connected_issues = vec!["https://github.com/test/test/issues/6".to_string()];
+
+        // Update a pull request
+        let result = update_pull_request(
+            &pool,
+            pull_id,
+            merged_by,
+            &cross_referenced_issues,
+            &connected_issues,
+        )
+        .await;
+        assert!(result.is_ok());
     }
 
+    #[tokio::test]
+    async fn test_add_pull_request() {
+        let pool = get_pool().await;
+
+        let pull_id = "https://github.com/test/test/pull/4";
+        let title = "Test Pull Request 2";
+        let author = "test2";
+        let repository = "https://github.com/test/test2";
+        let merged_by = "test2";
+
+        // Add a pull request
+        let result = add_pull_request(&pool, pull_id, title, author, repository, merged_by).await;
+        assert!(result.is_ok());
+
+        // Check if the pull request exists
+        let exists = pull_request_exists(&pool, pull_id).await.unwrap();
+        assert!(exists);
+    }
     // #[tokio::test]
     // async fn test_update_issue() {
     //     let pool = get_pool().await;
-    //     pool.setup_db().await;
+    //
 
     //     let issue_id = "https://github.com/test/test/issues/3";
     //     let project_id = "https://github.com/test/test13";
@@ -475,63 +401,47 @@ mod tests {
     //     println!("update_issue result: {:?}", update_result);
     // }
 
+    // #[tokio::test]
+    // async fn test_add_issue_checked() {
+    //     let pool = get_pool().await;
+    //
+
+    //     let issue_id = "https://github.com/test/test/issues/4";
+    //     let project_id = "https://github.com/test/test14";
+    //     let title = "Test Issue Checked";
+    //     let description = "This is a test issue for the checked function.";
+    //     let repository_avatar = "https://avatars.githubusercontent.com/u/test?v=4";
+
+    //     // Add an issue with checking
+    //     let result = add_issue_checked(
+    //         &pool,
+    //         issue_id,
+    //         project_id,
+    //         title,
+    //         description,
+    //         repository_avatar,
+    //     )
+    //     .await;
+    //     println!("add_issue_checked result: {:?}", result);
+    // }
+
     #[tokio::test]
-    async fn test_add_issue_checked() {
+    async fn test_add_project() {
         let pool = get_pool().await;
-        pool.setup_db().await;
 
-        let issue_id = "https://github.com/test/test/issues/4";
-        let project_id = "https://github.com/test/test14";
-        let title = "Test Issue Checked";
-        let description = "This is a test issue for the checked function.";
-        let repository_avatar = "https://avatars.githubusercontent.com/u/test?v=4";
+        let project_id = "https://github.com/test/test15";
 
-        // Add an issue with checking
-        let result = add_issue_checked(
-            &pool,
-            issue_id,
-            project_id,
-            title,
-            description,
-            repository_avatar,
-        )
-        .await;
-        println!("add_issue_checked result: {:?}", result);
+        let issue_id = "test_issue_id";
+        let res = add_project(&pool, project_id, "test_logo", issue_id).await;
+        println!("res: {:?}", res);
+        // The project should now exist
+        assert_eq!(project_exists(&pool, project_id).await.unwrap(), true);
     }
-
-    //     #[tokio::test]
-    //     async fn test_project_exists() {
-    //         let pool = get_pool().await;
-    //         pool.setup_db().await;
-    //         let project_id = "https://github.com/test/test13";
-
-    //         // // Add a project
-    //         // add_project(&pool, project_id, "test_logo", "test_issue_id")
-    //         //     .await
-    //         //     .unwrap();
-
-    //         // Now the project should exist
-    //         assert_eq!(project_exists(&pool, project_id).await.unwrap(), true);
-    //     }
-
-    //     #[tokio::test]
-    //     async fn test_add_project() {
-    //         let pool = get_pool().await;
-    //         pool.setup_db().await;
-    //         let project_id = "https://github.com/test/test15";
-
-    //         let issue_id= "test_issue_id";
-    //      let res =   add_project(&pool, project_id, "test_logo", issue_id)
-    //             .await;
-    // println!("res: {:?}", res);
-    //         // The project should now exist
-    //         assert_eq!(project_exists(&pool, project_id).await.unwrap(), true);
-    //     }
 
     // #[tokio::test]
     // async fn test_update_project() {
     //     let pool = get_pool().await;
-    //     pool.setup_db().await;
+    //
 
     //     let project_id = "https://github.com/test/test13";
     //     let project_logo = "https://avatars.githubusercontent.com/u/test?v=4";

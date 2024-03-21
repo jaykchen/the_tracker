@@ -22,7 +22,7 @@ pub struct OuterPull {
     pub merged_by: String,
 }
 
-pub async fn overall_search_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>> {
+pub async fn search_pull_requests_overall(query: &str) -> anyhow::Result<Vec<OuterPull>> {
     #[derive(Serialize, Deserialize, Debug)]
     struct GraphQLResponse {
         data: Data,
