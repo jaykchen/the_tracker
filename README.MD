@@ -16,81 +16,107 @@ Item 1, Search_issue_open,  It means that at the beginning of the program run Th
    Program will search Github daily to update the database, Human administ Will monitor over To database. And alter status Information of issues/which corresponds to projects on the database daily. Next, Search_overall_pull_request function Get pull requests information. Which will match the issues already saved in the previous step, Next search_issues_closed Function will search issues for New comments, and progream will use AI to Identify Problematic situation on the issue. Program will flag the issue when extraordinary situation arise. Lastly after human administrator intervention and the search_issues_per_repo repo by repo. The information about issues and their connected pool requests are cross checked and the final result can be obtained
 
 
-
 +---------------------+
-| Start               |
-+---------------------+
-          |
-          v
-+---------------------+     +-----------------------------+
-| Hourly Loop Begins  |---->| Layer 1: Hourly Collection  |
-+---------------------+     +-----------------------------+
-          |                           |
-          |                           v
-          |                 +---------------------------+
-          |                 | search_issues_w_update_comments        |
-          |                 | (Fetch & save issues with updated comments hourly) |  note: a search term that gets issues  
-                                                                                    ntoe:  with intened labels, comments updated  within date range,  
-          |                 | Flag issues with AI  |
-          |                 +---------------------------+
-          |                           |
-          |                           v
-          |                 +---------------------------+
-          |<----------------| Wait until next hour      |
-          |                 | (Repeat Hourly Loop)      |
-          |                 +---------------------------+
-          |
-          v
-+---------------------+     +-----------------------------+
-| Daily Loop Begins   |---->| Layer 1: Daily Collection   |
-+---------------------+     +-----------------------------+
-          |                  
-          |                 +---------------------------+
-          |                 | search_issues_open        |
-          |                 | (Fetch & save initial     |     note: a search term that gets issues with target labels in date range
-          |                 |  open issues )      |
+        | Start               |
+        +---------------------+
+                 |
+                 v
+        +---------------------+     +------------------------------+
+        | Hourly Loop Trigger |---->| (Action) Hourly Collection   |
+        +---------------------+     +------------------------------+
+                 |                              |
+                 |                              v
+                 |                 +---------------------------------------+
+                 |                 | search_issues_w_update_comments       |
+                 |                 | identify issues with potential problems by filtering comments with AI, flag them in db if found       |
+                 |                 +---------------------------------------+
+                 |                              |
+                 |                              v
+                 |                 +---------------------------+
+                 |<----------------| Wait until next hour      |
+                 |                 +---------------------------+
+                 |
+                 v
+        +---------------------+     +------------------------------+
+        | Daily Loop Trigger  |---->| (Action) Daily Collection    |
+        +---------------------+     +------------------------------+
+                 |                              |
+                 |                              v
+                 |                 +---------------------------------------+
+                 |                 | search_issues_open                    |
+                 |                 | record new issues meeting all project conditions                    |
+                 |                 +---------------------------------------+
+                 |                              |
+                 |                              v
+                 |                 +---------------------------------------+
+                 |                 | overall_search_pull_requests          |
+                 |                 | record pull_requests meeting all project conditions          |
+                 |                 | to match pull_requests with issues in db           |
+                 |                 +---------------------------------------+
+                 |                              |
+                 |                              v
+                 |                 +---------------------------------------+
+                 |                 | search_issues_closed                  |
+                 |                 | record issues with closed status                   |
+                 |                 | flag them in db, ready for admin review                   |
+                 |                 +---------------------------------------+
+                 |                              |
+                 |                              v
+                 |                 +---------------------------------------+
+                 |                 | get_per_repo_pull_requests            |
+                 |                 | double check previously chosen issues have proper pull_requests to address them            |
+                 |                 | ready for final admin approval            |
+                 |                 +---------------------------------------+
+                 |                              |
+                 |                 +------------------------------+
+                 |<----------------| (Manual) Human Intervention |
+                 |                 | react to issues flaged  |
+                 |                 | assign issue_budget when admin sees an issue valid            |
+                 |                 | approve to release issue_budget when issue and pull_request match, all conditions comply            |
+                 |                 +------------------------------+
+                 |                              |
+                 |                              v
+                 |                 +-------------------------+
+                 |<----------------| End of Daily Loop       |
+                 |                 +-------------------------+
+                 |                              |
+                 |                              v
+                 |                 +-------------------------+
+                 |<----------------| Wait until next cycle   |
+                 |                 +-------------------------+
+                 |                              |
+                 |                              v
+                 |<----------------| Repeat the Daily Loop   |
+                                   +-------------------------+
 
-                                        |
-                                        v
-          |                 +---------------------------+
-          |                 | search_pull_requests_overall |
-          |                 | (Fetch pull requests,     |      note: pull_request with target labels, hoping to match issues already logged
-          |                 |  update issues daily)     |
-          |                 +---------------------------+
-          |                           |
-          |                           v
-          |                 +---------------------------+
-          |<----------------| search_issues_closed      |
-          |                 | (Update closed issues     |    note: almost same conditions for issues, identifying those with closed status
-          |                 |  daily)                   |
-          |                 +---------------------------+
-          |                           |
-          |                           v
-          |                 +---------------------------+
-          |<----------------| search_pull_requests_per_repo|    note: a more granular search to walk the projects saved in the database, 
-          |                 | (Cross-check data daily)  |    note: cross matching issues with pull_requests, hoping to get connections missed in previous steps
-          |                 +---------------------------+
-          |                           |
-          |                 +-----------------------------+
-          |---------------->| Layer 2: Human Intervention |
-                            +-----------------------------+
-                                      |
-                                      v
-                            +---------------------------+
-                            | Admin monitors & alters   |
-                            | status of issues/projects |   note: changed status of issues will cause program to handle differently
-                            | daily                     |
-                            +---------------------------+
-                                      |
-                                      v
-                             +-------------------------+
-                             | Daily Loop Ends         |
-                             +-------------------------+
-                                      |
-                                      v
-                             +-------------------------+
-                             | Wait until next cycle   |
-                             +-------------------------+
-                                      |
-                                      v
-                               (Repeat the Daily Loop)
+**Explanatory Notes for Functions Based on Flowchart:**
+
+- **search_issues_w_update_comments:**
+  - **Location in Chart:** Layer 1: Hourly Collection.
+  - **Purpose:** This function is responsible for finding issues that have been updated with comments within the last hour.
+  - **Query File:** `search_issues_w_update_comments.gql`.
+  - **Execution:** Runs every hour to ensure up-to-date comment tracking.
+
+- **search_issues_open:**
+  - **Location in Chart:** Layer 1: Daily Collection (search_issues_open).
+  - **Purpose:** Gathers all issues that are currently open.
+  - **Query File:** `search_issues_open.gql`.
+  - **Execution:** Invoked once a day to compile active issues for daily reporting.
+
+- **overall_search_pull_requests:**
+  - **Location in Chart:** Layer 1: Daily Collection (overall_search_pull_requests).
+  - **Purpose:** Searches for pull requests across the entire dataset.
+  - **Query File:** `search_pull_requests_overall.gql`.
+  - **Execution:** Carried out daily to provide a holistic view of pull requests.
+
+- **search_issues_closed:**
+  - **Location in Chart:** Layer 1: Daily Collection (search_issues_closed).
+  - **Purpose:** Finds all issues that were closed within the last day.
+  - **Query File:** `search_issues_closed.gql`.
+  - **Execution:** Conducted daily to track the volume and status of resolved issues.
+
+- **get_per_repo_pull_requests:**
+  - **Location in Chart:** Layer 1: Daily Collection (get_per_repo_pull_requests).
+  - **Purpose:** Retrieves pull request data for each individual repository.
+  - **Query File:** `search_pull_requests_per_repo.gql`.
+  - **Execution:** Performed daily to analyze pull request activities per repository.

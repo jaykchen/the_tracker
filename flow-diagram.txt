@@ -1,0 +1,94 @@
++---------------------+
+| Start               |
++---------------------+
+          |
+          v
++---------------------+     +-----------------------------+
+| Hourly Loop Begins  |---->| Layer 1: Hourly Collection  |
++---------------------+     +-----------------------------+
+          |                           |
+          |                           v
+          |                 +------------------------------------------------+
+          |                 | search_issues_w_update_comments               |
+          |                 | (Fetch & save issues with updated comments    |
+          |                 |  hourly)                                      |
+          |                 | Objective: gets issues with intended labels,  |
+          |                 | comments updated within date range. Flag      |
+          |                 | issues with AI query:                        |
+          |                 | query_responses/search_issues_w_update_comments.gql |
+          |                 |                                                |
+          |                 +------------------------------------------------+
+          |                           |
+          |                           v
+          |                 +---------------------------+
+          |<----------------| Wait until next hour      |
+          |                 | (Repeat Hourly Loop)      |
+          |                 +---------------------------+
+          |
+          v
++---------------------+     +-----------------------------+
+| Daily Loop Begins   |---->| Layer 1: Daily Collection   |
++---------------------+     +-----------------------------+
+          |                           |
+          |                           v
+          |                 +------------------------------------------------+
+          |                 | search_issues_open                            |
+          |                 | (Fetch & save initial open issues daily)      |
+          |                 | Objective: gets issues with target labels     |
+          |                 | in date range.                                |
+          |                 | query: query_responses/search_issues_open.gql |
+          |                 +------------------------------------------------+
+          |                           |
+          |                           v
+          |                 +------------------------------------------------+
+          |                 | overall_search_pull_requests                  |
+          |                 | (Fetch pull requests, update issues daily)    |
+          |                 | Objective: get Pull requests with target      |
+          |                 | labels, hoping to match issues already logged.|
+          |                 | query: query_responses/search_pull_requests_overall.gql |
+          |                 +------------------------------------------------+
+          |                           |
+          |                           v
+          |                 +------------------------------------------------+
+          |                 | search_issues_closed                          |
+          |                 | (Update closed issues daily)                  |
+          |                 | Note: Almost same conditions for issues,      |
+          |                 | identifying those with closed status.         |
+          |                 +------------------------------------------------+
+          |                           |
+          |                           v
+          |                 +------------------------------------------------+
+          |                 | get_per_repo_pull_requests                    |
+          |                 | (Cross-check data daily)                      |
+          |                 | Note: A more granular search to walk the      |
+          |                 | projects saved in the database, cross matching|
+          |                 | issues with pull requests, hoping to get      |
+          |                 | connections missed in previous steps.         |
+          |                 +------------------------------------------------+
+          |                           |
+          |                 +-----------------------------+
+          |---------------->| Layer 2: Human Intervention |
+          |                 +-----------------------------+
+          |                           |
+          |                           v
+          |                 +------------------------------------------------+
+          |                 | Admin monitors & alters                       |
+          |                 | status of issues/projects daily               |
+          |                 | Note: Changed status of issues will cause     |
+          |                 | program to handle differently.                |
+          |                 +------------------------------------------------+
+          |                           |
+          |                           v
+          |                 +-------------------------+
+          |---------------->| Daily Loop Ends         |
+          |                 +-------------------------+
+          |                           |
+          |                           v
+          |                 +-------------------------+
+          |---------------->| Wait until next cycle   |
+          |                 +-------------------------+
+          |                           |
+          |                           v
+          |                 +-------------------------+
+          |---------------->| Repeat the Daily Loop   |
+                            +-------------------------+
