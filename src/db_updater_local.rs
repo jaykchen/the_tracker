@@ -328,8 +328,8 @@ pub async fn update_pull_request(
 #[cfg(test)]
 mod tests {
     use super::*;
-    use mysql_async::prelude::Queryable;
-    use mysql_async::Pool;
+    
+    
 
     #[tokio::test]
     async fn test_list_projects() {

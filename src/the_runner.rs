@@ -1,8 +1,7 @@
-use crate::db_updater_local::*;
 use crate::issues_tracker_local::*;
-use crate::{END_DATE, ISSUE_LABEL, PR_LABEL, START_DATE, TODAY_PLUS_TEN_MINUTES, TODAY_THIS_HOUR};
+use crate::{ISSUE_LABEL, PR_LABEL, START_DATE, TODAY_PLUS_TEN_MINUTES};
 
-use chrono::{Datelike, Duration, NaiveDate, NaiveDateTime, Timelike, Utc};
+use chrono::{Duration, NaiveDate, Utc};
 
 pub fn inner_query_n_days(
     start_date: &str,
@@ -92,7 +91,7 @@ pub async fn run_hourly(start_date: &str) {
     let query = inner_query_n_days(start_date, 2, ISSUE_LABEL, PR_LABEL, is_issue, is_start);
     // let query ="label:hacktoberfest is:issue is:open created:>=2023-10-01 updated:>=2023-10-03 -label:spam -label:invalid";
 
-    let _ = search_issues_w_update_comments().await;
+    let _ = search_issues_w_update_comments(&query).await;
 }
 
 pub async fn run_daily(start_date: &str) {

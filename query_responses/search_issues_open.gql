@@ -27,16 +27,6 @@ query ($query: String!) {
               }
             }
           }
-          comments(first:10) {
-            edges {
-              node {
-                author {
-                  login
-                }
-                body
-              }
-            }
-          }
         }
       }
     }

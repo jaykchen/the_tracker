@@ -49,7 +49,6 @@ pub async fn search_issues_w_update_comments(query: &str) -> anyhow::Result<Vec<
         search: Option<Search>,
     }
 
-    #[allow(non_snake_case)]
     #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Search {
         issueCount: Option<i32>,
@@ -57,7 +56,6 @@ pub async fn search_issues_w_update_comments(query: &str) -> anyhow::Result<Vec<
         pageInfo: PageInfo,
     }
 
-    #[allow(non_snake_case)]
     #[derive(Serialize, Deserialize, Clone, Debug)]
     struct PageInfo {
         endCursor: Option<String>,
@@ -97,40 +95,37 @@ pub async fn search_issues_w_update_comments(query: &str) -> anyhow::Result<Vec<
         login: Option<String>,
     }
 
-    let mut all_issues = Vec::new();
-    let mut after_cursor: Option<String> = None;
-
     for _ in 0..10 {
         let query_str = format!(
             r#"
-                query {{
-                    search(query: "{}", type: ISSUE, first: 100, after: {}) {{
-                        issueCount
-                        edges {{
-                            node {{
-                                ... on Issue {{
-                                    url
-                                    body
-                                    comments(first: 50) {{
-                                        edges {{
-                                            node {{
-                                                author {{
-                                                    login
-                                                }}
-                                                body
+            query {{
+                search(query: "{}", type: ISSUE, first: 100, after: {}) {{
+                    issueCount
+                    edges {{
+                        node {{
+                            ... on Issue {{
+                                url
+                                body
+                                comments(first: 50) {{
+                                    edges {{
+                                        node {{
+                                            author {{
+                                                login
                                             }}
+                                            body
                                         }}
                                     }}
                                 }}
                             }}
                         }}
-                        pageInfo {{
-                            endCursor
-                            hasNextPage
-                        }}
+                    }}
+                    pageInfo {{
+                        endCursor
+                        hasNextPage
                     }}
                 }}
-                "#,
+            }}
+            "#,
             query.replace("\"", "\\\""),
             after_cursor
                 .as_ref()
@@ -148,7 +143,6 @@ pub async fn search_issues_w_update_comments(query: &str) -> anyhow::Result<Vec<
             if let Some(search) = data.search {
                 for edge in search.edges.unwrap_or_default() {
                     if let Some(issue) = edge.node {
-                        let temp_str = String::from("");
                         let comments = issue.comments.map_or(Vec::new(), |comments| {
                             comments.edges.map_or(Vec::new(), |edges| {
                                 edges
@@ -160,8 +154,8 @@ pub async fn search_issues_w_update_comments(query: &str) -> anyhow::Result<Vec<
                                                 comment.author.as_ref().map_or("", |a| a
                                                     .login
                                                     .as_ref()
-                                                    .unwrap_or(&temp_str)),
-                                                comment.body.as_ref().unwrap_or(&temp_str)
+                                                    .unwrap_or(&"")),
+                                                comment.body.as_ref().unwrap_or(&"")
                                             )
                                         })
                                     })
@@ -173,6 +167,7 @@ pub async fn search_issues_w_update_comments(query: &str) -> anyhow::Result<Vec<
                             url: issue.url.unwrap_or_default(),
                             body: issue.body.clone().unwrap_or_default(),
                             comments,
+                            // Populate other fields as needed, or remove them if they are no longer relevant
                             ..Default::default() // Use Default trait implementation to fill in missing fields
                         });
                     }
@@ -191,7 +186,6 @@ pub async fn search_issues_w_update_comments(query: &str) -> anyhow::Result<Vec<
 }
 
 #[allow(non_snake_case)]
-#[derive(Serialize, Deserialize, Clone, Debug, Default)]
 pub struct OuterIssue {
     pub title: String,
     pub url: String,
@@ -247,6 +241,7 @@ pub async fn search_issues_open(query: &str) -> anyhow::Result<Vec<OuterIssue>> 
         author: Option<Author>,
         repository: Option<Repository>,
         labels: Option<Labels>,
+        comments: Option<Comments>,
     }
 
     #[allow(non_snake_case)]
@@ -293,8 +288,30 @@ pub async fn search_issues_open(query: &str) -> anyhow::Result<Vec<OuterIssue>> 
         name: Option<String>,
     }
 
+    #[allow(non_snake_case)]
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct Comments {
+        edges: Option<Vec<CommentEdge>>,
+    }
+
+    #[allow(non_snake_case)]
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct CommentEdge {
+        node: Option<Comment>,
+    }
+
+    #[allow(non_snake_case)]
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct Comment {
+        author: Option<Author>,
+        body: Option<String>,
+    }
+
+    let first_comments = 10;
+    let first_timeline_items = 10;
     let mut all_issues = Vec::new();
     let mut after_cursor: Option<String> = None;
+    let file_path = "issues.txt";
 
     for _ in 0..10 {
         let query_str = format!(
@@ -324,6 +341,16 @@ pub async fn search_issues_open(query: &str) -> anyhow::Result<Vec<OuterIssue>> 
                                     edges {{
                                         node {{
                                             name
+                                        }}
+                                    }}
+                                }}
+                                comments(first: 10) {{
+                                    edges {{
+                                        node {{
+                                            author {{
+                                                login
+                                            }}
+                                            body
                                         }}
                                     }}
                                 }}
@@ -367,6 +394,25 @@ pub async fn search_issues_open(query: &str) -> anyhow::Result<Vec<OuterIssue>> 
                             })
                         });
                         let temp_str = String::from("");
+                        let comments = issue.comments.map_or(Vec::new(), |comments| {
+                            comments.edges.map_or(Vec::new(), |edges| {
+                                edges
+                                    .iter()
+                                    .filter_map(|edge| {
+                                        edge.node.as_ref().map(|comment| {
+                                            format!(
+                                                "{}: {}",
+                                                comment.author.as_ref().map_or("", |a| a
+                                                    .login
+                                                    .as_ref()
+                                                    .unwrap_or(&temp_str)),
+                                                comment.body.as_ref().unwrap_or(&"".to_string())
+                                            )
+                                        })
+                                    })
+                                    .collect()
+                            })
+                        });
 
                         all_issues.push(OuterIssue {
                             title: issue.title.unwrap_or_default(),
@@ -390,7 +436,7 @@ pub async fn search_issues_open(query: &str) -> anyhow::Result<Vec<OuterIssue>> 
                                 })
                             }),
                             issue_labels: labels,
-                            comments: Vec::<String>::new(),
+                            comments: comments,
                         });
                     }
                 }
@@ -459,8 +505,13 @@ pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<CloseOuterI
     #[allow(non_snake_case)]
     #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Issue {
+        title: Option<String>,
         url: Option<String>,
+        body: Option<String>,
+        author: Option<Author>,
+        repository: Option<Repository>,
         labels: Option<Labels>,
+        comments: Option<Comments>,
         timelineItems: Option<TimelineItems>,
     }
 
@@ -468,6 +519,19 @@ pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<CloseOuterI
     #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Author {
         login: Option<String>,
+    }
+
+    #[allow(non_snake_case)]
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct Repository {
+        url: Option<String>,
+        stargazers: Option<Stargazers>,
+    }
+
+    #[allow(non_snake_case)]
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct Stargazers {
+        totalCount: Option<i64>,
     }
 
     #[allow(non_snake_case)]
@@ -486,6 +550,25 @@ pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<CloseOuterI
     #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Label {
         name: Option<String>,
+    }
+
+    #[allow(non_snake_case)]
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct Comments {
+        edges: Option<Vec<CommentEdge>>,
+    }
+
+    #[allow(non_snake_case)]
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct CommentEdge {
+        node: Option<Comment>,
+    }
+
+    #[allow(non_snake_case)]
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct Comment {
+        author: Option<Author>,
+        body: Option<String>,
     }
 
     #[allow(non_snake_case)]
@@ -529,11 +612,32 @@ pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<CloseOuterI
                     edges {{
                         node {{
                             ... on Issue {{
+                                title
                                 url
+                                body
+                                author {{
+                                    login
+                                }}
+                                repository {{
+                                    url
+                                    stargazers {{
+                                        totalCount
+                                    }}
+                                }}
                                 labels(first: 10) {{
                                     edges {{
                                         node {{
                                             name
+                                        }}
+                                    }}
+                                }}
+                                comments(first: 10) {{
+                                    edges {{
+                                        node {{
+                                            author {{
+                                                login
+                                            }}
+                                            body
                                         }}
                                     }}
                                 }}
@@ -597,6 +701,25 @@ pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<CloseOuterI
                         });
                         let temp_str = String::from("");
 
+                        let comments = issue.comments.map_or(Vec::new(), |comments| {
+                            comments.edges.map_or(Vec::new(), |edges| {
+                                edges
+                                    .iter()
+                                    .filter_map(|edge| {
+                                        edge.node.as_ref().map(|comment| {
+                                            format!(
+                                                "{}: {}",
+                                                comment.author.as_ref().map_or("", |a| a
+                                                    .login
+                                                    .as_ref()
+                                                    .unwrap_or(&temp_str)),
+                                                comment.body.as_ref().unwrap_or(&"".to_string())
+                                            )
+                                        })
+                                    })
+                                    .collect()
+                            })
+                        });
 
                         let (close_reason, close_pull_request, close_author) = issue
                             .timelineItems
@@ -645,14 +768,22 @@ pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<CloseOuterI
                             });
 
                         all_issues.push(CloseOuterIssue {
-                            title: String::new(),
+                            title: issue.title.unwrap_or_default(),
                             url: issue.url.unwrap_or_default(),
-                            author: String::new(),
-                            body: String::new(),
-                            repository: String::new(),
-                            repository_stars: 0,
+                            author: issue
+                                .author
+                                .map_or(String::new(), |author| author.login.unwrap_or_default()),
+                            body: issue.body.unwrap_or_default(),
+                            repository: issue
+                                .repository
+                                .clone() // Clone here
+                                .map_or(String::new(), |repo| repo.url.unwrap_or_default()),
+                            repository_stars: issue.repository.map_or(0, |repo| {
+                                repo.stargazers
+                                    .map_or(0, |stars| stars.totalCount.unwrap_or(0))
+                            }),
                             issue_labels: labels,
-                            comments: Vec::<String>::new(),
+                            comments: comments,
                             close_reason: close_reason,
                             close_pull_request: close_pull_request,
                             close_author: close_author,
