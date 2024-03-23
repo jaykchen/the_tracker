@@ -1,11 +1,10 @@
-
 use dotenv::dotenv;
 
 use octocrab::Octocrab;
 use serde::{Deserialize, Serialize};
 
-
 use the_tracker::issues_tracker_local::*;
+use the_tracker::the_runner::*;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
@@ -43,7 +42,7 @@ async fn search_issues() -> anyhow::Result<()> {
     let n_days = 3;
     let is_issue = true;
     let is_start = true;
-    let query_vec = inner_query_by_date_range(
+    let query_vec = inner_query_vec_by_date_range(
         start_date,
         n_days,
         issue_label,
@@ -62,7 +61,7 @@ async fn search_issues() -> anyhow::Result<()> {
     let iss = search_issues_open(query).await?;
 
     for issue in iss {
-        println!("issue: {:?}", issue);
+        println!("issue: {:?}", issue.title);
     }
     Ok(())
 }
@@ -73,7 +72,7 @@ async fn search_pulls() -> anyhow::Result<()> {
     let n_days = 3;
     let is_issue = true;
     let is_start = true;
-    let query_vec = inner_query_by_date_range(
+    let query_vec = inner_query_vec_by_date_range(
         start_date,
         n_days,
         issue_label,
