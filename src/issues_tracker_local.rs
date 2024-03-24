@@ -597,7 +597,6 @@ pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<CloseOuterI
                         });
                         let temp_str = String::from("");
 
-
                         let (close_reason, close_pull_request, close_author) = issue
                             .timelineItems
                             .map_or((String::new(), String::new(), String::new()), |items| {
@@ -670,330 +669,94 @@ pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<CloseOuterI
     Ok(all_issues)
 }
 
-#[allow(non_snake_case)]
-#[derive(Serialize, Deserialize, Clone, Debug)]
+#[derive(Serialize, Deserialize, Clone, Default, Debug)]
 pub struct OuterPull {
-    pub title: String,
-    pub url: String,
-    pub author: String,
-    pub repository: String, // URL of the repository where the pull request was opened
-    pub labels: Vec<String>,
-    pub reviews: Vec<String>, // authors whose review state is approved
-    pub merged_by: String,
-}
-
-pub async fn overall_search_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>> {
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Debug)]
-    struct GraphQLResponse {
-        data: Data,
-    }
-
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Debug)]
-    struct Data {
-        search: Search,
-    }
-
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Debug)]
-    struct Search {
-        issueCount: i32,
-        edges: Vec<Edge>,
-        pageInfo: PageInfo,
-    }
-
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Debug)]
-    struct PageInfo {
-        endCursor: Option<String>,
-        hasNextPage: bool,
-    }
-
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Debug)]
-    struct Edge {
-        node: PullRequest,
-    }
-
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Debug)]
-    struct PullRequest {
-        title: String,
-        url: String,
-        repository: Repository,
-        author: Option<Author>,
-        labels: Labels,
-        hasApprovedReview: Reviews,
-        mergedBy: Option<Author>,
-    }
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Debug)]
-    struct Repository {
-        url: Option<String>,
-    }
-
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Debug)]
-    struct Author {
-        login: Option<String>,
-    }
-
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Debug)]
-    struct Labels {
-        edges: Option<Vec<LabelEdge>>,
-    }
-
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Debug)]
-    struct LabelEdge {
-        node: Option<Label>,
-    }
-
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Debug)]
-    struct Label {
-        name: Option<String>,
-    }
-
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Debug)]
-    struct Reviews {
-        edges: Option<Vec<ReviewEdge>>,
-    }
-
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Debug)]
-    struct ReviewEdge {
-        node: Option<Review>,
-    }
-
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Debug)]
-    struct Review {
-        author: Option<Author>,
-    }
-
-    let mut all_pulls = Vec::new();
-    let mut after_cursor = None;
-    for _n in 0..10 {
-        let query_str = format!(
-            r#"
-            query {{
-                search(query: "{}", type: ISSUE, first: 100, after: {}) {{
-                    issueCount
-                    edges {{
-                        node {{
-                            ... on PullRequest {{
-                                title
-                                url
-                                repository {{
-                                    url
-                                }}
-                                author {{
-                                    login
-                                }}
-                                labels(first: 10) {{
-                                    edges {{
-                                        node {{
-                                            name
-                                        }}
-                                    }}
-                                }}
-                                hasApprovedReview: reviews(first: 5, states: [APPROVED]) {{
-                                    edges {{
-                                        node {{
-                                            author {{
-                                                login
-                                            }}
-                                            state
-                                        }}
-                                    }}
-                                }}
-                                mergedBy {{
-                                    login
-                                }}
-                            }}
-                        }}
-                    }}
-                    pageInfo {{
-                        endCursor
-                        hasNextPage
-                    }}
-                }}
-            }}
-            "#,
-            query,
-            after_cursor
-                .as_ref()
-                .map_or(String::from("null"), |c| format!("\"{}\"", c))
-        );
-
-        let response_body = github_http_post_gql(&query_str).await?;
-        let response: GraphQLResponse = serde_json::from_slice(&response_body)?;
-
-        for edge in response.data.search.edges {
-            let pull = edge.node;
-
-            let labels = pull
-                .labels
-                .edges
-                .as_ref()
-                .unwrap_or(&Vec::new())
-                .into_iter()
-                .filter_map(|edge| edge.node.as_ref())
-                .map(|node| node.name.clone())
-                .collect::<Vec<Option<_>>>();
-
-            let reviews = pull
-                .hasApprovedReview
-                .edges
-                .as_ref()
-                .unwrap_or(&Vec::new())
-                .into_iter()
-                .filter_map(|edge| edge.node.as_ref())
-                .map(|node| node.author.as_ref().and_then(|author| author.login.clone()))
-                .collect::<Vec<Option<_>>>();
-
-            all_pulls.push(OuterPull {
-                title: pull.title.clone(),
-                url: pull.url.clone(),
-                author: pull
-                    .author
-                    .as_ref()
-                    .and_then(|author| author.login.clone())
-                    .unwrap_or_else(|| String::from("Unknown author")),
-                repository: pull
-                    .repository
-                    .url
-                    .clone()
-                    .unwrap_or_else(|| String::from("Unknown repository")),
-                labels: labels.into_iter().filter_map(|x| x).collect(),
-                reviews: reviews.into_iter().filter_map(|x| x).collect(),
-                merged_by: pull
-                    .mergedBy
-                    .as_ref()
-                    .and_then(|author| author.login.clone())
-                    .unwrap_or_else(|| String::from("Unknown merged_by")),
-            });
-        }
-
-        match response.data.search.pageInfo {
-            PageInfo {
-                hasNextPage: true,
-                endCursor: Some(cursor),
-            } => after_cursor = Some(cursor),
-            _ => break,
-        }
-    }
-    Ok(all_pulls)
-}
-
-#[allow(non_snake_case)]
-#[derive(Serialize, Deserialize, Clone, Debug)]
-pub struct SimplePull {
     pub title: String,
     pub url: String,
     pub author: String,
     pub connected_issues: Vec<String>,
     pub labels: Vec<String>,
-    pub reviews: Vec<String>,      // authors whose review state is approved
-    pub merged_by: Option<String>, // This field can be empty if the PR is not merged
+    pub reviews: Vec<String>, // authors whose review state is approved
+    pub merged_by: String,
 }
 
-pub async fn get_per_repo_pull_requests(query: &str) -> anyhow::Result<Vec<SimplePull>> {
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct GraphQLResponse {
-        data: Data,
+pub async fn search_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>> {
+    #[derive(Serialize, Deserialize, Default, Debug)]
+    pub struct Author {
+        login: Option<String>,
     }
 
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Data {
-        search: Search,
+    #[derive(Serialize, Deserialize, Default, Debug)]
+    pub struct Subject {
+        url: Option<String>,
     }
 
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Search {
-        issueCount: i32,
-        nodes: Vec<Node>,
-        pageInfo: PageInfo,
-    }
-
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Node {
-        title: String,
-        url: String,
-        author: Author,
-        timelineItems: TimelineItems,
-        labels: Labels,
-        reviews: Reviews,
-        mergedBy: Option<Author>,
-    }
-
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Author {
-        login: String,
-    }
-
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct TimelineItems {
-        nodes: Vec<TimelineEvent>,
-    }
-
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct TimelineEvent {
+    #[derive(Serialize, Deserialize, Default, Debug)]
+    pub struct ConnectedEvent {
         subject: Option<Subject>,
     }
 
+    #[derive(Serialize, Deserialize, Default, Debug)]
+    pub struct Label {
+        name: Option<String>,
+    }
+
+    #[derive(Serialize, Deserialize, Default, Debug)]
+    pub struct Review {
+        author: Option<Author>,
+        state: Option<String>,
+    }
+
+    #[derive(Serialize, Deserialize, Default, Debug)]
+    pub struct LabelNodes {
+        nodes: Option<Vec<Label>>,
+    }
+
+    #[derive(Serialize, Deserialize, Default, Debug)]
+    pub struct ReviewNodes {
+        nodes: Option<Vec<Review>>,
+    }
+
+    #[derive(Serialize, Deserialize, Default, Debug)]
+    pub struct ConnectedEventNodes {
+        nodes: Option<Vec<ConnectedEvent>>,
+    }
+
     #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Subject {
+    #[derive(Serialize, Deserialize, Default, Debug)]
+    pub struct PullRequest {
+        title: String,
         url: String,
+        author: Option<Author>,
+        timelineItems: Option<ConnectedEventNodes>,
+        labels: Option<LabelNodes>,
+        reviews: Option<ReviewNodes>,
+        mergedBy: Option<Author>,
+        mergedAt: Option<String>,
     }
 
     #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Labels {
-        nodes: Vec<Label>,
+    #[derive(Serialize, Deserialize, Default, Debug)]
+    pub struct Search {
+        issueCount: Option<i64>,
+        nodes: Option<Vec<PullRequest>>,
+        pageInfo: Option<PageInfo>,
     }
 
+    
     #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Label {
-        name: String,
-    }
-
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Reviews {
-        nodes: Vec<Review>,
-    }
-
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Review {
-        author: Author,
-        state: String,
-    }
-
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Clone, Debug)]
+    #[derive(Serialize, Deserialize, Default, Debug)]
     struct PageInfo {
         endCursor: Option<String>,
         hasNextPage: bool,
     }
 
-    let mut simplified_pulls = Vec::new();
-    let mut after_cursor: Option<String> = None;
-
+    #[derive(Serialize, Deserialize, Default, Debug)]
+    pub struct QueryResult {
+        data: Search,
+    }
+    let mut all_pulls = Vec::new();
+    let mut after_cursor = None;
     for _n in 0..10 {
         let query_str = format!(
             r#"
@@ -1034,6 +797,7 @@ pub async fn get_per_repo_pull_requests(query: &str) -> anyhow::Result<Vec<Simpl
                             mergedBy {{
                                 login
                             }}
+                            mergedAt
                         }}
                     }}
                     pageInfo {{
@@ -1046,53 +810,65 @@ pub async fn get_per_repo_pull_requests(query: &str) -> anyhow::Result<Vec<Simpl
             query,
             after_cursor
                 .as_ref()
-                .map_or(String::from("null"), |c| format!("\"{}\"", c))
+                .map_or(String::from("null"), |c| format!("\"{:?}\"", c))
         );
 
         let response_body = github_http_post_gql(&query_str).await?;
-        let response: GraphQLResponse = serde_json::from_slice(&response_body)?;
+        let response: QueryResult = serde_json::from_slice(&response_body)?;
 
-        for node in response.data.search.nodes {
-            let connected_issues = node
-                .timelineItems
-                .nodes
-                .iter()
-                .filter_map(|event| event.subject.as_ref().map(|subject| subject.url.clone()))
-                .collect::<Vec<String>>();
+        let search = response.data;
+        if let Some(nodes) = search.nodes {
+            for pull in nodes {
+                let connected_issues = pull
+                    .timelineItems
+                    .and_then(|items| items.nodes)
+                    .unwrap_or_default()
+                    .into_iter()
+                    .filter_map(|item| item.subject)
+                    .map(|subject| subject.url.unwrap_or_default())
+                    .collect();
 
-            let labels = node
-                .labels
-                .nodes
-                .iter()
-                .map(|label| label.name.clone())
-                .collect::<Vec<String>>();
+                let labels = pull
+                    .labels
+                    .and_then(|items| items.nodes)
+                    .unwrap_or_default()
+                    .into_iter()
+                    .map(|label| label.name.unwrap_or_default())
+                    .collect();
 
-            let reviews = node
-                .reviews
-                .nodes
-                .iter()
-                .filter(|review| review.state == "APPROVED")
-                .map(|review| review.author.login.clone())
-                .collect::<Vec<String>>();
+                let reviews = pull
+                    .reviews
+                    .and_then(|items| items.nodes)
+                    .unwrap_or_default()
+                    .into_iter()
+                    .filter_map(|review| review.author)
+                    .map(|author| author.login.unwrap_or_default())
+                    .collect();
 
-            simplified_pulls.push(SimplePull {
-                title: node.title,
-                url: node.url,
-                author: node.author.login,
-                connected_issues,
-                labels,
-                reviews,
-                merged_by: node.mergedBy.as_ref().map(|author| author.login.clone()),
-            });
+                let outer_pull = OuterPull {
+                    title: pull.title.clone(),
+                    url: pull.url,
+                    author: pull
+                        .author
+                        .unwrap_or_default().login.unwrap_or_default(),
+                    connected_issues,
+                    labels,
+                    reviews,
+                    merged_by: pull
+                        .mergedBy
+                        .unwrap_or_default().login.unwrap_or_default(),
+                };
+
+                all_pulls.push(outer_pull);
+            }
         }
-        match response.data.search.pageInfo {
-            PageInfo {
-                hasNextPage: true,
-                endCursor: Some(cursor),
-            } => after_cursor = Some(cursor),
-            _ => break,
+        if let Some(pageInfo) = search.pageInfo {
+            if pageInfo.hasNextPage {
+                after_cursor = Some(pageInfo.endCursor);
+            } else {
+                break;
+            }
         }
     }
-
-    Ok(simplified_pulls)
+    Ok(all_pulls)
 }

@@ -1,7 +1,7 @@
-query repoquery($query: String!) {
-  search(query: $query, type: ISSUE, first: 100) {
-      issueCount
-  nodes {
+query ($query: String!) {
+  search(query: $query, type: ISSUE, first: 100, after: null) {
+    issueCount
+    nodes {
       ... on PullRequest {
         title
         url
@@ -36,6 +36,7 @@ query repoquery($query: String!) {
         mergedBy {
           login
         }
+        mergedAt
       }
     }
     pageInfo {
@@ -47,5 +48,5 @@ query repoquery($query: String!) {
 
 
 {
-  "query": "repo:SarthakKeshari/calc_for_everything is:pr is:merged label:hacktoberfest-accepted created:2023-10-01..2023-10-03 review:approved -label:spam -label:invalid"
+  "query": "label:hacktoberfest-accepted is:pr is:merged merged:2023-10-01..2023-10-01 review:approved -label:spam -label:invalid"
 }

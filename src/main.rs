@@ -12,7 +12,7 @@ async fn main() -> anyhow::Result<()> {
 
     let   query ="label:hacktoberfest is:issue is:open created:>=2023-10-01 updated:>=2023-10-30 -label:spam -label:invalid";
 
-    let _ = search_issues().await?;
+    let _ = search_pulls().await?;
 
     // for date_range in date_range_vec {
     //     let query =
@@ -110,13 +110,13 @@ async fn search_pulls() -> anyhow::Result<()> {
         is_start,
     );
 
-    let query = "label:hacktoberfest-accepted is:pr is:merged created:2023-10-01..2023-10-03 review:approved -label:spam -label:invalid";
+    let query = "label:hacktoberfest-accepted is:pr is:merged merged:2023-10-01..2023-10-02 review:approved -label:spam -label:invalid";
 
-    let query = "repo:SarthakKeshari/calc_for_everything is:pr is:merged label:hacktoberfest-accepted created:2023-10-01..2023-10-30 review:approved -label:spam -label:invalid";
-    // let pulls = search_pull_requests_per_repo(query).await?;
+    let pulls = search_pull_requests(query).await?;
 
-    // for issue in pulls {
-    //     println!("issue: {:?}", issue);
-    // }
+    println!("pulls: {:?}", pulls.len());
+    for issue in pulls {
+        println!("issue: {:?}", issue.merged_by);
+    }
     Ok(())
 }

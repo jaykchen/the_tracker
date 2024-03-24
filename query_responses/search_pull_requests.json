@@ -1,0 +1,50 @@
+{
+  "data": {
+    "search": {
+      "issueCount": 342,
+      "nodes": [
+        {
+          "title": "added setname functionality",
+          "url": "https://github.com/thtauhid/terminal-portfolio/pull/53",
+          "author": {
+            "login": "LinhNguyenLe2109"
+          },
+          "timelineItems": {
+            "nodes": [
+              {
+                "subject": {
+                  "url": "https://github.com/thtauhid/terminal-portfolio/issues/3"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "hacktoberfest-accepted"
+              }
+            ]
+          },
+          "reviews": {
+            "nodes": [
+              {
+                "author": {
+                  "login": "thtauhid"
+                },
+                "state": "APPROVED"
+              }
+            ]
+          },
+          "mergedBy": {
+            "login": "thtauhid"
+          },
+          "mergedAt": "2023-10-01T23:29:46Z"
+        }
+      ],
+      "pageInfo": {
+        "endCursor": "Y3Vyc29yOjE=",
+        "hasNextPage": true
+      }
+    }
+  }
+}
