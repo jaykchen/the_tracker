@@ -20,14 +20,13 @@ async fn main() -> anyhow::Result<()> {
     //     println!("query: {:?}", query.clone());
     //     let issues = get_issues(&query).await?;
 
-
     // }
 
     Ok(())
 }
 
 async fn test_search_issue_comments() -> anyhow::Result<()> {
-    let   query ="label:hacktoberfest is:issue is:open created:>=2023-10-01 updated:>=2023-10-30 -label:spam -label:invalid";
+    let   query ="label:hacktoberfest is:issue is:open created:>=2023-10-01 updated:>=2023-10-30T00:10:00 -label:spam -label:invalid";
 
     let issues = search_issues_w_update_comments(&query).await?;
     // for date_range in date_range_vec {
@@ -88,9 +87,7 @@ async fn search_issues() -> anyhow::Result<()> {
         } else {
             println!("issue: {:?}", issue.close_pull_request);
             println!("issue: {:?}", issue.close_author);
-            println!("issue: {:?}", issue.close_reason);
         };
-
     }
     Ok(())
 }
@@ -110,13 +107,13 @@ async fn search_pulls() -> anyhow::Result<()> {
         is_start,
     );
 
-    let query = "label:hacktoberfest-accepted is:pr is:merged merged:2023-10-01..2023-10-02 review:approved -label:spam -label:invalid";
+    let query = "label:hacktoberfest-accepted is:pr is:merged merged:2023-10-01..2023-10-01 review:approved -label:spam -label:invalid";
 
     let pulls = search_pull_requests(query).await?;
 
     println!("pulls: {:?}", pulls.len());
     for issue in pulls {
-        println!("issue: {:?}", issue.merged_by);
+        println!("issue: {:?}", issue.labels);
     }
     Ok(())
 }

@@ -116,5 +116,4 @@ pub async fn run_daily(start_date: &str) {
     let query_pr_overall = inner_query_n_days(start_date, 2, ISSUE_LABEL, PR_LABEL, false, false);
 
     let _ = search_pull_requests(&query_pr_overall).await;
-
 }

@@ -53,8 +53,8 @@ pub async fn search_issues_w_update_comments(query: &str) -> anyhow::Result<Vec<
     #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Search {
         issueCount: Option<i32>,
-        edges: Option<Vec<Edge>>,
-        pageInfo: PageInfo,
+        nodes: Option<Vec<IssueNode>>,
+        pageInfo: Option<PageInfo>,
     }
 
     #[allow(non_snake_case)]
@@ -65,12 +65,7 @@ pub async fn search_issues_w_update_comments(query: &str) -> anyhow::Result<Vec<
     }
 
     #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Edge {
-        node: Option<Issue>,
-    }
-
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Issue {
+    struct IssueNode {
         url: Option<String>,
         body: Option<String>,
         comments: Option<Comments>,
@@ -78,12 +73,7 @@ pub async fn search_issues_w_update_comments(query: &str) -> anyhow::Result<Vec<
 
     #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Comments {
-        edges: Option<Vec<CommentEdge>>,
-    }
-
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct CommentEdge {
-        node: Option<Comment>,
+        nodes: Option<Vec<Comment>>,
     }
 
     #[derive(Serialize, Deserialize, Clone, Debug)]
@@ -106,24 +96,20 @@ pub async fn search_issues_w_update_comments(query: &str) -> anyhow::Result<Vec<
                 query {{
                     search(query: "{}", type: ISSUE, first: 100, after: {}) {{
                         issueCount
-                        edges {{
-                            node {{
-                                ... on Issue {{
-                                    url
-                                    body
-                                    comments(first: 50) {{
-                                        edges {{
-                                            node {{
-                                                author {{
-                                                    login
-                                                }}
-                                                body
-                                            }}
+                        nodes {{
+                            ... on Issue {{
+                                url
+                                body
+                                comments(first: 50) {{
+                                    nodes {{
+                                        author {{
+                                            login
                                         }}
-                                    }}
+                                        body
+                                }}
                                 }}
                             }}
-                        }}
+                    }}
                         pageInfo {{
                             endCursor
                             hasNextPage
@@ -134,7 +120,7 @@ pub async fn search_issues_w_update_comments(query: &str) -> anyhow::Result<Vec<
             query.replace("\"", "\\\""),
             after_cursor
                 .as_ref()
-                .map_or(String::from("null"), |c| format!("\"{}\"", c)),
+                .map_or(String::from("null"), |c| format!("\"{:?}\"", c)),
         );
 
         let response_body = github_http_post_gql(&query_str)
@@ -146,24 +132,22 @@ pub async fn search_issues_w_update_comments(query: &str) -> anyhow::Result<Vec<
 
         if let Some(data) = response.data {
             if let Some(search) = data.search {
-                for edge in search.edges.unwrap_or_default() {
-                    if let Some(issue) = edge.node {
+                if let Some(nodes) = search.nodes {
+                    for issue in nodes {
                         let temp_str = String::from("");
                         let comments = issue.comments.map_or(Vec::new(), |comments| {
-                            comments.edges.map_or(Vec::new(), |edges| {
-                                edges
+                            comments.nodes.map_or(Vec::new(), |nodes| {
+                                nodes
                                     .iter()
-                                    .filter_map(|edge| {
-                                        edge.node.as_ref().map(|comment| {
-                                            format!(
-                                                "{}: {}",
-                                                comment.author.as_ref().map_or("", |a| a
-                                                    .login
-                                                    .as_ref()
-                                                    .unwrap_or(&temp_str)),
-                                                comment.body.as_ref().unwrap_or(&temp_str)
-                                            )
-                                        })
+                                    .filter_map(|comment| {
+                                        Some(format!(
+                                            "{}: {}",
+                                            comment.author.as_ref().map_or("", |a| a
+                                                .login
+                                                .as_ref()
+                                                .unwrap_or(&temp_str)),
+                                            comment.body.as_ref().unwrap_or(&temp_str)
+                                        ))
                                     })
                                     .collect()
                             })
@@ -178,10 +162,12 @@ pub async fn search_issues_w_update_comments(query: &str) -> anyhow::Result<Vec<
                     }
                 }
 
-                if search.pageInfo.hasNextPage {
-                    after_cursor = search.pageInfo.endCursor
-                } else {
-                    break;
+                if let Some(page_info) = search.pageInfo {
+                    if page_info.hasNextPage {
+                        after_cursor = page_info.endCursor
+                    } else {
+                        break;
+                    }
                 }
             }
         }
@@ -221,8 +207,8 @@ pub async fn search_issues_open(query: &str) -> anyhow::Result<Vec<OuterIssue>> 
     #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Search {
         issueCount: Option<i32>,
-        edges: Option<Vec<Edge>>,
-        pageInfo: PageInfo,
+        nodes: Option<Vec<Issue>>,
+        pageInfo: Option<PageInfo>,
     }
 
     #[allow(non_snake_case)]
@@ -234,19 +220,13 @@ pub async fn search_issues_open(query: &str) -> anyhow::Result<Vec<OuterIssue>> 
 
     #[allow(non_snake_case)]
     #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Edge {
-        node: Option<Issue>,
-    }
-
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Issue {
-        title: Option<String>,
-        url: Option<String>,
+        title: String,
+        url: String,
         body: Option<String>,
         author: Option<Author>,
         repository: Option<Repository>,
-        labels: Option<Labels>,
+        labels: Option<LabelNodes>,
     }
 
     #[allow(non_snake_case)]
@@ -257,16 +237,17 @@ pub async fn search_issues_open(query: &str) -> anyhow::Result<Vec<OuterIssue>> 
 
     #[allow(non_snake_case)]
     #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Owner {
-        avatarUrl: Option<String>,
-    }
-
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Repository {
         url: Option<String>,
         stargazers: Option<Stargazers>,
         owner: Option<Owner>,
+        usesCustomOpenGraphImage: Option<bool>,
+    }
+
+    #[allow(non_snake_case)]
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct Owner {
+        avatarUrl: Option<String>,
     }
 
     #[allow(non_snake_case)]
@@ -277,14 +258,8 @@ pub async fn search_issues_open(query: &str) -> anyhow::Result<Vec<OuterIssue>> 
 
     #[allow(non_snake_case)]
     #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Labels {
-        edges: Option<Vec<LabelEdge>>,
-    }
-
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct LabelEdge {
-        node: Option<Label>,
+    struct LabelNodes {
+        nodes: Option<Vec<Label>>,
     }
 
     #[allow(non_snake_case)]
@@ -292,7 +267,6 @@ pub async fn search_issues_open(query: &str) -> anyhow::Result<Vec<OuterIssue>> 
     struct Label {
         name: Option<String>,
     }
-
     let mut all_issues = Vec::new();
     let mut after_cursor: Option<String> = None;
 
@@ -302,8 +276,7 @@ pub async fn search_issues_open(query: &str) -> anyhow::Result<Vec<OuterIssue>> 
             query {{
                 search(query: "{}", type: ISSUE, first: 100, after: {}) {{
                     issueCount
-                    edges {{
-                        node {{
+                    nodes {{
                             ... on Issue {{
                                 title
                                 url
@@ -321,14 +294,11 @@ pub async fn search_issues_open(query: &str) -> anyhow::Result<Vec<OuterIssue>> 
                                     }}
                                 }}
                                 labels(first: 10) {{
-                                    edges {{
-                                        node {{
-                                            name
-                                        }}
+                                    nodes {{
+                                        name
                                     }}
                                 }}
                             }}
-                        }}
                     }}
                     pageInfo {{
                         endCursor
@@ -352,52 +322,53 @@ pub async fn search_issues_open(query: &str) -> anyhow::Result<Vec<OuterIssue>> 
 
         if let Some(data) = response.data {
             if let Some(search) = data.search {
-                for edge in search.edges.unwrap_or_default() {
-                    if let Some(issue) = edge.node {
-                        let labels = issue.labels.map_or(Vec::new(), |labels| {
-                            labels.edges.map_or(Vec::new(), |edges| {
-                                edges
+                if let Some(nodes) = search.nodes {
+                    for issue in nodes {
+                        let labels = issue.labels.as_ref().map_or(Vec::new(), |labels| {
+                            labels.nodes.as_ref().map_or(Vec::new(), |nodes| {
+                                nodes
                                     .iter()
-                                    .filter_map(|edge| {
-                                        edge.node
-                                            .as_ref()
-                                            .map(|label| label.name.clone().unwrap_or_default())
-                                    })
+                                    .filter_map(|label| label.name.clone())
                                     .collect()
                             })
                         });
-                        let temp_str = String::from("");
 
                         all_issues.push(OuterIssue {
-                            title: issue.title.unwrap_or_default(),
-                            url: issue.url.unwrap_or_default(),
-                            author: issue
-                                .author
-                                .clone()
-                                .map_or(String::new(), |author| author.login.unwrap_or_default()),
+                            title: issue.title,
+                            url: issue.url,
+                            author: issue.author.as_ref().map_or(String::new(), |author| {
+                                author.login.clone().unwrap_or_default()
+                            }),
                             body: issue.body.clone().unwrap_or_default(),
                             repository: issue
                                 .repository
-                                .clone() // Clone here
-                                .map_or(String::new(), |repo| repo.url.unwrap_or_default()),
-                            repository_stars: issue.repository.clone().map_or(0, |repo| {
+                                .as_ref()
+                                .map_or(String::new(), |repo| repo.url.clone().unwrap_or_default()),
+                            repository_stars: issue.repository.as_ref().map_or(0, |repo| {
                                 repo.stargazers
+                                    .as_ref()
                                     .map_or(0, |stars| stars.totalCount.unwrap_or(0))
                             }),
-                            repository_avatar: issue.repository.map_or(String::new(), |repo| {
-                                repo.owner.map_or(String::new(), |owner| {
-                                    owner.avatarUrl.unwrap_or_default()
-                                })
-                            }),
+                            repository_avatar: issue.repository.as_ref().map_or(
+                                String::new(),
+                                |repo| {
+                                    repo.owner.as_ref().map_or(String::new(), |owner| {
+                                        owner.avatarUrl.clone().unwrap_or_default()
+                                    })
+                                },
+                            ),
                             issue_labels: labels,
                             comments: Vec::<String>::new(),
                         });
                     }
                 }
-                if search.pageInfo.hasNextPage {
-                    after_cursor = search.pageInfo.endCursor
-                } else {
-                    break;
+
+                if let Some(pageInfo) = search.pageInfo {
+                    if pageInfo.hasNextPage {
+                        after_cursor = pageInfo.endCursor;
+                    } else {
+                        break;
+                    }
                 }
             }
         }
@@ -423,13 +394,11 @@ pub struct CloseOuterIssue {
 }
 
 pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<CloseOuterIssue>> {
-    #[allow(non_snake_case)]
     #[derive(Serialize, Deserialize, Clone, Debug)]
     struct GraphQLResponse {
         data: Option<Data>,
     }
 
-    #[allow(non_snake_case)]
     #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Data {
         search: Option<Search>,
@@ -439,8 +408,8 @@ pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<CloseOuterI
     #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Search {
         issueCount: Option<i32>,
-        edges: Option<Vec<Edge>>,
-        pageInfo: PageInfo,
+        nodes: Option<Vec<Issue>>,
+        pageInfo: Option<PageInfo>,
     }
 
     #[allow(non_snake_case)]
@@ -452,52 +421,25 @@ pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<CloseOuterI
 
     #[allow(non_snake_case)]
     #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Edge {
-        node: Option<Issue>,
-    }
-
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Issue {
         url: Option<String>,
-        labels: Option<Labels>,
+        labels: Option<LabelNodes>,
         timelineItems: Option<TimelineItems>,
     }
 
-    #[allow(non_snake_case)]
     #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Author {
-        login: Option<String>,
+    struct LabelNodes {
+        nodes: Option<Vec<Label>>,
     }
 
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Labels {
-        edges: Option<Vec<LabelEdge>>,
-    }
-
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct LabelEdge {
-        node: Option<Label>,
-    }
-
-    #[allow(non_snake_case)]
     #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Label {
         name: Option<String>,
     }
 
-    #[allow(non_snake_case)]
     #[derive(Serialize, Deserialize, Clone, Debug)]
     struct TimelineItems {
-        edges: Option<Vec<TimelineEdge>>,
-    }
-
-    #[allow(non_snake_case)]
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct TimelineEdge {
-        node: Option<ClosedEvent>,
+        nodes: Option<Vec<ClosedEvent>>,
     }
 
     #[allow(non_snake_case)]
@@ -507,7 +449,6 @@ pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<CloseOuterI
         closer: Option<Closer>,
     }
 
-    #[allow(non_snake_case)]
     #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Closer {
         title: Option<String>,
@@ -515,8 +456,11 @@ pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<CloseOuterI
         author: Option<Author>,
     }
 
-    let first_comments = 10;
-    let first_timeline_items = 10;
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct Author {
+        login: Option<String>,
+    }
+
     let mut all_issues = Vec::new();
     let mut after_cursor: Option<String> = None;
 
@@ -526,39 +470,32 @@ pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<CloseOuterI
             query {{
                 search(query: "{}", type: ISSUE, first: 100, after: {}) {{
                     issueCount
-                    edges {{
-                        node {{
-                            ... on Issue {{
-                                url
-                                labels(first: 10) {{
-                                    edges {{
-                                        node {{
-                                            name
-                                        }}
-                                    }}
+                    nodes {{
+                        ... on Issue {{
+                            url
+                            labels(first: 10) {{
+                                nodes {{
+                                    name
                                 }}
-                                timelineItems(first: 10, itemTypes: [CLOSED_EVENT]) {{
-                                    edges {{
-                                        node {{
-                                            ... on ClosedEvent {{
-                                                stateReason
-                                                closer {{
-                                                    __typename
-                                                    ... on PullRequest {{
-                                                        title
-                                                        url
-                                                        author {{
-                                                            login
-                                                        }}
-                                                    }}
+                            }}
+                            timelineItems(first: 10, itemTypes: [CLOSED_EVENT]) {{
+                                nodes {{
+                                    ... on ClosedEvent {{
+                                        stateReason
+                                        closer {{
+                                            ... on PullRequest {{
+                                                title
+                                                url
+                                                author {{
+                                                    login
                                                 }}
                                             }}
                                         }}
                                     }}
-                                }}
+                            }}
                             }}
                         }}
-                    }}
+                }}
                     pageInfo {{
                         endCursor
                         hasNextPage
@@ -569,7 +506,7 @@ pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<CloseOuterI
             query.replace("\"", "\\\""),
             after_cursor
                 .as_ref()
-                .map_or(String::from("null"), |c| format!("\"{}\"", c)),
+                .map_or(String::from("null"), |c| format!("\"{:?}\"", c)),
         );
 
         let response_body = github_http_post_gql(&query_str)
@@ -581,57 +518,51 @@ pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<CloseOuterI
 
         if let Some(data) = response.data {
             if let Some(search) = data.search {
-                for edge in search.edges.unwrap_or_default() {
-                    if let Some(issue) = edge.node {
-                        let labels = issue.labels.map_or(Vec::new(), |labels| {
-                            labels.edges.map_or(Vec::new(), |edges| {
-                                edges
+                if let Some(nodes) = search.nodes {
+                    for issue in nodes {
+                        let labels = issue.labels.as_ref().map_or(Vec::new(), |labels| {
+                            labels.nodes.as_ref().map_or(Vec::new(), |nodes| {
+                                nodes
                                     .iter()
-                                    .filter_map(|edge| {
-                                        edge.node
-                                            .as_ref()
-                                            .map(|label| label.name.clone().unwrap_or_default())
-                                    })
+                                    .filter_map(|label| label.name.clone())
                                     .collect()
                             })
                         });
-                        let temp_str = String::from("");
 
                         let (close_reason, close_pull_request, close_author) = issue
                             .timelineItems
+                            .as_ref()
                             .map_or((String::new(), String::new(), String::new()), |items| {
-                                items.edges.map_or(
+                                items.nodes.as_ref().map_or(
                                     (String::new(), String::new(), String::new()),
-                                    |edges| {
-                                        edges
+                                    |nodes| {
+                                        nodes
                                             .iter()
-                                            .filter_map(|edge| {
-                                                edge.node.as_ref().map(|event| {
-                                                    if let Some(closer) = &event.closer {
-                                                        (
-                                                            event
-                                                                .stateReason
-                                                                .clone()
-                                                                .unwrap_or_default(),
-                                                            closer.url.clone().unwrap_or_default(),
-                                                            closer.author.as_ref().map_or(
-                                                                String::new(),
-                                                                |author| {
-                                                                    author
-                                                                        .login
-                                                                        .clone()
-                                                                        .unwrap_or_default()
-                                                                },
-                                                            ),
-                                                        )
-                                                    } else {
-                                                        (
+                                            .filter_map(|event| {
+                                                if let Some(closer) = &event.closer {
+                                                    Some((
+                                                        event
+                                                            .stateReason
+                                                            .clone()
+                                                            .unwrap_or_default(),
+                                                        closer.url.clone().unwrap_or_default(),
+                                                        closer.author.as_ref().map_or(
                                                             String::new(),
-                                                            String::new(),
-                                                            String::new(),
-                                                        )
-                                                    }
-                                                })
+                                                            |author| {
+                                                                author
+                                                                    .login
+                                                                    .clone()
+                                                                    .unwrap_or_default()
+                                                            },
+                                                        ),
+                                                    ))
+                                                } else {
+                                                    Some((
+                                                        String::new(),
+                                                        String::new(),
+                                                        String::new(),
+                                                    ))
+                                                }
                                             })
                                             .next()
                                             .unwrap_or((
@@ -658,10 +589,13 @@ pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<CloseOuterI
                         });
                     }
                 }
-                if search.pageInfo.hasNextPage {
-                    after_cursor = search.pageInfo.endCursor
-                } else {
-                    break;
+
+                if let Some(pageInfo) = search.pageInfo {
+                    if pageInfo.hasNextPage {
+                        after_cursor = pageInfo.endCursor;
+                    } else {
+                        break;
+                    }
                 }
             }
         }
@@ -686,12 +620,12 @@ pub async fn search_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>>
         login: Option<String>,
     }
 
-    #[derive(Serialize, Deserialize, Default, Debug)]
+    #[derive(Serialize, Deserialize, Default, Clone, Debug)]
     pub struct Subject {
         url: Option<String>,
     }
 
-    #[derive(Serialize, Deserialize, Default, Debug)]
+    #[derive(Serialize, Deserialize, Default, Clone, Debug)]
     pub struct ConnectedEvent {
         subject: Option<Subject>,
     }
@@ -718,7 +652,14 @@ pub async fn search_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>>
     }
 
     #[derive(Serialize, Deserialize, Default, Debug)]
-    pub struct ConnectedEventNodes {
+    pub struct Closer {
+        title: Option<String>,
+        url: Option<String>,
+        author: Option<Author>,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    pub struct TimelineItems {
         nodes: Option<Vec<ConnectedEvent>>,
     }
 
@@ -728,22 +669,20 @@ pub async fn search_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>>
         title: String,
         url: String,
         author: Option<Author>,
-        timelineItems: Option<ConnectedEventNodes>,
+        timelineItems: Option<TimelineItems>,
         labels: Option<LabelNodes>,
         reviews: Option<ReviewNodes>,
         mergedBy: Option<Author>,
-        mergedAt: Option<String>,
+        mergedAt: Option<i64>,
     }
-
     #[allow(non_snake_case)]
     #[derive(Serialize, Deserialize, Default, Debug)]
     pub struct Search {
-        issueCount: Option<i64>,
+        issueCount: Option<i32>,
         nodes: Option<Vec<PullRequest>>,
         pageInfo: Option<PageInfo>,
     }
 
-    
     #[allow(non_snake_case)]
     #[derive(Serialize, Deserialize, Default, Debug)]
     struct PageInfo {
@@ -761,7 +700,7 @@ pub async fn search_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>>
         let query_str = format!(
             r#"
             query {{
-                search(query: "{}", type: ISSUE, first: 100, after: {}) {{
+                search(query: "{}", type: ISSUE, first: 1, after: {}) {{
                     issueCount
                     nodes {{
                         ... on PullRequest {{
@@ -813,20 +752,23 @@ pub async fn search_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>>
                 .map_or(String::from("null"), |c| format!("\"{:?}\"", c))
         );
 
-        let response_body = github_http_post_gql(&query_str).await?;
+        let response_body =  github_http_post_gql(&query_str).await?;
+        // println!("{}", String::from_utf8_lossy(&response_body));
+        // break;
         let response: QueryResult = serde_json::from_slice(&response_body)?;
 
         let search = response.data;
         if let Some(nodes) = search.nodes {
             for pull in nodes {
-                let connected_issues = pull
-                    .timelineItems
-                    .and_then(|items| items.nodes)
-                    .unwrap_or_default()
-                    .into_iter()
-                    .filter_map(|item| item.subject)
-                    .map(|subject| subject.url.unwrap_or_default())
-                    .collect();
+                let connected_issues = vec![    ];
+                // let connected_issues = pull
+                //     .timelineItems
+                //     .and_then(|items| items.nodes)
+                //     .unwrap_or_default()
+                //     .into_iter()
+                //     .filter_map(|item| item.subject)
+                //     .map(|subject| subject.url.unwrap_or_default())
+                //     .collect();
 
                 let labels = pull
                     .labels
@@ -850,13 +792,13 @@ pub async fn search_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>>
                     url: pull.url,
                     author: pull
                         .author
-                        .unwrap_or_default().login.unwrap_or_default(),
+                        .map_or(String::new(), |a| a.login.unwrap_or_default()),
                     connected_issues,
                     labels,
                     reviews,
                     merged_by: pull
                         .mergedBy
-                        .unwrap_or_default().login.unwrap_or_default(),
+                        .map_or(String::new(), |a| a.login.unwrap_or_default()),
                 };
 
                 all_pulls.push(outer_pull);
@@ -864,11 +806,12 @@ pub async fn search_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>>
         }
         if let Some(pageInfo) = search.pageInfo {
             if pageInfo.hasNextPage {
-                after_cursor = Some(pageInfo.endCursor);
+                after_cursor = pageInfo.endCursor;
             } else {
                 break;
             }
         }
     }
+
     Ok(all_pulls)
 }

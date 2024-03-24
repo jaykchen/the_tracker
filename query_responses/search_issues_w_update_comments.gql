@@ -1,20 +1,16 @@
 query ($query: String!) {
   search(query: $query, type: ISSUE, first: 10, after: null) {
     issueCount
-    edges {
-      node {
-        ... on Issue {
-          url
-          body
-          comments(first: 50) {
-            edges {
-              node {
-                author {
-                  login
-                }
-                body
-              }
+    nodes {
+      ... on Issue {
+        url
+        body
+        comments(first: 50) {
+          nodes {
+            author {
+              login
             }
+            body
           }
         }
       }
@@ -27,9 +23,8 @@ query ($query: String!) {
 }
 
 {
-  "query": "label:hacktoberfest is:issue is:open created:>=2023-10-01 updated:>=2023-10-03 -label:spam -label:invalid"
+  "query": "label:hacktoberfest is:issue is:open created:>=2023-10-01 updated:>=2023-10-02T00:10:00 -label:spam -label:invalid"
 }
-
 {
   "query": "label:hacktoberfest is:issue is:open no:assignee created:2023-10-01..2023-10-03 -label:spam -label:invalid",
   "firstComments": 10,

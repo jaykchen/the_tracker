@@ -10,7 +10,6 @@ query ($query: String!) {
         }
         timelineItems(first: 5, itemTypes: [CONNECTED_EVENT]) {
           nodes {
-            __typename
             ... on ConnectedEvent {
               subject {
                 ... on Issue {

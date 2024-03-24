@@ -328,8 +328,6 @@ pub async fn update_pull_request(
 #[cfg(test)]
 mod tests {
     use super::*;
-    
-    
 
     #[tokio::test]
     async fn test_list_projects() {
