@@ -108,12 +108,13 @@ async fn search_pulls() -> anyhow::Result<()> {
     );
 
     let query = "label:hacktoberfest-accepted is:pr is:merged merged:2023-10-01..2023-10-01 review:approved -label:spam -label:invalid";
+    let query = "is:pr is:merged label:hacktoberfest-accepted created:2023-10-01..2023-10-30 review:approved -label:spam -label:invalid";
 
     let pulls = search_pull_requests(query).await?;
 
     println!("pulls: {:?}", pulls.len());
     for issue in pulls {
-        println!("issue: {:?}", issue.labels);
+        println!("issue: {:?}", issue.connected_issues);
     }
     Ok(())
 }

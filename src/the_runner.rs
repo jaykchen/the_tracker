@@ -115,5 +115,5 @@ pub async fn run_daily(start_date: &str) {
     // let query_pr_overall ="label:hacktoberfest-accepted is:pr is:merged created:2023-10-01..2023-10-02 review:approved -label:spam -label:invalid";
     let query_pr_overall = inner_query_n_days(start_date, 2, ISSUE_LABEL, PR_LABEL, false, false);
 
-    let _ = search_pull_requests(&query_pr_overall).await;
+    // let _ = search_pull_requests(&query_pr_overall).await;
 }

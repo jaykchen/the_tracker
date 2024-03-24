@@ -38,85 +38,129 @@ pub async fn github_http_post_gql(query: &str) -> anyhow::Result<Vec<u8>> {
     }
 }
 
-pub async fn search_issues_w_update_comments(query: &str) -> anyhow::Result<Vec<OuterIssue>> {
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct GraphQLResponse {
-        data: Option<Data>,
+/* pub async fn search_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>> {
+    #[derive(Serialize, Deserialize, Default, Debug)]
+    pub struct Author {
+        login: Option<String>,
+    }
+
+    #[derive(Serialize, Deserialize, Default, Clone, Debug)]
+    pub struct Subject {
+        url: Option<String>,
+    }
+
+    #[derive(Serialize, Deserialize, Default, Clone, Debug)]
+    pub struct ConnectedEvent {
+        subject: Option<Subject>,
+    }
+
+    #[derive(Serialize, Deserialize, Default, Debug)]
+    pub struct Label {
+        name: Option<String>,
+    }
+
+    #[derive(Serialize, Deserialize, Default, Debug)]
+    pub struct Review {
+        author: Option<Author>,
+        state: Option<String>,
+    }
+
+    #[derive(Serialize, Deserialize, Default, Debug)]
+    pub struct LabelNodes {
+        nodes: Option<Vec<Label>>,
+    }
+
+    #[derive(Serialize, Deserialize, Default, Debug)]
+    pub struct ReviewNodes {
+        nodes: Option<Vec<Review>>,
+    }
+
+    #[derive(Serialize, Deserialize, Default, Debug)]
+    pub struct Closer {
+        title: Option<String>,
+        url: Option<String>,
+        author: Option<Author>,
     }
 
     #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Data {
-        search: Option<Search>,
+    pub struct TimelineItems {
+        nodes: Option<Vec<ConnectedEvent>>,
     }
 
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Search {
+    #[allow(non_snake_case)]
+    #[derive(Serialize, Deserialize, Default, Debug)]
+    pub struct PullRequest {
+        title: String,
+        url: String,
+        author: Option<Author>,
+        timelineItems: Option<TimelineItems>,
+        labels: Option<LabelNodes>,
+        reviews: Option<ReviewNodes>,
+        mergedBy: Option<Author>,
+        mergedAt: Option<i64>,
+    }
+    #[allow(non_snake_case)]
+    #[derive(Serialize, Deserialize, Default, Debug)]
+    pub struct Search {
         issueCount: Option<i32>,
-        edges: Option<Vec<Edge>>,
-        pageInfo: PageInfo,
+        nodes: Option<Vec<PullRequest>>,
+        pageInfo: Option<PageInfo>,
     }
 
-    #[derive(Serialize, Deserialize, Clone, Debug)]
+    #[allow(non_snake_case)]
+    #[derive(Serialize, Deserialize, Default, Debug)]
     struct PageInfo {
         endCursor: Option<String>,
         hasNextPage: bool,
     }
 
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Edge {
-        node: Option<Issue>,
+    #[derive(Serialize, Deserialize, Default, Debug)]
+    pub struct QueryResult {
+        data: Search,
     }
-
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Issue {
-        url: Option<String>,
-        body: Option<String>,
-        comments: Option<Comments>,
-    }
-
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Comments {
-        edges: Option<Vec<CommentEdge>>,
-    }
-
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct CommentEdge {
-        node: Option<Comment>,
-    }
-
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Comment {
-        author: Option<Author>,
-        body: Option<String>,
-    }
-
-    #[derive(Serialize, Deserialize, Clone, Debug)]
-    struct Author {
-        login: Option<String>,
-    }
-
-    for _ in 0..10 {
+    let mut all_pulls = Vec::new();
+    let mut after_cursor = None;
+    for _n in 0..10 {
         let query_str = format!(
             r#"
             query {{
-                search(query: "{}", type: ISSUE, first: 100, after: {}) {{
+                search(query: "{}", type: ISSUE, first: 1, after: {}) {{
                     issueCount
-                    edges {{
-                        node {{
-                            ... on Issue {{
-                                url
-                                body
-                                comments(first: 50) {{
-                                    edges {{
-                                        node {{
-                                            author {{
-                                                login
+                    nodes {{
+                        ... on PullRequest {{
+                            title
+                            url
+                            author {{
+                                login
+                            }}
+                            timelineItems(first: 5, itemTypes: [CONNECTED_EVENT]) {{
+                                nodes {{
+                                    ... on ConnectedEvent {{
+                                        subject {{
+                                            ... on Issue {{
+                                                url
                                             }}
-                                            body
                                         }}
                                     }}
                                 }}
                             }}
+                            labels(first: 10) {{
+                                nodes {{
+                                    name
+                                }}
+                            }}
+                            reviews(first: 5, states: [APPROVED]) {{
+                                nodes {{
+                                    author {{
+                                        login
+                                    }}
+                                    state
+                                }}
+                            }}
+                            mergedBy {{
+                                login
+                            }}
+                            mergedAt
                         }}
                     }}
                     pageInfo {{
@@ -126,64 +170,75 @@ pub async fn search_issues_w_update_comments(query: &str) -> anyhow::Result<Vec<
                 }}
             }}
             "#,
-            query.replace("\"", "\\\""),
+            query,
             after_cursor
                 .as_ref()
-                .map_or(String::from("null"), |c| format!("\"{}\"", c)),
+                .map_or(String::from("null"), |c| format!("\"{:?}\"", c))
         );
 
-        let response_body = github_http_post_gql(&query_str)
-            .await
-            .map_err(|e| anyhow!("Failed to post GraphQL query: {}", e))?;
+        let response_body =  github_http_post_gql(&query_str).await?;
+        // println!("{}", String::from_utf8_lossy(&response_body));
+        // break;
+        let response: QueryResult = serde_json::from_slice(&response_body)?;
 
-        let response: GraphQLResponse = serde_json::from_slice(&response_body)
-            .map_err(|e| anyhow!("Failed to deserialize response: {}", e))?;
+        let search = response.data;
+        if let Some(nodes) = search.nodes {
+            for pull in nodes {
+                let connected_issues = vec![    ];
+                // let connected_issues = pull
+                //     .timelineItems
+                //     .and_then(|items| items.nodes)
+                //     .unwrap_or_default()
+                //     .into_iter()
+                //     .filter_map(|item| item.subject)
+                //     .map(|subject| subject.url.unwrap_or_default())
+                //     .collect();
 
-        if let Some(data) = response.data {
-            if let Some(search) = data.search {
-                for edge in search.edges.unwrap_or_default() {
-                    if let Some(issue) = edge.node {
-                        let comments = issue.comments.map_or(Vec::new(), |comments| {
-                            comments.edges.map_or(Vec::new(), |edges| {
-                                edges
-                                    .iter()
-                                    .filter_map(|edge| {
-                                        edge.node.as_ref().map(|comment| {
-                                            format!(
-                                                "{}: {}",
-                                                comment.author.as_ref().map_or("", |a| a
-                                                    .login
-                                                    .as_ref()
-                                                    .unwrap_or(&"")),
-                                                comment.body.as_ref().unwrap_or(&"")
-                                            )
-                                        })
-                                    })
-                                    .collect()
-                            })
-                        });
+                let labels = pull
+                    .labels
+                    .and_then(|items| items.nodes)
+                    .unwrap_or_default()
+                    .into_iter()
+                    .map(|label| label.name.unwrap_or_default())
+                    .collect();
 
-                        all_issues.push(OuterIssue {
-                            url: issue.url.unwrap_or_default(),
-                            body: issue.body.clone().unwrap_or_default(),
-                            comments,
-                            // Populate other fields as needed, or remove them if they are no longer relevant
-                            ..Default::default() // Use Default trait implementation to fill in missing fields
-                        });
-                    }
-                }
+                let reviews = pull
+                    .reviews
+                    .and_then(|items| items.nodes)
+                    .unwrap_or_default()
+                    .into_iter()
+                    .filter_map(|review| review.author)
+                    .map(|author| author.login.unwrap_or_default())
+                    .collect();
 
-                if search.pageInfo.hasNextPage {
-                    after_cursor = search.pageInfo.endCursor
-                } else {
-                    break;
-                }
+                let outer_pull = OuterPull {
+                    title: pull.title.clone(),
+                    url: pull.url,
+                    author: pull
+                        .author
+                        .map_or(String::new(), |a| a.login.unwrap_or_default()),
+                    connected_issues,
+                    labels,
+                    reviews,
+                    merged_by: pull
+                        .mergedBy
+                        .map_or(String::new(), |a| a.login.unwrap_or_default()),
+                };
+
+                all_pulls.push(outer_pull);
+            }
+        }
+        if let Some(pageInfo) = search.pageInfo {
+            if pageInfo.hasNextPage {
+                after_cursor = pageInfo.endCursor;
+            } else {
+                break;
             }
         }
     }
 
-    Ok(all_issues)
-}
+    Ok(all_pulls)
+} */
 
 #[allow(non_snake_case)]
 pub struct OuterIssue {
