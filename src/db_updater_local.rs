@@ -273,7 +273,6 @@ pub async fn add_pull_request(
     Ok(())
 }
 
-
 /* pub async fn add_comment(
     pool: &PgPool,
     comment_id: &str,

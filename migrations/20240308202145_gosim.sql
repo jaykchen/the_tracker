@@ -38,7 +38,8 @@ CREATE TABLE pull_requests (
     pull_id VARCHAR(255) PRIMARY KEY,  -- url of pull_request
     title VARCHAR(255) NOT NULL,
     author VARCHAR(50) ,
-    repository VARCHAR(255) NOT NULL,
+    project_id VARCHAR(255) NOT NULL,
     merged_by VARCHAR(50) ,
-    connected_issues JSON
+    connected_issues JSON,
+    pull_status TEXT,    -- default empty, or some situation exposed by conflicting information
 );

@@ -198,12 +198,12 @@ pub async fn run_hourly(pool: &Pool) -> anyhow::Result<()> {
     let pull_request_obj = search_pull_requests(&query_pull_request).await?;
 
     for pull in pull_request_obj {
-        let pull_id = pull.url.clone();
+        let pull_id = pull.pull_id.clone();
 
         let title = pull.title.clone();
-        let author = pull.author.clone();
+        let author = pull.author.clone().unwrap_or_default();
         let repository = pull
-            .url
+            .pull_id
             .clone()
             .rsplitn(3, '/')
             .nth(2)

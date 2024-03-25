@@ -9,6 +9,11 @@ query ($query: String!) {
             name
           }
         }
+        assignees(first: 5) {
+          nodes {
+            name
+          }
+        }
         timelineItems(first: 10, itemTypes: [CLOSED_EVENT]) {
           nodes {
             ... on ClosedEvent {

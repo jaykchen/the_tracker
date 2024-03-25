@@ -68,7 +68,18 @@ pub async fn search_issues_w_update_comments(query: &str) -> anyhow::Result<Vec<
     struct IssueNode {
         url: Option<String>,
         body: Option<String>,
+        assignees: Option<AssigneeNodes>,
         comments: Option<Comments>,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct AssigneeNodes {
+        nodes: Option<Vec<Assignee>>,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct Assignee {
+        name: Option<String>,
     }
 
     #[derive(Serialize, Deserialize, Clone, Debug)]
@@ -100,13 +111,18 @@ pub async fn search_issues_w_update_comments(query: &str) -> anyhow::Result<Vec<
                             ... on Issue {{
                                 url
                                 body
-                                comments(first: 50) {{
+                                assignees(first: 5) {{
                                     nodes {{
-                                        author {{
-                                            login
-                                        }}
-                                        body
+                                        name
                                     }}
+                                }}
+                                comments(first: 50) {{
+                                nodes {{
+                                    author {{
+                                        login
+                                    }}
+                                    body
+                                }}
                                 }}
                             }}
                         }}
@@ -152,11 +168,21 @@ pub async fn search_issues_w_update_comments(query: &str) -> anyhow::Result<Vec<
                                     .collect()
                             })
                         });
-                        let comments_summary = todo!("Summarize comments");
+                        let assignees = issue.assignees.as_ref().map_or(Vec::new(), |assignees| {
+                            assignees.nodes.as_ref().map_or(Vec::new(), |nodes| {
+                                nodes
+                                    .iter()
+                                    .filter_map(|assignee| assignee.name.clone())
+                                    .collect()
+                            })
+                        });
+
+                        // let comments_summary = check_comments().await;
+                        let comments_summary = String::from("placeholder");
 
                         all_issues.push(OuterIssue {
                             issue_id: issue.url.unwrap_or_default(), // Assuming issue.url is the issue_id
-                            issue_assignees: Vec::new(), // You need to provide the issue_assignees
+                            issue_assignees: assignees, // You need to provide the issue_assignees
                             issue_status: comments_summary,
                             ..Default::default()
                         });
@@ -175,6 +201,13 @@ pub async fn search_issues_w_update_comments(query: &str) -> anyhow::Result<Vec<
     }
 
     Ok(all_issues)
+}
+
+pub async fn check_comments() -> String {
+    let mut comment_summary = String::new();
+    todo!("Implement this function");
+
+    comment_summary
 }
 
 #[allow(non_snake_case)]
@@ -398,6 +431,7 @@ pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<OuterIssue>
     struct Issue {
         url: Option<String>,
         labels: Option<LabelNodes>,
+        assignees: Option<AssigneeNodes>,
         timelineItems: Option<TimelineItems>,
     }
 
@@ -408,6 +442,16 @@ pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<OuterIssue>
 
     #[derive(Serialize, Deserialize, Clone, Debug)]
     struct Label {
+        name: Option<String>,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct AssigneeNodes {
+        nodes: Option<Vec<Assignee>>,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    struct Assignee {
         name: Option<String>,
     }
 
@@ -448,6 +492,11 @@ pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<OuterIssue>
                         ... on Issue {{
                             url
                             labels(first: 10) {{
+                                nodes {{
+                                    name
+                                }}
+                            }}
+                            assignees(first: 5) {{
                                 nodes {{
                                     name
                                 }}
@@ -503,6 +552,15 @@ pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<OuterIssue>
                             })
                         });
 
+                        let assignees = issue.assignees.as_ref().map_or(Vec::new(), |assignees| {
+                            assignees.nodes.as_ref().map_or(Vec::new(), |nodes| {
+                                nodes
+                                    .iter()
+                                    .filter_map(|assignee| assignee.name.clone())
+                                    .collect()
+                            })
+                        });
+
                         let (close_reason, close_pull_request, close_author) = issue
                             .timelineItems
                             .as_ref()
@@ -549,15 +607,13 @@ pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<OuterIssue>
                             });
 
                         let issue_id = issue.url.clone().unwrap_or_default();
-                        let issue_assignees = Vec::<String>::new();
+                        let issue_assignees = assignees;
                         let issue_labels = labels;
-                        let comments = Vec::<String>::new();
 
                         let potential_problems_summary = issue_checker(
                             &issue_id,
                             issue_assignees.clone(),
                             issue_labels,
-                            comments,
                             &close_reason,
                             &close_pull_request.clone(),
                             &close_author,
@@ -591,7 +647,6 @@ pub async fn issue_checker(
     issue_id: &str,
     issue_assignees: Vec<String>,
     issue_labels: Vec<String>,
-    comments: Vec<String>,
     close_reason: &str,
     close_pull_request: &str,
     close_author: &str,
@@ -619,29 +674,44 @@ pub async fn issue_checker(
     potential_problems_summary
 }
 
-#[derive(Serialize, Deserialize, Clone, Default, Debug)]
-pub struct OuterPull {
-    pub title: String,
-    pub url: String,
-    pub author: String,
-    pub connected_issues: Vec<String>,
-    pub labels: Vec<String>,
-    pub reviews: Vec<String>, // authors whose review state is approved
-    pub merged_by: String,
-}
-
 #[derive(Serialize, Deserialize, Clone, Debug)]
-pub struct SimplePull {
+pub struct OuterPull {
+    pub pull_id: String, // url of pull_request
     pub title: String,
-    pub url: String,
-    pub author: String,
-    pub connected_issues: Vec<String>,
-    pub labels: Vec<String>,
-    pub reviews: Vec<String>,      // authors whose review state is approved
+    pub author: Option<String>,
+    pub project_id: String,
     pub merged_by: Option<String>, // This field can be empty if the PR is not merged
+    pub connected_issues: Vec<String>, // JSON data format
+    pub pull_status: String,
 }
 
-pub async fn search_pull_requests(query: &str) -> anyhow::Result<Vec<SimplePull>> {
+pub async fn pull_checker(
+    pull_id: &str,
+    pull_labels: Vec<String>,
+    reviews: Vec<String>,      // authors whose review state is approved
+    merged_by: Option<String>, // This field can be empty if the PR is not merged
+) -> String {
+    let mut potential_problems_summary = String::new();
+    let negative_labels = vec!["spam", "invalid"];
+    if pull_labels
+        .iter()
+        .any(|label| negative_labels.contains(&label.as_str()))
+    {
+        // Do something
+    }
+
+    if reviews.contains(&"some_bad".to_string()) {
+        // Do something
+    }
+
+    if merged_by == Some("bot".to_string()) {
+        // Do something
+    }
+
+    potential_problems_summary
+}
+
+pub async fn search_pull_requests(query: &str) -> anyhow::Result<Vec<OuterPull>> {
     #[derive(Serialize, Deserialize, Clone, Debug)]
     struct GraphQLResponse {
         data: Option<Data>,
@@ -720,7 +790,7 @@ pub async fn search_pull_requests(query: &str) -> anyhow::Result<Vec<SimplePull>
         hasNextPage: bool,
     }
 
-    let mut simplified_pulls = Vec::new();
+    let mut all_pulls = Vec::new();
     let mut after_cursor: Option<String> = None;
 
     for _n in 0..10 {
@@ -785,7 +855,6 @@ pub async fn search_pull_requests(query: &str) -> anyhow::Result<Vec<SimplePull>
             if let Some(search) = data.search {
                 if let Some(nodes) = search.nodes {
                     for node in nodes {
-                        println!("Node: {:?}", node);
                         let connected_issues = if let Some(items) = node.timelineItems {
                             if let Some(nodes) = items.nodes {
                                 nodes
@@ -836,21 +905,36 @@ pub async fn search_pull_requests(query: &str) -> anyhow::Result<Vec<SimplePull>
                             Vec::new()
                         };
 
-                        simplified_pulls.push(SimplePull {
-                            title: node.title.clone().unwrap_or_default(),
-                            url: node.url.clone().unwrap_or_default(),
-                            author: node
-                                .author
-                                .as_ref()
-                                .and_then(|author| author.login.clone())
-                                .unwrap_or_default(),
+                        let pull_id = node.url.clone().unwrap_or_default();
+                        let project_id = pull_id
+                            .clone()
+                            .rsplitn(3, '/')
+                            .nth(2)
+                            .unwrap_or("unknown")
+                            .to_string();
+                        let title = node.title.clone().unwrap_or_default();
+                        let author = node.author.as_ref().and_then(|author| author.login.clone());
+                        let merged_by = node
+                            .mergedBy
+                            .as_ref()
+                            .and_then(|author| author.login.clone());
+
+                        let potential_problems_summary = pull_checker(
+                            &pull_id,
+                            labels.clone(),
+                            reviews.clone(),
+                            merged_by.clone(),
+                        )
+                        .await;
+
+                        all_pulls.push(OuterPull {
+                            pull_id,
+                            title,
+                            author,
+                            project_id,
+                            merged_by,
                             connected_issues,
-                            labels,
-                            reviews,
-                            merged_by: node
-                                .mergedBy
-                                .as_ref()
-                                .and_then(|author| author.login.clone()),
+                            pull_status: potential_problems_summary,
                         });
                     }
 
@@ -866,5 +950,5 @@ pub async fn search_pull_requests(query: &str) -> anyhow::Result<Vec<SimplePull>
         }
     }
 
-    Ok(simplified_pulls)
+    Ok(all_pulls)
 }

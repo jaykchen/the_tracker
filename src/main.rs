@@ -31,6 +31,7 @@ async fn main() -> anyhow::Result<()> {
 
     let   query ="label:hacktoberfest is:issue is:open created:>=2023-10-01 updated:>=2023-10-30 -label:spam -label:invalid";
 
+    let _ = search_pulls().await?;
     // let pool = db_updater_local::get_pool().await;
     // let _ = run_hourly(&pool).await?;
 
@@ -63,7 +64,11 @@ async fn test_search_issue_comments() -> anyhow::Result<()> {
         };
         println!("issue: {:?}", comment);
 
-        let body = issue.issue_description.chars().take(200).collect::<String>();
+        let body = issue
+            .issue_description
+            .chars()
+            .take(200)
+            .collect::<String>();
         let title = issue.issue_title.chars().take(200).collect::<String>();
     }
     // }
@@ -97,16 +102,13 @@ async fn search_issues() -> anyhow::Result<()> {
 
     let query = "label:hacktoberfest-accepted is:pr is:merged created:2023-10-01..2023-10-03 review:approved -label:spam -label:invalid";
 
-    let query = "label:hacktoberfest is:issue is:open no:assignee created:2023-10-01..2023-10-01 -label:spam -label:invalid";
     let query = "label:hacktoberfest is:issue is:closed created:2023-10-01..2023-10-30 -label:spam -label:invalid";
+    let query = "label:hacktoberfest is:issue is:open created:2023-10-01..2023-10-01 -label:spam -label:invalid";
 
-    let iss = search_issues_closed(query).await?;
+    let iss = search_issues_w_update_comments(query).await?;
 
     for issue in iss {
-        if issue.issue_linked_pr.is_none() {
-        } else {
-            println!("issue: {:?}", issue.issue_linked_pr);
-        };
+        println!("issue: {:?}", issue.issue_assignees);
     }
     Ok(())
 }
@@ -136,7 +138,9 @@ async fn search_pulls() -> anyhow::Result<()> {
 
     println!("pulls: {:?}", pulls.len());
     for issue in pulls {
-        println!("issue: {:?}", issue);
+        if issue.connected_issues.len() > 0 {
+            println!("issue: {:?}", issue.connected_issues);
+        }
     }
     Ok(())
 }
