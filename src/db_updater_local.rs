@@ -5,7 +5,7 @@ pub use mysql_async::*;
 use mysql_async::{prelude::*, Pool};
 use serde_json::json;
 
-async fn get_pool() -> Pool {
+pub async fn get_pool() -> Pool {
     dotenv().ok();
     let url = std::env::var("DATABASE_URL").expect("not url db url found");
 
@@ -248,11 +248,14 @@ pub async fn add_pull_request(
     author: &str,
     repository: &str,
     merged_by: &str,
+    connected_issues: &Vec<String>,
 ) -> Result<(), Error> {
     let mut conn = pool.get_conn().await?;
 
-    let query = r"INSERT INTO pull_requests (pull_id, title, author, repository, merged_by)
-                  VALUES (:pull_id, :title, :author, :repository, :merged_by)";
+    let connected_issues_json: Value = json!(connected_issues).into();
+
+    let query = r"INSERT INTO pull_requests (pull_id, title, author, repository, merged_by, connected_issues)
+                  VALUES (:pull_id, :title, :author, :repository, :merged_by, :connected_issues)";
 
     conn.exec_drop(
         query,
@@ -262,6 +265,7 @@ pub async fn add_pull_request(
             "author" => author,
             "repository" => repository,
             "merged_by" => merged_by,
+            "connected_issues" => &connected_issues_json,
         },
     )
     .await?;
@@ -269,38 +273,6 @@ pub async fn add_pull_request(
     Ok(())
 }
 
-pub async fn update_pull_request(
-    pool: &Pool,
-    pull_id: &str,
-    merged_by: &str,
-    cross_referenced_issues: &Vec<String>,
-    connected_issues: &Vec<String>,
-) -> Result<(), Error> {
-    let mut conn = pool.get_conn().await?;
-
-    let cross_referenced_issues_json: Value = json!(cross_referenced_issues).into();
-    let connected_issues_json: Value = json!(connected_issues).into();
-
-    let query = r"UPDATE pull_requests 
-                  SET merged_by = :merged_by, 
-                      cross_referenced_issues = :cross_referenced_issues, 
-                      connected_issues = :connected_issues
-                  WHERE pull_id = :pull_id";
-
-    let result = conn
-        .exec_drop(
-            query,
-            params! {
-                "pull_id" => pull_id,
-                "merged_by" => merged_by,
-                "cross_referenced_issues" => cross_referenced_issues_json,
-                "connected_issues" => connected_issues_json,
-            },
-        )
-        .await;
-
-    result
-}
 
 /* pub async fn add_comment(
     pool: &PgPool,
@@ -323,7 +295,7 @@ pub async fn update_pull_request(
     .await?;
     Ok(())
 }
- */
+*/
 
 #[cfg(test)]
 mod tests {

@@ -31,6 +31,5 @@ CREATE TABLE pull_requests (
     author VARCHAR(50) ,
     repository VARCHAR(255) NOT NULL,
     merged_by VARCHAR(50) ,
-    cross_referenced_issues JSON, 
     connected_issues JSON
 );

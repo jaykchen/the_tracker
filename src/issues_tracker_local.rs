@@ -764,11 +764,12 @@ pub async fn search_pull_requests(query: &str) -> anyhow::Result<Vec<SimplePull>
 
         let response_body = github_http_post_gql(&query_str).await?;
         let response: GraphQLResponse = serde_json::from_slice(&response_body)?;
-
+       
         if let Some(data) = response.data {
             if let Some(search) = data.search {
                 if let Some(nodes) = search.nodes {
                     for node in nodes {
+                        println!("Node: {:?}", node);
                         let connected_issues = if let Some(items) = node.timelineItems {
                             if let Some(nodes) = items.nodes {
                                 nodes

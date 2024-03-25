@@ -2,7 +2,10 @@ pub mod db_updater_local;
 pub mod issues_tracker_local;
 pub mod the_runner;
 use chrono::{NaiveDateTime, NaiveTime, Timelike, Utc};
+pub use db_updater_local::*;
+pub use issues_tracker_local::*;
 use lazy_static::lazy_static;
+pub use the_runner::*;
 
 pub static ISSUE_LABEL: &str = "hacktoberfest";
 pub static PR_LABEL: &str = "hacktoberfest-accepted";
