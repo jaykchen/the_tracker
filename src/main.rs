@@ -31,8 +31,8 @@ async fn main() -> anyhow::Result<()> {
 
     let   query ="label:hacktoberfest is:issue is:open created:>=2023-10-01 updated:>=2023-10-30 -label:spam -label:invalid";
 
-    let pool = db_updater_local::get_pool().await;
-    let _ = run_hourly(&pool).await?;
+    // let pool = db_updater_local::get_pool().await;
+    // let _ = run_hourly(&pool).await?;
 
     // for date_range in date_range_vec {
     //     let query =
@@ -56,15 +56,15 @@ async fn test_search_issue_comments() -> anyhow::Result<()> {
     //     let issues = get_issues(&query).await?;
 
     for issue in issues {
-        let comment = if issue.comments.is_empty() {
+        let comment = if issue.issue_status.is_empty() {
             "No comments".to_string()
         } else {
-            issue.comments[0].clone()
+            issue.issue_status.clone()
         };
         println!("issue: {:?}", comment);
 
-        let body = issue.body.chars().take(200).collect::<String>();
-        let title = issue.title.chars().take(200).collect::<String>();
+        let body = issue.issue_description.chars().take(200).collect::<String>();
+        let title = issue.issue_title.chars().take(200).collect::<String>();
     }
     // }
 
@@ -103,10 +103,9 @@ async fn search_issues() -> anyhow::Result<()> {
     let iss = search_issues_closed(query).await?;
 
     for issue in iss {
-        if issue.close_pull_request.is_empty() {
+        if issue.issue_linked_pr.is_none() {
         } else {
-            println!("issue: {:?}", issue.close_pull_request);
-            println!("issue: {:?}", issue.close_author);
+            println!("issue: {:?}", issue.issue_linked_pr);
         };
     }
     Ok(())

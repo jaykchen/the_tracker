@@ -142,22 +142,22 @@ pub async fn run_hourly(pool: &Pool) -> anyhow::Result<()> {
     log::info!("query_open: {:?}", query_open);
     let open_issue_obj = search_issues_open(&query_open).await?;
 
-    for iss in open_issue_obj {
-        let project_logo = &iss.repository_avatar.clone();
-        let issue_id = iss.url.clone();
-        let project_id = iss.repository.clone();
-        let title = iss.title.clone();
-        let description = iss.body.clone();
-        add_issue_checked(
-            pool,
-            &issue_id,
-            &project_id,
-            &title,
-            &description,
-            &project_logo,
-        )
-        .await;
-    }
+    // for iss in open_issue_obj {
+    //     let project_logo = &iss.repository_avatar.clone();
+    //     let issue_id = iss.url.clone();
+    //     let project_id = iss.repository.clone();
+    //     let title = iss.title.clone();
+    //     let description = iss.body.clone();
+    //     add_issue_checked(
+    //         pool,
+    //         &issue_id,
+    //         &project_id,
+    //         &title,
+    //         &description,
+    //         &project_logo,
+    //     )
+    //     .await;
+    // }
 
     // let query_closed =
     //     "label:hacktoberfest is:issue is:closed updated:>=2023-10-01 -label:spam -label:invalid";
@@ -175,8 +175,8 @@ pub async fn run_hourly(pool: &Pool) -> anyhow::Result<()> {
     let close_issue_obj = search_issues_closed(&query_closed).await?;
 
     for iss in close_issue_obj {
-        let issue_id = iss.url.clone();
-        let issue_linked_pr = iss.close_pull_request.clone();
+        let issue_id = iss.issue_id.clone();
+        let issue_linked_pr = iss.issue_linked_pr.clone().unwrap_or_default();
         // let issue_assignee = iss.assignee.clone();
         let issue_assignee = String::new();
 

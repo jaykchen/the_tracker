@@ -5,7 +5,7 @@ use http_req::{
     uri::Uri,
 };
 
-use serde::{Deserialize, Serialize};
+use serde::{de, Deserialize, Serialize};
 use std::env;
 
 pub async fn github_http_post_gql(query: &str) -> anyhow::Result<Vec<u8>> {
@@ -152,12 +152,13 @@ pub async fn search_issues_w_update_comments(query: &str) -> anyhow::Result<Vec<
                                     .collect()
                             })
                         });
+                        let comments_summary = todo!("Summarize comments");
 
                         all_issues.push(OuterIssue {
-                            url: issue.url.unwrap_or_default(),
-                            body: issue.body.clone().unwrap_or_default(),
-                            comments,
-                            ..Default::default() // Use Default trait implementation to fill in missing fields
+                            issue_id: issue.url.unwrap_or_default(), // Assuming issue.url is the issue_id
+                            issue_assignees: Vec::new(), // You need to provide the issue_assignees
+                            issue_status: comments_summary,
+                            ..Default::default()
                         });
                     }
                 }
@@ -179,15 +180,24 @@ pub async fn search_issues_w_update_comments(query: &str) -> anyhow::Result<Vec<
 #[allow(non_snake_case)]
 #[derive(Serialize, Deserialize, Clone, Debug, Default)]
 pub struct OuterIssue {
-    pub title: String,
-    pub url: String,
-    pub author: String,
-    pub body: String,
-    pub repository: String,
-    pub repository_stars: i64,
-    pub repository_avatar: String,
-    pub issue_labels: Vec<String>,
-    pub comments: Vec<String>,
+    pub issue_id: String, // url of an issue
+    pub project_id: String,
+    pub issue_title: String,
+    pub issue_description: String, // description of the issue, could be truncated body text
+    pub issue_budget: i32,
+    pub issue_assignees: Vec<String>,    // JSON data format
+    pub issue_linked_pr: Option<String>, // url of the pull_request that closed the issue, if any, or the pull_request that is linked to the issue
+    pub issue_status: String, // default empty, or some situation identified by AI summarizing the issue's comments
+    pub review_status: ReviewStatus,
+    pub issue_budget_approved: bool,
+}
+
+#[derive(Serialize, Deserialize, Clone, Debug, Default)]
+pub enum ReviewStatus {
+    #[default]
+    Queue,
+    Approve,
+    Decline,
 }
 
 pub async fn search_issues_open(query: &str) -> anyhow::Result<Vec<OuterIssue>> {
@@ -334,31 +344,11 @@ pub async fn search_issues_open(query: &str) -> anyhow::Result<Vec<OuterIssue>> 
                         });
 
                         all_issues.push(OuterIssue {
-                            title: issue.title,
-                            url: issue.url,
-                            author: issue.author.as_ref().map_or(String::new(), |author| {
-                                author.login.clone().unwrap_or_default()
-                            }),
-                            body: issue.body.clone().unwrap_or_default(),
-                            repository: issue
-                                .repository
-                                .as_ref()
-                                .map_or(String::new(), |repo| repo.url.clone().unwrap_or_default()),
-                            repository_stars: issue.repository.as_ref().map_or(0, |repo| {
-                                repo.stargazers
-                                    .as_ref()
-                                    .map_or(0, |stars| stars.totalCount.unwrap_or(0))
-                            }),
-                            repository_avatar: issue.repository.as_ref().map_or(
-                                String::new(),
-                                |repo| {
-                                    repo.owner.as_ref().map_or(String::new(), |owner| {
-                                        owner.avatarUrl.clone().unwrap_or_default()
-                                    })
-                                },
-                            ),
-                            issue_labels: labels,
-                            comments: Vec::<String>::new(),
+                            issue_id: issue.url,       // Assuming issue.url is the issue_id
+                            project_id: String::new(), // You need to provide the project_id
+                            issue_title: issue.title,
+                            issue_description: issue.body.clone().unwrap_or_default(),
+                            ..Default::default() // Use Default trait implementation to fill in missing fields
                         });
                     }
                 }
@@ -377,23 +367,7 @@ pub async fn search_issues_open(query: &str) -> anyhow::Result<Vec<OuterIssue>> 
     Ok(all_issues)
 }
 
-#[allow(non_snake_case)]
-#[derive(Serialize, Deserialize, Clone, Debug)]
-pub struct CloseOuterIssue {
-    pub title: String,
-    pub url: String,
-    pub author: String,
-    pub body: String,
-    pub repository: String,
-    pub repository_stars: i64,
-    pub issue_labels: Vec<String>,
-    pub comments: Vec<String>, // Concat of author and comment
-    pub close_reason: String,
-    pub close_pull_request: String,
-    pub close_author: String,
-}
-
-pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<CloseOuterIssue>> {
+pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<OuterIssue>> {
     #[derive(Serialize, Deserialize, Clone, Debug)]
     struct GraphQLResponse {
         data: Option<Data>,
@@ -574,18 +548,28 @@ pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<CloseOuterI
                                 )
                             });
 
-                        all_issues.push(CloseOuterIssue {
-                            title: String::new(),
-                            url: issue.url.unwrap_or_default(),
-                            author: String::new(),
-                            body: String::new(),
-                            repository: String::new(),
-                            repository_stars: 0,
-                            issue_labels: labels,
-                            comments: Vec::<String>::new(),
-                            close_reason: close_reason,
-                            close_pull_request: close_pull_request,
-                            close_author: close_author,
+                        let issue_id = issue.url.clone().unwrap_or_default();
+                        let issue_assignees = Vec::<String>::new();
+                        let issue_labels = labels;
+                        let comments = Vec::<String>::new();
+
+                        let potential_problems_summary = issue_checker(
+                            &issue_id,
+                            issue_assignees.clone(),
+                            issue_labels,
+                            comments,
+                            &close_reason,
+                            &close_pull_request.clone(),
+                            &close_author,
+                        )
+                        .await;
+
+                        all_issues.push(OuterIssue {
+                            issue_id: issue.url.unwrap_or_default(), // Assuming issue.url is the issue_id
+                            issue_assignees: issue_assignees.clone(), // You need to provide the issue_assignees
+                            issue_linked_pr: Some(close_pull_request),
+                            issue_status: potential_problems_summary, // You need to provide the issue_status
+                            ..Default::default()
                         });
                     }
                 }
@@ -601,6 +585,38 @@ pub async fn search_issues_closed(query: &str) -> anyhow::Result<Vec<CloseOuterI
         }
     }
     Ok(all_issues)
+}
+
+pub async fn issue_checker(
+    issue_id: &str,
+    issue_assignees: Vec<String>,
+    issue_labels: Vec<String>,
+    comments: Vec<String>,
+    close_reason: &str,
+    close_pull_request: &str,
+    close_author: &str,
+) -> String {
+    let mut potential_problems_summary = String::new();
+    let negative_labels = vec!["spam", "invalid"];
+    if issue_labels
+        .iter()
+        .any(|label| negative_labels.contains(&label.as_str()))
+    {
+        // Do something
+    }
+
+    if close_author == "bot" {
+        // Do something
+    }
+
+    if close_reason == "some_strange" {
+        // Do something
+    }
+    if !issue_assignees.contains(&"intended_id".to_string()) {
+        // Do something
+    }
+
+    potential_problems_summary
 }
 
 #[derive(Serialize, Deserialize, Clone, Default, Debug)]
@@ -764,7 +780,7 @@ pub async fn search_pull_requests(query: &str) -> anyhow::Result<Vec<SimplePull>
 
         let response_body = github_http_post_gql(&query_str).await?;
         let response: GraphQLResponse = serde_json::from_slice(&response_body)?;
-       
+
         if let Some(data) = response.data {
             if let Some(search) = data.search {
                 if let Some(nodes) = search.nodes {

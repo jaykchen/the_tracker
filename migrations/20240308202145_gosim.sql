@@ -1,6 +1,15 @@
+CREATE TABLE participants (
+    login_id VARCHAR(255) PRIMARY KEY,  -- url of a project repo
+    email  VARCHAR(255),
+    in_event_status ENUM('zero', 'single', 'multiple', 'banned'),
+    his_issues_list JSON
+);
+
 CREATE TABLE projects (
     project_id VARCHAR(255) PRIMARY KEY,  -- url of a project repo
-    project_logo VARCHAR(255) ,
+    project_logo VARCHAR(255),
+    repo_stars INT,
+    project_description TEXT,  -- description of the project, summary of its readme, etc.
     issues_list JSON
 );
 
@@ -10,9 +19,9 @@ CREATE TABLE issues (
     issue_title VARCHAR(255) NOT NULL,
     issue_description TEXT NOT NULL,  -- description of the issue, could be truncated body text
     issue_budget INT,
-    issue_assignee VARCHAR(255),
+    issue_assignees JSON,    
     issue_linked_pr VARCHAR(255),    -- url of the pull_request that closed the issue, if any, or the pull_request that is linked to the issue
-    issue_status VARCHAR(255),    -- open, closed, in progress, or some signal of the status identified by the bot summarizing the issue's comments
+    issue_status TEXT,    -- default empty, or some situation identified by AI summarizing the issue's comments
     review_status ENUM('queue', 'approve', 'decline'),
     issue_budget_approved BOOLEAN
 );
