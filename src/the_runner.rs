@@ -220,6 +220,7 @@ pub async fn run_hourly(pool: &Pool) -> anyhow::Result<()> {
             &repository,
             &merged_by,
             &connected_issue,
+            "pull_status",
         )
         .await;
     }

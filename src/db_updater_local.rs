@@ -241,6 +241,144 @@ pub async fn pull_request_exists(pool: &Pool, pull_id: &str) -> Result<bool, Err
     Ok(result.is_some())
 }
 
+pub async fn consolidate_issues(pool: &mysql_async::Pool) -> Result<(), Error> {
+    let mut conn = pool.get_conn().await?;
+
+    let select_query = r"
+        SELECT 
+            issues_open.issue_id, 
+            issues_open.project_id, 
+            issues_open.issue_title, 
+            issues_open.issue_description, 
+            issues_open.repo_stars, 
+            issues_open.repo_avatar, 
+            issues_closed.issue_assignees, 
+            issues_closed.issue_linked_pr, 
+            issues_comments.issue_status
+        FROM issues_open
+        LEFT JOIN issues_closed ON issues_open.issue_id = issues_closed.issue_id
+        LEFT JOIN issues_comments ON issues_open.issue_id = issues_comments.issue_id";
+
+    let result: Vec<(
+        String,
+        String,
+        String,
+        String,
+        i32,
+        Option<String>,
+        Option<String>,
+        Option<String>,
+        Option<String>,
+    )> = conn.query(select_query).await?;
+
+    let mut transaction = conn
+        .start_transaction(mysql_async::TxOpts::default())
+        .await?;
+    for row in result {
+        transaction.exec_drop(
+            r"
+                INSERT INTO issues_master (issue_id, project_id, issue_title, issue_description, issue_assignees, issue_linked_pr, issue_status)
+                VALUES (:issue_id, :project_id, :issue_title, :issue_description, :issue_assignees, :issue_linked_pr, :issue_status)",
+            params! {
+                "issue_id" => &row.0,
+                "project_id" => &row.1,
+                "issue_title" => &row.2,
+                "issue_description" => &row.3,
+                "issue_assignees" => row.6.as_deref(),
+                "issue_linked_pr" => row.7.as_deref(),
+                "issue_status" => row.8.as_deref(),
+            },
+        )
+        .await?;
+    }
+
+    transaction.commit().await?;
+
+    Ok(())
+}
+
+pub async fn add_issues_open(
+    pool: &Pool,
+    issue_id: &str,
+    project_id: &str,
+    issue_title: &str,
+    issue_description: &str,
+    repo_stars: i32,
+    repo_avatar: &str,
+) -> Result<(), Error> {
+    let mut conn = pool.get_conn().await?;
+
+    let query = r"INSERT INTO issues_open (issue_id, project_id, issue_title, issue_description, repo_stars, repo_avatar)
+                  VALUES (:issue_id, :project_id, :issue_title, :issue_description, :repo_stars, :repo_avatar)";
+
+    conn.exec_drop(
+        query,
+        params! {
+            "issue_id" => issue_id,
+            "project_id" => project_id,
+            "issue_title" => issue_title,
+            "issue_description" => issue_description,
+            "repo_stars" => repo_stars,
+            "repo_avatar" => repo_avatar,
+        },
+    )
+    .await?;
+
+    Ok(())
+}
+
+pub async fn add_issues_closed(
+    pool: &Pool,
+    issue_id: &str,
+    issue_budget: Option<i32>,
+    issue_assignees: &Vec<String>,
+    issue_linked_pr: &str,
+) -> Result<(), Error> {
+    let mut conn = pool.get_conn().await?;
+
+    let issue_assignees_json: Value = json!(issue_assignees).into();
+
+    let query = r"INSERT INTO issues_closed (issue_id, issue_budget, issue_assignees, issue_linked_pr)
+                  VALUES (:issue_id, :issue_budget, :issue_assignees, :issue_linked_pr)";
+
+    conn.exec_drop(
+        query,
+        params! {
+            "issue_id" => issue_id,
+            "issue_budget" => issue_budget,
+            "issue_assignees" => &issue_assignees_json,
+            "issue_linked_pr" => issue_linked_pr,
+        },
+    )
+    .await?;
+
+    Ok(())
+}
+
+pub async fn add_issues_comments(
+    pool: &Pool,
+    issue_id: &str,
+    comments: &Vec<String>,
+) -> Result<(), Error> {
+    let mut conn = pool.get_conn().await?;
+
+    // let issue_status = todo!(comments);
+    let issue_status = "open";
+
+    let query = r"INSERT INTO issues_comments (issue_id, issue_status)
+                  VALUES (:issue_id, :issue_status)";
+
+    conn.exec_drop(
+        query,
+        params! {
+            "issue_id" => issue_id,
+            "issue_status" => issue_status,
+        },
+    )
+    .await?;
+
+    Ok(())
+}
 pub async fn add_pull_request(
     pool: &Pool,
     pull_id: &str,
@@ -249,13 +387,14 @@ pub async fn add_pull_request(
     repository: &str,
     merged_by: &str,
     connected_issues: &Vec<String>,
+    pull_status: &str,
 ) -> Result<(), Error> {
     let mut conn = pool.get_conn().await?;
 
     let connected_issues_json: Value = json!(connected_issues).into();
 
-    let query = r"INSERT INTO pull_requests (pull_id, title, author, repository, merged_by, connected_issues)
-                  VALUES (:pull_id, :title, :author, :repository, :merged_by, :connected_issues)";
+    let query = r"INSERT INTO pull_requests (pull_id, title, author, project_id, merged_by, connected_issues, pull_satatus)
+                  VALUES (:pull_id, :title, :author, :repository, :merged_by, :connected_issues, :pull_status)";
 
     conn.exec_drop(
         query,
@@ -263,9 +402,10 @@ pub async fn add_pull_request(
             "pull_id" => pull_id,
             "title" => title,
             "author" => author,
-            "repository" => repository,
+            "project_id" => repository,
             "merged_by" => merged_by,
             "connected_issues" => &connected_issues_json,
+            "pull_status" => pull_status,
         },
     )
     .await?;

@@ -10,10 +10,16 @@ CREATE TABLE projects (
     project_logo VARCHAR(255),
     repo_stars INT,
     project_description TEXT,  -- description of the project, summary of its readme, etc.
-    issues_list JSON
+    issues_list JSON,
+    issues_flagged JSON,
+    issue_without_pr JSON,
+    pr_without_issue JSON,
+    participants_list JSON,
+    total_budget_allocated INT,
+    total_budget_used INT,
 );
 
-CREATE TABLE issues (
+CREATE TABLE issues_master (
     issue_id VARCHAR(255) PRIMARY KEY,  -- url of an issue
     project_id VARCHAR(255) NOT NULL,
     issue_title VARCHAR(255) NOT NULL,
@@ -26,20 +32,34 @@ CREATE TABLE issues (
     issue_budget_approved BOOLEAN
 );
 
-CREATE TABLE comments (
-    comment_id VARCHAR(255) PRIMARY KEY,
-    issue_id VARCHAR(255) NOT NULL,
-    creator VARCHAR(50) NOT NULL,
-    time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    content TEXT 
+CREATE TABLE issues_open (
+    issue_id VARCHAR(255) PRIMARY KEY,  -- url of an issue
+    project_id VARCHAR(255) NOT NULL,
+    issue_title VARCHAR(255) NOT NULL,
+    issue_description TEXT NOT NULL,  -- description of the issue, could be truncated body text
+    repo_stars INT NOT NULL,  
+    repo_avatar VARCHAR(255),
 );
+
+
+CREATE TABLE issues_closed (
+    issue_id VARCHAR(255) PRIMARY KEY,  -- url of an issue
+    issue_assignees JSON,    
+    issue_linked_pr VARCHAR(255),    -- url of the pull_request that closed the issue, if any, or the pull_request that is linked to the issue
+);
+
+CREATE TABLE issues_comments (
+    issue_id VARCHAR(255) PRIMARY KEY,  -- url of an issue
+    issue_status TEXT,    -- default empty, or some situation identified by AI summarizing the issue's comments
+);
+
 
 CREATE TABLE pull_requests (
     pull_id VARCHAR(255) PRIMARY KEY,  -- url of pull_request
     title VARCHAR(255) NOT NULL,
     author VARCHAR(50) ,
     project_id VARCHAR(255) NOT NULL,
-    merged_by VARCHAR(50) ,
     connected_issues JSON,
+    merged_by VARCHAR(50) ,
     pull_status TEXT,    -- default empty, or some situation exposed by conflicting information
 );
