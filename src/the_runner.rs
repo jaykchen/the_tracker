@@ -180,7 +180,7 @@ pub async fn run_hourly(pool: &Pool) -> anyhow::Result<()> {
         // let issue_assignee = iss.assignee.clone();
         let issue_assignee = String::new();
 
-        update_issue(pool, &issue_id, &issue_assignee, &issue_linked_pr).await;
+        // update_issue(pool, &issue_id, &issue_assignee, &issue_linked_pr).await;
     }
 
     // let query_pr_overall ="label:hacktoberfest-accepted is:pr is:merged updated:2023-10-01..2023-10-02 review:approved -label:spam -label:invalid";
