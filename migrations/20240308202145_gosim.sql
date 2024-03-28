@@ -54,10 +54,30 @@ CREATE TABLE issues_comments (
 
 CREATE TABLE pull_requests (
     pull_id VARCHAR(255) PRIMARY KEY,  -- url of pull_request
-    title VARCHAR(255) NOT NULL,
-    author VARCHAR(50) ,
+    pull_title VARCHAR(255) NOT NULL,
+    pull_author VARCHAR(50) ,
     project_id VARCHAR(255) NOT NULL,
     connected_issues JSON,
     merged_by VARCHAR(50) ,
     pull_status TEXT    -- default empty, or some situation exposed by conflicting information
-);
+)
+
+
+
+INSERT INTO issues_master (
+    issue_id,
+    project_id,
+    issue_title,
+    issue_description,
+    issue_assignees,
+    issue_linked_pr
+)
+SELECT
+    issues_open.issue_id,
+    issues_open.project_id,
+    issues_open.issue_title,
+    issues_open.issue_description,
+    IFNULL(issues_closed.issue_assignees, '[]'),  -- assuming empty JSON array as default for issue_assignees
+    issues_closed.issue_linked_pr
+FROM issues_open
+LEFT JOIN issues_closed ON issues_open.issue_id = issues_closed.issue_id;
